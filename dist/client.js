@@ -22,10 +22,10 @@ class StreetManagerApiClient {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 let response = yield this.axios.get('/status');
-                return Promise.resolve(response.status === http_status_codes_1.OK);
+                return response.status === http_status_codes_1.OK;
             }
             catch (err) {
-                return Promise.resolve(false);
+                return false;
             }
         });
     }
@@ -38,7 +38,7 @@ class StreetManagerApiClient {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 let response = yield request();
-                return Promise.resolve(response.data);
+                return response.data;
             }
             catch (err) {
                 return Promise.reject(err);
