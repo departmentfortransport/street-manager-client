@@ -1,5 +1,4 @@
-import { WorkCreateRequest } from 'street-manager-interfaces'
-import { WorkResponse } from 'street-manager-interfaces';
+import { WorkCreateRequest, WorkResponse } from 'street-manager-interfaces'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,

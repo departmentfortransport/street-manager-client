@@ -19,9 +19,9 @@ export class StreetManagerApiClient {
   public async isAvailable(): Promise<boolean> {
     try {
       let response: AxiosResponse = await this.axios.get('/status')
-      return Promise.resolve(response.status === OK)
+      return response.status === OK
     } catch (err) {
-      return Promise.resolve(false)
+      return false
     }
   }
 
@@ -32,7 +32,7 @@ export class StreetManagerApiClient {
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
     try {
       let response: AxiosResponse<T> = await request()
-      return Promise.resolve(response.data)
+      return response.data
     } catch (err) {
       return Promise.reject(err)
     }
