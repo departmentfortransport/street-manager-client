@@ -6,11 +6,11 @@ It is used within the `street-manager-frontend` project.
 
 ## To make changes to this repo
 
-First, make sure that you have the following shell scripts. If not, ask a member of the dev team to provide them:
+First, make sure that you have the following shell scripts. They can be retrieved from `street-manager-ops/scripts/`:
 * make-local-changes.sh
 * finish-local-changes.sh
 
-Place these on the same level as your street-manager repos ( [see here]([https://github.com/departmentfortransport/street-manager/wiki/dft-street-manager-developer-environment-setup-and-on-boarding#cloning-development-repos) for example )
+Place these on the same level as your street-manager repos ( [see here](https://github.com/departmentfortransport/street-manager/wiki/dft-street-manager-developer-environment-setup-and-on-boarding#cloning-development-repos) for example )
 
 Then:
 1. Run `make-local-changes.sh` - this will replace all references to the `street-manager-client` dependency in any `package.json` that references it with a local filepath i.e. `file:../street-manager-client`
