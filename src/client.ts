@@ -1,5 +1,5 @@
-import { WorkCreateRequest, WorkResponse } from 'street-manager-interfaces'
-import axios, { AxiosInstance, AxiosResponse, AxiosPromise } from 'axios'
+import { WorkCreateRequest, WorkResponse, WorkStatus } from 'street-manager-interfaces'
+import axios, { AxiosInstance, AxiosResponse, AxiosPromise, AxiosRequestConfig } from 'axios'
 import { OK } from 'http-status-codes'
 
 export interface StreetManagerApiClientConfig {
@@ -27,6 +27,11 @@ export class StreetManagerApiClient {
 
   public async createWork(workCreateRequest: WorkCreateRequest): Promise<WorkResponse> {
     return this.httpHandler<WorkResponse>(() => this.axios.post('/works', workCreateRequest))
+  }
+
+  public async getWorks(status?: WorkStatus): Promise<WorkResponse[]> {
+    let config: AxiosRequestConfig = status ? { params: { status: status } } : {}
+    return this.httpHandler<WorkResponse[]>(() => this.axios.get('/works', config))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

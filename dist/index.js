@@ -4,4 +4,3 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./client"));
-__export(require("street-manager-interfaces"));

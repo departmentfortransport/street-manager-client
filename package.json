@@ -19,7 +19,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "http-status-codes": "^1.3.0",
-    "street-manager-interfaces": "git+ssh://git@github.com:departmentfortransport/street-manager-interfaces#12f32b9df4bd3e964b1571b96cb26ba748c59be3"
+    "street-manager-interfaces": "git+ssh://git@github.com:departmentfortransport/street-manager-interfaces#e9886fba8505320984959a7056df46fe90eee4f1"
   },
   "devDependencies": {
     "nsp": "^3.2.1",
