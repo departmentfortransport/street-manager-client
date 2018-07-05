@@ -34,6 +34,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post('/works', workCreateRequest));
         });
     }
+    getWork(referenceNumber) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}`));
+        });
+    }
     getWorks(status) {
         return __awaiter(this, void 0, void 0, function* () {
             let config = status ? { params: { status: status } } : {};
