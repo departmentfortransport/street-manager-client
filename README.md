@@ -4,7 +4,11 @@ Contains NodeJS Client that is used to communicate with the `street-manager-api`
 
 It is used within the `street-manager-frontend` project.
 
-## To make changes to this repo
+NOTE - Remember to run `npm run build` once you have completed development and commit the generate `dist/` folder. This will make the new version of your source code available to dependent repos when they run `npm install`
+
+## Optional - Developing in Local Mode
+
+Rather than pushing your newly developed code to github and pointing to the new commit in dependent repos, you may want to point to the local version of this project.
 
 First, make sure that you have the following shell scripts. They can be retrieved from `street-manager-ops/scripts/`:
 * make-local-changes.sh

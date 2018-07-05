@@ -1,4 +1,6 @@
-import { WorkCreateRequest, WorkResponse, WorkStatus } from 'street-manager-interfaces';
+import { WorkCreateRequest } from '../interfaces/workCreateRequest';
+import { WorkResponse } from '../interfaces/workResponse';
+import { WorkStatus } from '../interfaces/referenceTypes';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;

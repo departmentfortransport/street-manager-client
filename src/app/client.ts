@@ -1,6 +1,8 @@
-import { WorkCreateRequest, WorkResponse, WorkStatus } from 'street-manager-interfaces'
 import axios, { AxiosInstance, AxiosResponse, AxiosPromise, AxiosRequestConfig } from 'axios'
 import { OK } from 'http-status-codes'
+import { WorkCreateRequest } from '../interfaces/workCreateRequest'
+import { WorkResponse } from '../interfaces/workResponse'
+import { WorkStatus } from '../interfaces/referenceTypes'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
