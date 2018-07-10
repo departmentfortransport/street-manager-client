@@ -52,7 +52,9 @@ class StreetManagerApiClient {
                 return response.data;
             }
             catch (err) {
-                return Promise.reject(err);
+                let error = new Error(err.response.data.message);
+                error['status'] = err.response.status;
+                return Promise.reject(error);
             }
         });
     }
