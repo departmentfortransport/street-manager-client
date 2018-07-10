@@ -31,6 +31,10 @@ export class StreetManagerApiClient {
     return this.httpHandler<WorkResponse>(() => this.axios.post('/works', workCreateRequest))
   }
 
+  public async getWork(referenceNumber: string) {
+    return this.httpHandler<WorkResponse>(() => this.axios.get(`/works/${referenceNumber}`))
+  }
+
   public async getWorks(status?: WorkStatus): Promise<WorkResponse[]> {
     let config: AxiosRequestConfig = status ? { params: { status: status } } : {}
     return this.httpHandler<WorkResponse[]>(() => this.axios.get('/works', config))
@@ -41,7 +45,9 @@ export class StreetManagerApiClient {
       let response: AxiosResponse<T> = await request()
       return response.data
     } catch (err) {
-      return Promise.reject(err)
+      let error = new Error(err.response.data.message)
+      error['status'] = err.response.status
+      return Promise.reject(error)
     }
   }
 }

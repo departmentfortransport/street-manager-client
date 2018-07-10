@@ -11,6 +11,7 @@ export declare class StreetManagerApiClient {
     constructor(config: StreetManagerApiClientConfig);
     isAvailable(): Promise<boolean>;
     createWork(workCreateRequest: WorkCreateRequest): Promise<WorkResponse>;
+    getWork(referenceNumber: string): Promise<WorkResponse>;
     getWorks(status?: WorkStatus): Promise<WorkResponse[]>;
     private httpHandler;
 }
