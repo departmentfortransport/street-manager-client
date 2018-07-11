@@ -1,6 +1,6 @@
 import { ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType } from './referenceTypes'
 
-export interface WorkCreateRequest {
+export interface PermitCreateRequest {
   reference_number: string
   promoter_organisation: string
   promoter_contact_details: string

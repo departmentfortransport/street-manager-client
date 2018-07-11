@@ -29,9 +29,9 @@ class StreetManagerApiClient {
             }
         });
     }
-    createWork(workCreateRequest) {
+    createWork(permitCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post('/works', workCreateRequest));
+            return this.httpHandler(() => this.axios.post('/works', permitCreateRequest));
         });
     }
     getWork(referenceNumber) {

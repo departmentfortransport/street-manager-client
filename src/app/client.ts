@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosPromise, AxiosRequestConfig } from 'axios'
 import { OK } from 'http-status-codes'
-import { WorkCreateRequest } from '../interfaces/workCreateRequest'
+import { PermitCreateRequest } from '../interfaces/permitCreateRequest'
 import { WorkResponse } from '../interfaces/workResponse'
 import { WorkStatus } from '../interfaces/referenceTypes'
 
@@ -27,8 +27,8 @@ export class StreetManagerApiClient {
     }
   }
 
-  public async createWork(workCreateRequest: WorkCreateRequest): Promise<WorkResponse> {
-    return this.httpHandler<WorkResponse>(() => this.axios.post('/works', workCreateRequest))
+  public async createWork(permitCreateRequest: PermitCreateRequest): Promise<WorkResponse> {
+    return this.httpHandler<WorkResponse>(() => this.axios.post('/works', permitCreateRequest))
   }
 
   public async getWork(referenceNumber: string) {
