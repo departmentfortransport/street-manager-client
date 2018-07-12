@@ -29,20 +29,20 @@ class StreetManagerApiClient {
             }
         });
     }
-    createWork(permitCreateRequest) {
+    createPermit(permitCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post('/works', permitCreateRequest));
+            return this.httpHandler(() => this.axios.post('/permits', permitCreateRequest));
         });
     }
-    getWork(referenceNumber) {
+    getPermit(referenceNumber) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}`));
+            return this.httpHandler(() => this.axios.get(`/permits/${referenceNumber}`));
         });
     }
-    getWorks(status) {
+    getPermits(status) {
         return __awaiter(this, void 0, void 0, function* () {
             let config = status ? { params: { status: status } } : {};
-            return this.httpHandler(() => this.axios.get('/works', config));
+            return this.httpHandler(() => this.axios.get('/permits', config));
         });
     }
     httpHandler(request) {

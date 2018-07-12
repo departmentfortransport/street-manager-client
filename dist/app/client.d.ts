@@ -1,6 +1,6 @@
 import { PermitCreateRequest } from '../interfaces/permitCreateRequest';
-import { WorkResponse } from '../interfaces/workResponse';
-import { WorkStatus } from '../interfaces/referenceTypes';
+import { PermitResponse } from '../interfaces/permitResponse';
+import { PermitStatus } from '../interfaces/referenceTypes';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -10,8 +10,8 @@ export declare class StreetManagerApiClient {
     private axios;
     constructor(config: StreetManagerApiClientConfig);
     isAvailable(): Promise<boolean>;
-    createWork(permitCreateRequest: PermitCreateRequest): Promise<WorkResponse>;
-    getWork(referenceNumber: string): Promise<WorkResponse>;
-    getWorks(status?: WorkStatus): Promise<WorkResponse[]>;
+    createPermit(permitCreateRequest: PermitCreateRequest): Promise<PermitResponse>;
+    getPermit(referenceNumber: string): Promise<PermitResponse>;
+    getPermits(status?: PermitStatus): Promise<PermitResponse[]>;
     private httpHandler;
 }

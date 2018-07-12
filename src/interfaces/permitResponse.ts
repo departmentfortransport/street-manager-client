@@ -1,7 +1,7 @@
-import { WorkStatus, ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType } from './referenceTypes'
+import { PermitStatus, ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType } from './referenceTypes'
 
-export interface WorkResponse {
-  work_id: number
+export interface PermitResponse {
+  permit_id: number
   reference_number: string
   promoter_organisation: string
   promoter_contact_details: string
@@ -33,7 +33,7 @@ export interface WorkResponse {
   date_created: Date
   date_modified: Date
   deadline_date: Date
-  work_status: WorkStatus
+  permit_status: PermitStatus
   activity_type: ActivityType
   work_category: WorkCategory
   traffic_management_type: TrafficManagementType

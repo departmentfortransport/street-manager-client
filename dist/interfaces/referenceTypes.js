@@ -49,8 +49,10 @@ var WorkCategory;
     WorkCategory["immediate_urgent"] = "immediate_urgent";
     WorkCategory["immediate_emergency"] = "immediate_emergency";
 })(WorkCategory = exports.WorkCategory || (exports.WorkCategory = {}));
-var WorkStatus;
-(function (WorkStatus) {
-    WorkStatus["permit_application_submitted"] = "permit_application_submitted";
-    WorkStatus["permit_application_approved"] = "permit_application_approved";
-})(WorkStatus = exports.WorkStatus || (exports.WorkStatus = {}));
+var PermitStatus;
+(function (PermitStatus) {
+    PermitStatus["submitted"] = "submitted";
+    PermitStatus["granted"] = "granted";
+    PermitStatus["granted_with_changes"] = "granted_with_changes";
+    PermitStatus["refuse"] = "refuse";
+})(PermitStatus = exports.PermitStatus || (exports.PermitStatus = {}));
