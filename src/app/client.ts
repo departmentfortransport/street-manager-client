@@ -1,8 +1,8 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosPromise, AxiosRequestConfig } from 'axios'
 import { OK } from 'http-status-codes'
-import { WorkCreateRequest } from '../interfaces/workCreateRequest'
-import { WorkResponse } from '../interfaces/workResponse'
-import { WorkStatus } from '../interfaces/referenceTypes'
+import { PermitCreateRequest } from '../interfaces/permitCreateRequest'
+import { PermitResponse } from '../interfaces/permitResponse'
+import { PermitStatus } from '../interfaces/referenceTypes'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -27,17 +27,17 @@ export class StreetManagerApiClient {
     }
   }
 
-  public async createWork(workCreateRequest: WorkCreateRequest): Promise<WorkResponse> {
-    return this.httpHandler<WorkResponse>(() => this.axios.post('/works', workCreateRequest))
+  public async createPermit(permitCreateRequest: PermitCreateRequest): Promise<PermitResponse> {
+    return this.httpHandler<PermitResponse>(() => this.axios.post('/permits', permitCreateRequest))
   }
 
-  public async getWork(referenceNumber: string) {
-    return this.httpHandler<WorkResponse>(() => this.axios.get(`/works/${referenceNumber}`))
+  public async getPermit(referenceNumber: string) {
+    return this.httpHandler<PermitResponse>(() => this.axios.get(`/permits/${referenceNumber}`))
   }
 
-  public async getWorks(status?: WorkStatus): Promise<WorkResponse[]> {
+  public async getPermits(status?: PermitStatus): Promise<PermitResponse[]> {
     let config: AxiosRequestConfig = status ? { params: { status: status } } : {}
-    return this.httpHandler<WorkResponse[]>(() => this.axios.get('/works', config))
+    return this.httpHandler<PermitResponse[]>(() => this.axios.get('/permits', config))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

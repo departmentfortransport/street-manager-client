@@ -47,7 +47,9 @@ export enum WorkCategory {
   immediate_emergency = 'immediate_emergency'
 }
 
-export enum WorkStatus {
-  permit_application_submitted = 'permit_application_submitted',
-  permit_application_approved = 'permit_application_approved'
+export enum PermitStatus {
+  submitted = 'submitted',
+  granted = 'granted',
+  granted_with_changes = 'granted_with_changes',
+  refuse = 'refuse'
 }
