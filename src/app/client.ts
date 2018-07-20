@@ -3,6 +3,7 @@ import { OK } from 'http-status-codes'
 import { PermitCreateRequest } from '../interfaces/permitCreateRequest'
 import { PermitResponse } from '../interfaces/permitResponse'
 import { PermitStatus } from '../interfaces/referenceTypes'
+import { PermitStatusUpdateRequest } from '../interfaces/permitStatusUpdateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -40,14 +41,19 @@ export class StreetManagerApiClient {
     return this.httpHandler<PermitResponse[]>(() => this.axios.get('/permits', config))
   }
 
+  public async updatePermitStatus(referenceNumber: string, updatePermitStatusRequest: PermitStatusUpdateRequest): Promise<void> {
+    await this.axios.put(`/permits/${referenceNumber}/status`, updatePermitStatusRequest)
+  }
+
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
     try {
       let response: AxiosResponse<T> = await request()
-      return response.data
+      if (response.data) {
+        return response.data
+      }
     } catch (err) {
-      let error = new Error(err.response.data.message)
-      error['status'] = err.response.status
-      return Promise.reject(error)
+      err.status = err.response.status
+      return Promise.reject(err)
     }
   }
 }
