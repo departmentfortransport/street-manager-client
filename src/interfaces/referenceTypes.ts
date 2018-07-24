@@ -51,5 +51,6 @@ export enum PermitStatus {
   submitted = 'submitted',
   granted = 'granted',
   granted_with_changes = 'granted_with_changes',
-  refuse = 'refuse'
+  refuse = 'refuse',
+  work_in_progress = 'work_in_progress'
 }
