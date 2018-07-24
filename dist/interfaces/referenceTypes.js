@@ -55,4 +55,5 @@ var PermitStatus;
     PermitStatus["granted"] = "granted";
     PermitStatus["granted_with_changes"] = "granted_with_changes";
     PermitStatus["refuse"] = "refuse";
+    PermitStatus["work_in_progress"] = "work_in_progress";
 })(PermitStatus = exports.PermitStatus || (exports.PermitStatus = {}));
