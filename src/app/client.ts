@@ -42,7 +42,7 @@ export class StreetManagerApiClient {
   }
 
   public async updatePermitStatus(referenceNumber: string, updatePermitStatusRequest: PermitStatusUpdateRequest): Promise<void> {
-    await this.axios.put(`/permits/${referenceNumber}/status`, updatePermitStatusRequest)
+    return this.httpHandler<void>(() =>  this.axios.put(`/permits/${referenceNumber}/status`, updatePermitStatusRequest))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

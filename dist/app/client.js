@@ -47,7 +47,7 @@ class StreetManagerApiClient {
     }
     updatePermitStatus(referenceNumber, updatePermitStatusRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.axios.put(`/permits/${referenceNumber}/status`, updatePermitStatusRequest);
+            return this.httpHandler(() => this.axios.put(`/permits/${referenceNumber}/status`, updatePermitStatusRequest));
         });
     }
     httpHandler(request) {
