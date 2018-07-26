@@ -55,6 +55,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/start`, workStartUpdateRequest));
         });
     }
+    updateWorkActualStopDate(referenceNumber, workStopUpdateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/stop`, workStopUpdateRequest));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

@@ -5,6 +5,7 @@ import { PermitResponse } from '../interfaces/permitResponse'
 import { PermitStatus } from '../interfaces/referenceTypes'
 import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpdateRequest'
 import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest'
+import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -48,6 +49,10 @@ export class StreetManagerApiClient {
 
   public async updateWorkActualStartDate(referenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() =>  this.axios.put(`/works/${referenceNumber}/start`, workStartUpdateRequest))
+  }
+
+  public async updateWorkActualStopDate(referenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() =>  this.axios.put(`/works/${referenceNumber}/stop`, workStopUpdateRequest))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
