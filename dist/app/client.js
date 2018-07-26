@@ -50,6 +50,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/permits/${referenceNumber}/status`, updatePermitStatusRequest));
         });
     }
+    updateWorkActualStartDate(referenceNumber, workStartUpdateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/start`, workStartUpdateRequest));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
