@@ -1,4 +1,4 @@
-import { PermitStatus, ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType } from './referenceTypes'
+import { PermitStatus, ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType, AssessmentStatus } from './referenceTypes'
 
 export interface PermitResponse {
   permit_id: number
@@ -42,4 +42,5 @@ export interface PermitResponse {
   application_type: ApplicationType
   collaboration_type?: CollaborationType
   location_types: LocationType[]
+  assessment_status?: AssessmentStatus
 }

@@ -3,7 +3,7 @@ import { OK } from 'http-status-codes'
 import { PermitCreateRequest } from '../interfaces/permitCreateRequest'
 import { PermitResponse } from '../interfaces/permitResponse'
 import { PermitStatus } from '../interfaces/referenceTypes'
-import { PermitStatusUpdateRequest } from '../interfaces/permitStatusUpdateRequest'
+import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpdateRequest'
 import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest'
 
 export interface StreetManagerApiClientConfig {
@@ -42,8 +42,8 @@ export class StreetManagerApiClient {
     return this.httpHandler<PermitResponse[]>(() => this.axios.get('/permits', config))
   }
 
-  public async updatePermitStatus(referenceNumber: string, updatePermitStatusRequest: PermitStatusUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() =>  this.axios.put(`/permits/${referenceNumber}/status`, updatePermitStatusRequest))
+  public async updateAssessmentStatus(referenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() =>  this.axios.put(`/permits/${referenceNumber}/status`, updateAssessmentStatusRequest))
   }
 
   public async updateWorkActualStartDate(referenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void> {

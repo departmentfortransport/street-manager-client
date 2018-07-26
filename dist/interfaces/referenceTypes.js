@@ -52,8 +52,12 @@ var WorkCategory;
 var PermitStatus;
 (function (PermitStatus) {
     PermitStatus["submitted"] = "submitted";
-    PermitStatus["granted"] = "granted";
-    PermitStatus["granted_with_changes"] = "granted_with_changes";
-    PermitStatus["refuse"] = "refuse";
+    PermitStatus["assessed"] = "assessed";
     PermitStatus["work_in_progress"] = "work_in_progress";
 })(PermitStatus = exports.PermitStatus || (exports.PermitStatus = {}));
+var AssessmentStatus;
+(function (AssessmentStatus) {
+    AssessmentStatus["granted"] = "granted";
+    AssessmentStatus["granted_with_changes"] = "granted_with_changes";
+    AssessmentStatus["refused"] = "refused";
+})(AssessmentStatus = exports.AssessmentStatus || (exports.AssessmentStatus = {}));

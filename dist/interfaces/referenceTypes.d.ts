@@ -43,8 +43,11 @@ export declare enum WorkCategory {
 }
 export declare enum PermitStatus {
     submitted = "submitted",
+    assessed = "assessed",
+    work_in_progress = "work_in_progress"
+}
+export declare enum AssessmentStatus {
     granted = "granted",
     granted_with_changes = "granted_with_changes",
-    refuse = "refuse",
-    work_in_progress = "work_in_progress"
+    refused = "refused"
 }
