@@ -34,7 +34,7 @@ export interface PermitResponse {
   date_modified: Date
   deadline_date: Date
   actual_start_date?: Date
-  actual_end_date?: Date
+  actual_stop_date?: Date
   permit_status: PermitStatus
   activity_type: ActivityType
   work_category: WorkCategory

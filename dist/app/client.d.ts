@@ -3,6 +3,7 @@ import { PermitResponse } from '../interfaces/permitResponse';
 import { PermitStatus } from '../interfaces/referenceTypes';
 import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpdateRequest';
 import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest';
+import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -17,5 +18,6 @@ export declare class StreetManagerApiClient {
     getPermits(status?: PermitStatus): Promise<PermitResponse[]>;
     updateAssessmentStatus(referenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void>;
     updateWorkActualStartDate(referenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void>;
+    updateWorkActualStopDate(referenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void>;
     private httpHandler;
 }
