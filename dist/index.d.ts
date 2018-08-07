@@ -5,3 +5,4 @@ export * from './interfaces/permitResponse';
 export * from './interfaces/assessmentStatusUpdateRequest';
 export * from './interfaces/workStartUpdateRequest';
 export * from './interfaces/workStopUpdateRequest';
+export * from './interfaces/excavationCarriedOutUpdateRequest';
