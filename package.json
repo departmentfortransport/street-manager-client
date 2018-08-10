@@ -22,8 +22,8 @@
   },
   "devDependencies": {
     "nsp": "^3.2.1",
-    "tslint": "^5.9.1",
     "rimraf": "^2.6.2",
+    "tslint": "^5.11.0",
     "typescript": "^2.7.1"
   }
 }

@@ -24,8 +24,7 @@ export interface PermitResponse {
   highway_authority: string
   road_category: number
   works_location_description: string
-  works_latitude: number
-  works_longitude: number
+  works_coordinates: any
   environmental_health_notifiable: boolean
   collaborative_working: boolean
   collaboration_details?: string
