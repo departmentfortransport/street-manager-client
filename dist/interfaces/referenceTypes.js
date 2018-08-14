@@ -61,3 +61,8 @@ var AssessmentStatus;
     AssessmentStatus["granted_with_changes"] = "granted_with_changes";
     AssessmentStatus["refused"] = "refused";
 })(AssessmentStatus = exports.AssessmentStatus || (exports.AssessmentStatus = {}));
+var ReinstatementStatus;
+(function (ReinstatementStatus) {
+    ReinstatementStatus["interim"] = "Interim";
+    ReinstatementStatus["permanent"] = "Permanent";
+})(ReinstatementStatus = exports.ReinstatementStatus || (exports.ReinstatementStatus = {}));

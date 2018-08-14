@@ -51,3 +51,7 @@ export declare enum AssessmentStatus {
     granted_with_changes = "granted_with_changes",
     refused = "refused"
 }
+export declare enum ReinstatementStatus {
+    interim = "Interim",
+    permanent = "Permanent"
+}

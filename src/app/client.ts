@@ -7,6 +7,8 @@ import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpd
 import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest'
 import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest'
 import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarriedOutUpdateRequest'
+import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateRequest'
+import { ReinstatementResponse } from '../interfaces/reinstatementResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -58,6 +60,10 @@ export class StreetManagerApiClient {
 
   public async updateExcavationCarriedOut(referenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() =>  this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest))
+  }
+
+  public async createReinstatement(reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementResponse> {
+    return this.httpHandler<ReinstatementResponse>(() => this.axios.post('/works/${referenceNumber}/reinstatements', reinstatementCreateRequest))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
