@@ -62,8 +62,8 @@ export class StreetManagerApiClient {
     return this.httpHandler<void>(() =>  this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest))
   }
 
-  public async createReinstatement(reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementResponse> {
-    return this.httpHandler<ReinstatementResponse>(() => this.axios.post('/works/${referenceNumber}/reinstatements', reinstatementCreateRequest))
+  public async createReinstatement(referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementResponse> {
+    return this.httpHandler<ReinstatementResponse>(() => this.axios.post(`/works/${referenceNumber}/reinstatements`, reinstatementCreateRequest))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
