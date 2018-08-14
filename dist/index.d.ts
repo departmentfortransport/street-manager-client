@@ -6,3 +6,5 @@ export * from './interfaces/assessmentStatusUpdateRequest';
 export * from './interfaces/workStartUpdateRequest';
 export * from './interfaces/workStopUpdateRequest';
 export * from './interfaces/excavationCarriedOutUpdateRequest';
+export * from './interfaces/reinstatementCreateRequest';
+export * from './interfaces/reinstatementResponse';
