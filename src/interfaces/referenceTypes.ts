@@ -60,6 +60,6 @@ export enum AssessmentStatus {
 }
 
 export enum ReinstatementStatus {
-  interim = 'Interim',
-  permanent = 'Permanent'
+  interim = 'interim',
+  permanent = 'permanent'
 }

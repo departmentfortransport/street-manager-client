@@ -63,6 +63,6 @@ var AssessmentStatus;
 })(AssessmentStatus = exports.AssessmentStatus || (exports.AssessmentStatus = {}));
 var ReinstatementStatus;
 (function (ReinstatementStatus) {
-    ReinstatementStatus["interim"] = "Interim";
-    ReinstatementStatus["permanent"] = "Permanent";
+    ReinstatementStatus["interim"] = "interim";
+    ReinstatementStatus["permanent"] = "permanent";
 })(ReinstatementStatus = exports.ReinstatementStatus || (exports.ReinstatementStatus = {}));

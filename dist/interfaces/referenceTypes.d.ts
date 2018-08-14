@@ -52,6 +52,6 @@ export declare enum AssessmentStatus {
     refused = "refused"
 }
 export declare enum ReinstatementStatus {
-    interim = "Interim",
-    permanent = "Permanent"
+    interim = "interim",
+    permanent = "permanent"
 }
