@@ -66,6 +66,10 @@ export class StreetManagerApiClient {
     return this.httpHandler<ReinstatementResponse>(() => this.axios.post(`/works/${referenceNumber}/reinstatements`, reinstatementCreateRequest))
   }
 
+  public async getReinstatement(referenceNumber: string, reinstatementId: number): Promise<ReinstatementResponse> {
+    return this.httpHandler<ReinstatementResponse>(() => this.axios.get(`/works/${referenceNumber}/reinstatements/${reinstatementId}`))
+  }
+
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
     try {
       let response: AxiosResponse<T> = await request()
