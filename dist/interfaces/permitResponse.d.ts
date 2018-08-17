@@ -4,6 +4,7 @@ export interface PermitResponse {
     permit_id: number;
     reference_number: string;
     promoter_organisation: string;
+    promoter_swa_code: string;
     promoter_contact_details: string;
     approved_undertaker: string;
     undertaker_contact_details: string;
