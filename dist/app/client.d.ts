@@ -24,5 +24,6 @@ export declare class StreetManagerApiClient {
     updateWorkActualStopDate(referenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void>;
     updateExcavationCarriedOut(referenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void>;
     createReinstatement(referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementResponse>;
+    getReinstatement(referenceNumber: string, reinstatementId: number): Promise<ReinstatementResponse>;
     private httpHandler;
 }
