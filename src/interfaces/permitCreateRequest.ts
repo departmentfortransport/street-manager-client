@@ -15,7 +15,6 @@ export interface PermitCreateRequest {
   description_of_work: string
   excavation: boolean
   project_reference_number?: string
-  commercially_sensitive?: boolean
   traffic_management_plan: boolean
   lane_rental_applicable: boolean
   street_name: string
