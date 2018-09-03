@@ -75,6 +75,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/reinstatements/${reinstatementId}`));
         });
     }
+    createInspection(referenceNumber, inspectionCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/inspection`, inspectionCreateRequest));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

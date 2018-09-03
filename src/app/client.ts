@@ -9,6 +9,7 @@ import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest'
 import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarriedOutUpdateRequest'
 import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateRequest'
 import { ReinstatementResponse } from '../interfaces/reinstatementResponse'
+import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -62,12 +63,16 @@ export class StreetManagerApiClient {
     return this.httpHandler<void>(() =>  this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest))
   }
 
-  public async createReinstatement(referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementResponse> {
-    return this.httpHandler<ReinstatementResponse>(() => this.axios.post(`/works/${referenceNumber}/reinstatements`, reinstatementCreateRequest))
+  public async createReinstatement(referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/works/${referenceNumber}/reinstatements`, reinstatementCreateRequest))
   }
 
   public async getReinstatement(referenceNumber: string, reinstatementId: number): Promise<ReinstatementResponse> {
     return this.httpHandler<ReinstatementResponse>(() => this.axios.get(`/works/${referenceNumber}/reinstatements/${reinstatementId}`))
+  }
+
+  public async createInspection(referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/works/${referenceNumber}/inspection`, inspectionCreateRequest))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
