@@ -7,6 +7,7 @@ import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest';
 import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarriedOutUpdateRequest';
 import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateRequest';
 import { ReinstatementResponse } from '../interfaces/reinstatementResponse';
+import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -23,7 +24,8 @@ export declare class StreetManagerApiClient {
     updateWorkActualStartDate(referenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void>;
     updateWorkActualStopDate(referenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void>;
     updateExcavationCarriedOut(referenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void>;
-    createReinstatement(referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementResponse>;
+    createReinstatement(referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<void>;
     getReinstatement(referenceNumber: string, reinstatementId: number): Promise<ReinstatementResponse>;
+    createInspection(referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void>;
     private httpHandler;
 }

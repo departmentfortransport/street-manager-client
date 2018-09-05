@@ -55,3 +55,26 @@ export declare enum ReinstatementStatus {
     interim = "interim",
     permanent = "permanent"
 }
+export declare enum InspectionType {
+    slg = "slg",
+    reinstatement = "reinstatement"
+}
+export declare enum InspectionCategory {
+    a = "a",
+    b = "b",
+    c = "c",
+    third_party = "third_party",
+    routine = "routine"
+}
+export declare enum InspectionOutcome {
+    passed = "passed",
+    unable_to_complete = "unable_to_complete",
+    failed_standard = "failed_standard",
+    failed_2_hour = "failed_2_hour",
+    failed_4_hour = "failed_4_hour"
+}
+export declare enum DefectFixedOnsite {
+    yes_by_inspector = "yes_by_inspector",
+    yes_by_onsite_members = "yes_by_onsite_members",
+    no = "no"
+}
