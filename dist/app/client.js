@@ -29,55 +29,58 @@ class StreetManagerApiClient {
             }
         });
     }
-    createPermit(permitCreateRequest) {
+    createPermit(token, permitCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post('/permits', permitCreateRequest));
+            return this.httpHandler(() => this.axios.post('/permits', permitCreateRequest, this.generateRequestConfig(token)));
         });
     }
-    getPermit(referenceNumber) {
+    getPermit(token, referenceNumber) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/permits/${referenceNumber}`));
+            return this.httpHandler(() => this.axios.get(`/permits/${referenceNumber}`, this.generateRequestConfig(token)));
         });
     }
-    getPermits(status) {
+    getPermits(token, status) {
         return __awaiter(this, void 0, void 0, function* () {
-            let config = status ? { params: { status: status } } : {};
+            let config = this.generateRequestConfig(token);
+            if (status) {
+                config.params = { status: status };
+            }
             return this.httpHandler(() => this.axios.get('/permits', config));
         });
     }
-    updateAssessmentStatus(referenceNumber, updateAssessmentStatusRequest) {
+    updateAssessmentStatus(token, referenceNumber, updateAssessmentStatusRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/permits/${referenceNumber}/status`, updateAssessmentStatusRequest));
+            return this.httpHandler(() => this.axios.put(`/permits/${referenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(token)));
         });
     }
-    updateWorkActualStartDate(referenceNumber, workStartUpdateRequest) {
+    updateWorkActualStartDate(token, referenceNumber, workStartUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/start`, workStartUpdateRequest));
+            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/start`, workStartUpdateRequest, this.generateRequestConfig(token)));
         });
     }
-    updateWorkActualStopDate(referenceNumber, workStopUpdateRequest) {
+    updateWorkActualStopDate(token, referenceNumber, workStopUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/stop`, workStopUpdateRequest));
+            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/stop`, workStopUpdateRequest, this.generateRequestConfig(token)));
         });
     }
-    updateExcavationCarriedOut(referenceNumber, excavationCarriedOutUpdateRequest) {
+    updateExcavationCarriedOut(token, referenceNumber, excavationCarriedOutUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest));
+            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(token)));
         });
     }
-    createReinstatement(referenceNumber, reinstatementCreateRequest) {
+    createReinstatement(token, referenceNumber, reinstatementCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/reinstatements`, reinstatementCreateRequest));
+            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(token)));
         });
     }
-    getReinstatement(referenceNumber, reinstatementId) {
+    getReinstatement(token, referenceNumber, reinstatementId) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/reinstatements/${reinstatementId}`));
+            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/reinstatements/${reinstatementId}`, this.generateRequestConfig(token)));
         });
     }
-    createInspection(referenceNumber, inspectionCreateRequest) {
+    createInspection(token, referenceNumber, inspectionCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/inspection`, inspectionCreateRequest));
+            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/inspection`, inspectionCreateRequest, this.generateRequestConfig(token)));
         });
     }
     httpHandler(request) {
@@ -93,6 +96,9 @@ class StreetManagerApiClient {
                 return Promise.reject(err);
             }
         });
+    }
+    generateRequestConfig(token) {
+        return { headers: { Authorization: token }, params: {} };
     }
 }
 exports.StreetManagerApiClient = StreetManagerApiClient;
