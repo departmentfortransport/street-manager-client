@@ -36,6 +36,7 @@ export interface PermitResponse {
     actual_start_date?: Date;
     actual_stop_date?: Date;
     excavation_carried_out: boolean;
+    assessment_comments?: string;
     permit_status: PermitStatus;
     activity_type: ActivityType;
     work_category: WorkCategory;
