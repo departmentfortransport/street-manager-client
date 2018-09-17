@@ -10,6 +10,8 @@ import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateReq
 import { ReinstatementResponse } from '../interfaces/reinstatementResponse'
 import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest'
 import { PermitStatus } from '../interfaces/referenceTypes'
+import { AuthenticationResponse } from '../interfaces/authenticationResponse'
+import { AuthenticationRequest } from '../interfaces/authenticationRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -32,6 +34,10 @@ export class StreetManagerApiClient {
     } catch (err) {
       return false
     }
+  }
+
+  public async authenticate(authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse> {
+    return this.httpHandler<AuthenticationResponse>(() => this.axios.post('/authenticate', authenticationRequest))
   }
 
   public async createPermit(token: string, permitCreateRequest: PermitCreateRequest): Promise<PermitResponse> {
