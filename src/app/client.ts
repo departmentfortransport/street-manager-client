@@ -12,6 +12,7 @@ import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest'
 import { PermitStatus } from '../interfaces/referenceTypes'
 import { AuthenticationResponse } from '../interfaces/authenticationResponse'
 import { AuthenticationRequest } from '../interfaces/authenticationRequest'
+import { InspectionResponse } from '../interfaces/inspectionResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -84,6 +85,10 @@ export class StreetManagerApiClient {
 
   public async createInspection(token: string, referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.post(`/works/${referenceNumber}/inspection`, inspectionCreateRequest, this.generateRequestConfig(token)))
+  }
+
+  public async getInspection(token: string, referenceNumber: string, inspectionId: number): Promise<InspectionResponse> {
+    return this.httpHandler<InspectionResponse>(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(token)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
