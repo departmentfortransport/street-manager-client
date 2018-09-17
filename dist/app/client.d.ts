@@ -8,6 +8,8 @@ import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateReq
 import { ReinstatementResponse } from '../interfaces/reinstatementResponse';
 import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest';
 import { PermitStatus } from '../interfaces/referenceTypes';
+import { AuthenticationResponse } from '../interfaces/authenticationResponse';
+import { AuthenticationRequest } from '../interfaces/authenticationRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -17,6 +19,7 @@ export declare class StreetManagerApiClient {
     private axios;
     constructor(config: StreetManagerApiClientConfig);
     isAvailable(): Promise<boolean>;
+    authenticate(authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse>;
     createPermit(token: string, permitCreateRequest: PermitCreateRequest): Promise<PermitResponse>;
     getPermit(token: string, referenceNumber: string): Promise<PermitResponse>;
     getPermits(token: string, status?: PermitStatus): Promise<PermitResponse[]>;
