@@ -97,7 +97,7 @@ class StreetManagerApiClient {
                 }
             }
             catch (err) {
-                err.status = err.response.status;
+                err.status = err.response ? err.response.status : http_status_codes_1.INTERNAL_SERVER_ERROR;
                 return Promise.reject(err);
             }
         });
