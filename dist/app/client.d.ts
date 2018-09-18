@@ -10,6 +10,7 @@ import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest';
 import { PermitStatus } from '../interfaces/referenceTypes';
 import { AuthenticationResponse } from '../interfaces/authenticationResponse';
 import { AuthenticationRequest } from '../interfaces/authenticationRequest';
+import { InspectionResponse } from '../interfaces/inspectionResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -30,6 +31,7 @@ export declare class StreetManagerApiClient {
     createReinstatement(token: string, referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<void>;
     getReinstatement(token: string, referenceNumber: string, reinstatementId: number): Promise<ReinstatementResponse>;
     createInspection(token: string, referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void>;
+    getInspection(token: string, referenceNumber: string, inspectionId: number): Promise<InspectionResponse>;
     private httpHandler;
     private generateRequestConfig;
 }
