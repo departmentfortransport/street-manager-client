@@ -1,4 +1,4 @@
-/// <reference types="multer" />
+/// <reference types="node" />
 import { PermitCreateRequest } from '../interfaces/permitCreateRequest';
 import { PermitResponse } from '../interfaces/permitResponse';
 import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpdateRequest';
@@ -32,7 +32,7 @@ export declare class StreetManagerApiClient {
     createReinstatement(token: string, referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<void>;
     getReinstatement(token: string, referenceNumber: string, reinstatementId: number): Promise<ReinstatementResponse>;
     createInspection(token: string, referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void>;
-    uploadFile(token: string, file: Express.Multer.File): Promise<FileUploadResponse>;
+    uploadFile(token: string, buffer: Buffer): Promise<FileUploadResponse>;
     private httpHandler;
     private generateRequestConfig;
 }

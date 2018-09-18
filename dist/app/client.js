@@ -89,12 +89,12 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/inspection`, inspectionCreateRequest, this.generateRequestConfig(token)));
         });
     }
-    uploadFile(token, file) {
+    uploadFile(token, buffer) {
         return __awaiter(this, void 0, void 0, function* () {
             let config = this.generateRequestConfig(token);
             config.headers['Content-Type'] = 'multipart/form-data';
             let form = new FormData();
-            form.append('file', file.buffer);
+            form.append('file', buffer);
             return this.httpHandler(() => this.axios.post('/files', form, config));
         });
     }
