@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosPromise, AxiosRequestConfig } from 'axios'
-import { OK } from 'http-status-codes'
+import { OK, INTERNAL_SERVER_ERROR } from 'http-status-codes'
 import { PermitCreateRequest } from '../interfaces/permitCreateRequest'
 import { PermitResponse } from '../interfaces/permitResponse'
 import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpdateRequest'
@@ -98,7 +98,7 @@ export class StreetManagerApiClient {
         return response.data
       }
     } catch (err) {
-      err.status = err.response.status
+      err.status = err.response ? err.response.status : INTERNAL_SERVER_ERROR
       return Promise.reject(err)
     }
   }
