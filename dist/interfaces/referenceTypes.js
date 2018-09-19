@@ -45,6 +45,9 @@ var WorkCategory;
 (function (WorkCategory) {
     WorkCategory["minor"] = "minor";
     WorkCategory["standard"] = "standard";
+    WorkCategory["major"] = "major";
+    WorkCategory["immediate_urgent"] = "immediate_urgent";
+    WorkCategory["immediate_emergency"] = "immediate_emergency";
 })(WorkCategory = exports.WorkCategory || (exports.WorkCategory = {}));
 var PermitStatus;
 (function (PermitStatus) {
