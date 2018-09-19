@@ -94,12 +94,12 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(token)));
         });
     }
-    uploadFile(token, buffer) {
+    uploadFile(token, buffer, filename) {
         return __awaiter(this, void 0, void 0, function* () {
-            let config = this.generateRequestConfig(token);
-            config.headers['Content-Type'] = 'multipart/form-data';
             let form = new FormData();
-            form.append('file', buffer);
+            form.append('file', buffer, filename);
+            let config = this.generateRequestConfig(token);
+            Object.assign(config.headers, form.getHeaders());
             return this.httpHandler(() => this.axios.post('/files', form, config));
         });
     }

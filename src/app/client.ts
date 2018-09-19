@@ -93,12 +93,12 @@ export class StreetManagerApiClient {
     return this.httpHandler<InspectionResponse>(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(token)))
   }
 
-  public async uploadFile(token: string, buffer: Buffer): Promise<FileUploadResponse> {
-    let config: AxiosRequestConfig = this.generateRequestConfig(token)
-    config.headers['Content-Type'] = 'multipart/form-data'
-
+  public async uploadFile(token: string, buffer: Buffer, filename: string): Promise<FileUploadResponse> {
     let form: FormData = new FormData()
-    form.append('file', buffer)
+    form.append('file', buffer, filename)
+
+    let config: AxiosRequestConfig = this.generateRequestConfig(token)
+    Object.assign(config.headers, form.getHeaders())
 
     return this.httpHandler<FileUploadResponse>(() => this.axios.post('/files', form, config))
   }
