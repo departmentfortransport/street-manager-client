@@ -41,7 +41,10 @@ export enum TrafficManagementType {
 
 export enum WorkCategory {
   minor = 'minor',
-  standard = 'standard'
+  standard = 'standard',
+  major = 'major',
+  immediate_urgent = 'immediate_urgent',
+  immediate_emergency = 'immediate_emergency'
 }
 
 export enum PermitStatus {

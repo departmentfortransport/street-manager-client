@@ -12,7 +12,9 @@ import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest'
 import { PermitStatus } from '../interfaces/referenceTypes'
 import { AuthenticationResponse } from '../interfaces/authenticationResponse'
 import { AuthenticationRequest } from '../interfaces/authenticationRequest'
+import { FileUploadResponse } from '../interfaces/fileUploadResponse'
 import { InspectionResponse } from '../interfaces/inspectionResponse'
+import * as FormData from 'form-data'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -89,6 +91,16 @@ export class StreetManagerApiClient {
 
   public async getInspection(token: string, referenceNumber: string, inspectionId: number): Promise<InspectionResponse> {
     return this.httpHandler<InspectionResponse>(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(token)))
+  }
+
+  public async uploadFile(token: string, buffer: Buffer, filename: string): Promise<FileUploadResponse> {
+    let form: FormData = new FormData()
+    form.append('file', buffer, filename)
+
+    let config: AxiosRequestConfig = this.generateRequestConfig(token)
+    Object.assign(config.headers, form.getHeaders())
+
+    return this.httpHandler<FileUploadResponse>(() => this.axios.post('/files', form, config))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

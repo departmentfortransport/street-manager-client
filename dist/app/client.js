@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
 const http_status_codes_1 = require("http-status-codes");
+const FormData = require("form-data");
 class StreetManagerApiClient {
     constructor(config) {
         this.config = config;
@@ -91,6 +92,15 @@ class StreetManagerApiClient {
     getInspection(token, referenceNumber, inspectionId) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(token)));
+        });
+    }
+    uploadFile(token, buffer, filename) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let form = new FormData();
+            form.append('file', buffer, filename);
+            let config = this.generateRequestConfig(token);
+            Object.assign(config.headers, form.getHeaders());
+            return this.httpHandler(() => this.axios.post('/files', form, config));
         });
     }
     httpHandler(request) {

@@ -12,3 +12,4 @@ export * from './interfaces/inspectionCreateRequest';
 export * from './interfaces/inspectionResponse';
 export * from './interfaces/authenticationRequest';
 export * from './interfaces/authenticationResponse';
+export * from './interfaces/fileUploadResponse';
