@@ -1,6 +1,7 @@
 import { PermitStatus, ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType, AssessmentStatus } from './referenceTypes'
 import { ReinstatementResponse } from './reinstatementResponse'
 import { InspectionResponse } from './inspectionResponse'
+import { PermitCondition } from './permitCondition'
 
 export interface PermitResponse {
   permit_id: number
@@ -20,6 +21,7 @@ export interface PermitResponse {
   project_reference_number?: string
   traffic_management_plan: boolean
   lane_rental_applicable: boolean
+  permit_conditions?: PermitCondition[]
   street_name: string
   area_name: string
   usrn: number

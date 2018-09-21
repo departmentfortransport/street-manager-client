@@ -1,4 +1,5 @@
 import { ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType } from './referenceTypes'
+import { PermitCondition } from './permitCondition'
 
 export interface PermitCreateRequest {
   reference_number: string
@@ -17,6 +18,7 @@ export interface PermitCreateRequest {
   project_reference_number?: string
   traffic_management_plan: boolean
   lane_rental_applicable: boolean
+  permit_conditions?: PermitCondition[]
   street_name: string
   area_name: string
   usrn: number
