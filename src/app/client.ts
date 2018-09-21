@@ -116,6 +116,6 @@ export class StreetManagerApiClient {
   }
 
   private generateRequestConfig(token: string): AxiosRequestConfig {
-    return { headers: { Authorization: token }, params: {} }
+    return { headers: { token: token }, params: {} }
   }
 }
