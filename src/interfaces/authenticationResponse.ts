@@ -1,3 +1,3 @@
 export interface AuthenticationResponse {
-  accessToken: string
+  idToken: string
 }
