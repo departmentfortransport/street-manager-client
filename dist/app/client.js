@@ -118,7 +118,7 @@ class StreetManagerApiClient {
         });
     }
     generateRequestConfig(token) {
-        return { headers: { Authorization: token }, params: {} };
+        return { headers: { token: token }, params: {} };
     }
 }
 exports.StreetManagerApiClient = StreetManagerApiClient;
