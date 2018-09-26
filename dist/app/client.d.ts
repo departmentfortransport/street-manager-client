@@ -11,7 +11,7 @@ import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest';
 import { PermitStatus } from '../interfaces/referenceTypes';
 import { AuthenticationResponse } from '../interfaces/authenticationResponse';
 import { AuthenticationRequest } from '../interfaces/authenticationRequest';
-import { FileUploadResponse } from '../interfaces/fileUploadResponse';
+import { FileResponse } from '../interfaces/fileResponse';
 import { InspectionResponse } from '../interfaces/inspectionResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
@@ -34,7 +34,7 @@ export declare class StreetManagerApiClient {
     getReinstatement(token: string, referenceNumber: string, reinstatementId: number): Promise<ReinstatementResponse>;
     createInspection(token: string, referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void>;
     getInspection(token: string, referenceNumber: string, inspectionId: number): Promise<InspectionResponse>;
-    uploadFile(token: string, buffer: Buffer, filename: string): Promise<FileUploadResponse>;
+    uploadFile(token: string, buffer: Buffer, filename: string): Promise<FileResponse>;
     private httpHandler;
     private generateRequestConfig;
 }
