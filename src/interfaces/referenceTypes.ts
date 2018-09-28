@@ -101,9 +101,11 @@ export enum DefectFixedOnsite {
 
 export enum PermitConditionType {
   NCT01a = 'NCT01a',
+  NCT01b = 'NCT01b',
   NCT02a = 'NCT02a',
   NCT02b = 'NCT02b',
   NCT04a = 'NCT04a',
+  NCT04b = 'NCT04b',
   NCT05a = 'NCT05a',
   NCT06a = 'NCT06a',
   NCT07a = 'NCT07a',
@@ -113,7 +115,7 @@ export enum PermitConditionType {
   NCT09b = 'NCT09b',
   NCT09c = 'NCT09c',
   NCT10a = 'NCT10a',
+  NCT11a = 'NCT11a',
   NCT11b = 'NCT11b',
-  NCT12a = 'NCT12a',
-  NCT13 = 'NCT13'
+  NCT12a = 'NCT12a'
 }
