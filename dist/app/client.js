@@ -103,6 +103,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post('/files', form, config));
         });
     }
+    deleteFile(token, fileId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/files/${fileId}`, this.generateRequestConfig(token)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

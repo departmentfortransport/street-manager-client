@@ -35,6 +35,7 @@ export declare class StreetManagerApiClient {
     createInspection(token: string, referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void>;
     getInspection(token: string, referenceNumber: string, inspectionId: number): Promise<InspectionResponse>;
     uploadFile(token: string, buffer: Buffer, filename: string): Promise<FileResponse>;
+    deleteFile(token: string, fileId: number): Promise<void>;
     private httpHandler;
     private generateRequestConfig;
 }
