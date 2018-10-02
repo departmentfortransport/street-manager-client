@@ -105,7 +105,7 @@ class StreetManagerApiClient {
     }
     deleteFile(token, fileId) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/files/${fileId}`, this.generateRequestConfig(token)));
+            return this.httpHandler(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(token)));
         });
     }
     httpHandler(request) {

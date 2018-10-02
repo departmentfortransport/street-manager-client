@@ -104,7 +104,7 @@ export class StreetManagerApiClient {
   }
 
   public async deleteFile(token: string, fileId: number): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/files/${fileId}`, this.generateRequestConfig(token)))
+    return this.httpHandler<void>(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(token)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
