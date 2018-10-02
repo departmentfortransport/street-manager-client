@@ -103,6 +103,10 @@ export class StreetManagerApiClient {
     return this.httpHandler<FileResponse>(() => this.axios.post('/files', form, config))
   }
 
+  public async deleteFile(token: string, fileId: number): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(token)))
+  }
+
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
     try {
       let response: AxiosResponse<T> = await request()
