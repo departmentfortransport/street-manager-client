@@ -11,6 +11,6 @@ export interface InspectionCreateRequest {
     call_logged_summary?: string;
     defect_fixed_on_site?: DefectFixedOnsite;
     additional_failure_comments?: string;
-    inspection_evidence: boolean;
+    inspection_evidence?: boolean;
     file_ids?: number[];
 }
