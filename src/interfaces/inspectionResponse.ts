@@ -1,4 +1,5 @@
 import { InspectionCategory, InspectionOutcome, DefectFixedOnsite, InspectionType } from './referenceTypes'
+import { FileResponse } from './fileResponse'
 
 export interface InspectionResponse {
   inspection_id: number
@@ -16,4 +17,5 @@ export interface InspectionResponse {
   additional_failure_comments?: string
   date_created: Date
   date_modified: Date
+  files?: FileResponse[]
 }
