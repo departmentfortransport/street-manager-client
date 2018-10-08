@@ -26,6 +26,7 @@ export interface PermitResponse {
   area_name: string
   usrn: number
   highway_authority: string
+  highway_authority_swa_code: string
   road_category: number
   works_location_description: string
   works_coordinates: any

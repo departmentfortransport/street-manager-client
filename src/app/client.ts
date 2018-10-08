@@ -9,12 +9,13 @@ import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarri
 import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateRequest'
 import { ReinstatementResponse } from '../interfaces/reinstatementResponse'
 import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest'
-import { PermitStatus } from '../interfaces/referenceTypes'
 import { AuthenticationResponse } from '../interfaces/authenticationResponse'
 import { AuthenticationRequest } from '../interfaces/authenticationRequest'
 import { FileResponse } from '../interfaces/fileResponse'
 import { InspectionResponse } from '../interfaces/inspectionResponse'
+import { GetPermitsRequest } from '../interfaces/getPermitsRequest'
 import * as FormData from 'form-data'
+
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -51,12 +52,10 @@ export class StreetManagerApiClient {
     return this.httpHandler<PermitResponse>(() => this.axios.get(`/permits/${referenceNumber}`, this.generateRequestConfig(token)))
   }
 
-  public async getPermits(token: string, status?: PermitStatus): Promise<PermitResponse[]> {
+  public async getPermits(token: string, getPermitsRequest: GetPermitsRequest): Promise<PermitResponse[]> {
     let config: AxiosRequestConfig = this.generateRequestConfig(token)
 
-    if (status) {
-      config.params = { status: status }
-    }
+    config.params = getPermitsRequest
 
     return this.httpHandler<PermitResponse[]>(() => this.axios.get('/permits', config))
   }

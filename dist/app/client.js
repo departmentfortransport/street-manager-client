@@ -45,12 +45,10 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.get(`/permits/${referenceNumber}`, this.generateRequestConfig(token)));
         });
     }
-    getPermits(token, status) {
+    getPermits(token, getPermitsRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             let config = this.generateRequestConfig(token);
-            if (status) {
-                config.params = { status: status };
-            }
+            config.params = getPermitsRequest;
             return this.httpHandler(() => this.axios.get('/permits', config));
         });
     }

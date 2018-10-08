@@ -14,3 +14,4 @@ export * from './interfaces/authenticationRequest';
 export * from './interfaces/authenticationResponse';
 export * from './interfaces/fileResponse';
 export * from './interfaces/permitCondition';
+export * from './interfaces/getPermitsRequest';
