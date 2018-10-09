@@ -101,6 +101,19 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post('/files', form, config));
         });
     }
+    getFile(token, fileId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                let config = this.generateRequestConfig(token);
+                config.responseType = 'arraybuffer';
+                config.transformResponse = (data) => data;
+                return yield this.axios.get(`/files/${fileId}`, config);
+            }
+            catch (err) {
+                return this.handleError(err);
+            }
+        });
+    }
     deleteFile(token, fileId) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(token)));
@@ -115,10 +128,13 @@ class StreetManagerApiClient {
                 }
             }
             catch (err) {
-                err.status = err.response ? err.response.status : http_status_codes_1.INTERNAL_SERVER_ERROR;
-                return Promise.reject(err);
+                return this.handleError(err);
             }
         });
+    }
+    handleError(err) {
+        err.status = err.response ? err.response.status : http_status_codes_1.INTERNAL_SERVER_ERROR;
+        return Promise.reject(err);
     }
     generateRequestConfig(token) {
         return { headers: { token: token }, params: {} };

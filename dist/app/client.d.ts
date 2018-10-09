@@ -1,4 +1,5 @@
 /// <reference types="node" />
+import { AxiosResponse } from 'axios';
 import { PermitCreateRequest } from '../interfaces/permitCreateRequest';
 import { PermitResponse } from '../interfaces/permitResponse';
 import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpdateRequest';
@@ -8,10 +9,10 @@ import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarri
 import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateRequest';
 import { ReinstatementResponse } from '../interfaces/reinstatementResponse';
 import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest';
+import { InspectionResponse } from '../interfaces/inspectionResponse';
 import { AuthenticationResponse } from '../interfaces/authenticationResponse';
 import { AuthenticationRequest } from '../interfaces/authenticationRequest';
 import { FileResponse } from '../interfaces/fileResponse';
-import { InspectionResponse } from '../interfaces/inspectionResponse';
 import { GetPermitsRequest } from '../interfaces/getPermitsRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
@@ -35,7 +36,9 @@ export declare class StreetManagerApiClient {
     createInspection(token: string, referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void>;
     getInspection(token: string, referenceNumber: string, inspectionId: number): Promise<InspectionResponse>;
     uploadFile(token: string, buffer: Buffer, filename: string): Promise<FileResponse>;
+    getFile(token: string, fileId: number): Promise<AxiosResponse<Buffer>>;
     deleteFile(token: string, fileId: number): Promise<void>;
     private httpHandler;
+    private handleError;
     private generateRequestConfig;
 }

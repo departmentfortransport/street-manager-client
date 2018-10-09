@@ -9,10 +9,10 @@ import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarri
 import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateRequest'
 import { ReinstatementResponse } from '../interfaces/reinstatementResponse'
 import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest'
+import { InspectionResponse } from '../interfaces/inspectionResponse'
 import { AuthenticationResponse } from '../interfaces/authenticationResponse'
 import { AuthenticationRequest } from '../interfaces/authenticationRequest'
 import { FileResponse } from '../interfaces/fileResponse'
-import { InspectionResponse } from '../interfaces/inspectionResponse'
 import { GetPermitsRequest } from '../interfaces/getPermitsRequest'
 import * as FormData from 'form-data'
 
@@ -102,6 +102,17 @@ export class StreetManagerApiClient {
     return this.httpHandler<FileResponse>(() => this.axios.post('/files', form, config))
   }
 
+  public async getFile(token: string, fileId: number): Promise<AxiosResponse<Buffer>> {
+    try {
+      let config: AxiosRequestConfig = this.generateRequestConfig(token)
+      config.responseType = 'arraybuffer'
+      config.transformResponse = (data) => data
+      return await this.axios.get(`/files/${fileId}`, config)
+    } catch (err) {
+      return this.handleError(err)
+    }
+  }
+
   public async deleteFile(token: string, fileId: number): Promise<void> {
     return this.httpHandler<void>(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(token)))
   }
@@ -113,9 +124,13 @@ export class StreetManagerApiClient {
         return response.data
       }
     } catch (err) {
-      err.status = err.response ? err.response.status : INTERNAL_SERVER_ERROR
-      return Promise.reject(err)
+      return this.handleError(err)
     }
+  }
+
+  private handleError(err) {
+    err.status = err.response ? err.response.status : INTERNAL_SERVER_ERROR
+    return Promise.reject(err)
   }
 
   private generateRequestConfig(token: string): AxiosRequestConfig {
