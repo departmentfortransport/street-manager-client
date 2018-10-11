@@ -15,6 +15,7 @@ import { AuthenticationRequest } from '../interfaces/authenticationRequest'
 import { FileResponse } from '../interfaces/fileResponse'
 import { GetPermitsRequest } from '../interfaces/getPermitsRequest'
 import * as FormData from 'form-data'
+import { RequestConfig } from '../interfaces/requestConfig'
 
 
 export interface StreetManagerApiClientConfig {
@@ -40,71 +41,71 @@ export class StreetManagerApiClient {
     }
   }
 
-  public async authenticate(authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse> {
-    return this.httpHandler<AuthenticationResponse>(() => this.axios.post('/authenticate', authenticationRequest))
+  public async authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse> {
+    return this.httpHandler<AuthenticationResponse>(() => this.axios.post('/authenticate', authenticationRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createPermit(token: string, permitCreateRequest: PermitCreateRequest): Promise<PermitResponse> {
-    return this.httpHandler<PermitResponse>(() => this.axios.post('/permits', permitCreateRequest, this.generateRequestConfig(token)))
+  public async createPermit(requestConfig: RequestConfig, permitCreateRequest: PermitCreateRequest): Promise<PermitResponse> {
+    return this.httpHandler<PermitResponse>(() => this.axios.post('/permits', permitCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getPermit(token: string, referenceNumber: string) {
-    return this.httpHandler<PermitResponse>(() => this.axios.get(`/permits/${referenceNumber}`, this.generateRequestConfig(token)))
+  public async getPermit(requestConfig: RequestConfig, referenceNumber: string) {
+    return this.httpHandler<PermitResponse>(() => this.axios.get(`/permits/${referenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getPermits(token: string, getPermitsRequest: GetPermitsRequest): Promise<PermitResponse[]> {
-    let config: AxiosRequestConfig = this.generateRequestConfig(token)
+  public async getPermits(requestConfig: RequestConfig, getPermitsRequest: GetPermitsRequest): Promise<PermitResponse[]> {
+    let config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
 
     config.params = getPermitsRequest
 
     return this.httpHandler<PermitResponse[]>(() => this.axios.get('/permits', config))
   }
 
-  public async updateAssessmentStatus(token: string, referenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() =>  this.axios.put(`/permits/${referenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(token)))
+  public async updateAssessmentStatus(requestConfig: RequestConfig, referenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() =>  this.axios.put(`/permits/${referenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updateWorkActualStartDate(token: string, referenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() =>  this.axios.put(`/works/${referenceNumber}/start`, workStartUpdateRequest, this.generateRequestConfig(token)))
+  public async updateWorkActualStartDate(requestConfig: RequestConfig, referenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() =>  this.axios.put(`/works/${referenceNumber}/start`, workStartUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updateWorkActualStopDate(token: string, referenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() =>  this.axios.put(`/works/${referenceNumber}/stop`, workStopUpdateRequest, this.generateRequestConfig(token)))
+  public async updateWorkActualStopDate(requestConfig: RequestConfig, referenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() =>  this.axios.put(`/works/${referenceNumber}/stop`, workStopUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updateExcavationCarriedOut(token: string, referenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() =>  this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(token)))
+  public async updateExcavationCarriedOut(requestConfig: RequestConfig, referenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() =>  this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createReinstatement(token: string, referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/works/${referenceNumber}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(token)))
+  public async createReinstatement(requestConfig: RequestConfig, referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/works/${referenceNumber}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getReinstatement(token: string, referenceNumber: string, reinstatementId: number): Promise<ReinstatementResponse> {
-    return this.httpHandler<ReinstatementResponse>(() => this.axios.get(`/works/${referenceNumber}/reinstatements/${reinstatementId}`, this.generateRequestConfig(token)))
+  public async getReinstatement(requestConfig: RequestConfig, referenceNumber: string, reinstatementId: number): Promise<ReinstatementResponse> {
+    return this.httpHandler<ReinstatementResponse>(() => this.axios.get(`/works/${referenceNumber}/reinstatements/${reinstatementId}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createInspection(token: string, referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/works/${referenceNumber}/inspection`, inspectionCreateRequest, this.generateRequestConfig(token)))
+  public async createInspection(requestConfig: RequestConfig, referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/works/${referenceNumber}/inspection`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getInspection(token: string, referenceNumber: string, inspectionId: number): Promise<InspectionResponse> {
-    return this.httpHandler<InspectionResponse>(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(token)))
+  public async getInspection(requestConfig: RequestConfig, referenceNumber: string, inspectionId: number): Promise<InspectionResponse> {
+    return this.httpHandler<InspectionResponse>(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async uploadFile(token: string, buffer: Buffer, filename: string): Promise<FileResponse> {
+  public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse> {
     let form: FormData = new FormData()
     form.append('file', buffer, filename)
 
-    let config: AxiosRequestConfig = this.generateRequestConfig(token)
+    let config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
     Object.assign(config.headers, form.getHeaders())
 
     return this.httpHandler<FileResponse>(() => this.axios.post('/files', form, config))
   }
 
-  public async getFile(token: string, fileId: number): Promise<AxiosResponse<Buffer>> {
+  public async getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>> {
     try {
-      let config: AxiosRequestConfig = this.generateRequestConfig(token)
+      let config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
       config.responseType = 'arraybuffer'
       config.transformResponse = (data) => data
       return await this.axios.get(`/files/${fileId}`, config)
@@ -113,8 +114,8 @@ export class StreetManagerApiClient {
     }
   }
 
-  public async deleteFile(token: string, fileId: number): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(token)))
+  public async deleteFile(requestConfig: RequestConfig, fileId: number): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
@@ -133,7 +134,12 @@ export class StreetManagerApiClient {
     return Promise.reject(err)
   }
 
-  private generateRequestConfig(token: string): AxiosRequestConfig {
-    return { headers: { token: token }, params: {} }
+  private generateRequestConfig(config: RequestConfig): AxiosRequestConfig {
+    let headers = {}
+    if (config.token) {
+      headers['token'] = config.token
+    }
+    headers['request-id'] = config.requestId
+    return { headers: headers, params: {} }
   }
 }

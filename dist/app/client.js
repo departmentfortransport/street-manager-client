@@ -30,81 +30,81 @@ class StreetManagerApiClient {
             }
         });
     }
-    authenticate(authenticationRequest) {
+    authenticate(requestConfig, authenticationRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post('/authenticate', authenticationRequest));
+            return this.httpHandler(() => this.axios.post('/authenticate', authenticationRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    createPermit(token, permitCreateRequest) {
+    createPermit(requestConfig, permitCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post('/permits', permitCreateRequest, this.generateRequestConfig(token)));
+            return this.httpHandler(() => this.axios.post('/permits', permitCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    getPermit(token, referenceNumber) {
+    getPermit(requestConfig, referenceNumber) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/permits/${referenceNumber}`, this.generateRequestConfig(token)));
+            return this.httpHandler(() => this.axios.get(`/permits/${referenceNumber}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    getPermits(token, getPermitsRequest) {
+    getPermits(requestConfig, getPermitsRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            let config = this.generateRequestConfig(token);
+            let config = this.generateRequestConfig(requestConfig);
             config.params = getPermitsRequest;
             return this.httpHandler(() => this.axios.get('/permits', config));
         });
     }
-    updateAssessmentStatus(token, referenceNumber, updateAssessmentStatusRequest) {
+    updateAssessmentStatus(requestConfig, referenceNumber, updateAssessmentStatusRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/permits/${referenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(token)));
+            return this.httpHandler(() => this.axios.put(`/permits/${referenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    updateWorkActualStartDate(token, referenceNumber, workStartUpdateRequest) {
+    updateWorkActualStartDate(requestConfig, referenceNumber, workStartUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/start`, workStartUpdateRequest, this.generateRequestConfig(token)));
+            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/start`, workStartUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    updateWorkActualStopDate(token, referenceNumber, workStopUpdateRequest) {
+    updateWorkActualStopDate(requestConfig, referenceNumber, workStopUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/stop`, workStopUpdateRequest, this.generateRequestConfig(token)));
+            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/stop`, workStopUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    updateExcavationCarriedOut(token, referenceNumber, excavationCarriedOutUpdateRequest) {
+    updateExcavationCarriedOut(requestConfig, referenceNumber, excavationCarriedOutUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(token)));
+            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    createReinstatement(token, referenceNumber, reinstatementCreateRequest) {
+    createReinstatement(requestConfig, referenceNumber, reinstatementCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(token)));
+            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    getReinstatement(token, referenceNumber, reinstatementId) {
+    getReinstatement(requestConfig, referenceNumber, reinstatementId) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/reinstatements/${reinstatementId}`, this.generateRequestConfig(token)));
+            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/reinstatements/${reinstatementId}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    createInspection(token, referenceNumber, inspectionCreateRequest) {
+    createInspection(requestConfig, referenceNumber, inspectionCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/inspection`, inspectionCreateRequest, this.generateRequestConfig(token)));
+            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/inspection`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    getInspection(token, referenceNumber, inspectionId) {
+    getInspection(requestConfig, referenceNumber, inspectionId) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(token)));
+            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    uploadFile(token, buffer, filename) {
+    uploadFile(requestConfig, buffer, filename) {
         return __awaiter(this, void 0, void 0, function* () {
             let form = new FormData();
             form.append('file', buffer, filename);
-            let config = this.generateRequestConfig(token);
+            let config = this.generateRequestConfig(requestConfig);
             Object.assign(config.headers, form.getHeaders());
             return this.httpHandler(() => this.axios.post('/files', form, config));
         });
     }
-    getFile(token, fileId) {
+    getFile(requestConfig, fileId) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                let config = this.generateRequestConfig(token);
+                let config = this.generateRequestConfig(requestConfig);
                 config.responseType = 'arraybuffer';
                 config.transformResponse = (data) => data;
                 return yield this.axios.get(`/files/${fileId}`, config);
@@ -114,9 +114,9 @@ class StreetManagerApiClient {
             }
         });
     }
-    deleteFile(token, fileId) {
+    deleteFile(requestConfig, fileId) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(token)));
+            return this.httpHandler(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(requestConfig)));
         });
     }
     httpHandler(request) {
@@ -136,8 +136,13 @@ class StreetManagerApiClient {
         err.status = err.response ? err.response.status : http_status_codes_1.INTERNAL_SERVER_ERROR;
         return Promise.reject(err);
     }
-    generateRequestConfig(token) {
-        return { headers: { token: token }, params: {} };
+    generateRequestConfig(config) {
+        let headers = {};
+        if (config.token) {
+            headers['token'] = config.token;
+        }
+        headers['request-id'] = config.requestId;
+        return { headers: headers, params: {} };
     }
 }
 exports.StreetManagerApiClient = StreetManagerApiClient;

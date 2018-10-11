@@ -15,3 +15,4 @@ export * from './interfaces/authenticationResponse';
 export * from './interfaces/fileResponse';
 export * from './interfaces/permitCondition';
 export * from './interfaces/getPermitsRequest';
+export * from './interfaces/requestConfig';
