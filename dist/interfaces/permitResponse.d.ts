@@ -4,6 +4,7 @@ import { InspectionResponse } from './inspectionResponse';
 import { PermitCondition } from './permitCondition';
 export interface PermitResponse {
     permit_id: number;
+    work_id: number;
     reference_number: string;
     promoter_organisation: string;
     promoter_swa_code: string;
