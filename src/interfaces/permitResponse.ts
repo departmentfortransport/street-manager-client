@@ -10,8 +10,8 @@ export interface PermitResponse {
   promoter_organisation: string
   promoter_swa_code: string
   promoter_contact_details: string
-  approved_undertaker: string
-  undertaker_contact_details: string
+  approved_contractor: string
+  contractor_contact_details: string
   proposed_start_date: Date
   proposed_start_time?: Date
   proposed_end_date: Date
