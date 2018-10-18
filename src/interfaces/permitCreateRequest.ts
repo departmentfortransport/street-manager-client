@@ -12,7 +12,6 @@ export interface PermitCreateRequest {
   proposed_start_time?: Date
   proposed_end_date: Date
   proposed_end_time?: Date
-  duration: number
   description_of_work: string
   excavation: boolean
   project_reference_number?: string
