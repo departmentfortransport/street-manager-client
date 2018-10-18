@@ -119,6 +119,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(requestConfig)));
         });
     }
+    getWorkHistory(requestConfig, referenceNumber) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/history`, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

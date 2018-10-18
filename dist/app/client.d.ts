@@ -15,6 +15,7 @@ import { AuthenticationRequest } from '../interfaces/authenticationRequest';
 import { FileResponse } from '../interfaces/fileResponse';
 import { GetPermitsRequest } from '../interfaces/getPermitsRequest';
 import { RequestConfig } from '../interfaces/requestConfig';
+import { WorkHistoryResponse } from '../interfaces/workHistoryResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -39,6 +40,7 @@ export declare class StreetManagerApiClient {
     uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse>;
     getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>>;
     deleteFile(requestConfig: RequestConfig, fileId: number): Promise<void>;
+    getWorkHistory(requestConfig: RequestConfig, referenceNumber: string): Promise<WorkHistoryResponse[]>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;

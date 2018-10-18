@@ -16,6 +16,7 @@ import { FileResponse } from '../interfaces/fileResponse'
 import { GetPermitsRequest } from '../interfaces/getPermitsRequest'
 import * as FormData from 'form-data'
 import { RequestConfig } from '../interfaces/requestConfig'
+import { WorkHistoryResponse } from '../interfaces/workHistoryResponse'
 
 
 export interface StreetManagerApiClientConfig {
@@ -116,6 +117,10 @@ export class StreetManagerApiClient {
 
   public async deleteFile(requestConfig: RequestConfig, fileId: number): Promise<void> {
     return this.httpHandler<void>(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async getWorkHistory(requestConfig: RequestConfig, referenceNumber: string): Promise<WorkHistoryResponse[]> {
+    return this.httpHandler<WorkHistoryResponse[]>(() => this.axios.get(`/works/${referenceNumber}/history`, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
