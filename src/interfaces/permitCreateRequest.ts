@@ -32,8 +32,9 @@ export interface PermitCreateRequest {
   collaborative_works?: string
   activity_type: ActivityType
   work_category: WorkCategory
-  traffic_management_type: TrafficManagementType
+  traffic_management_type: TrafficManagementType,
   application_type: ApplicationType
   collaboration_type?: CollaborationType
   location_types: LocationType[]
+  file_ids?: number[]
 }

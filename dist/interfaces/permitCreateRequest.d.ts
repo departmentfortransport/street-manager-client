@@ -35,4 +35,5 @@ export interface PermitCreateRequest {
     application_type: ApplicationType;
     collaboration_type?: CollaborationType;
     location_types: LocationType[];
+    file_ids?: number[];
 }
