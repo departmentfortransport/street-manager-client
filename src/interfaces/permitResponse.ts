@@ -1,8 +1,8 @@
 import { PermitStatus, ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType, AssessmentStatus } from './referenceTypes'
-import { ReinstatementResponse } from './reinstatementResponse'
 import { InspectionResponse } from './inspectionResponse'
 import { PermitCondition } from './permitCondition'
 import { FileResponse } from './fileResponse'
+import { SiteSummaryResponse } from './siteSummaryResponse'
 
 export interface PermitResponse {
   permit_id: number
@@ -51,7 +51,7 @@ export interface PermitResponse {
   collaboration_type?: CollaborationType
   location_types: LocationType[]
   assessment_status?: AssessmentStatus
-  reinstatements?: ReinstatementResponse[]
+  sites?: SiteSummaryResponse[]
   inspections?: InspectionResponse[]
   files?: FileResponse[]
 }

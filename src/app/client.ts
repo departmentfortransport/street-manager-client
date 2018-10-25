@@ -7,7 +7,6 @@ import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest'
 import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest'
 import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarriedOutUpdateRequest'
 import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateRequest'
-import { ReinstatementResponse } from '../interfaces/reinstatementResponse'
 import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest'
 import { InspectionResponse } from '../interfaces/inspectionResponse'
 import { AuthenticationResponse } from '../interfaces/authenticationResponse'
@@ -17,6 +16,8 @@ import { GetPermitsRequest } from '../interfaces/getPermitsRequest'
 import * as FormData from 'form-data'
 import { RequestConfig } from '../interfaces/requestConfig'
 import { WorkHistoryResponse } from '../interfaces/workHistoryResponse'
+import { SiteResponse } from '../interfaces/siteResponse'
+import { SiteCreateResponse } from '../interfaces/siteCreateResponse'
 
 
 export interface StreetManagerApiClientConfig {
@@ -78,12 +79,12 @@ export class StreetManagerApiClient {
     return this.httpHandler<void>(() =>  this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createReinstatement(requestConfig: RequestConfig, referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/works/${referenceNumber}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createSite(requestConfig: RequestConfig, referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<SiteCreateResponse> {
+    return this.httpHandler<SiteCreateResponse>(() => this.axios.post(`/works/${referenceNumber}/sites`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getReinstatement(requestConfig: RequestConfig, referenceNumber: string, reinstatementId: number): Promise<ReinstatementResponse> {
-    return this.httpHandler<ReinstatementResponse>(() => this.axios.get(`/works/${referenceNumber}/reinstatements/${reinstatementId}`, this.generateRequestConfig(requestConfig)))
+  public async getSite(requestConfig: RequestConfig, referenceNumber: string, siteId: number): Promise<SiteResponse> {
+    return this.httpHandler<SiteResponse>(() => this.axios.get(`/works/${referenceNumber}/sites/${siteId}`, this.generateRequestConfig(requestConfig)))
   }
 
   public async createInspection(requestConfig: RequestConfig, referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void> {
