@@ -5,6 +5,6 @@ export interface SiteSummaryResponse {
   site_description: string,
   depth: number,
   completed_date: Date,
-  guarantee_expiry: Date,
+  guarantee_expiry_date: Date,
   status: ReinstatementStatus
 }
