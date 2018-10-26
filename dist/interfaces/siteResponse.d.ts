@@ -6,5 +6,5 @@ export interface SiteResponse extends SiteSummaryResponse {
     site_coordinates: any;
     length: number;
     width: number;
-    reinstatements?: ReinstatementResponse[];
+    reinstatements: ReinstatementResponse[];
 }
