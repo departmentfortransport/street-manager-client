@@ -1,8 +1,8 @@
 import { PermitStatus, ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType, AssessmentStatus } from './referenceTypes';
-import { ReinstatementResponse } from './reinstatementResponse';
 import { InspectionResponse } from './inspectionResponse';
 import { PermitCondition } from './permitCondition';
 import { FileResponse } from './fileResponse';
+import { ReinstatementResponse } from './reinstatementResponse';
 export interface PermitResponse {
     permit_id: number;
     work_id: number;
