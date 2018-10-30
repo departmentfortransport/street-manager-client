@@ -24,7 +24,7 @@ export declare class StreetManagerApiClient {
     private config;
     private axios;
     constructor(config: StreetManagerApiClientConfig);
-    isAvailable(): Promise<boolean>;
+    status(): Promise<void>;
     authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse>;
     createPermit(requestConfig: RequestConfig, permitCreateRequest: PermitCreateRequest): Promise<PermitResponse>;
     getPermit(requestConfig: RequestConfig, referenceNumber: string): Promise<PermitResponse>;
