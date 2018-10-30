@@ -144,7 +144,7 @@ export class StreetManagerApiClient {
     if (config.token) {
       headers['token'] = config.token
     }
-    headers['request-id'] = config.requestId
+    headers['x-request-id'] = config.requestId
     return { headers: headers, params: {} }
   }
 }
