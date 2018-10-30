@@ -36,7 +36,8 @@ export class StreetManagerApiClient {
   public async status(): Promise<void> {
     return this.httpHandler<void>(() => this.axios.get('/status'))
   }
- public async authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse> {
+
+  public async authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse> {
     return this.httpHandler<AuthenticationResponse>(() => this.axios.post('/authenticate', authenticationRequest, this.generateRequestConfig(requestConfig)))
   }
 
