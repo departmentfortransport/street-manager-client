@@ -24,24 +24,6 @@ export declare class StreetManagerApiClient {
     private config;
     private axios;
     constructor(config: StreetManagerApiClientConfig);
-<<<<<<< HEAD
-    status(): Promise<boolean>;
-    authenticate(authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse>;
-    createPermit(token: string, permitCreateRequest: PermitCreateRequest): Promise<PermitResponse>;
-    getPermit(token: string, referenceNumber: string): Promise<PermitResponse>;
-    getPermits(token: string, getPermitsRequest: GetPermitsRequest): Promise<PermitResponse[]>;
-    updateAssessmentStatus(token: string, referenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void>;
-    updateWorkActualStartDate(token: string, referenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void>;
-    updateWorkActualStopDate(token: string, referenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void>;
-    updateExcavationCarriedOut(token: string, referenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void>;
-    createReinstatement(token: string, referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<void>;
-    getReinstatement(token: string, referenceNumber: string, reinstatementId: number): Promise<ReinstatementResponse>;
-    createInspection(token: string, referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void>;
-    getInspection(token: string, referenceNumber: string, inspectionId: number): Promise<InspectionResponse>;
-    uploadFile(token: string, buffer: Buffer, filename: string): Promise<FileResponse>;
-    getFile(token: string, fileId: number): Promise<AxiosResponse<Buffer>>;
-    deleteFile(token: string, fileId: number): Promise<void>;
-=======
     status(): Promise<void>;
     authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse>;
     createPermit(requestConfig: RequestConfig, permitCreateRequest: PermitCreateRequest): Promise<PermitResponse>;
@@ -59,7 +41,6 @@ export declare class StreetManagerApiClient {
     getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>>;
     deleteFile(requestConfig: RequestConfig, fileId: number): Promise<void>;
     getWorkHistory(requestConfig: RequestConfig, referenceNumber: string): Promise<WorkHistoryResponse[]>;
->>>>>>> 250c4ff... upsate dist
     private httpHandler;
     private handleError;
     private generateRequestConfig;
