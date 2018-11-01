@@ -66,14 +66,14 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    createReinstatement(requestConfig, referenceNumber, reinstatementCreateRequest) {
+    createSite(requestConfig, referenceNumber, reinstatementCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/sites`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    getReinstatement(requestConfig, referenceNumber, reinstatementId) {
+    getSite(requestConfig, referenceNumber, siteId) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/reinstatements/${reinstatementId}`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/sites/${siteId}`, this.generateRequestConfig(requestConfig)));
         });
     }
     createInspection(requestConfig, referenceNumber, inspectionCreateRequest) {
