@@ -10,7 +10,7 @@ export interface ReinstatementResponse {
   width: number
   reinstatement_coordinates: any
   location_description: string
-  guarantee_end_date: Date
+  end_date: Date
   date_created: Date
   date_modified: Date
   location_types: LocationType[]
