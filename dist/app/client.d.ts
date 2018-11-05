@@ -3,6 +3,7 @@ import { AxiosResponse } from 'axios';
 import { PermitCreateRequest } from '../interfaces/permitCreateRequest';
 import { PermitResponse } from '../interfaces/permitResponse';
 import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpdateRequest';
+import { WorkResponse } from '../interfaces/workResponse';
 import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest';
 import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest';
 import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarriedOutUpdateRequest';
@@ -30,6 +31,7 @@ export declare class StreetManagerApiClient {
     createPermit(requestConfig: RequestConfig, permitCreateRequest: PermitCreateRequest): Promise<PermitResponse>;
     getPermit(requestConfig: RequestConfig, referenceNumber: string): Promise<PermitResponse>;
     getPermits(requestConfig: RequestConfig, getPermitsRequest: GetPermitsRequest): Promise<PermitResponse[]>;
+    getWork(requestConfig: RequestConfig, referenceNumber: string): Promise<WorkResponse>;
     updateAssessmentStatus(requestConfig: RequestConfig, referenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void>;
     updateWorkActualStartDate(requestConfig: RequestConfig, referenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void>;
     updateWorkActualStopDate(requestConfig: RequestConfig, referenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void>;

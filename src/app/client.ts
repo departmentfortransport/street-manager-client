@@ -3,6 +3,7 @@ import { INTERNAL_SERVER_ERROR } from 'http-status-codes'
 import { PermitCreateRequest } from '../interfaces/permitCreateRequest'
 import { PermitResponse } from '../interfaces/permitResponse'
 import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpdateRequest'
+import { WorkResponse } from '../interfaces/workResponse'
 import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest'
 import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest'
 import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarriedOutUpdateRequest'
@@ -56,6 +57,10 @@ export class StreetManagerApiClient {
     config.params = getPermitsRequest
 
     return this.httpHandler<PermitResponse[]>(() => this.axios.get('/permits', config))
+  }
+
+  public async getWork(requestConfig: RequestConfig, referenceNumber: string): Promise<WorkResponse> {
+    return this.httpHandler<WorkResponse>(() => this.axios.get(`/works/${referenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
   public async updateAssessmentStatus(requestConfig: RequestConfig, referenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void> {
