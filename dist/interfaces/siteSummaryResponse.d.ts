@@ -6,6 +6,6 @@ export interface SiteSummaryResponse {
     length: number;
     width: number;
     completed_date: Date;
-    guarantee_end_date: Date;
+    end_date: Date;
     site_status: ReinstatementStatus;
 }
