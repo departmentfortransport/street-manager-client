@@ -46,6 +46,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.get('/permits', config));
         });
     }
+    getWork(requestConfig, referenceNumber) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}`, this.generateRequestConfig(requestConfig)));
+        });
+    }
     updateAssessmentStatus(requestConfig, referenceNumber, updateAssessmentStatusRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.put(`/permits/${referenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)));
