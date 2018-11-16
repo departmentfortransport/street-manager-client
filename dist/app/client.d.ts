@@ -13,7 +13,6 @@ import { InspectionResponse } from '../interfaces/inspectionResponse';
 import { AuthenticationResponse } from '../interfaces/authenticationResponse';
 import { AuthenticationRequest } from '../interfaces/authenticationRequest';
 import { FileResponse } from '../interfaces/fileResponse';
-import { GetPermitsRequest } from '../interfaces/getPermitsRequest';
 import { RequestConfig } from '../interfaces/requestConfig';
 import { WorkHistoryResponse } from '../interfaces/workHistoryResponse';
 import { SiteResponse } from '../interfaces/siteResponse';
@@ -30,7 +29,6 @@ export declare class StreetManagerApiClient {
     authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse>;
     createPermit(requestConfig: RequestConfig, permitCreateRequest: PermitCreateRequest): Promise<PermitResponse>;
     getPermit(requestConfig: RequestConfig, referenceNumber: string): Promise<PermitResponse>;
-    getPermits(requestConfig: RequestConfig, getPermitsRequest: GetPermitsRequest): Promise<PermitResponse[]>;
     getWork(requestConfig: RequestConfig, referenceNumber: string): Promise<WorkResponse>;
     updateAssessmentStatus(requestConfig: RequestConfig, referenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void>;
     updateWorkActualStartDate(requestConfig: RequestConfig, referenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void>;
