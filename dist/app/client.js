@@ -76,6 +76,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/sites`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    createReinstatement(requestConfig, referenceNumber, siteId, reinstatementCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/sites/${siteId}`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     getSite(requestConfig, referenceNumber, siteId) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/sites/${siteId}`, this.generateRequestConfig(requestConfig)));
