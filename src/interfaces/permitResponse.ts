@@ -49,5 +49,6 @@ export interface PermitResponse {
   collaboration_type?: CollaborationType
   location_types: LocationType[]
   assessment_status?: AssessmentStatus
-  files?: FileResponse[]
+  files?: FileResponse[],
+  inspection_units?: number
 }
