@@ -39,13 +39,6 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.get(`/permits/${referenceNumber}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    getPermits(requestConfig, getPermitsRequest) {
-        return __awaiter(this, void 0, void 0, function* () {
-            let config = this.generateRequestConfig(requestConfig);
-            config.params = getPermitsRequest;
-            return this.httpHandler(() => this.axios.get('/permits', config));
-        });
-    }
     getWork(requestConfig, referenceNumber) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}`, this.generateRequestConfig(requestConfig)));

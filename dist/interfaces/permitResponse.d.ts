@@ -1,6 +1,7 @@
 import { PermitStatus, ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType, AssessmentStatus } from './referenceTypes';
 import { PermitCondition } from './permitCondition';
 import { FileResponse } from './fileResponse';
+import { PermitASD } from './permitASD';
 export interface PermitResponse {
     permit_id: number;
     work_id: number;
@@ -50,4 +51,5 @@ export interface PermitResponse {
     assessment_status?: AssessmentStatus;
     files?: FileResponse[];
     inspection_units?: number;
+    permit_asds: PermitASD[];
 }

@@ -13,7 +13,6 @@ import { InspectionResponse } from '../interfaces/inspectionResponse'
 import { AuthenticationResponse } from '../interfaces/authenticationResponse'
 import { AuthenticationRequest } from '../interfaces/authenticationRequest'
 import { FileResponse } from '../interfaces/fileResponse'
-import { GetPermitsRequest } from '../interfaces/getPermitsRequest'
 import * as FormData from 'form-data'
 import { RequestConfig } from '../interfaces/requestConfig'
 import { WorkHistoryResponse } from '../interfaces/workHistoryResponse'
@@ -50,14 +49,6 @@ export class StreetManagerApiClient {
 
   public async getPermit(requestConfig: RequestConfig, referenceNumber: string) {
     return this.httpHandler<PermitResponse>(() => this.axios.get(`/permits/${referenceNumber}`, this.generateRequestConfig(requestConfig)))
-  }
-
-  public async getPermits(requestConfig: RequestConfig, getPermitsRequest: GetPermitsRequest): Promise<PermitResponse[]> {
-    let config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
-
-    config.params = getPermitsRequest
-
-    return this.httpHandler<PermitResponse[]>(() => this.axios.get('/permits', config))
   }
 
   public async getWork(requestConfig: RequestConfig, referenceNumber: string): Promise<WorkResponse> {
