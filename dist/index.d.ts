@@ -8,6 +8,7 @@ export * from './interfaces/workStartUpdateRequest';
 export * from './interfaces/workStopUpdateRequest';
 export * from './interfaces/excavationCarriedOutUpdateRequest';
 export * from './interfaces/reinstatementCreateRequest';
+export * from './interfaces/reinstatementCreateResponse';
 export * from './interfaces/reinstatementResponse';
 export * from './interfaces/inspectionCreateRequest';
 export * from './interfaces/inspectionResponse';
