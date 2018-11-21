@@ -50,5 +50,6 @@ export interface PermitResponse {
     location_types: LocationType[];
     assessment_status?: AssessmentStatus;
     files?: FileResponse[];
+    inspection_units?: number;
     permit_asds: PermitASD[];
 }

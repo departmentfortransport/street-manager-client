@@ -18,6 +18,7 @@ import { RequestConfig } from '../interfaces/requestConfig'
 import { WorkHistoryResponse } from '../interfaces/workHistoryResponse'
 import { SiteResponse } from '../interfaces/siteResponse'
 import { SiteCreateResponse } from '../interfaces/siteCreateResponse'
+import { InspectionUnitsUpdateRequest } from '../interfaces/inspectionUnitsUpdateRequest'
 
 
 export interface StreetManagerApiClientConfig {
@@ -68,6 +69,10 @@ export class StreetManagerApiClient {
 
   public async updateExcavationCarriedOut(requestConfig: RequestConfig, referenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updateInspectionUnits(requestConfig: RequestConfig, referenceNumber: string, inspectionUnitsUpdateRequest: InspectionUnitsUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${referenceNumber}/inspection-units`, inspectionUnitsUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async createSite(requestConfig: RequestConfig, referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<SiteCreateResponse> {
