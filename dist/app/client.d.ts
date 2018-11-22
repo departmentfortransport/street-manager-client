@@ -8,7 +8,7 @@ import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest';
 import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest';
 import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarriedOutUpdateRequest';
 import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateRequest';
-import { ReinstatementCreateResponse } from '../interfaces/ReinstatementCreateResponse';
+import { ReinstatementCreateResponse } from '../interfaces/reinstatementCreateResponse';
 import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest';
 import { InspectionResponse } from '../interfaces/inspectionResponse';
 import { AuthenticationResponse } from '../interfaces/authenticationResponse';
