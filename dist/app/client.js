@@ -64,6 +64,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    updateInspectionUnits(requestConfig, referenceNumber, inspectionUnitsUpdateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/inspection-units`, inspectionUnitsUpdateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     createSite(requestConfig, referenceNumber, reinstatementCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/sites`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)));
