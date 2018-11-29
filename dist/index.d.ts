@@ -23,3 +23,5 @@ export * from './interfaces/workHistoryResponse';
 export * from './interfaces/siteCreateResponse';
 export * from './interfaces/siteResponse';
 export * from './interfaces/siteSummaryResponse';
+export * from './interfaces/fpnResponse';
+export * from './interfaces/fpnCreateRequest';

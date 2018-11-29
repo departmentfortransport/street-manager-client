@@ -86,12 +86,17 @@ class StreetManagerApiClient {
     }
     createInspection(requestConfig, referenceNumber, inspectionCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/inspection`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/inspections`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     getInspection(requestConfig, referenceNumber, inspectionId) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    createFPN(requestConfig, referenceNumber, fpnCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/fpns`, fpnCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     uploadFile(requestConfig, buffer, filename) {
