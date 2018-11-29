@@ -94,6 +94,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)));
         });
     }
+    createComment(requestConfig, worksReferenceNumber, commentCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/works/${worksReferenceNumber}/comments`, commentCreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     uploadFile(requestConfig, buffer, filename) {
         return __awaiter(this, void 0, void 0, function* () {
             let form = new FormData();

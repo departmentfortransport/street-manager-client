@@ -122,3 +122,10 @@ var PermitConditionType;
     PermitConditionType["NCT11b"] = "NCT11b";
     PermitConditionType["NCT12a"] = "NCT12a";
 })(PermitConditionType = exports.PermitConditionType || (exports.PermitConditionType = {}));
+var CommentTopic;
+(function (CommentTopic) {
+    CommentTopic["General"] = "GENERAL";
+    CommentTopic["section74"] = "SECTION_74";
+    CommentTopic["Inspection"] = "INSPECTION";
+    CommentTopic["FPN"] = "FPN";
+})(CommentTopic = exports.CommentTopic || (exports.CommentTopic = {}));

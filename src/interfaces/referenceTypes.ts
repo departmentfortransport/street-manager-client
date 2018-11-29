@@ -119,3 +119,10 @@ export enum PermitConditionType {
   NCT11b = 'NCT11b',
   NCT12a = 'NCT12a'
 }
+
+export enum CommentTopic {
+  General = 'GENERAL',
+  section74 = 'SECTION_74',
+  Inspection = 'INSPECTION',
+  FPN = 'FPN'
+}
