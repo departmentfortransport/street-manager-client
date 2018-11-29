@@ -96,6 +96,10 @@ export class StreetManagerApiClient {
     return this.httpHandler<InspectionResponse>(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)))
   }
 
+  public async postComment(requestConfig: RequestConfig, worksReferenceNumber: string): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post('/works/${worksReferenceNumber}', this.generateRequestConfig(requestConfig)))
+  }
+
   public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse> {
     let form: FormData = new FormData()
     form.append('file', buffer, filename)
