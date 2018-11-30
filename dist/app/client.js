@@ -96,7 +96,7 @@ class StreetManagerApiClient {
     }
     createFPN(requestConfig, referenceNumber, fpnCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/fpns`, fpnCreateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/fixed-penalty-notices`, fpnCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     uploadFile(requestConfig, buffer, filename) {

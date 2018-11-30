@@ -99,7 +99,7 @@ export class StreetManagerApiClient {
   }
 
   public async createFPN(requestConfig: RequestConfig, referenceNumber: string, fpnCreateRequest: FPNCreateRequest): Promise<FPNResponse> {
-    return this.httpHandler<FPNResponse>(() => this.axios.post(`/works/${referenceNumber}/fpns`, fpnCreateRequest, this.generateRequestConfig(requestConfig)))
+    return this.httpHandler<FPNResponse>(() => this.axios.post(`/works/${referenceNumber}/fixed-penalty-notices`, fpnCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse> {
