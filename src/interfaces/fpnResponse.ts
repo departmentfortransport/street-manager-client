@@ -11,7 +11,7 @@ export interface FPNResponse {
   permit_area_name: string,
   fpn_reference_number: string,
   fpn_evidence: boolean,
-  file_ids?: FileResponse[]
+  files?: FileResponse[],
   offence_date: Date,
   offence_type_id: number,
   offence_code: OffenceCode,
