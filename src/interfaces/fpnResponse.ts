@@ -1,4 +1,5 @@
 import { OffenceCode, FPNStatus } from './referenceTypes'
+import { FileResponse } from './fileResponse'
 
 export interface FPNResponse {
   fpn_id: number,
@@ -10,7 +11,7 @@ export interface FPNResponse {
   permit_area_name: string,
   fpn_reference_number: string,
   fpn_evidence: boolean,
-  file_ids?: number[]
+  file_ids?: FileResponse[]
   offence_date: Date,
   offence_type_id: number,
   offence_code: OffenceCode,
