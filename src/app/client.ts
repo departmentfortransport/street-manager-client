@@ -12,7 +12,7 @@ import { ReinstatementCreateResponse } from '../interfaces/reinstatementCreateRe
 import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest'
 import { InspectionResponse } from '../interfaces/inspectionResponse'
 import { FPNCreateRequest } from '../interfaces/fpnCreateRequest'
-import { FPNResponse } from '../interfaces/fpnResponse'
+import { FPNCreateResponse } from '../interfaces/fpnCreateResponse'
 import { AuthenticationResponse } from '../interfaces/authenticationResponse'
 import { AuthenticationRequest } from '../interfaces/authenticationRequest'
 import { FileResponse } from '../interfaces/fileResponse'
@@ -98,8 +98,8 @@ export class StreetManagerApiClient {
     return this.httpHandler<InspectionResponse>(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createFPN(requestConfig: RequestConfig, referenceNumber: string, fpnCreateRequest: FPNCreateRequest): Promise<FPNResponse> {
-    return this.httpHandler<FPNResponse>(() => this.axios.post(`/works/${referenceNumber}/fixed-penalty-notices`, fpnCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createFPN(requestConfig: RequestConfig, referenceNumber: string, fpnCreateRequest: FPNCreateRequest): Promise<FPNCreateResponse> {
+    return this.httpHandler<FPNCreateResponse>(() => this.axios.post(`/works/${referenceNumber}/fixed-penalty-notices`, fpnCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse> {
