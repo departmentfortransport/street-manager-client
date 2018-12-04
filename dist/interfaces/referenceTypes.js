@@ -131,9 +131,9 @@ var OffenceCode;
 })(OffenceCode = exports.OffenceCode || (exports.OffenceCode = {}));
 var FPNStatus;
 (function (FPNStatus) {
-    FPNStatus["issued"] = "Issued";
-    FPNStatus["accepted"] = "Accepted";
-    FPNStatus["paid"] = "Paid";
-    FPNStatus["disputed"] = "Disputed";
-    FPNStatus["withdrawn"] = "Withdrawn";
+    FPNStatus["issued"] = "issued";
+    FPNStatus["accepted"] = "accepted";
+    FPNStatus["paid"] = "paid";
+    FPNStatus["disputed"] = "disputed";
+    FPNStatus["withdrawn"] = "withdrawn";
 })(FPNStatus = exports.FPNStatus || (exports.FPNStatus = {}));

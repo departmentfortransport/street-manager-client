@@ -113,9 +113,9 @@ export declare enum OffenceCode {
     offence_code_09 = "09"
 }
 export declare enum FPNStatus {
-    issued = "Issued",
-    accepted = "Accepted",
-    paid = "Paid",
-    disputed = "Disputed",
-    withdrawn = "Withdrawn"
+    issued = "issued",
+    accepted = "accepted",
+    paid = "paid",
+    disputed = "disputed",
+    withdrawn = "withdrawn"
 }
