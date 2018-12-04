@@ -124,10 +124,10 @@ var PermitConditionType;
 })(PermitConditionType = exports.PermitConditionType || (exports.PermitConditionType = {}));
 var OffenceCode;
 (function (OffenceCode) {
-    OffenceCode["offence_code_05"] = "05";
-    OffenceCode["offence_code_06"] = "06";
-    OffenceCode["offence_code_08"] = "08";
-    OffenceCode["offence_code_09"] = "09";
+    OffenceCode["offence_code_05"] = "offence_code_05";
+    OffenceCode["offence_code_06"] = "offence_code_06";
+    OffenceCode["offence_code_08"] = "offence_code_08";
+    OffenceCode["offence_code_09"] = "offence_code_09";
 })(OffenceCode = exports.OffenceCode || (exports.OffenceCode = {}));
 var FPNStatus;
 (function (FPNStatus) {

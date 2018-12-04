@@ -121,10 +121,10 @@ export enum PermitConditionType {
 }
 
 export enum OffenceCode {
-  offence_code_05 = '05',
-  offence_code_06 = '06',
-  offence_code_08 = '08',
-  offence_code_09 = '09'
+  offence_code_05 = 'offence_code_05',
+  offence_code_06 = 'offence_code_06',
+  offence_code_08 = 'offence_code_08',
+  offence_code_09 = 'offence_code_09'
 }
 
 export enum FPNStatus {
