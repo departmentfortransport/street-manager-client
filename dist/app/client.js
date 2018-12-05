@@ -34,69 +34,69 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post('/permits', permitCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    getPermit(requestConfig, referenceNumber) {
+    getPermit(requestConfig, workReferenceNumber) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/permits/${referenceNumber}`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/permits/${workReferenceNumber}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    getWork(requestConfig, referenceNumber) {
+    getWork(requestConfig, workReferenceNumber) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    updateAssessmentStatus(requestConfig, referenceNumber, updateAssessmentStatusRequest) {
+    updateAssessmentStatus(requestConfig, workReferenceNumber, updateAssessmentStatusRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/permits/${referenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.put(`/permits/${workReferenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    updateWorkActualStartDate(requestConfig, referenceNumber, workStartUpdateRequest) {
+    updateWorkActualStartDate(requestConfig, workReferenceNumber, workStartUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/start`, workStartUpdateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/start`, workStartUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    updateWorkActualStopDate(requestConfig, referenceNumber, workStopUpdateRequest) {
+    updateWorkActualStopDate(requestConfig, workReferenceNumber, workStopUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/stop`, workStopUpdateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/stop`, workStopUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    updateExcavationCarriedOut(requestConfig, referenceNumber, excavationCarriedOutUpdateRequest) {
+    updateExcavationCarriedOut(requestConfig, workReferenceNumber, excavationCarriedOutUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    updateInspectionUnits(requestConfig, referenceNumber, inspectionUnitsUpdateRequest) {
+    updateInspectionUnits(requestConfig, workReferenceNumber, inspectionUnitsUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/works/${referenceNumber}/inspection-units`, inspectionUnitsUpdateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/inspection-units`, inspectionUnitsUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    createSite(requestConfig, referenceNumber, reinstatementCreateRequest) {
+    createSite(requestConfig, workReferenceNumber, reinstatementCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/sites`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/sites`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    createReinstatement(requestConfig, referenceNumber, siteId, reinstatementCreateRequest) {
+    createReinstatement(requestConfig, workReferenceNumber, siteId, reinstatementCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/sites/${siteId}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/sites/${siteId}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    getSite(requestConfig, referenceNumber, siteId) {
+    getSite(requestConfig, workReferenceNumber, siteId) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/sites/${siteId}`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}/sites/${siteId}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    createInspection(requestConfig, referenceNumber, inspectionCreateRequest) {
+    createInspection(requestConfig, workReferenceNumber, inspectionCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/inspections`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/inspections`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    getInspection(requestConfig, referenceNumber, inspectionId) {
+    getInspection(requestConfig, workReferenceNumber, inspectionId) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    createFPN(requestConfig, referenceNumber, fpnCreateRequest) {
+    createFPN(requestConfig, workReferenceNumber, fpnCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${referenceNumber}/fixed-penalty-notices`, fpnCreateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/fixed-penalty-notices`, fpnCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     uploadFile(requestConfig, buffer, filename) {
@@ -126,9 +126,9 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    getWorkHistory(requestConfig, referenceNumber) {
+    getWorkHistory(requestConfig, workReferenceNumber) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/works/${referenceNumber}/history`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}/history`, this.generateRequestConfig(requestConfig)));
         });
     }
     httpHandler(request) {

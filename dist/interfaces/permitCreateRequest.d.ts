@@ -2,7 +2,7 @@ import { ActivityType, WorkCategory, TrafficManagementType, ApplicationType, Col
 import { PermitCondition } from './permitCondition';
 import { PermitASD } from './permitASD';
 export interface PermitCreateRequest {
-    reference_number: string;
+    work_reference_number: string;
     promoter_organisation: string;
     promoter_swa_code: string;
     promoter_contact_details: string;

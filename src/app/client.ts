@@ -50,56 +50,56 @@ export class StreetManagerApiClient {
     return this.httpHandler<PermitResponse>(() => this.axios.post('/permits', permitCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getPermit(requestConfig: RequestConfig, referenceNumber: string) {
-    return this.httpHandler<PermitResponse>(() => this.axios.get(`/permits/${referenceNumber}`, this.generateRequestConfig(requestConfig)))
+  public async getPermit(requestConfig: RequestConfig, workReferenceNumber: string) {
+    return this.httpHandler<PermitResponse>(() => this.axios.get(`/permits/${workReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getWork(requestConfig: RequestConfig, referenceNumber: string): Promise<WorkResponse> {
-    return this.httpHandler<WorkResponse>(() => this.axios.get(`/works/${referenceNumber}`, this.generateRequestConfig(requestConfig)))
+  public async getWork(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkResponse> {
+    return this.httpHandler<WorkResponse>(() => this.axios.get(`/works/${workReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updateAssessmentStatus(requestConfig: RequestConfig, referenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.put(`/permits/${referenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)))
+  public async updateAssessmentStatus(requestConfig: RequestConfig, workReferenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/permits/${workReferenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updateWorkActualStartDate(requestConfig: RequestConfig, referenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.put(`/works/${referenceNumber}/start`, workStartUpdateRequest, this.generateRequestConfig(requestConfig)))
+  public async updateWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/start`, workStartUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updateWorkActualStopDate(requestConfig: RequestConfig, referenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.put(`/works/${referenceNumber}/stop`, workStopUpdateRequest, this.generateRequestConfig(requestConfig)))
+  public async updateWorkActualStopDate(requestConfig: RequestConfig, workReferenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/stop`, workStopUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updateExcavationCarriedOut(requestConfig: RequestConfig, referenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.put(`/works/${referenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)))
+  public async updateExcavationCarriedOut(requestConfig: RequestConfig, workReferenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updateInspectionUnits(requestConfig: RequestConfig, referenceNumber: string, inspectionUnitsUpdateRequest: InspectionUnitsUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.put(`/works/${referenceNumber}/inspection-units`, inspectionUnitsUpdateRequest, this.generateRequestConfig(requestConfig)))
+  public async updateInspectionUnits(requestConfig: RequestConfig, workReferenceNumber: string, inspectionUnitsUpdateRequest: InspectionUnitsUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/inspection-units`, inspectionUnitsUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createSite(requestConfig: RequestConfig, referenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<SiteCreateResponse> {
-    return this.httpHandler<SiteCreateResponse>(() => this.axios.post(`/works/${referenceNumber}/sites`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createSite(requestConfig: RequestConfig, workReferenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<SiteCreateResponse> {
+    return this.httpHandler<SiteCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/sites`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createReinstatement(requestConfig: RequestConfig, referenceNumber: string, siteId: number, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementCreateResponse> {
-    return this.httpHandler<ReinstatementCreateResponse>(() => this.axios.post(`/works/${referenceNumber}/sites/${siteId}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, siteId: number, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementCreateResponse> {
+    return this.httpHandler<ReinstatementCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/sites/${siteId}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getSite(requestConfig: RequestConfig, referenceNumber: string, siteId: number): Promise<SiteResponse> {
-    return this.httpHandler<SiteResponse>(() => this.axios.get(`/works/${referenceNumber}/sites/${siteId}`, this.generateRequestConfig(requestConfig)))
+  public async getSite(requestConfig: RequestConfig, workReferenceNumber: string, siteId: number): Promise<SiteResponse> {
+    return this.httpHandler<SiteResponse>(() => this.axios.get(`/works/${workReferenceNumber}/sites/${siteId}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createInspection(requestConfig: RequestConfig, referenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/works/${referenceNumber}/inspections`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/works/${workReferenceNumber}/inspections`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getInspection(requestConfig: RequestConfig, referenceNumber: string, inspectionId: number): Promise<InspectionResponse> {
-    return this.httpHandler<InspectionResponse>(() => this.axios.get(`/works/${referenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)))
+  public async getInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionId: number): Promise<InspectionResponse> {
+    return this.httpHandler<InspectionResponse>(() => this.axios.get(`/works/${workReferenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createFPN(requestConfig: RequestConfig, referenceNumber: string, fpnCreateRequest: FPNCreateRequest): Promise<FPNCreateResponse> {
-    return this.httpHandler<FPNCreateResponse>(() => this.axios.post(`/works/${referenceNumber}/fixed-penalty-notices`, fpnCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createFPN(requestConfig: RequestConfig, workReferenceNumber: string, fpnCreateRequest: FPNCreateRequest): Promise<FPNCreateResponse> {
+    return this.httpHandler<FPNCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/fixed-penalty-notices`, fpnCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse> {
@@ -127,8 +127,8 @@ export class StreetManagerApiClient {
     return this.httpHandler<void>(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getWorkHistory(requestConfig: RequestConfig, referenceNumber: string): Promise<WorkHistoryResponse[]> {
-    return this.httpHandler<WorkHistoryResponse[]>(() => this.axios.get(`/works/${referenceNumber}/history`, this.generateRequestConfig(requestConfig)))
+  public async getWorkHistory(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkHistoryResponse[]> {
+    return this.httpHandler<WorkHistoryResponse[]>(() => this.axios.get(`/works/${workReferenceNumber}/history`, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
