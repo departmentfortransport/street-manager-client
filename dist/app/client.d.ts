@@ -11,6 +11,8 @@ import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateReq
 import { ReinstatementCreateResponse } from '../interfaces/reinstatementCreateResponse';
 import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest';
 import { InspectionResponse } from '../interfaces/inspectionResponse';
+import { FPNCreateRequest } from '../interfaces/fpnCreateRequest';
+import { FPNCreateResponse } from '../interfaces/fpnCreateResponse';
 import { AuthenticationResponse } from '../interfaces/authenticationResponse';
 import { AuthenticationRequest } from '../interfaces/authenticationRequest';
 import { FileResponse } from '../interfaces/fileResponse';
@@ -42,6 +44,7 @@ export declare class StreetManagerApiClient {
     getSite(requestConfig: RequestConfig, workReferenceNumber: string, siteId: number): Promise<SiteResponse>;
     createInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void>;
     getInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionId: number): Promise<InspectionResponse>;
+    createFPN(requestConfig: RequestConfig, workReferenceNumber: string, fpnCreateRequest: FPNCreateRequest): Promise<FPNCreateResponse>;
     uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse>;
     getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>>;
     deleteFile(requestConfig: RequestConfig, fileId: number): Promise<void>;

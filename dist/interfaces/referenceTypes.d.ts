@@ -106,3 +106,9 @@ export declare enum PermitConditionType {
     NCT11b = "NCT11b",
     NCT12a = "NCT12a"
 }
+export declare enum OffenceCode {
+    offence_code_05 = "offence_code_05",
+    offence_code_06 = "offence_code_06",
+    offence_code_08 = "offence_code_08",
+    offence_code_09 = "offence_code_09"
+}

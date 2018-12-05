@@ -86,12 +86,17 @@ class StreetManagerApiClient {
     }
     createInspection(requestConfig, workReferenceNumber, inspectionCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/inspection`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/inspections`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     getInspection(requestConfig, workReferenceNumber, inspectionId) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    createFPN(requestConfig, workReferenceNumber, fpnCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/fixed-penalty-notices`, fpnCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     uploadFile(requestConfig, buffer, filename) {
