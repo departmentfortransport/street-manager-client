@@ -122,10 +122,17 @@ var PermitConditionType;
     PermitConditionType["NCT11b"] = "NCT11b";
     PermitConditionType["NCT12a"] = "NCT12a";
 })(PermitConditionType = exports.PermitConditionType || (exports.PermitConditionType = {}));
+var OffenceCode;
+(function (OffenceCode) {
+    OffenceCode["offence_code_05"] = "offence_code_05";
+    OffenceCode["offence_code_06"] = "offence_code_06";
+    OffenceCode["offence_code_08"] = "offence_code_08";
+    OffenceCode["offence_code_09"] = "offence_code_09";
+})(OffenceCode = exports.OffenceCode || (exports.OffenceCode = {}));
 var CommentTopic;
 (function (CommentTopic) {
-    CommentTopic["General"] = "GENERAL";
-    CommentTopic["section74"] = "SECTION_74";
-    CommentTopic["Inspection"] = "INSPECTION";
+    CommentTopic["GENERAL"] = "GENERAL";
+    CommentTopic["SECTION_74"] = "SECTION_74";
+    CommentTopic["INSPECTION"] = "INSPECTION";
     CommentTopic["FPN"] = "FPN";
 })(CommentTopic = exports.CommentTopic || (exports.CommentTopic = {}));
