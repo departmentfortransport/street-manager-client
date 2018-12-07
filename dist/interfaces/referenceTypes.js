@@ -129,3 +129,10 @@ var OffenceCode;
     OffenceCode["offence_code_08"] = "offence_code_08";
     OffenceCode["offence_code_09"] = "offence_code_09";
 })(OffenceCode = exports.OffenceCode || (exports.OffenceCode = {}));
+var CommentTopic;
+(function (CommentTopic) {
+    CommentTopic["GENERAL"] = "GENERAL";
+    CommentTopic["SECTION_74"] = "SECTION_74";
+    CommentTopic["INSPECTION"] = "INSPECTION";
+    CommentTopic["FPN"] = "FPN";
+})(CommentTopic = exports.CommentTopic || (exports.CommentTopic = {}));

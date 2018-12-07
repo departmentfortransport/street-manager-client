@@ -6,6 +6,8 @@ export * from './interfaces/assessmentStatusUpdateRequest';
 export * from './interfaces/workResponse';
 export * from './interfaces/workStartUpdateRequest';
 export * from './interfaces/workStopUpdateRequest';
+export * from './interfaces/commentCreateRequest';
+export * from './interfaces/commentCreateResponse';
 export * from './interfaces/excavationCarriedOutUpdateRequest';
 export * from './interfaces/inspectionUnitsUpdateRequest';
 export * from './interfaces/reinstatementCreateRequest';

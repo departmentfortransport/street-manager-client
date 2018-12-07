@@ -112,3 +112,9 @@ export declare enum OffenceCode {
     offence_code_08 = "offence_code_08",
     offence_code_09 = "offence_code_09"
 }
+export declare enum CommentTopic {
+    GENERAL = "GENERAL",
+    SECTION_74 = "SECTION_74",
+    INSPECTION = "INSPECTION",
+    FPN = "FPN"
+}
