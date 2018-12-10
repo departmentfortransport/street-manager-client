@@ -57,7 +57,8 @@ export declare enum PermitStatus {
 export declare enum AssessmentStatus {
     granted_proposed = "granted_proposed",
     granted_with_changes = "granted_with_changes",
-    refused = "refused"
+    refused = "refused",
+    deemed_proposed = "deemed_proposed"
 }
 export declare enum ReinstatementStatus {
     interim = "interim",
