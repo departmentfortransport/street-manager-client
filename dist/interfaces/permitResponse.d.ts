@@ -4,6 +4,7 @@ import { FileResponse } from './fileResponse';
 import { PermitASD } from './permitASD';
 export interface PermitResponse {
     permit_id: number;
+    permit_reference_number: string;
     work_id: number;
     work_reference_number: string;
     promoter_organisation: string;
