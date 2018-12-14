@@ -29,9 +29,14 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post('/authenticate', authenticationRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    createPermit(requestConfig, permitCreateRequest) {
+    createWork(requestConfig, workCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post('/permits', permitCreateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post('/works', workCreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    createPermit(requestConfig, workReferenceNumber, permitCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/permits`, permitCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     getPermit(requestConfig, workReferenceNumber, permitReferenceNumber) {
