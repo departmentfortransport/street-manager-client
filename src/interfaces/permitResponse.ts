@@ -1,9 +1,10 @@
-import { PermitStatus, ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType, AssessmentStatus } from './referenceTypes'
+import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType } from './referenceTypes'
 import { PermitCondition } from './permitCondition'
 import { FileResponse } from './fileResponse'
 import { PermitASD } from './permitASD'
+import { PermitSummaryResponse } from './permitSummaryResponse'
 
-export interface PermitResponse {
+export interface PermitResponse extends PermitSummaryResponse {
   permit_id: number
   work_id: number
   work_reference_number: string
@@ -12,9 +13,7 @@ export interface PermitResponse {
   promoter_contact_details: string
   approved_contractor: string
   contractor_contact_details: string
-  proposed_start_date: Date
   proposed_start_time?: Date
-  proposed_end_date: Date
   proposed_end_time?: Date
   duration: number
   description_of_work: string
@@ -38,19 +37,14 @@ export interface PermitResponse {
   date_created: Date
   date_modified: Date
   deadline_date: Date
-  actual_start_date?: Date
-  actual_stop_date?: Date
-  excavation_carried_out: boolean,
-  assessment_comments?: string,
-  permit_status: PermitStatus
+  excavation_carried_out: boolean
+  assessment_comments?: string
   activity_type: ActivityType
-  work_category: WorkCategory
   traffic_management_type: TrafficManagementType
   application_type: ApplicationType
   collaboration_type?: CollaborationType
   location_types: LocationType[]
-  assessment_status?: AssessmentStatus
-  files?: FileResponse[],
+  files?: FileResponse[]
   inspection_units?: number
   permit_asds: PermitASD[]
 }
