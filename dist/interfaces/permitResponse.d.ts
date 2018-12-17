@@ -48,9 +48,9 @@ export interface PermitResponse {
     traffic_management_type: TrafficManagementType;
     application_type: ApplicationType;
     collaboration_type?: CollaborationType;
-    location_types?: LocationType[];
+    location_types: LocationType[];
     assessment_status?: AssessmentStatus;
     files?: FileResponse[];
     inspection_units?: number;
-    permit_asds?: PermitASD[];
+    permit_asds: PermitASD[];
 }
