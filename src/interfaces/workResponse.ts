@@ -5,7 +5,7 @@ import { FPNSummaryResponse } from './fpnSummaryResponse'
 
 export interface WorkResponse {
   work_id: number,
-  reference_number: string,
+  work_reference_number: string,
   permits: PermitResponse[],
   sites?: SiteSummaryResponse[],
   inspections?: InspectionResponse[],

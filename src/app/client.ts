@@ -52,16 +52,16 @@ export class StreetManagerApiClient {
     return this.httpHandler<PermitResponse>(() => this.axios.post('/permits', permitCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getPermit(requestConfig: RequestConfig, workReferenceNumber: string) {
-    return this.httpHandler<PermitResponse>(() => this.axios.get(`/permits/${workReferenceNumber}`, this.generateRequestConfig(requestConfig)))
+  public async getPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string) {
+    return this.httpHandler<PermitResponse>(() => this.axios.get(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
   public async getWork(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkResponse> {
     return this.httpHandler<WorkResponse>(() => this.axios.get(`/works/${workReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updateAssessmentStatus(requestConfig: RequestConfig, workReferenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.put(`/permits/${workReferenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)))
+  public async updatePermitAssessmentStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updateWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void> {
