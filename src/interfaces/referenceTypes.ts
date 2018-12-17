@@ -128,6 +128,14 @@ export enum OffenceCode {
   offence_code_09 = 'offence_code_09'
 }
 
+export enum FPNStatus {
+  issued = 'issued',
+  accepted = 'accepted',
+  paid = 'paid',
+  disputed = 'disputed',
+  withdrawn = 'withdrawn'
+}
+
 export enum CommentTopic {
   GENERAL = 'GENERAL',
   SECTION_74 = 'SECTION_74',

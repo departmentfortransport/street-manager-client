@@ -130,6 +130,14 @@ var OffenceCode;
     OffenceCode["offence_code_08"] = "offence_code_08";
     OffenceCode["offence_code_09"] = "offence_code_09";
 })(OffenceCode = exports.OffenceCode || (exports.OffenceCode = {}));
+var FPNStatus;
+(function (FPNStatus) {
+    FPNStatus["issued"] = "issued";
+    FPNStatus["accepted"] = "accepted";
+    FPNStatus["paid"] = "paid";
+    FPNStatus["disputed"] = "disputed";
+    FPNStatus["withdrawn"] = "withdrawn";
+})(FPNStatus = exports.FPNStatus || (exports.FPNStatus = {}));
 var CommentTopic;
 (function (CommentTopic) {
     CommentTopic["GENERAL"] = "GENERAL";
