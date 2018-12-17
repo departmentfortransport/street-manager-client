@@ -113,6 +113,13 @@ export declare enum OffenceCode {
     offence_code_08 = "offence_code_08",
     offence_code_09 = "offence_code_09"
 }
+export declare enum FPNStatus {
+    issued = "issued",
+    accepted = "accepted",
+    paid = "paid",
+    disputed = "disputed",
+    withdrawn = "withdrawn"
+}
 export declare enum CommentTopic {
     GENERAL = "GENERAL",
     SECTION_74 = "SECTION_74",
