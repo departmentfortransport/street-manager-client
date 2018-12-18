@@ -7,7 +7,6 @@ export interface FPNResponse extends FPNSummaryResponse {
     authorised_officer: string;
     officer_contact_details: string;
     work_reference_number: string;
-    promoter_organisation?: string;
-    highway_authority?: string;
+    swa_organisation_name: string;
     files?: FileResponse[];
 }
