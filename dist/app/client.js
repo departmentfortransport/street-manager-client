@@ -34,9 +34,9 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post('/permits', permitCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    getPermit(requestConfig, workReferenceNumber) {
+    getPermit(requestConfig, workReferenceNumber, permitReferenceNumber) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/permits/${workReferenceNumber}`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}`, this.generateRequestConfig(requestConfig)));
         });
     }
     getWork(requestConfig, workReferenceNumber) {
@@ -44,9 +44,9 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    updateAssessmentStatus(requestConfig, workReferenceNumber, updateAssessmentStatusRequest) {
+    updatePermitAssessmentStatus(requestConfig, workReferenceNumber, permitReferenceNumber, updateAssessmentStatusRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/permits/${workReferenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     updateWorkActualStartDate(requestConfig, workReferenceNumber, workStartUpdateRequest) {

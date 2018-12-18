@@ -35,9 +35,9 @@ export declare class StreetManagerApiClient {
     status(): Promise<void>;
     authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse>;
     createPermit(requestConfig: RequestConfig, permitCreateRequest: PermitCreateRequest): Promise<PermitResponse>;
-    getPermit(requestConfig: RequestConfig, workReferenceNumber: string): Promise<PermitResponse>;
+    getPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string): Promise<PermitResponse>;
     getWork(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkResponse>;
-    updateAssessmentStatus(requestConfig: RequestConfig, workReferenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void>;
+    updatePermitAssessmentStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void>;
     updateWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void>;
     updateWorkActualStopDate(requestConfig: RequestConfig, workReferenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void>;
     updateExcavationCarriedOut(requestConfig: RequestConfig, workReferenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void>;
