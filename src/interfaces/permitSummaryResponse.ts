@@ -1,4 +1,4 @@
-import { PermitStatus, WorkCategory, AssessmentStatus } from './referenceTypes'
+import { PermitStatus, WorkCategory } from './referenceTypes'
 
 export interface PermitSummaryResponse {
   permit_reference_number: string
@@ -8,5 +8,4 @@ export interface PermitSummaryResponse {
   actual_stop_date?: Date
   permit_status: PermitStatus
   work_category: WorkCategory
-  assessment_status?: AssessmentStatus
 }
