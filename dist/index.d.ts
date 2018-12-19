@@ -28,3 +28,4 @@ export * from './interfaces/siteSummaryResponse';
 export * from './interfaces/fpnCreateResponse';
 export * from './interfaces/fpnCreateRequest';
 export * from './interfaces/fpnSummaryResponse';
+export * from './interfaces/fpnResponse';
