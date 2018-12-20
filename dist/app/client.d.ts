@@ -1,6 +1,9 @@
 /// <reference types="node" />
 import { AxiosResponse } from 'axios';
+import { WorkCreateRequest } from '../interfaces/workCreateRequest';
+import { WorkCreateResponse } from '../interfaces/workCreateResponse';
 import { PermitCreateRequest } from '../interfaces/permitCreateRequest';
+import { PermitCreateResponse } from '../interfaces/permitCreateResponse';
 import { PermitResponse } from '../interfaces/permitResponse';
 import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpdateRequest';
 import { WorkResponse } from '../interfaces/workResponse';
@@ -34,7 +37,8 @@ export declare class StreetManagerApiClient {
     constructor(config: StreetManagerApiClientConfig);
     status(): Promise<void>;
     authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse>;
-    createPermit(requestConfig: RequestConfig, permitCreateRequest: PermitCreateRequest): Promise<PermitResponse>;
+    createWork(requestConfig: RequestConfig, workCreateRequest: WorkCreateRequest): Promise<WorkCreateResponse>;
+    createPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitCreateRequest: PermitCreateRequest): Promise<PermitCreateResponse>;
     getPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string): Promise<PermitResponse>;
     getWork(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkResponse>;
     updatePermitAssessmentStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void>;

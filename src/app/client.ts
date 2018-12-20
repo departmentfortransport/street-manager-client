@@ -1,6 +1,9 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosPromise, AxiosRequestConfig } from 'axios'
 import { INTERNAL_SERVER_ERROR } from 'http-status-codes'
+import { WorkCreateRequest } from '../interfaces/workCreateRequest'
+import { WorkCreateResponse } from '../interfaces/workCreateResponse'
 import { PermitCreateRequest } from '../interfaces/permitCreateRequest'
+import { PermitCreateResponse } from '../interfaces/permitCreateResponse'
 import { PermitResponse } from '../interfaces/permitResponse'
 import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpdateRequest'
 import { WorkResponse } from '../interfaces/workResponse'
@@ -49,8 +52,12 @@ export class StreetManagerApiClient {
     return this.httpHandler<AuthenticationResponse>(() => this.axios.post('/authenticate', authenticationRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createPermit(requestConfig: RequestConfig, permitCreateRequest: PermitCreateRequest): Promise<PermitResponse> {
-    return this.httpHandler<PermitResponse>(() => this.axios.post('/permits', permitCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createWork(requestConfig: RequestConfig, workCreateRequest: WorkCreateRequest): Promise<WorkCreateResponse> {
+    return this.httpHandler<WorkCreateResponse>(() => this.axios.post('/works', workCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitCreateRequest: PermitCreateRequest): Promise<PermitCreateResponse> {
+    return this.httpHandler<PermitCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/permits`, permitCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async getPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string) {
