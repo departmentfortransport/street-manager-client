@@ -17,4 +17,5 @@ export interface InspectionResponse {
     date_created: Date;
     date_modified: Date;
     files?: FileResponse[];
+    work_reference_number: string;
 }
