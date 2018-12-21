@@ -28,7 +28,7 @@ import { InspectionUnitsUpdateRequest } from '../interfaces/inspectionUnitsUpdat
 import { CommentCreateRequest } from '../interfaces/commentCreateRequest'
 import { CommentCreateResponse } from '../interfaces/commentCreateResponse'
 import { FPNResponse } from '../interfaces/fpnResponse'
-
+import { FPNStatusUpdateRequest } from '../interfaces/fpnStatusUpdateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -114,6 +114,10 @@ export class StreetManagerApiClient {
 
   public async getFPN(requestConfig: RequestConfig, workReferenceNumber: string, fpnReferenceNumber: string): Promise<FPNResponse> {
     return this.httpHandler<FPNResponse>(() => this.axios.get(`/works/${workReferenceNumber}/fixed-penalty-notices/${fpnReferenceNumber}`, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updateFPNStatus(requestConfig: RequestConfig, workReferenceNumber: string, fpnReferenceNumber: string, fpnStatusUpdateRequest: FPNStatusUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/fixed-penalty-notices/${fpnReferenceNumber}/status`, fpnStatusUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<CommentCreateResponse> {
