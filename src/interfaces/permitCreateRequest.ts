@@ -1,5 +1,6 @@
 import { ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType } from './referenceTypes'
 import { PermitCondition } from './permitCondition'
+import { PermitASD } from './permitASD'
 
 export interface PermitCreateRequest {
   promoter_contact_details: string
@@ -27,4 +28,5 @@ export interface PermitCreateRequest {
   collaboration_type?: CollaborationType
   location_types: LocationType[]
   file_ids?: number[]
+  permit_asds?: PermitASD[]
 }
