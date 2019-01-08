@@ -27,6 +27,7 @@ import { InspectionUnitsUpdateRequest } from '../interfaces/inspectionUnitsUpdat
 import { CommentCreateRequest } from '../interfaces/commentCreateRequest';
 import { CommentCreateResponse } from '../interfaces/commentCreateResponse';
 import { FPNResponse } from '../interfaces/fpnResponse';
+import { FPNStatusUpdateRequest } from '../interfaces/fpnStatusUpdateRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -53,6 +54,7 @@ export declare class StreetManagerApiClient {
     getInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionId: number): Promise<InspectionResponse>;
     createFPN(requestConfig: RequestConfig, workReferenceNumber: string, fpnCreateRequest: FPNCreateRequest): Promise<FPNCreateResponse>;
     getFPN(requestConfig: RequestConfig, workReferenceNumber: string, fpnReferenceNumber: string): Promise<FPNResponse>;
+    updateFPNStatus(requestConfig: RequestConfig, workReferenceNumber: string, fpnReferenceNumber: string, fpnStatusUpdateRequest: FPNStatusUpdateRequest): Promise<void>;
     createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<CommentCreateResponse>;
     uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse>;
     getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>>;
