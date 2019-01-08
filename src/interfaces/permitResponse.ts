@@ -49,4 +49,5 @@ export interface PermitResponse extends PermitSummaryResponse {
   files?: FileResponse[]
   inspection_units?: number
   permit_asds: PermitASD[]
+  assessment_discount?: number
 }
