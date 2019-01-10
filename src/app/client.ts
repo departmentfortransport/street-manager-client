@@ -30,6 +30,7 @@ import { CommentCreateResponse } from '../interfaces/commentCreateResponse'
 import { FPNResponse } from '../interfaces/fpnResponse'
 import { FPNStatusUpdateRequest } from '../interfaces/fpnStatusUpdateRequest'
 import { InspectionCreateResponse } from '../interfaces/inspectionCreateResponse'
+import { DurationCalculationResponse } from '../interfaces/durationCalculationResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -152,6 +153,10 @@ export class StreetManagerApiClient {
 
   public async getWorkHistory(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkHistoryResponse[]> {
     return this.httpHandler<WorkHistoryResponse[]>(() => this.axios.get(`/works/${workReferenceNumber}/history`, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async getDuration(requestConfig: RequestConfig, startDate: string, endDate: string): Promise<DurationCalculationResponse> {
+    return this.httpHandler<DurationCalculationResponse>(() => this.axios.get(`/duration?startDate=${startDate}&endDate=${endDate}`, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
