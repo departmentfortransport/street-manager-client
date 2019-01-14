@@ -94,9 +94,9 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/inspections`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    getInspection(requestConfig, workReferenceNumber, inspectionId) {
+    getInspection(requestConfig, workReferenceNumber, inspectionReferenceNumber) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}/inspections/${inspectionReferenceNumber}`, this.generateRequestConfig(requestConfig)));
         });
     }
     createFPN(requestConfig, workReferenceNumber, fpnCreateRequest) {
