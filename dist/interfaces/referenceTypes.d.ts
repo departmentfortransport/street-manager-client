@@ -1,8 +1,17 @@
 export declare enum ActivityType {
-    water_leak = "water_leak",
-    gas_leak = "gas_leak",
-    new_supply = "new_supply",
-    resurfacing = "resurfacing"
+    highway_improvement_works = "highway_improvement_works",
+    highway_repair_and_maintenance_works = "highway_repair_and_maintenance_works",
+    utility_asset_works = "utility_asset_works",
+    utility_repair_and_maintenance_works = "utility_repair_and_maintenance_works",
+    diversionary_works = "diversionary_works",
+    disconnection_or_alteration_of_supply = "disconnection_or_alteration_of_supply",
+    permanent_reinstatement = "permanent_reinstatement",
+    remedial_works = "remedial_works",
+    section_58 = "section_58",
+    section_50 = "section_50",
+    core_sampling = "core_sampling",
+    statutory_infrastructure_works = "statutory_infrastructure_works",
+    works_for_rail_purposes = "works_for_rail_purposes"
 }
 export declare enum ApplicationType {
     permit = "permit",

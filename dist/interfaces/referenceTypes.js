@@ -2,10 +2,19 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var ActivityType;
 (function (ActivityType) {
-    ActivityType["water_leak"] = "water_leak";
-    ActivityType["gas_leak"] = "gas_leak";
-    ActivityType["new_supply"] = "new_supply";
-    ActivityType["resurfacing"] = "resurfacing";
+    ActivityType["highway_improvement_works"] = "highway_improvement_works";
+    ActivityType["highway_repair_and_maintenance_works"] = "highway_repair_and_maintenance_works";
+    ActivityType["utility_asset_works"] = "utility_asset_works";
+    ActivityType["utility_repair_and_maintenance_works"] = "utility_repair_and_maintenance_works";
+    ActivityType["diversionary_works"] = "diversionary_works";
+    ActivityType["disconnection_or_alteration_of_supply"] = "disconnection_or_alteration_of_supply";
+    ActivityType["permanent_reinstatement"] = "permanent_reinstatement";
+    ActivityType["remedial_works"] = "remedial_works";
+    ActivityType["section_58"] = "section_58";
+    ActivityType["section_50"] = "section_50";
+    ActivityType["core_sampling"] = "core_sampling";
+    ActivityType["statutory_infrastructure_works"] = "statutory_infrastructure_works";
+    ActivityType["works_for_rail_purposes"] = "works_for_rail_purposes";
 })(ActivityType = exports.ActivityType || (exports.ActivityType = {}));
 var ApplicationType;
 (function (ApplicationType) {
