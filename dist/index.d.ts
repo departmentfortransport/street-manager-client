@@ -17,6 +17,7 @@ export * from './interfaces/reinstatementCreateRequest';
 export * from './interfaces/reinstatementCreateResponse';
 export * from './interfaces/reinstatementResponse';
 export * from './interfaces/inspectionCreateRequest';
+export * from './interfaces/inspectionCreateResponse';
 export * from './interfaces/inspectionResponse';
 export * from './interfaces/authenticationRequest';
 export * from './interfaces/authenticationResponse';

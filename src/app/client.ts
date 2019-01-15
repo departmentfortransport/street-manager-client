@@ -29,6 +29,7 @@ import { CommentCreateRequest } from '../interfaces/commentCreateRequest'
 import { CommentCreateResponse } from '../interfaces/commentCreateResponse'
 import { FPNResponse } from '../interfaces/fpnResponse'
 import { FPNStatusUpdateRequest } from '../interfaces/fpnStatusUpdateRequest'
+import { InspectionCreateResponse } from '../interfaces/inspectionCreateResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -100,12 +101,12 @@ export class StreetManagerApiClient {
     return this.httpHandler<SiteResponse>(() => this.axios.get(`/works/${workReferenceNumber}/sites/${siteId}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/works/${workReferenceNumber}/inspections`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<InspectionCreateResponse> {
+    return this.httpHandler<InspectionCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/inspections`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionId: number): Promise<InspectionResponse> {
-    return this.httpHandler<InspectionResponse>(() => this.axios.get(`/works/${workReferenceNumber}/inspections/${inspectionId}`, this.generateRequestConfig(requestConfig)))
+  public async getInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionReferenceNumber: string): Promise<InspectionResponse> {
+    return this.httpHandler<InspectionResponse>(() => this.axios.get(`/works/${workReferenceNumber}/inspections/${inspectionReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
   public async createFPN(requestConfig: RequestConfig, workReferenceNumber: string, fpnCreateRequest: FPNCreateRequest): Promise<FPNCreateResponse> {
