@@ -3,6 +3,7 @@ import { ReinstatementStatus } from './referenceTypes'
 export interface SiteSummaryResponse {
   site_id: number,
   site_description: string,
+  permit_id: number,
   depth: number,
   length: number,
   width: number,
