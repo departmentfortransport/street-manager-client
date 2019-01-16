@@ -18,4 +18,6 @@ export interface InspectionResponse {
     date_modified: Date;
     files?: FileResponse[];
     work_reference_number: string;
+    reinspection_start_date?: Date;
+    reinspection_start_time?: Date;
 }
