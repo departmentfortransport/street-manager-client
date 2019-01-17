@@ -16,7 +16,8 @@ export interface PermitResponse extends PermitSummaryResponse {
   contractor_contact_details: string
   proposed_start_time?: Date
   proposed_end_time?: Date
-  duration: number
+  calendar_day_duration: number
+  working_day_duration: number
   description_of_work: string
   excavation: boolean
   project_reference_number?: string
