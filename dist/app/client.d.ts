@@ -29,6 +29,7 @@ import { CommentCreateResponse } from '../interfaces/commentCreateResponse';
 import { FPNResponse } from '../interfaces/fpnResponse';
 import { FPNStatusUpdateRequest } from '../interfaces/fpnStatusUpdateRequest';
 import { InspectionCreateResponse } from '../interfaces/inspectionCreateResponse';
+import { DurationCalculationResponse } from '../interfaces/durationCalculationResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -61,6 +62,7 @@ export declare class StreetManagerApiClient {
     getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>>;
     deleteFile(requestConfig: RequestConfig, fileId: number): Promise<void>;
     getWorkHistory(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkHistoryResponse[]>;
+    getDuration(requestConfig: RequestConfig, startDate: string, endDate: string): Promise<DurationCalculationResponse>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;

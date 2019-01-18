@@ -34,3 +34,5 @@ export * from './interfaces/fpnCreateRequest';
 export * from './interfaces/fpnSummaryResponse';
 export * from './interfaces/fpnResponse';
 export * from './interfaces/fpnStatusUpdateRequest';
+export * from './interfaces/durationCalculationRequest';
+export * from './interfaces/durationCalculationResponse';
