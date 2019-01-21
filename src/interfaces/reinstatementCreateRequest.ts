@@ -9,4 +9,6 @@ export interface ReinstatementCreateRequest {
   reinstatement_coordinates: any
   location_description: string
   location_types: LocationType[]
+  reinstatement_evidence: boolean
+  file_ids?: number[]
 }

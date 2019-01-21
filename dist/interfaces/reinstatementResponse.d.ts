@@ -1,4 +1,5 @@
 import { ReinstatementStatus, LocationType } from './referenceTypes';
+import { FileResponse } from './fileResponse';
 export interface ReinstatementResponse {
     reinstatement_id: number;
     permit_id: number;
@@ -13,4 +14,6 @@ export interface ReinstatementResponse {
     date_created: Date;
     date_modified: Date;
     location_types: LocationType[];
+    reinstatement_evidence: boolean;
+    files?: FileResponse[];
 }
