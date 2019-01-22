@@ -13,4 +13,6 @@ export interface InspectionCreateRequest {
     additional_failure_comments?: string;
     inspection_evidence?: boolean;
     file_ids?: number[];
+    reinspection_date?: Date;
+    reinspection_date_time?: Date;
 }

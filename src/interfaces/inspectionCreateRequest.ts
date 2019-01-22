@@ -13,5 +13,7 @@ export interface InspectionCreateRequest {
     defect_fixed_on_site?: DefectFixedOnsite,
     additional_failure_comments?: string,
     inspection_evidence?: boolean,
-    file_ids?: number[]
+    file_ids?: number[],
+    reinspection_date?: Date,
+    reinspection_date_time?: Date
 }
