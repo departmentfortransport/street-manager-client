@@ -77,6 +77,10 @@ export declare enum InspectionType {
     slg = "slg",
     reinstatement = "reinstatement"
 }
+export declare enum InspectionResponseType {
+    inspection = "inspection",
+    reinspection = "reinspection"
+}
 export declare enum InspectionCategory {
     a = "a",
     b = "b",
