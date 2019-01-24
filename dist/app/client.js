@@ -119,6 +119,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/comments`, commentCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    createPermitAlteration(requestConfig, workReferenceNumber, permitReferenceNumber, permitAlterationRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations`, permitAlterationRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     uploadFile(requestConfig, buffer, filename) {
         return __awaiter(this, void 0, void 0, function* () {
             let form = new FormData();

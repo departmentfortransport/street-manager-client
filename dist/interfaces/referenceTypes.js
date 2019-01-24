@@ -153,3 +153,10 @@ var CommentTopic;
     CommentTopic["INSPECTION"] = "INSPECTION";
     CommentTopic["FPN"] = "FPN";
 })(CommentTopic = exports.CommentTopic || (exports.CommentTopic = {}));
+var AlterationStatus;
+(function (AlterationStatus) {
+    AlterationStatus["submitted"] = "submitted";
+    AlterationStatus["granted"] = "granted";
+    AlterationStatus["refused"] = "refused";
+    AlterationStatus["deemed"] = "deemed";
+})(AlterationStatus = exports.AlterationStatus || (exports.AlterationStatus = {}));
