@@ -6,4 +6,5 @@ export interface InspectionSummaryResponse {
     inspection_type?: InspectionType;
     inspection_category?: InspectionCategory;
     inspection_outcome?: InspectionOutcome;
+    inspection_date?: Date;
 }
