@@ -5,7 +5,7 @@ export * from './interfaces/workCreateResponse';
 export * from './interfaces/permitCreateRequest';
 export * from './interfaces/permitCreateResponse';
 export * from './interfaces/permitResponse';
-export * from './interfaces/assessmentStatusUpdateRequest';
+export * from './interfaces/permitStatusUpdateRequest';
 export * from './interfaces/workResponse';
 export * from './interfaces/workStartUpdateRequest';
 export * from './interfaces/workStopUpdateRequest';

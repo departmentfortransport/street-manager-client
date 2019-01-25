@@ -70,13 +70,6 @@ export enum PermitStatus {
   deemed_in_progress = 'deemed_in_progress'
 }
 
-export enum AssessmentStatus {
-  granted_proposed = 'granted_proposed',
-  granted_with_changes = 'granted_with_changes',
-  refused = 'refused',
-  deemed_proposed = 'deemed_proposed'
-}
-
 export enum ReinstatementStatus {
   interim = 'interim',
   permanent = 'permanent'
