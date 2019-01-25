@@ -5,7 +5,7 @@ import { WorkCreateResponse } from '../interfaces/workCreateResponse';
 import { PermitCreateRequest } from '../interfaces/permitCreateRequest';
 import { PermitCreateResponse } from '../interfaces/permitCreateResponse';
 import { PermitResponse } from '../interfaces/permitResponse';
-import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpdateRequest';
+import { PermitStatusUpdateRequest } from '../interfaces/permitStatusUpdateRequest';
 import { WorkResponse } from '../interfaces/workResponse';
 import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest';
 import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest';
@@ -44,7 +44,7 @@ export declare class StreetManagerApiClient {
     createPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitCreateRequest: PermitCreateRequest): Promise<PermitCreateResponse>;
     getPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string): Promise<PermitResponse>;
     getWork(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkResponse>;
-    updatePermitAssessmentStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void>;
+    updatePermitStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, updatePermitStatusRequest: PermitStatusUpdateRequest): Promise<void>;
     updateWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void>;
     updateWorkActualStopDate(requestConfig: RequestConfig, workReferenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void>;
     updateExcavationCarriedOut(requestConfig: RequestConfig, workReferenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void>;
