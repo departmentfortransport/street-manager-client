@@ -5,7 +5,7 @@ import { WorkCreateResponse } from '../interfaces/workCreateResponse'
 import { PermitCreateRequest } from '../interfaces/permitCreateRequest'
 import { PermitCreateResponse } from '../interfaces/permitCreateResponse'
 import { PermitResponse } from '../interfaces/permitResponse'
-import { AssessmentStatusUpdateRequest } from '../interfaces/assessmentStatusUpdateRequest'
+import { PermitStatusUpdateRequest } from '../interfaces/permitStatusUpdateRequest'
 import { WorkResponse } from '../interfaces/workResponse'
 import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest'
 import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest'
@@ -70,8 +70,8 @@ export class StreetManagerApiClient {
     return this.httpHandler<WorkResponse>(() => this.axios.get(`/works/${workReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updatePermitAssessmentStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, updateAssessmentStatusRequest: AssessmentStatusUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/status`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)))
+  public async updatePermitStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, updatePermitStatusRequest: PermitStatusUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/status`, updatePermitStatusRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updateWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void> {
