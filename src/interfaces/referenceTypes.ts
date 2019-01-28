@@ -80,6 +80,11 @@ export enum InspectionType {
   reinstatement = 'reinstatement'
 }
 
+export enum InspectionResponseType {
+  inspection = 'inspection',
+  reinspection = 'reinspection'
+}
+
 export enum InspectionCategory {
   a = 'a',
   b = 'b',

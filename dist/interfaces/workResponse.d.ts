@@ -1,4 +1,4 @@
-import { InspectionResponse } from './inspectionResponse';
+import { InspectionSummaryResponse } from './inspectionSummaryResponse';
 import { SiteSummaryResponse } from './siteSummaryResponse';
 import { PermitSummaryResponse } from './permitSummaryResponse';
 import { FPNSummaryResponse } from './fpnSummaryResponse';
@@ -9,6 +9,6 @@ export interface WorkResponse {
     active_permit: PermitResponse;
     permits: PermitSummaryResponse[];
     sites?: SiteSummaryResponse[];
-    inspections?: InspectionResponse[];
+    inspections?: InspectionSummaryResponse[];
     fpns?: FPNSummaryResponse[];
 }

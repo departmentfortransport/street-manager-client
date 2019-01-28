@@ -82,6 +82,11 @@ var InspectionType;
     InspectionType["slg"] = "slg";
     InspectionType["reinstatement"] = "reinstatement";
 })(InspectionType = exports.InspectionType || (exports.InspectionType = {}));
+var InspectionResponseType;
+(function (InspectionResponseType) {
+    InspectionResponseType["inspection"] = "inspection";
+    InspectionResponseType["reinspection"] = "reinspection";
+})(InspectionResponseType = exports.InspectionResponseType || (exports.InspectionResponseType = {}));
 var InspectionCategory;
 (function (InspectionCategory) {
     InspectionCategory["a"] = "a";
