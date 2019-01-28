@@ -72,13 +72,6 @@ var PermitStatus;
     PermitStatus["deemed_proposed"] = "deemed_proposed";
     PermitStatus["deemed_in_progress"] = "deemed_in_progress";
 })(PermitStatus = exports.PermitStatus || (exports.PermitStatus = {}));
-var AssessmentStatus;
-(function (AssessmentStatus) {
-    AssessmentStatus["granted_proposed"] = "granted_proposed";
-    AssessmentStatus["granted_with_changes"] = "granted_with_changes";
-    AssessmentStatus["refused"] = "refused";
-    AssessmentStatus["deemed_proposed"] = "deemed_proposed";
-})(AssessmentStatus = exports.AssessmentStatus || (exports.AssessmentStatus = {}));
 var ReinstatementStatus;
 (function (ReinstatementStatus) {
     ReinstatementStatus["interim"] = "interim";
