@@ -37,6 +37,7 @@ export interface WorkCreateRequest {
   application_type: ApplicationType
   collaboration_type?: CollaborationType
   location_types: LocationType[]
-  file_ids?: number[],
+  file_ids?: number[]
   permit_asds?: PermitASD[]
+  is_ttro_required?: boolean
 }
