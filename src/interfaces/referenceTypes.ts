@@ -150,3 +150,10 @@ export enum CommentTopic {
   INSPECTION = 'INSPECTION',
   FPN = 'FPN'
 }
+
+export enum AlterationStatus {
+  submitted = 'submitted',
+  granted = 'granted',
+  refused = 'refused',
+  deemed = 'deemed'
+}

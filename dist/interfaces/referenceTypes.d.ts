@@ -134,3 +134,9 @@ export declare enum CommentTopic {
     INSPECTION = "INSPECTION",
     FPN = "FPN"
 }
+export declare enum AlterationStatus {
+    submitted = "submitted",
+    granted = "granted",
+    refused = "refused",
+    deemed = "deemed"
+}

@@ -31,6 +31,8 @@ import { FPNResponse } from '../interfaces/fpnResponse'
 import { FPNStatusUpdateRequest } from '../interfaces/fpnStatusUpdateRequest'
 import { InspectionCreateResponse } from '../interfaces/inspectionCreateResponse'
 import { DurationCalculationResponse } from '../interfaces/durationCalculationResponse'
+import { PermitAlterationCreateResponse } from '../interfaces/permitAlterationCreateResponse'
+import { PermitRequest } from '../interfaces/permitRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -124,6 +126,10 @@ export class StreetManagerApiClient {
 
   public async createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<CommentCreateResponse> {
     return this.httpHandler<CommentCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/comments`, commentCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationRequest: PermitRequest): Promise<PermitAlterationCreateResponse> {
+    return this.httpHandler<PermitAlterationCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations`, permitAlterationRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse> {
