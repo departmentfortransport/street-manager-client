@@ -32,4 +32,5 @@ export interface PermitRequest {
   early_start_reason?: string
   is_ttro_required?: boolean
   file_ids?: number[]
+  additional_info?: string
 }
