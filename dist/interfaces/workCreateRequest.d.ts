@@ -43,4 +43,5 @@ export interface WorkCreateRequest {
     pre_approval_details?: string;
     pre_approval_authoriser?: string;
     early_start_reason?: string;
+    additional_info?: string;
 }
