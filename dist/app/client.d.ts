@@ -32,6 +32,7 @@ import { InspectionCreateResponse } from '../interfaces/inspectionCreateResponse
 import { DurationCalculationResponse } from '../interfaces/durationCalculationResponse';
 import { PermitAlterationCreateResponse } from '../interfaces/permitAlterationCreateResponse';
 import { PermitAlterationCreateRequest } from '../interfaces/permitAlterationCreateRequest';
+import { PermitAlterationStatusUpdateRequest } from '../interfaces/permitAlterationStatusUpdateRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -61,6 +62,7 @@ export declare class StreetManagerApiClient {
     updateFPNStatus(requestConfig: RequestConfig, workReferenceNumber: string, fpnReferenceNumber: string, fpnStatusUpdateRequest: FPNStatusUpdateRequest): Promise<void>;
     createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<CommentCreateResponse>;
     createPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationRequest: PermitAlterationCreateRequest): Promise<PermitAlterationCreateResponse>;
+    updatePermitAlterationStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string, updatePermitAlterationStatusRequest: PermitAlterationStatusUpdateRequest): Promise<void>;
     uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse>;
     getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>>;
     deleteFile(requestConfig: RequestConfig, fileId: number): Promise<void>;
