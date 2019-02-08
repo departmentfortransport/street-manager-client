@@ -45,7 +45,7 @@ export interface StreetManagerApiClientConfig {
 
 export class StreetManagerApiClient {
   private axios: AxiosInstance
-  constructor(private config: StreetManagerApiClientConfig) {
+  constructor (private config: StreetManagerApiClientConfig) {
     this.axios = axios.create({
       baseURL: this.config.baseURL,
       timeout: this.config.timeout
