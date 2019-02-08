@@ -1,4 +1,4 @@
-import { ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType } from './referenceTypes';
+import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType } from './referenceTypes';
 import { PermitCondition } from './permitCondition';
 export interface PermitRequest {
     promoter_contact_details: string;
@@ -20,7 +20,6 @@ export interface PermitRequest {
     collaboration_details?: string;
     collaborative_works?: string;
     activity_type: ActivityType;
-    work_category: WorkCategory;
     traffic_management_type: TrafficManagementType;
     application_type: ApplicationType;
     collaboration_type?: CollaborationType;
@@ -29,7 +28,9 @@ export interface PermitRequest {
     pre_approval_details?: string;
     pre_approval_authoriser?: string;
     early_start_reason?: string;
+    work_type: WorkType;
     is_ttro_required?: boolean;
+    immediate_risk?: boolean;
     file_ids?: number[];
     additional_info?: string;
 }
