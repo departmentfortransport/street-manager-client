@@ -50,6 +50,11 @@ var TrafficManagementType;
     TrafficManagementType["some_carriageway_incursion"] = "some_carriageway_incursion";
     TrafficManagementType["no_carriageway_incursion"] = "no_carriageway_incursion";
 })(TrafficManagementType = exports.TrafficManagementType || (exports.TrafficManagementType = {}));
+var WorkType;
+(function (WorkType) {
+    WorkType["planned"] = "planned";
+    WorkType["immediate"] = "immediate";
+})(WorkType = exports.WorkType || (exports.WorkType = {}));
 var WorkCategory;
 (function (WorkCategory) {
     WorkCategory["minor"] = "minor";

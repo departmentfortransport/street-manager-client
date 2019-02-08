@@ -33,6 +33,8 @@ import { DurationCalculationResponse } from '../interfaces/durationCalculationRe
 import { PermitAlterationCreateResponse } from '../interfaces/permitAlterationCreateResponse';
 import { PermitAlterationCreateRequest } from '../interfaces/permitAlterationCreateRequest';
 import { PermitAlterationStatusUpdateRequest } from '../interfaces/permitAlterationStatusUpdateRequest';
+import { WorkCategoryResponse } from '../interfaces/workCategoryResponse';
+import { GetWorkCategoryRequest } from '../interfaces/getWorkCategoryRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -68,6 +70,7 @@ export declare class StreetManagerApiClient {
     deleteFile(requestConfig: RequestConfig, fileId: number): Promise<void>;
     getWorkHistory(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkHistoryResponse[]>;
     getDuration(requestConfig: RequestConfig, startDate: string, endDate: string): Promise<DurationCalculationResponse>;
+    getWorkCategory(requestConfig: RequestConfig, getWorkCategoryRequest: GetWorkCategoryRequest): Promise<WorkCategoryResponse>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;

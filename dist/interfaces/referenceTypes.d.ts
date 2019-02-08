@@ -43,6 +43,10 @@ export declare enum TrafficManagementType {
     some_carriageway_incursion = "some_carriageway_incursion",
     no_carriageway_incursion = "no_carriageway_incursion"
 }
+export declare enum WorkType {
+    planned = "planned",
+    immediate = "immediate"
+}
 export declare enum WorkCategory {
     minor = "minor",
     standard = "standard",
