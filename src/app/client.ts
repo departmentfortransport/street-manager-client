@@ -32,7 +32,7 @@ import { FPNStatusUpdateRequest } from '../interfaces/fpnStatusUpdateRequest'
 import { InspectionCreateResponse } from '../interfaces/inspectionCreateResponse'
 import { DurationCalculationResponse } from '../interfaces/durationCalculationResponse'
 import { PermitAlterationCreateResponse } from '../interfaces/permitAlterationCreateResponse'
-import { PermitRequest } from '../interfaces/permitRequest'
+import { PermitAlterationCreateRequest } from '../interfaces/permitAlterationCreateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -128,7 +128,7 @@ export class StreetManagerApiClient {
     return this.httpHandler<CommentCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/comments`, commentCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationRequest: PermitRequest): Promise<PermitAlterationCreateResponse> {
+  public async createPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationRequest: PermitAlterationCreateRequest): Promise<PermitAlterationCreateResponse> {
     return this.httpHandler<PermitAlterationCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations`, permitAlterationRequest, this.generateRequestConfig(requestConfig)))
   }
 

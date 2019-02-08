@@ -6,6 +6,7 @@ export * from './interfaces/permitRequest';
 export * from './interfaces/permitResponse';
 export * from './interfaces/permitCreateRequest';
 export * from './interfaces/permitCreateResponse';
+export * from './interfaces/permitAlterationCreateRequest';
 export * from './interfaces/permitAlterationCreateResponse';
 export * from './interfaces/permitStatusUpdateRequest';
 export * from './interfaces/workResponse';
