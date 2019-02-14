@@ -33,6 +33,7 @@ import { InspectionCreateResponse } from '../interfaces/inspectionCreateResponse
 import { DurationCalculationResponse } from '../interfaces/durationCalculationResponse'
 import { PermitAlterationCreateResponse } from '../interfaces/permitAlterationCreateResponse'
 import { PermitAlterationCreateRequest } from '../interfaces/permitAlterationCreateRequest'
+import { PermitAlterationStatusUpdateRequest } from '../interfaces/permitAlterationStatusUpdateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -130,6 +131,10 @@ export class StreetManagerApiClient {
 
   public async createPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationRequest: PermitAlterationCreateRequest): Promise<PermitAlterationCreateResponse> {
     return this.httpHandler<PermitAlterationCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations`, permitAlterationRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updatePermitAlterationStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string, updatePermitAlterationStatusRequest: PermitAlterationStatusUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations/${permitAlterationReferenceNumber}/status`, updatePermitAlterationStatusRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse> {
