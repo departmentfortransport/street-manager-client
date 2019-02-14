@@ -11,6 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
 const http_status_codes_1 = require("http-status-codes");
 const FormData = require("form-data");
+const qs = require("qs");
 class StreetManagerApiClient {
     constructor(config) {
         this.config = config;
@@ -166,6 +167,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.get(`/duration?startDate=${startDate}&endDate=${endDate}`, this.generateRequestConfig(requestConfig)));
         });
     }
+    getWorkCategory(requestConfig, getWorkCategoryRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.get('/permits/category', this.generateRequestConfig(requestConfig, getWorkCategoryRequest)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
@@ -183,13 +189,23 @@ class StreetManagerApiClient {
         err.status = err.response ? err.response.status : http_status_codes_1.INTERNAL_SERVER_ERROR;
         return Promise.reject(err);
     }
-    generateRequestConfig(config) {
-        let headers = {};
-        if (config.token) {
-            headers['token'] = config.token;
+    generateRequestConfig(config, request) {
+        let requestConfig = {
+            headers: {
+                token: config.token,
+                'x-request-id': config.requestId
+            }
+        };
+        if (!request) {
+            requestConfig.params = {};
         }
-        headers['x-request-id'] = config.requestId;
-        return { headers: headers, params: {} };
+        else {
+            requestConfig.params = request;
+            requestConfig.paramsSerializer = (params) => {
+                return qs.stringify(params, { arrayFormat: 'repeat' });
+            };
+        }
+        return requestConfig;
     }
 }
 exports.StreetManagerApiClient = StreetManagerApiClient;

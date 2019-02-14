@@ -48,6 +48,11 @@ export enum TrafficManagementType {
   no_carriageway_incursion = 'no_carriageway_incursion'
 }
 
+export enum WorkType {
+  planned = 'planned',
+  immediate = 'immediate'
+}
+
 export enum WorkCategory {
   minor = 'minor',
   standard = 'standard',
