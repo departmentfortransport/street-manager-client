@@ -2,7 +2,6 @@ import { InspectionCategory, InspectionOutcome, DefectFixedOnsite, InspectionTyp
 import { FileResponse } from './fileResponse';
 export interface InspectionResponse {
     inspection_reference_number: string;
-    permit_id: number;
     inspection_type: InspectionType;
     inspection_start_date: Date;
     inspection_category: InspectionCategory;
