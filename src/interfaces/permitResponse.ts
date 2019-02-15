@@ -3,6 +3,7 @@ import { PermitCondition } from './permitCondition'
 import { FileResponse } from './fileResponse'
 import { PermitASD } from './permitASD'
 import { PermitSummaryResponse } from './permitSummaryResponse'
+import { PermitAlterationSummaryResponse } from './permitAlterationSummaryResponse'
 
 export interface PermitResponse extends PermitSummaryResponse {
   permit_id: number
@@ -57,4 +58,5 @@ export interface PermitResponse extends PermitSummaryResponse {
   pre_approval_authoriser?: string
   early_start_reason?: string
   additional_info?: string
+  permit_alterations?: PermitAlterationSummaryResponse[]
 }
