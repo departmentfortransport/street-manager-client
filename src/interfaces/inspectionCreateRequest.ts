@@ -15,5 +15,6 @@ export interface InspectionCreateRequest {
     inspection_evidence?: boolean,
     file_ids?: number[],
     reinspection_date?: Date,
-    reinspection_date_time?: Date
+    reinspection_date_time?: Date,
+    username: string
 }

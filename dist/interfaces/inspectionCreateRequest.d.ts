@@ -15,4 +15,5 @@ export interface InspectionCreateRequest {
     file_ids?: number[];
     reinspection_date?: Date;
     reinspection_date_time?: Date;
+    username: string;
 }

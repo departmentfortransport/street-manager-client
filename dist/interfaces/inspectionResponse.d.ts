@@ -20,4 +20,7 @@ export interface InspectionResponse {
     work_reference_number: string;
     reinspection_date?: Date;
     reinspection_date_time?: Date;
+    username: string;
+    promoter_organisation: string;
+    highway_authority: string;
 }
