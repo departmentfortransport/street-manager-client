@@ -33,6 +33,10 @@ import { InspectionCreateResponse } from '../interfaces/inspectionCreateResponse
 import { DurationCalculationResponse } from '../interfaces/durationCalculationResponse'
 import { PermitAlterationCreateResponse } from '../interfaces/permitAlterationCreateResponse'
 import { PermitAlterationCreateRequest } from '../interfaces/permitAlterationCreateRequest'
+import { PermitAlterationStatusUpdateRequest } from '../interfaces/permitAlterationStatusUpdateRequest'
+import { WorkCategoryResponse } from '../interfaces/workCategoryResponse'
+import { GetWorkCategoryRequest } from '../interfaces/getWorkCategoryRequest'
+import * as qs from 'qs'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -132,6 +136,10 @@ export class StreetManagerApiClient {
     return this.httpHandler<PermitAlterationCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations`, permitAlterationRequest, this.generateRequestConfig(requestConfig)))
   }
 
+  public async updatePermitAlterationStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string, updatePermitAlterationStatusRequest: PermitAlterationStatusUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations/${permitAlterationReferenceNumber}/status`, updatePermitAlterationStatusRequest, this.generateRequestConfig(requestConfig)))
+  }
+
   public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse> {
     let form: FormData = new FormData()
     form.append('file', buffer, filename)
@@ -165,6 +173,10 @@ export class StreetManagerApiClient {
     return this.httpHandler<DurationCalculationResponse>(() => this.axios.get(`/duration?startDate=${startDate}&endDate=${endDate}`, this.generateRequestConfig(requestConfig)))
   }
 
+  public async getWorkCategory(requestConfig: RequestConfig, getWorkCategoryRequest: GetWorkCategoryRequest): Promise<WorkCategoryResponse> {
+    return this.httpHandler<WorkCategoryResponse>(() => this.axios.get('/permits/category', this.generateRequestConfig(requestConfig, getWorkCategoryRequest)))
+  }
+
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
     try {
       let response: AxiosResponse<T> = await request()
@@ -181,12 +193,23 @@ export class StreetManagerApiClient {
     return Promise.reject(err)
   }
 
-  private generateRequestConfig(config: RequestConfig): AxiosRequestConfig {
-    let headers = {}
-    if (config.token) {
-      headers['token'] = config.token
+  private generateRequestConfig(config: RequestConfig, request?: any): AxiosRequestConfig {
+    let requestConfig: AxiosRequestConfig = {
+      headers: {
+        token: config.token,
+        'x-request-id': config.requestId
+      }
     }
-    headers['x-request-id'] = config.requestId
-    return { headers: headers, params: {} }
+
+    if (!request) {
+      requestConfig.params = {}
+    } else {
+      requestConfig.params = request
+      requestConfig.paramsSerializer = (params) => {
+        return qs.stringify(params, { arrayFormat: 'repeat' })
+      }
+    }
+
+    return requestConfig
   }
 }
