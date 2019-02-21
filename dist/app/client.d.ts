@@ -33,6 +33,7 @@ import { DurationCalculationResponse } from '../interfaces/durationCalculationRe
 import { PermitAlterationCreateResponse } from '../interfaces/permitAlterationCreateResponse';
 import { PermitAlterationCreateRequest } from '../interfaces/permitAlterationCreateRequest';
 import { PermitAlterationStatusUpdateRequest } from '../interfaces/permitAlterationStatusUpdateRequest';
+import { PermitAlterationResponse } from '../interfaces/permitAlterationResponse';
 import { WorkCategoryResponse } from '../interfaces/workCategoryResponse';
 import { GetWorkCategoryRequest } from '../interfaces/getWorkCategoryRequest';
 export interface StreetManagerApiClientConfig {
@@ -65,6 +66,7 @@ export declare class StreetManagerApiClient {
     createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<CommentCreateResponse>;
     createPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationRequest: PermitAlterationCreateRequest): Promise<PermitAlterationCreateResponse>;
     updatePermitAlterationStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string, updatePermitAlterationStatusRequest: PermitAlterationStatusUpdateRequest): Promise<void>;
+    getPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string): Promise<PermitAlterationResponse>;
     uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse>;
     getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>>;
     deleteFile(requestConfig: RequestConfig, fileId: number): Promise<void>;
