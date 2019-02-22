@@ -196,9 +196,12 @@ export class StreetManagerApiClient {
   private generateRequestConfig(config: RequestConfig, request?: any): AxiosRequestConfig {
     let requestConfig: AxiosRequestConfig = {
       headers: {
-        token: config.token,
         'x-request-id': config.requestId
       }
+    }
+
+    if (config.token) {
+      requestConfig.headers.token = config.token
     }
 
     if (!request) {
