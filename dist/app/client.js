@@ -192,10 +192,12 @@ class StreetManagerApiClient {
     generateRequestConfig(config, request) {
         let requestConfig = {
             headers: {
-                token: config.token,
                 'x-request-id': config.requestId
             }
         };
+        if (config.token) {
+            requestConfig.headers.token = config.token;
+        }
         if (!request) {
             requestConfig.params = {};
         }
