@@ -1,4 +1,4 @@
-import { ActivityType, WorkCategory, TrafficManagementType, ApplicationType, CollaborationType, LocationType } from './referenceTypes';
+import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType } from './referenceTypes';
 import { PermitCondition } from './permitCondition';
 import { PermitASD } from './permitASD';
 export interface WorkCreateRequest {
@@ -31,14 +31,15 @@ export interface WorkCreateRequest {
     collaboration_details?: string;
     collaborative_works?: string;
     activity_type: ActivityType;
-    work_category: WorkCategory;
     traffic_management_type: TrafficManagementType;
     application_type: ApplicationType;
     collaboration_type?: CollaborationType;
     location_types: LocationType[];
     file_ids?: number[];
     permit_asds?: PermitASD[];
+    work_type: WorkType;
     is_ttro_required?: boolean;
+    immediate_risk?: boolean;
     early_start_pre_approval?: boolean;
     pre_approval_details?: string;
     pre_approval_authoriser?: string;
