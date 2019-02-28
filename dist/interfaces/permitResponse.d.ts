@@ -52,6 +52,7 @@ export interface PermitResponse extends PermitSummaryResponse {
     permit_asds: PermitASD[];
     assessment_discount?: number;
     is_ttro_required?: boolean;
+    immediate_risk?: boolean;
     early_start_pre_approval?: boolean;
     pre_approval_details?: string;
     pre_approval_authoriser?: string;
