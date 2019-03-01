@@ -1,4 +1,4 @@
-import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, PermitStatus } from './referenceTypes'
+import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, PermitStatus, WorkType } from './referenceTypes'
 import { PermitCondition } from './permitCondition'
 import { FileResponse } from './fileResponse'
 import { PermitASD } from './permitASD'
@@ -58,5 +58,6 @@ export interface PermitResponse extends PermitSummaryResponse {
   pre_approval_authoriser?: string
   early_start_reason?: string
   additional_info?: string
-  permit_alterations?: PermitAlterationSummaryResponse[]
+  permit_alterations?: PermitAlterationSummaryResponse[],
+  work_type: WorkType
 }
