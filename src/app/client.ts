@@ -34,6 +34,7 @@ import { DurationCalculationResponse } from '../interfaces/durationCalculationRe
 import { PermitAlterationCreateResponse } from '../interfaces/permitAlterationCreateResponse'
 import { PermitAlterationCreateRequest } from '../interfaces/permitAlterationCreateRequest'
 import { PermitAlterationStatusUpdateRequest } from '../interfaces/permitAlterationStatusUpdateRequest'
+import { PermitAlterationResponse } from '../interfaces/permitAlterationResponse'
 import { WorkCategoryResponse } from '../interfaces/workCategoryResponse'
 import { GetWorkCategoryRequest } from '../interfaces/getWorkCategoryRequest'
 import * as qs from 'qs'
@@ -138,6 +139,10 @@ export class StreetManagerApiClient {
 
   public async updatePermitAlterationStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string, updatePermitAlterationStatusRequest: PermitAlterationStatusUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations/${permitAlterationReferenceNumber}/status`, updatePermitAlterationStatusRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async getPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string): Promise<PermitAlterationResponse> {
+    return this.httpHandler<PermitAlterationResponse>(() => this.axios.get(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations/${permitAlterationReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
   public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse> {
