@@ -146,3 +146,8 @@ export declare enum AlterationStatus {
     refused = "refused",
     deemed = "deemed"
 }
+export declare enum AlterationType {
+    STANDARD = "PERMIT_CHANGE_REQUEST",
+    EXTENSION = "PERMIT_CHANGE_EXTENSION",
+    AIV = "PERMIT_CHANGE_AIV"
+}
