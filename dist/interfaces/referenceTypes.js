@@ -167,3 +167,9 @@ var AlterationStatus;
     AlterationStatus["refused"] = "refused";
     AlterationStatus["deemed"] = "deemed";
 })(AlterationStatus = exports.AlterationStatus || (exports.AlterationStatus = {}));
+var AlterationType;
+(function (AlterationType) {
+    AlterationType["STANDARD"] = "PERMIT_CHANGE_REQUEST";
+    AlterationType["EXTENSION"] = "PERMIT_CHANGE_EXTENSION";
+    AlterationType["AIV"] = "PERMIT_CHANGE_AIV";
+})(AlterationType = exports.AlterationType || (exports.AlterationType = {}));

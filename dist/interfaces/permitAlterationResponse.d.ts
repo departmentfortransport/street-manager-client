@@ -1,6 +1,6 @@
 import { PermitAlterationSummaryResponse } from './permitAlterationSummaryResponse';
 import { PermitResponse } from './permitResponse';
-import { PermitStatus } from './referenceTypes';
+import { PermitStatus, AlterationType } from './referenceTypes';
 export interface PermitAlterationResponse extends PermitAlterationSummaryResponse {
     permit_status?: PermitStatus;
     assessment_discount?: number;
@@ -8,4 +8,5 @@ export interface PermitAlterationResponse extends PermitAlterationSummaryRespons
     permit_alteration_reason: string;
     original: PermitResponse;
     proposed: PermitResponse;
+    alteration_type: AlterationType;
 }
