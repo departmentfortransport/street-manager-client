@@ -83,7 +83,8 @@ export enum ReinstatementStatus {
 
 export enum InspectionType {
   slg = 'slg',
-  reinstatement = 'reinstatement'
+  reinstatement = 'reinstatement',
+  defect_inspection = 'defect_inspection'
 }
 
 export enum InspectionResponseType {
@@ -96,15 +97,19 @@ export enum InspectionCategory {
   b = 'b',
   c = 'c',
   third_party = 'third_party',
-  routine = 'routine'
+  routine = 'routine',
+  joint_site_visit = 'joint_site_visit',
+  follow_up = 'follow_up',
+  follow_up_completion = 'follow_up_completion'
 }
 
 export enum InspectionOutcome {
   passed = 'passed',
-  unable_to_complete = 'unable_to_complete',
-  failed_standard = 'failed_standard',
-  failed_2_hour = 'failed_2_hour',
-  failed_4_hour = 'failed_4_hour'
+  unable_to_complete_inspection = 'unable_to_complete_inspection',
+  failed_low = 'failed_low',
+  failed_high = 'failed_high',
+  further_inspections_required = 'further_inspections_required',
+  withdraw_defect = 'withdraw-defect'
 }
 
 export enum DefectFixedOnsite {
