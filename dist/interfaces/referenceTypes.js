@@ -112,7 +112,7 @@ var InspectionOutcome;
     InspectionOutcome["failed_low"] = "failed_low";
     InspectionOutcome["failed_high"] = "failed_high";
     InspectionOutcome["further_inspections_required"] = "further_inspections_required";
-    InspectionOutcome["withdraw_defect"] = "withdraw-defect";
+    InspectionOutcome["withdraw_defect"] = "withdraw_defect";
 })(InspectionOutcome = exports.InspectionOutcome || (exports.InspectionOutcome = {}));
 var DefectFixedOnsite;
 (function (DefectFixedOnsite) {

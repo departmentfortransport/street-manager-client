@@ -109,7 +109,7 @@ export enum InspectionOutcome {
   failed_low = 'failed_low',
   failed_high = 'failed_high',
   further_inspections_required = 'further_inspections_required',
-  withdraw_defect = 'withdraw-defect'
+  withdraw_defect = 'withdraw_defect'
 }
 
 export enum DefectFixedOnsite {
