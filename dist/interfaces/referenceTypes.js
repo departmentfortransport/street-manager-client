@@ -87,6 +87,7 @@ var InspectionType;
 (function (InspectionType) {
     InspectionType["slg"] = "slg";
     InspectionType["reinstatement"] = "reinstatement";
+    InspectionType["defect_inspection"] = "defect_inspection";
 })(InspectionType = exports.InspectionType || (exports.InspectionType = {}));
 var InspectionResponseType;
 (function (InspectionResponseType) {
@@ -100,14 +101,18 @@ var InspectionCategory;
     InspectionCategory["c"] = "c";
     InspectionCategory["third_party"] = "third_party";
     InspectionCategory["routine"] = "routine";
+    InspectionCategory["joint_site_visit"] = "joint_site_visit";
+    InspectionCategory["follow_up"] = "follow_up";
+    InspectionCategory["follow_up_completion"] = "follow_up_completion";
 })(InspectionCategory = exports.InspectionCategory || (exports.InspectionCategory = {}));
 var InspectionOutcome;
 (function (InspectionOutcome) {
     InspectionOutcome["passed"] = "passed";
-    InspectionOutcome["unable_to_complete"] = "unable_to_complete";
-    InspectionOutcome["failed_standard"] = "failed_standard";
-    InspectionOutcome["failed_2_hour"] = "failed_2_hour";
-    InspectionOutcome["failed_4_hour"] = "failed_4_hour";
+    InspectionOutcome["unable_to_complete_inspection"] = "unable_to_complete_inspection";
+    InspectionOutcome["failed_low"] = "failed_low";
+    InspectionOutcome["failed_high"] = "failed_high";
+    InspectionOutcome["further_inspections_required"] = "further_inspections_required";
+    InspectionOutcome["withdraw_defect"] = "withdraw_defect";
 })(InspectionOutcome = exports.InspectionOutcome || (exports.InspectionOutcome = {}));
 var DefectFixedOnsite;
 (function (DefectFixedOnsite) {
