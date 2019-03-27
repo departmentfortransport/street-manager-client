@@ -171,10 +171,13 @@ var AlterationStatus;
     AlterationStatus["granted"] = "granted";
     AlterationStatus["refused"] = "refused";
     AlterationStatus["deemed"] = "deemed";
+    AlterationStatus["cancelled"] = "cancelled";
 })(AlterationStatus = exports.AlterationStatus || (exports.AlterationStatus = {}));
 var AlterationType;
 (function (AlterationType) {
-    AlterationType["STANDARD"] = "PERMIT_CHANGE_REQUEST";
-    AlterationType["EXTENSION"] = "PERMIT_CHANGE_EXTENSION";
-    AlterationType["AIV"] = "PERMIT_CHANGE_AIV";
+    AlterationType["PROMOTER_CHANGE_REQUEST"] = "PROMOTER_CHANGE_REQUEST";
+    AlterationType["HA_CHANGE_REQUEST"] = "HA_CHANGE_REQUEST";
+    AlterationType["HA_IMPOSED_CHANGE"] = "HA_IMPOSED_CHANGE";
+    AlterationType["WORK_EXTENSION"] = "WORK_EXTENSION";
+    AlterationType["DURATION_CHALLENGE"] = "DURATION_CHALLENGE";
 })(AlterationType = exports.AlterationType || (exports.AlterationType = {}));
