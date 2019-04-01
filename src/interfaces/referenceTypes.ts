@@ -166,6 +166,7 @@ export enum CommentTopic {
 export enum AlterationStatus {
   submitted = 'submitted',
   granted = 'granted',
+  granted_with_duration_challenge = 'granted_with_duration_challenge',
   refused = 'refused',
   deemed = 'deemed',
   cancelled = 'cancelled'

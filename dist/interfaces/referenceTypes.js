@@ -169,6 +169,7 @@ var AlterationStatus;
 (function (AlterationStatus) {
     AlterationStatus["submitted"] = "submitted";
     AlterationStatus["granted"] = "granted";
+    AlterationStatus["granted_with_duration_challenge"] = "granted_with_duration_challenge";
     AlterationStatus["refused"] = "refused";
     AlterationStatus["deemed"] = "deemed";
     AlterationStatus["cancelled"] = "cancelled";
