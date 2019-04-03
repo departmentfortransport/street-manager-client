@@ -1,6 +1,6 @@
 import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, PermitStatus, WorkType } from './referenceTypes';
 import { PermitCondition } from './permitCondition';
-import { FileResponse } from './fileResponse';
+import { FileSummaryResponse } from './fileSummaryResponse';
 import { PermitASD } from './permitASD';
 import { PermitSummaryResponse } from './permitSummaryResponse';
 import { PermitAlterationSummaryResponse } from './permitAlterationSummaryResponse';
@@ -48,7 +48,7 @@ export interface PermitResponse extends PermitSummaryResponse {
     collaboration_type?: CollaborationType;
     location_types: LocationType[];
     assessment_status?: PermitStatus;
-    files?: FileResponse[];
+    files?: FileSummaryResponse[];
     inspection_units?: number;
     permit_asds: PermitASD[];
     assessment_discount?: number;

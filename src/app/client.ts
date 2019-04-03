@@ -18,7 +18,7 @@ import { FPNCreateRequest } from '../interfaces/fpnCreateRequest'
 import { FPNCreateResponse } from '../interfaces/fpnCreateResponse'
 import { AuthenticationResponse } from '../interfaces/authenticationResponse'
 import { AuthenticationRequest } from '../interfaces/authenticationRequest'
-import { FileResponse } from '../interfaces/fileResponse'
+import { FileSummaryResponse } from '../interfaces/fileSummaryResponse'
 import * as FormData from 'form-data'
 import { RequestConfig } from '../interfaces/requestConfig'
 import { WorkHistoryResponse } from '../interfaces/workHistoryResponse'
@@ -37,6 +37,7 @@ import { PermitAlterationStatusUpdateRequest } from '../interfaces/permitAlterat
 import { PermitAlterationResponse } from '../interfaces/permitAlterationResponse'
 import { WorkCategoryResponse } from '../interfaces/workCategoryResponse'
 import { GetWorkCategoryRequest } from '../interfaces/getWorkCategoryRequest'
+import { AddFileToWorkRequest } from '../interfaces/addFileToWorkRequest'
 import * as qs from 'qs'
 
 export interface StreetManagerApiClientConfig {
@@ -97,6 +98,10 @@ export class StreetManagerApiClient {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/inspection-units`, inspectionUnitsUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
+  public async addFileToWork(requestConfig: RequestConfig, workReferenceNumber: string, addFileToWorkRequest: AddFileToWorkRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/works/${workReferenceNumber}/files`, addFileToWorkRequest, this.generateRequestConfig(requestConfig)))
+  }
+
   public async createSite(requestConfig: RequestConfig, workReferenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<SiteCreateResponse> {
     return this.httpHandler<SiteCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/sites`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)))
   }
@@ -145,14 +150,14 @@ export class StreetManagerApiClient {
     return this.httpHandler<PermitAlterationResponse>(() => this.axios.get(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations/${permitAlterationReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse> {
+  public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileSummaryResponse> {
     let form: FormData = new FormData()
     form.append('file', buffer, filename)
 
     let config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
     Object.assign(config.headers, form.getHeaders())
 
-    return this.httpHandler<FileResponse>(() => this.axios.post('/files', form, config))
+    return this.httpHandler<FileSummaryResponse>(() => this.axios.post('/files', form, config))
   }
 
   public async getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>> {
