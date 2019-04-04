@@ -77,6 +77,10 @@ var PermitStatus;
     PermitStatus["revoked_in_progress"] = "revoked_in_progress";
     PermitStatus["deemed_proposed"] = "deemed_proposed";
     PermitStatus["deemed_in_progress"] = "deemed_in_progress";
+    PermitStatus["granted_auto"] = "granted_auto";
+    PermitStatus["refused_auto"] = "refused_auto";
+    PermitStatus["cancelled_auto"] = "cancelled_auto";
+    PermitStatus["awaiting_assessment_in_progress"] = "awaiting_assessment_in_progress";
 })(PermitStatus = exports.PermitStatus || (exports.PermitStatus = {}));
 var ReinstatementStatus;
 (function (ReinstatementStatus) {
