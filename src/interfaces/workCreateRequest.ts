@@ -20,7 +20,7 @@ export interface WorkCreateRequest {
   lane_rental_applicable: boolean
   permit_conditions?: PermitCondition[]
   street_name: string
-  area_name: string
+  area_name?: string
   usrn: number
   highway_authority: string
   highway_authority_swa_code: string
