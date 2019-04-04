@@ -62,4 +62,5 @@ export interface PermitResponse extends PermitSummaryResponse {
     permit_alterations?: PermitAlterationSummaryResponse[];
     work_type: WorkType;
     is_progressed_paa?: boolean;
+    revoke_reason?: string;
 }

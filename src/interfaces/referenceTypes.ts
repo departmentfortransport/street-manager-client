@@ -77,7 +77,8 @@ export enum PermitStatus {
   granted_auto = 'granted_auto',
   refused_auto = 'refused_auto',
   cancelled_auto = 'cancelled_auto',
-  awaiting_assessment_in_progress = 'awaiting_assessment_in_progress'
+  awaiting_assessment_in_progress = 'awaiting_assessment_in_progress',
+  revoked_closed = 'revoked_closed'
 }
 
 export enum ReinstatementStatus {
