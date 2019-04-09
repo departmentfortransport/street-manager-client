@@ -61,5 +61,6 @@ export interface PermitResponse extends PermitSummaryResponse {
   early_start_reason?: string
   additional_info?: string
   permit_alterations?: PermitAlterationSummaryResponse[],
-  work_type: WorkType
+  work_type: WorkType,
+  is_progressed_paa?: boolean
 }
