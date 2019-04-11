@@ -60,7 +60,8 @@ export interface PermitResponse extends PermitSummaryResponse {
   pre_approval_authoriser?: string
   early_start_reason?: string
   additional_info?: string
-  permit_alterations?: PermitAlterationSummaryResponse[],
-  work_type: WorkType,
+  permit_alterations?: PermitAlterationSummaryResponse[]
+  work_type: WorkType
   is_progressed_paa?: boolean
+  revoke_reason?: string
 }
