@@ -156,7 +156,8 @@ export declare enum AlterationStatus {
     granted_with_duration_challenge = "granted_with_duration_challenge",
     refused = "refused",
     deemed = "deemed",
-    cancelled = "cancelled"
+    cancelled = "cancelled",
+    revoked = "revoked"
 }
 export declare enum AlterationType {
     PROMOTER_CHANGE_REQUEST = "PROMOTER_CHANGE_REQUEST",
