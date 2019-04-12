@@ -4,6 +4,7 @@ import { PermitSummaryResponse } from './permitSummaryResponse'
 import { FPNSummaryResponse } from './fpnSummaryResponse'
 import { PermitResponse } from './permitResponse'
 import { WorkHistoryResponse } from './workHistoryResponse'
+import { FileResponse} from './fileResponse'
 
 export interface WorkResponse {
   work_id: number
@@ -14,4 +15,5 @@ export interface WorkResponse {
   sites?: SiteSummaryResponse[]
   inspections?: InspectionSummaryResponse[]
   fpns?: FPNSummaryResponse[]
+  files?: FileResponse[]
 }

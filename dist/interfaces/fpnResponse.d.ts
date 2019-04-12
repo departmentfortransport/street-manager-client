@@ -1,5 +1,5 @@
 import { FPNSummaryResponse } from './fpnSummaryResponse';
-import { FileResponse } from './fileResponse';
+import { FileSummaryResponse } from './fileSummaryResponse';
 export interface FPNResponse extends FPNSummaryResponse {
     location: string;
     offence_date: Date;
@@ -9,5 +9,5 @@ export interface FPNResponse extends FPNSummaryResponse {
     work_reference_number: string;
     promoter_organisation: string;
     ha_organisation: string;
-    files?: FileResponse[];
+    files?: FileSummaryResponse[];
 }
