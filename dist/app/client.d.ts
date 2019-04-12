@@ -18,7 +18,7 @@ import { FPNCreateRequest } from '../interfaces/fpnCreateRequest';
 import { FPNCreateResponse } from '../interfaces/fpnCreateResponse';
 import { AuthenticationResponse } from '../interfaces/authenticationResponse';
 import { AuthenticationRequest } from '../interfaces/authenticationRequest';
-import { FileResponse } from '../interfaces/fileResponse';
+import { FileSummaryResponse } from '../interfaces/fileSummaryResponse';
 import { RequestConfig } from '../interfaces/requestConfig';
 import { WorkHistoryResponse } from '../interfaces/workHistoryResponse';
 import { SiteResponse } from '../interfaces/siteResponse';
@@ -36,6 +36,7 @@ import { PermitAlterationStatusUpdateRequest } from '../interfaces/permitAlterat
 import { PermitAlterationResponse } from '../interfaces/permitAlterationResponse';
 import { WorkCategoryResponse } from '../interfaces/workCategoryResponse';
 import { GetWorkCategoryRequest } from '../interfaces/getWorkCategoryRequest';
+import { AddFileToWorkRequest } from '../interfaces/addFileToWorkRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -55,6 +56,7 @@ export declare class StreetManagerApiClient {
     updateWorkActualStopDate(requestConfig: RequestConfig, workReferenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void>;
     updateExcavationCarriedOut(requestConfig: RequestConfig, workReferenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void>;
     updateInspectionUnits(requestConfig: RequestConfig, workReferenceNumber: string, inspectionUnitsUpdateRequest: InspectionUnitsUpdateRequest): Promise<void>;
+    addFileToWork(requestConfig: RequestConfig, workReferenceNumber: string, addFileToWorkRequest: AddFileToWorkRequest): Promise<void>;
     createSite(requestConfig: RequestConfig, workReferenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<SiteCreateResponse>;
     createReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, siteId: number, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementCreateResponse>;
     getSite(requestConfig: RequestConfig, workReferenceNumber: string, siteId: number): Promise<SiteResponse>;
@@ -67,7 +69,7 @@ export declare class StreetManagerApiClient {
     createPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationRequest: PermitAlterationCreateRequest): Promise<PermitAlterationCreateResponse>;
     updatePermitAlterationStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string, updatePermitAlterationStatusRequest: PermitAlterationStatusUpdateRequest): Promise<void>;
     getPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string): Promise<PermitAlterationResponse>;
-    uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileResponse>;
+    uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileSummaryResponse>;
     getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>>;
     deleteFile(requestConfig: RequestConfig, fileId: number): Promise<void>;
     getWorkHistory(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkHistoryResponse[]>;

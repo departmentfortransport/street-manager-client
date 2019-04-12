@@ -1,5 +1,5 @@
 import { InspectionCategory, InspectionOutcome, DefectFixedOnsite, InspectionType } from './referenceTypes';
-import { FileResponse } from './fileResponse';
+import { FileSummaryResponse } from './fileSummaryResponse';
 export interface InspectionResponse {
     inspection_reference_number: string;
     permit_id: number;
@@ -16,7 +16,7 @@ export interface InspectionResponse {
     additional_failure_comments?: string;
     date_created: Date;
     date_modified: Date;
-    files?: FileResponse[];
+    files?: FileSummaryResponse[];
     work_reference_number: string;
     reinspection_date?: Date;
     reinspection_date_time?: Date;
