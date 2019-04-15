@@ -174,7 +174,8 @@ export enum AlterationStatus {
   granted_with_duration_challenge = 'granted_with_duration_challenge',
   refused = 'refused',
   deemed = 'deemed',
-  cancelled = 'cancelled'
+  cancelled = 'cancelled',
+  revoked = 'revoked'
 }
 
 export enum AlterationType {

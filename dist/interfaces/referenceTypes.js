@@ -178,6 +178,7 @@ var AlterationStatus;
     AlterationStatus["refused"] = "refused";
     AlterationStatus["deemed"] = "deemed";
     AlterationStatus["cancelled"] = "cancelled";
+    AlterationStatus["revoked"] = "revoked";
 })(AlterationStatus = exports.AlterationStatus || (exports.AlterationStatus = {}));
 var AlterationType;
 (function (AlterationType) {
