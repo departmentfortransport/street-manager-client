@@ -1,7 +1,8 @@
 import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType } from './referenceTypes'
 import { PermitCondition } from './permitCondition'
+import { DelegatedUserIdentification } from './delegatedUserIdentification'
 
-export interface PermitRequest {
+export interface PermitRequest extends DelegatedUserIdentification {
   promoter_contact_details: string
   approved_contractor: string
   contractor_contact_details: string

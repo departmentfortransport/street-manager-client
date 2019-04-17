@@ -1,5 +1,6 @@
 import { FPNStatus } from './referenceTypes';
-export interface FPNStatusUpdateRequest {
+import { DelegatedUserIdentification } from './delegatedUserIdentification';
+export interface FPNStatusUpdateRequest extends DelegatedUserIdentification {
     fpn_status: FPNStatus;
     status_reason?: string;
 }

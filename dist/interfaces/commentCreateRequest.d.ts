@@ -1,5 +1,6 @@
 import { CommentTopic } from './referenceTypes';
-export interface CommentCreateRequest {
+import { DelegatedUserIdentification } from './delegatedUserIdentification';
+export interface CommentCreateRequest extends DelegatedUserIdentification {
     detail: string;
     topic: CommentTopic;
 }

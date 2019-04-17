@@ -1,8 +1,9 @@
 import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType } from './referenceTypes'
 import { PermitCondition } from './permitCondition'
 import { PermitASD } from './permitASD'
+import { DelegatedUserIdentification } from './delegatedUserIdentification'
 
-export interface WorkCreateRequest {
+export interface WorkCreateRequest extends DelegatedUserIdentification {
   work_reference_number: string
   promoter_organisation: string
   promoter_swa_code: string
