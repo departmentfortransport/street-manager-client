@@ -25,7 +25,9 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
   proposed_start_date: Date
   /** proposed_start_time is required if proposed_start_date is in the past */
   proposed_start_time?: Date
-  /** proposed_end_date must be on or after proposed_start_date */
+  /** proposed_end_date must be on or after proposed_start_date
+   * If work_type = planned, the maximum date range between proposed_start_date and proposed_end_date is 5 years
+   */
   proposed_end_date: Date
   /** proposed_end_time is required if proposed_end_date is in the past
    * proposed_end_time must be after the date and time for proposed_start_time
