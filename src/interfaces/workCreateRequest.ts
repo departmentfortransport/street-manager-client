@@ -63,7 +63,7 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
   road_category: number
   /** Max length 500 characters */
   works_location_description: string
-  /** Must be a GeoJSON geometry (using British National Grid Eastings and Northings coordinates) and must be a point, line string or polygon */
+  /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon */
   works_coordinates: any
   environmental_health_notifiable: boolean
   collaborative_working: boolean

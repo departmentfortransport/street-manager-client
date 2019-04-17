@@ -3,6 +3,6 @@ import { DelegatedUserIdentification } from './delegatedUserIdentification';
 export interface CommentCreateRequest extends DelegatedUserIdentification {
     /** Max length 1500 characters */
     detail: string;
-    /** Only Highway Authorities can comment with the topic OVERRUN */
+    /** Only highway authorities can comment with the topic OVERRUN */
     topic: CommentTopic;
 }
