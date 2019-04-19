@@ -6,6 +6,7 @@ export interface FPNCreateRequest extends DelegatedUserIdentification {
     /** Required if fpn_evidence = true
      * Array values must be unique
      * Must not contain null or undefined values
+     * A file_id can only be associated with one section of Street Manager
      */
     file_ids?: number[];
     /** offence_date must be in the past */

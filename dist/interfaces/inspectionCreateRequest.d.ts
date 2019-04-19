@@ -37,6 +37,7 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
     /** Required if inspection_evidence = true
      * Array values must be unique
      * Must not contain null or undefined values
+     * A file_id can only be associated with one section of Street Manager
      */
     file_ids?: number[];
     /** Optional if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required
