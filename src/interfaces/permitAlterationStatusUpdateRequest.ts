@@ -14,7 +14,7 @@ export interface PermitAlterationStatusUpdateRequest extends DelegatedUserIdenti
    */
   assessment_discount?: number,
   /** Required if alteration_status = granted_with_duration_challenge
-   * Must be after the permit proposed_end_date and before the alteration updated proposed_end_date
+   * Must be on or after the permit proposed_end_date and before the alteration updated proposed_end_date
    */
   reasonable_period_end_date?: Date
 }

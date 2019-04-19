@@ -84,6 +84,7 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
   location_types: LocationType[]
   /** Array values must be unique
    * Must not contain null or undefined values
+   * A file_id can only be associated with one section of Street Manager
    */
   file_ids?: number[]
   permit_asds?: PermitASD[]
