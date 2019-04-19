@@ -1,5 +1,6 @@
 import { AlterationStatus } from './referenceTypes';
-export interface PermitAlterationStatusUpdateRequest {
+import { DelegatedUserIdentification } from './delegatedUserIdentification';
+export interface PermitAlterationStatusUpdateRequest extends DelegatedUserIdentification {
     alteration_status: AlterationStatus;
     assessment_comments?: string;
     assessment_discount?: number;

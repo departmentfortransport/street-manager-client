@@ -1,5 +1,6 @@
 import { OffenceCode } from './referenceTypes';
-export interface FPNCreateRequest {
+import { DelegatedUserIdentification } from './delegatedUserIdentification';
+export interface FPNCreateRequest extends DelegatedUserIdentification {
     fpn_evidence: boolean;
     file_ids?: number[];
     offence_date: Date;

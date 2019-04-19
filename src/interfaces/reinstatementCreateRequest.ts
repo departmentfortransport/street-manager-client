@@ -1,6 +1,7 @@
 import { ReinstatementStatus, LocationType } from './referenceTypes'
+import { DelegatedUserIdentification } from './delegatedUserIdentification'
 
-export interface ReinstatementCreateRequest {
+export interface ReinstatementCreateRequest extends DelegatedUserIdentification {
   reinstatement_status: ReinstatementStatus
   reinstatement_date: Date
   depth: number

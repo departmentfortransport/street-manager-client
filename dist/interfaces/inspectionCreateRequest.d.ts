@@ -1,5 +1,6 @@
 import { InspectionType, InspectionCategory, InspectionOutcome, DefectFixedOnsite } from './referenceTypes';
-export interface InspectionCreateRequest {
+import { DelegatedUserIdentification } from './delegatedUserIdentification';
+export interface InspectionCreateRequest extends DelegatedUserIdentification {
     inspection_type: InspectionType;
     inspection_start_date: Date;
     inspection_category: InspectionCategory;
