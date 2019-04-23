@@ -32,4 +32,6 @@ export interface ReinstatementCreateRequest extends DelegatedUserIdentification 
    * See API specification Resource Guide > Works API > File upload for more information
    */
   file_ids?: number[]
+  inspection_unit: number
+  reinstatement_final: boolean
 }
