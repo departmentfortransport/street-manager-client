@@ -2,9 +2,9 @@ import { PermitStatus } from './referenceTypes';
 import { DelegatedUserIdentification } from './delegatedUserIdentification';
 export interface PermitStatusUpdateRequest extends DelegatedUserIdentification {
     /** Can only be set to granted_proposed, refused, cancelled, revoked_proposed, or revoked_in_progress
-     * See business rule ref. 6.1
-     * See business rule ref. 7.1
-     * See business rule ref. 10.1
+     * See business rule ref. 6.1 - Revoking a permit
+     * See business rule ref. 7.1 - Cancelling a permit before assessment
+     * See business rule ref. 10.1 - Permit Status
      */
     permit_status: PermitStatus;
     /** Required if permit_status = refused

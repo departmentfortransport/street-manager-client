@@ -5,9 +5,9 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
     inspection_type: InspectionType,
     /** inspection_start_date must be in the past */
     inspection_start_date: Date,
-    /** See business rule ref. 3.2 */
+    /** See business rule ref. 3.2 - Inspection category */
     inspection_category: InspectionCategory,
-    /** See business rule ref. 3.3 */
+    /** See business rule ref. 3.3 - Inspection outcome */
     inspection_outcome: InspectionOutcome,
     /** Required if inspection_outcome = failed_low or failed_high
      * Max length 500 characters
@@ -39,6 +39,7 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
      * Array values must be unique
      * Must not contain null or undefined values
      * A file_id can only be associated with one section of Street Manager
+     * See API specification Resource Guide > Works API > File upload for more information
      */
     file_ids?: number[],
     /** Optional if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required
@@ -50,6 +51,8 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
      * Time must occur today or a date in the future
      */
     reinspection_date_time?: Date,
-    /** Max length 50 characters */
+    /** Max length 50 characters
+     * Should be populated with the user creating the inspection
+     */
     username: string
 }
