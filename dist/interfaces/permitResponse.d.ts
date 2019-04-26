@@ -63,4 +63,6 @@ export interface PermitResponse extends PermitSummaryResponse {
     work_type: WorkType;
     is_progressed_paa?: boolean;
     revoke_reason?: string;
+    sliding_end_date_candidate: boolean;
+    validity_period_end_date: Date;
 }
