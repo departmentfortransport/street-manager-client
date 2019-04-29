@@ -7,4 +7,7 @@ export interface InspectionUnitsUpdateRequest extends DelegatedUserIdentificatio
    * Can only add inspection_units if the permit is in progress or closed
    */
   inspection_units: number
+  /** Whether it is a final reinstatement */
+  final_reinstatement: boolean
+
 }
