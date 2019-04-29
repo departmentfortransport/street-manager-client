@@ -2,9 +2,7 @@ import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType
 import { PermitCondition } from './permitCondition';
 import { DelegatedUserIdentification } from './delegatedUserIdentification';
 export interface PermitRequest extends DelegatedUserIdentification {
-    /** Max length 100 characters
-     * Auto-populated from NSG - can be overwritten
-     */
+    /** Max length 100 characters */
     promoter_contact_details: string;
     /** Max length 100 characters */
     approved_contractor: string;
@@ -31,7 +29,9 @@ export interface PermitRequest extends DelegatedUserIdentification {
     project_reference_number?: string;
     traffic_management_plan: boolean;
     lane_rental_applicable: boolean;
-    /** See business rule ref. 1.11 */
+    /** Array values must be unique
+     * See business rule ref. 1.11 - Permit conditions
+     */
     permit_conditions?: PermitCondition[];
     /** Max length 500 characters */
     works_location_description: string;
@@ -52,7 +52,7 @@ export interface PermitRequest extends DelegatedUserIdentification {
     collaboration_type?: CollaborationType;
     /** Array values must be unique */
     location_types: LocationType[];
-    /** See business rule ref. 1.9 */
+    /** See business rule ref. 1.9 - Early start */
     early_start_pre_approval?: boolean;
     /** Required if early_start_pre_approval = true
      * Max length 500 characters
@@ -74,6 +74,7 @@ export interface PermitRequest extends DelegatedUserIdentification {
     /** Array values must be unique
      * Must not contain null or undefined values
      * A file_id can only be associated with one section of Street Manager
+     * See API specification Resource Guide > Works API > File upload for more information
      */
     file_ids?: number[];
     /** Max length 500 characters */

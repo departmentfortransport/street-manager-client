@@ -2,7 +2,7 @@ import { ReinstatementStatus, LocationType } from './referenceTypes'
 import { DelegatedUserIdentification } from './delegatedUserIdentification'
 
 export interface ReinstatementCreateRequest extends DelegatedUserIdentification {
-  /** See business rule ref. 4.4 */
+  /** See business rule ref. 4.4 - Making interim site permanent */
   reinstatement_status: ReinstatementStatus
   /** reinstatement_date must be in the past
    * Must be after actual start date
@@ -29,6 +29,7 @@ export interface ReinstatementCreateRequest extends DelegatedUserIdentification 
    * Array values must be unique
    * Must not contain null or undefined values
    * A file_id can only be associated with one section of Street Manager
+   * See API specification Resource Guide > Works API > File upload for more information
    */
   file_ids?: number[]
 }

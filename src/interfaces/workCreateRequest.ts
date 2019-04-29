@@ -4,19 +4,15 @@ import { PermitASD } from './permitASD'
 import { DelegatedUserIdentification } from './delegatedUserIdentification'
 
 export interface WorkCreateRequest extends DelegatedUserIdentification {
-  /** Max length 100 characters
+  /** Max length 24 characters
    * Must be unique in the system
    */
   work_reference_number: string
-  /** Max length 100 characters
-   * Auto-populated from NSG - can be overwritten
-   */
+  /** Max length 100 characters */
   promoter_organisation: string
   /** Max length 4 characters */
   promoter_swa_code: string
-  /** Max length 100 characters
-   * Auto-populated from NSG - can be overwritten
-   */
+  /** Max length 100 characters */
   promoter_contact_details: string
   /** Max length 100 characters */
   approved_contractor: string
@@ -41,20 +37,24 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
   project_reference_number?: string
   traffic_management_plan: boolean
   lane_rental_applicable: boolean
-  /** See business rule ref. 1.11 */
+  /** Array values must be unique
+   * See business rule ref. 1.11 - Permit conditions
+   */
   permit_conditions?: PermitCondition[]
   /** Max length 100 characters
-   * Auto-populated from NSG - can be overwritten
+   * Use GeoJSON API endpoint /nsg/streets to lookup this information
    */
   street_name: string
   /** Max length 100 characters
-   * Auto-populated from NSG - can be overwritten
+   * Use GeoJSON API endpoint /nsg/streets to lookup this information
    */
   area_name?: string
-  /** Is whole number between 1000001 and 99999999 inclusive */
+  /** Is whole number between 1000001 and 99999999 inclusive
+   * See business rule ref. 1.12 - USRN
+   */
   usrn: number
   /** Max length 100 characters
-   * Auto-populated from NSG - can be overwritten
+   * Use GeoJSON API endpoint /nsg/streets to lookup this information
    */
   highway_authority: string
   /** Max length 4 characters */
@@ -85,6 +85,7 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
   /** Array values must be unique
    * Must not contain null or undefined values
    * A file_id can only be associated with one section of Street Manager
+   * See API specification Resource Guide > Works API > File upload for more information
    */
   file_ids?: number[]
   permit_asds?: PermitASD[]
@@ -93,7 +94,7 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
   is_ttro_required?: boolean
   /** Required when work_type is immediate */
   immediate_risk?: boolean
-  /** See business rule ref. 1.9 */
+  /** See business rule ref. 1.9 - Early start */
   early_start_pre_approval?: boolean
   /** Required if early_start_pre_approval = true
    * Max length 500 characters
