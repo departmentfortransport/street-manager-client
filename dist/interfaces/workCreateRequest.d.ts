@@ -41,11 +41,11 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
      */
     permit_conditions?: PermitCondition[];
     /** Max length 100 characters
-     * Use GeoJSON API endpoint /nsg/streets to lookup this information
+     * Use Street Lookup API endpoint /nsg/streets to lookup this information
      */
     street_name: string;
     /** Max length 100 characters
-     * Use GeoJSON API endpoint /nsg/streets to lookup this information
+     * Use Street Lookup API endpoint /nsg/streets to lookup this information
      */
     area_name?: string;
     /** Is whole number between 1000001 and 99999999 inclusive
@@ -53,7 +53,7 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
      */
     usrn: number;
     /** Max length 100 characters
-     * Use GeoJSON API endpoint /nsg/streets to lookup this information
+     * Use Street Lookup API endpoint /nsg/streets to lookup this information
      */
     highway_authority: string;
     /** Max length 4 characters */
