@@ -109,5 +109,4 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
     early_start_reason?: string;
     /** Max length 500 characters */
     additional_info?: string;
-    workstream_id: number;
 }
