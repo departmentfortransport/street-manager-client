@@ -65,4 +65,5 @@ export interface PermitResponse extends PermitSummaryResponse {
     revoke_reason?: string;
     sliding_end_date_candidate: boolean;
     validity_period_end_date: Date;
+    final_reinstatement: boolean;
 }
