@@ -67,4 +67,5 @@ export interface PermitResponse extends PermitSummaryResponse {
   sliding_end_date_candidate: boolean
   validity_period_end_date: Date
   final_reinstatement: boolean
+  workstream_id: number
 }
