@@ -8,6 +8,8 @@ export interface PermitRequest extends DelegatedUserIdentification {
     approved_contractor: string;
     /** Max length 100 characters */
     contractor_contact_details: string;
+    /** Max length 320 characters */
+    secondary_contact_email?: string;
     proposed_start_date: Date;
     /** Required if work_type is immediate
      * proposed_start_time is required if proposed_start_date is in the past
