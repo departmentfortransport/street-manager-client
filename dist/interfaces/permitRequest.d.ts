@@ -2,12 +2,14 @@ import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType
 import { PermitCondition } from './permitCondition';
 import { DelegatedUserIdentification } from './delegatedUserIdentification';
 export interface PermitRequest extends DelegatedUserIdentification {
-    /** Max length 100 characters */
-    promoter_contact_details: string;
+    /** DEPRECATED: Max length 100 characters */
+    promoter_contact_details?: string;
     /** Max length 100 characters */
     approved_contractor: string;
     /** Max length 100 characters */
     contractor_contact_details: string;
+    /** Max length 100 characters */
+    secondary_contact_email?: string;
     proposed_start_date: Date;
     /** Required if work_type is immediate
      * proposed_start_time is required if proposed_start_date is in the past
