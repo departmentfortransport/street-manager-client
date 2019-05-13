@@ -9,8 +9,8 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
      * If not supplied it will be auto-generated
      */
     work_reference_number?: string;
-    /** Max length 100 characters */
-    promoter_organisation: string;
+    /** DEPRECATED: Max length 100 characters */
+    promoter_organisation?: string;
     /** Max length 4 characters */
     promoter_swa_code: string;
     /** DEPRECATED: Max length 100 characters */
