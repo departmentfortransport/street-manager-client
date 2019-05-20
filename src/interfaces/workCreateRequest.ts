@@ -6,8 +6,10 @@ import { DelegatedUserIdentification } from './delegatedUserIdentification'
 export interface WorkCreateRequest extends DelegatedUserIdentification {
   /** Max length 24 characters
    * Must be unique in the system
+   * Must contain only alphanumeric characters and hyphens
+   * If not supplied it will be auto-generated
    */
-  work_reference_number: string
+  work_reference_number?: string
   /** DEPRECATED: Max length 100 characters */
   promoter_organisation?: string
   /** Max length 4 characters */
