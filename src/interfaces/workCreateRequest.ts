@@ -47,10 +47,12 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
   permit_conditions?: PermitCondition[]
   /** Max length 100 characters
    * Use Street Lookup API endpoint /nsg/streets to lookup this information
+   * If not provided, populated with NSG data related to supplied USRN
    */
-  street_name: string
+  street_name?: string
   /** Max length 100 characters
    * Use Street Lookup API endpoint /nsg/streets to lookup this information
+   * If not provided, populated with NSG data related to supplied USRN
    */
   area_name?: string
   /** Is whole number between 1000001 and 99999999 inclusive
@@ -63,8 +65,11 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
   highway_authority: string
   /** Max length 4 characters */
   highway_authority_swa_code: string
-  /** Is whole number between 0 and 4 inclusive */
-  road_category: number
+  /**
+   * Is whole number between 0 and 4 inclusive
+   * If not provided, populated with NSG data related to supplied USRN
+   */
+  road_category?: number
   /** Max length 500 characters */
   works_location_description: string
   /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon */
