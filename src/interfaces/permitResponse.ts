@@ -1,4 +1,4 @@
-import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, PermitStatus, WorkType } from './referenceTypes'
+import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, PermitStatus, WorkType, ReasonForRefusal } from './referenceTypes'
 import { PermitCondition } from './permitCondition'
 import { FileSummaryResponse } from './fileSummaryResponse'
 import { PermitASD } from './permitASD'
@@ -44,6 +44,7 @@ export interface PermitResponse extends PermitSummaryResponse {
   deadline_date: Date
   excavation_carried_out: boolean
   assessment_comments?: string
+  reasons_for_refusal?: ReasonForRefusal[]
   activity_type: ActivityType
   traffic_management_type: TrafficManagementType
   application_type: ApplicationType
