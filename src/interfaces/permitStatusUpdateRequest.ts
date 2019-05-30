@@ -12,9 +12,8 @@ export interface PermitStatusUpdateRequest extends DelegatedUserIdentification {
    * Max length 500 characters
    */
   additional_comments?: string
-  /** Required if permit_status = refused
-   * Contains between 1 and 5 reasons
-   * Must be one of RC10, RC11, RC12, RC20, RC21, RC22, RC23, RC30, RC31, RC32, RC33, RC40, RC41, RC42, RC43, RC44, RC50
+  /** Array values must be unique
+   * Must contain between 1 and 5 values
    */
   reasons_for_refusal?: ReasonForRefusal[]
   /** Required if permit_status = granted_proposed or granted_with_changes
