@@ -166,3 +166,22 @@ export declare enum AlterationType {
     WORK_EXTENSION = "WORK_EXTENSION",
     DURATION_CHALLENGE = "DURATION_CHALLENGE"
 }
+export declare enum ReasonForRefusal {
+    RC10 = "RC10",
+    RC11 = "RC11",
+    RC12 = "RC12",
+    RC20 = "RC20",
+    RC21 = "RC21",
+    RC22 = "RC22",
+    RC23 = "RC23",
+    RC30 = "RC30",
+    RC31 = "RC31",
+    RC32 = "RC32",
+    RC33 = "RC33",
+    RC40 = "RC40",
+    RC41 = "RC41",
+    RC42 = "RC42",
+    RC43 = "RC43",
+    RC44 = "RC44",
+    RC50 = "RC50"
+}
