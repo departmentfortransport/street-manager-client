@@ -58,10 +58,10 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
      * See business rule ref. 1.12 - USRN
      */
     usrn: number;
-    /** Max length 100 characters
+    /** DEPRECATED: Max length 100 characters
      * Use Street Lookup API endpoint /nsg/streets to lookup this information
      */
-    highway_authority: string;
+    highway_authority?: string;
     /** Max length 4 characters */
     highway_authority_swa_code: string;
     /**
