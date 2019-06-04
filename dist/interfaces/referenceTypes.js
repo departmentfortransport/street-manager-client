@@ -208,3 +208,9 @@ var ReasonForRefusal;
     ReasonForRefusal["RC44"] = "RC44";
     ReasonForRefusal["RC50"] = "RC50";
 })(ReasonForRefusal = exports.ReasonForRefusal || (exports.ReasonForRefusal = {}));
+var CloseFootway;
+(function (CloseFootway) {
+    CloseFootway["yes_provide_pedestrian_walkway"] = "yes_provide_pedestrian_walkway";
+    CloseFootway["yes_provide_alternative_route"] = "yes_provide_alternative_route";
+    CloseFootway["no"] = "no";
+})(CloseFootway = exports.CloseFootway || (exports.CloseFootway = {}));

@@ -1,4 +1,4 @@
-import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, PermitStatus, WorkType, ReasonForRefusal } from './referenceTypes'
+import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, PermitStatus, WorkType, ReasonForRefusal, CloseFootway } from './referenceTypes'
 import { PermitCondition } from './permitCondition'
 import { FileSummaryResponse } from './fileSummaryResponse'
 import { PermitASD } from './permitASD'
@@ -70,4 +70,5 @@ export interface PermitResponse extends PermitSummaryResponse {
   validity_period_end_date: Date
   final_reinstatement: boolean
   workstream_id: number
+  close_footway: CloseFootway
 }

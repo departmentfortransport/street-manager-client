@@ -1,4 +1,4 @@
-import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType } from './referenceTypes';
+import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType, CloseFootway } from './referenceTypes';
 import { PermitCondition } from './permitCondition';
 import { PermitASD } from './permitASD';
 import { DelegatedUserIdentification } from './delegatedUserIdentification';
@@ -120,4 +120,6 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
     additional_info?: string;
     /** Must consist of 3 positive whole numbers */
     workstream_prefix?: string;
+    /** Optional. If not provided, this will be defaulted to "no" */
+    close_footway?: CloseFootway;
 }

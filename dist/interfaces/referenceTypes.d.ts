@@ -185,3 +185,8 @@ export declare enum ReasonForRefusal {
     RC44 = "RC44",
     RC50 = "RC50"
 }
+export declare enum CloseFootway {
+    yes_provide_pedestrian_walkway = "yes_provide_pedestrian_walkway",
+    yes_provide_alternative_route = "yes_provide_alternative_route",
+    no = "no"
+}
