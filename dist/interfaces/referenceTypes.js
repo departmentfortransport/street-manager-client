@@ -214,3 +214,15 @@ var CloseFootway;
     CloseFootway["yes_provide_alternative_route"] = "yes_provide_alternative_route";
     CloseFootway["no"] = "no";
 })(CloseFootway = exports.CloseFootway || (exports.CloseFootway = {}));
+var ActivityActivityType;
+(function (ActivityActivityType) {
+    ActivityActivityType["skips"] = "skips";
+    ActivityActivityType["scaffolding"] = "scaffolding";
+    ActivityActivityType["hoarding"] = "hoarding";
+    ActivityActivityType["crane_mobile_platform"] = "crane_mobile_platform";
+    ActivityActivityType["event"] = "event";
+    ActivityActivityType["section50"] = "section50";
+    ActivityActivityType["section58"] = "section58";
+    ActivityActivityType["compound"] = "compound";
+    ActivityActivityType["other"] = "other";
+})(ActivityActivityType = exports.ActivityActivityType || (exports.ActivityActivityType = {}));
