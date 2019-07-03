@@ -182,6 +182,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.get('/permits/category', this.generateRequestConfig(requestConfig, getWorkCategoryRequest)));
         });
     }
+    createActivity(requestConfig, activityCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/activity`, activityCreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

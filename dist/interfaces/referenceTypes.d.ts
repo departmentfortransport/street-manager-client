@@ -190,3 +190,14 @@ export declare enum CloseFootway {
     yes_provide_alternative_route = "yes_provide_alternative_route",
     no = "no"
 }
+export declare enum ActivityActivityType {
+    skips = "skips",
+    scaffolding = "scaffolding",
+    hoarding = "hoarding",
+    crane_mobile_platform = "crane_mobile_platform",
+    event = "event",
+    section50 = "section50",
+    section58 = "section58",
+    compound = "compound",
+    other = "other"
+}

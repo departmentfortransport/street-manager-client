@@ -48,3 +48,5 @@ export * from './interfaces/permitSummaryResponse';
 export * from './interfaces/getWorkCategoryRequest';
 export * from './interfaces/workCategoryResponse';
 export * from './interfaces/addFileToWorkRequest';
+export * from './interfaces/activityCreateRequest';
+export * from './interfaces/activityCreateResponse';

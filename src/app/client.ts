@@ -39,6 +39,8 @@ import { WorkCategoryResponse } from '../interfaces/workCategoryResponse'
 import { GetWorkCategoryRequest } from '../interfaces/getWorkCategoryRequest'
 import { AddFileToWorkRequest } from '../interfaces/addFileToWorkRequest'
 import * as qs from 'qs'
+import { ActivityCreateRequest } from '../interfaces/activityCreateRequest'
+import { ActivityCreateResponse } from '../interfaces/activityCreateResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -185,6 +187,10 @@ export class StreetManagerApiClient {
 
   public async getWorkCategory(requestConfig: RequestConfig, getWorkCategoryRequest: GetWorkCategoryRequest): Promise<WorkCategoryResponse> {
     return this.httpHandler<WorkCategoryResponse>(() => this.axios.get('/permits/category', this.generateRequestConfig(requestConfig, getWorkCategoryRequest)))
+  }
+
+  public async createActivity(requestConfig: RequestConfig, activityCreateRequest: ActivityCreateRequest): Promise<ActivityCreateResponse> {
+    return this.httpHandler<ActivityCreateResponse>(() => this.axios.post(`/activity`, activityCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
