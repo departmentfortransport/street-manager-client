@@ -1,4 +1,4 @@
-import { TrafficManagementType, ActivityActivityType } from './referenceTypes';
+import { TrafficManagementType, ActivityActivityType, LocationType } from './referenceTypes';
 import { DelegatedUserIdentification } from './delegatedUserIdentification';
 export interface ActivityCreateRequest extends DelegatedUserIdentification {
     /** Is whole number between 1000001 and 99999999 inclusive
@@ -41,6 +41,8 @@ export interface ActivityCreateRequest extends DelegatedUserIdentification {
     end_date: Date;
     /** Must be after start_date */
     end_time?: Date;
+    /** Array values must be unique */
+    location_types: LocationType[];
     /** Max length 500 characters */
     activity_location_description: string;
     traffic_management_type: TrafficManagementType;
