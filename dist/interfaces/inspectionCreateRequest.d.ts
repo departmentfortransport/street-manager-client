@@ -1,4 +1,4 @@
-import { InspectionType, InspectionCategory, InspectionOutcome, DefectFixedOnsite } from './referenceTypes';
+import { InspectionType, InspectionCategory, InspectionOutcome, DefectFixedOnsite, FailureReason } from './referenceTypes';
 import { DelegatedUserIdentification } from './delegatedUserIdentification';
 export interface InspectionCreateRequest extends DelegatedUserIdentification {
     inspection_type: InspectionType;
@@ -12,6 +12,8 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
      * Max length 500 characters
      */
     defect_details?: string;
+    /** See business rule ref. 3.4 - Inspection failure reasons */
+    failure_reasons?: FailureReason[];
     /** Required if inspection_outcome = unable_to_complete_inspection
      * Max length 500 characters
      */
