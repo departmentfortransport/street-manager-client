@@ -152,11 +152,11 @@ export class StreetManagerApiClient {
     return this.httpHandler<PermitAlterationResponse>(() => this.axios.get(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations/${permitAlterationReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<FileSummaryResponse> {
+  public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string, swaCode?: string): Promise<FileSummaryResponse> {
     let form: FormData = new FormData()
     form.append('file', buffer, filename)
 
-    let config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
+    let config: AxiosRequestConfig = this.generateRequestConfig(requestConfig, { swaCode : swaCode })
     Object.assign(config.headers, form.getHeaders())
 
     return this.httpHandler<FileSummaryResponse>(() => this.axios.post('/files', form, config))
