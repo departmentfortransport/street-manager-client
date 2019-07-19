@@ -140,11 +140,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations/${permitAlterationReferenceNumber}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    uploadFile(requestConfig, buffer, filename) {
+    uploadFile(requestConfig, buffer, filename, swaCode) {
         return __awaiter(this, void 0, void 0, function* () {
             let form = new FormData();
             form.append('file', buffer, filename);
-            let config = this.generateRequestConfig(requestConfig);
+            let config = this.generateRequestConfig(requestConfig, { swaCode: swaCode });
             Object.assign(config.headers, form.getHeaders());
             return this.httpHandler(() => this.axios.post('/files', form, config));
         });
