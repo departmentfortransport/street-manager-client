@@ -1,4 +1,4 @@
-import { InspectionCategory, InspectionOutcome, DefectFixedOnsite, InspectionType } from './referenceTypes'
+import { InspectionCategory, InspectionOutcome, DefectFixedOnsite, InspectionType, FailureReason } from './referenceTypes'
 import { FileSummaryResponse } from './fileSummaryResponse'
 
 export interface InspectionResponse {
@@ -9,6 +9,7 @@ export interface InspectionResponse {
   inspection_category: InspectionCategory
   inspection_outcome: InspectionOutcome
   defect_details?: string
+  failure_reasons?: FailureReason[]
   unable_to_complete_details?: string
   was_call_logged?: boolean
   call_logged_to?: string
