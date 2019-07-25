@@ -261,3 +261,19 @@ export enum FailureReason {
   reinstatement_texture_depth = 'reinstatement_texture_depth',
   reinstatement_edge_depression = 'reinstatement_edge_depression'
 }
+
+export enum LaneRentalAssessment {
+  chargeable = 'chargeable',
+  potentially_chargeable = 'potentially_chargeable',
+  charges_waived = 'charges_waived',
+  exempt = 'exempt',
+  charges_not_applicable = 'charges_not_applicable'
+}
+
+export enum LaneRentalChargeBand {
+  charge_band_1 = 'charge_band_1',
+  charge_band_2 = 'charge_band_2',
+  charge_band_3 = 'charge_band_3',
+  charge_band_4 = 'charge_band_4',
+  charge_band_5 = 'charge_band_5'
+}
