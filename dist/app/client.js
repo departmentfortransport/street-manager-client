@@ -67,6 +67,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/start`, workStartUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    revertWorkActualStartDate(requestConfig, workReferenceNumber, workStartRevertRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/revert-start`, workStartRevertRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     updateWorkActualStopDate(requestConfig, workReferenceNumber, workStopUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/stop`, workStopUpdateRequest, this.generateRequestConfig(requestConfig)));
