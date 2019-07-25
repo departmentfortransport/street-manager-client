@@ -4,6 +4,7 @@ import { FileSummaryResponse } from './fileSummaryResponse'
 import { PermitASD } from './permitASD'
 import { PermitSummaryResponse } from './permitSummaryResponse'
 import { PermitAlterationSummaryResponse } from './permitAlterationSummaryResponse'
+import { LaneRentalAssessmentSummaryResponse } from './laneRentalAssessmentSummaryResponse'
 
 export interface PermitResponse extends PermitSummaryResponse {
   permit_id: number
@@ -71,4 +72,5 @@ export interface PermitResponse extends PermitSummaryResponse {
   final_reinstatement: boolean
   workstream_id: number
   close_footway: CloseFootway
+  lane_rental_assessment?: LaneRentalAssessmentSummaryResponse
 }
