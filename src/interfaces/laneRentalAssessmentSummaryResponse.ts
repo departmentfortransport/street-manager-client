@@ -1,6 +1,6 @@
 import { LaneRentalAssessmentOutcome } from './referenceTypes'
 
 export interface LaneRentalAssessmentSummaryResponse {
-  lane_rental_assessment: LaneRentalAssessmentOutcome
+  outcome: LaneRentalAssessmentOutcome
   additional_details?: string
 }

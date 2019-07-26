@@ -2,7 +2,7 @@ import { DelegatedUserIdentification } from './delegatedUserIdentification'
 import { LaneRentalAssessmentOutcome, LaneRentalAsssessmentChargeBand } from './referenceTypes'
 
 export interface LaneRentalAssessmentCreateRequest extends DelegatedUserIdentification {
-  lane_rental_assessment: LaneRentalAssessmentOutcome
+  outcome: LaneRentalAssessmentOutcome
   /** Max length 500 characters */
   additional_details?: string
   charge_band?: LaneRentalAsssessmentChargeBand
