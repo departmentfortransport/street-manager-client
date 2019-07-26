@@ -262,7 +262,7 @@ export enum FailureReason {
   reinstatement_edge_depression = 'reinstatement_edge_depression'
 }
 
-export enum LaneRentalAssessment {
+export enum LaneRentalAssessmentOutcome {
   chargeable = 'chargeable',
   potentially_chargeable = 'potentially_chargeable',
   charges_waived = 'charges_waived',
@@ -270,7 +270,7 @@ export enum LaneRentalAssessment {
   charges_not_applicable = 'charges_not_applicable'
 }
 
-export enum LaneRentalChargeBand {
+export enum LaneRentalAsssessmentChargeBand {
   charge_band_1 = 'charge_band_1',
   charge_band_2 = 'charge_band_2',
   charge_band_3 = 'charge_band_3',

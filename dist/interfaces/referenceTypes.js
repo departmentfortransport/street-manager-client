@@ -264,19 +264,19 @@ var FailureReason;
     FailureReason["reinstatement_texture_depth"] = "reinstatement_texture_depth";
     FailureReason["reinstatement_edge_depression"] = "reinstatement_edge_depression";
 })(FailureReason = exports.FailureReason || (exports.FailureReason = {}));
-var LaneRentalAssessment;
-(function (LaneRentalAssessment) {
-    LaneRentalAssessment["chargeable"] = "chargeable";
-    LaneRentalAssessment["potentially_chargeable"] = "potentially_chargeable";
-    LaneRentalAssessment["charges_waived"] = "charges_waived";
-    LaneRentalAssessment["exempt"] = "exempt";
-    LaneRentalAssessment["charges_not_applicable"] = "charges_not_applicable";
-})(LaneRentalAssessment = exports.LaneRentalAssessment || (exports.LaneRentalAssessment = {}));
-var LaneRentalChargeBand;
-(function (LaneRentalChargeBand) {
-    LaneRentalChargeBand["charge_band_1"] = "charge_band_1";
-    LaneRentalChargeBand["charge_band_2"] = "charge_band_2";
-    LaneRentalChargeBand["charge_band_3"] = "charge_band_3";
-    LaneRentalChargeBand["charge_band_4"] = "charge_band_4";
-    LaneRentalChargeBand["charge_band_5"] = "charge_band_5";
-})(LaneRentalChargeBand = exports.LaneRentalChargeBand || (exports.LaneRentalChargeBand = {}));
+var LaneRentalAssessmentOutcome;
+(function (LaneRentalAssessmentOutcome) {
+    LaneRentalAssessmentOutcome["chargeable"] = "chargeable";
+    LaneRentalAssessmentOutcome["potentially_chargeable"] = "potentially_chargeable";
+    LaneRentalAssessmentOutcome["charges_waived"] = "charges_waived";
+    LaneRentalAssessmentOutcome["exempt"] = "exempt";
+    LaneRentalAssessmentOutcome["charges_not_applicable"] = "charges_not_applicable";
+})(LaneRentalAssessmentOutcome = exports.LaneRentalAssessmentOutcome || (exports.LaneRentalAssessmentOutcome = {}));
+var LaneRentalAsssessmentChargeBand;
+(function (LaneRentalAsssessmentChargeBand) {
+    LaneRentalAsssessmentChargeBand["charge_band_1"] = "charge_band_1";
+    LaneRentalAsssessmentChargeBand["charge_band_2"] = "charge_band_2";
+    LaneRentalAsssessmentChargeBand["charge_band_3"] = "charge_band_3";
+    LaneRentalAsssessmentChargeBand["charge_band_4"] = "charge_band_4";
+    LaneRentalAsssessmentChargeBand["charge_band_5"] = "charge_band_5";
+})(LaneRentalAsssessmentChargeBand = exports.LaneRentalAsssessmentChargeBand || (exports.LaneRentalAsssessmentChargeBand = {}));
