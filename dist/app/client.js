@@ -189,7 +189,7 @@ class StreetManagerApiClient {
     }
     updatePermitLaneRentalAssessment(requestConfig, workReferenceNumber, permitReferenceNumber, permitLaneRentalAssessmentUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/laneRentalAssessment`, permitLaneRentalAssessmentUpdateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/lane-rental-assessments`, permitLaneRentalAssessmentUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     httpHandler(request) {
