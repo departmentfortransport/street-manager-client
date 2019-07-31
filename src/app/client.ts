@@ -41,19 +41,30 @@ import { AddFileToWorkRequest } from '../interfaces/addFileToWorkRequest'
 import * as qs from 'qs'
 import { ActivityCreateRequest } from '../interfaces/activityCreateRequest'
 import { ActivityCreateResponse } from '../interfaces/activityCreateResponse'
+import { Agent } from 'https'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
-  timeout?: number
+  timeout?: number,
+  disableCertificateVerification?: boolean
 }
 
 export class StreetManagerApiClient {
   private axios: AxiosInstance
+
   constructor (private config: StreetManagerApiClientConfig) {
-    this.axios = axios.create({
+    let axiosRequestConfig: AxiosRequestConfig = {
       baseURL: this.config.baseURL,
       timeout: this.config.timeout
-    })
+    }
+
+    if (this.config.disableCertificateVerification) {
+      axiosRequestConfig.httpsAgent = new Agent({
+        rejectUnauthorized: false
+      })
+    }
+
+    this.axios = axios.create(axiosRequestConfig)
   }
 
   public async status(): Promise<void> {

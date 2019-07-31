@@ -42,6 +42,7 @@ import { ActivityCreateResponse } from '../interfaces/activityCreateResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
+    disableCertificateVerification?: boolean;
 }
 export declare class StreetManagerApiClient {
     private config;

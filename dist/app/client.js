@@ -12,13 +12,20 @@ const axios_1 = require("axios");
 const http_status_codes_1 = require("http-status-codes");
 const FormData = require("form-data");
 const qs = require("qs");
+const https_1 = require("https");
 class StreetManagerApiClient {
     constructor(config) {
         this.config = config;
-        this.axios = axios_1.default.create({
+        let axiosRequestConfig = {
             baseURL: this.config.baseURL,
             timeout: this.config.timeout
-        });
+        };
+        if (this.config.disableCertificateVerification) {
+            axiosRequestConfig.httpsAgent = new https_1.Agent({
+                rejectUnauthorized: false
+            });
+        }
+        this.axios = axios_1.default.create(axiosRequestConfig);
     }
     status() {
         return __awaiter(this, void 0, void 0, function* () {
