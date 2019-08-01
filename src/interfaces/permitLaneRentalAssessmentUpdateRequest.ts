@@ -6,7 +6,8 @@ export interface PermitLaneRentalAssessmentUpdateRequest extends DelegatedUserId
   /** Max length 500 characters */
   additional_details?: string
   charge_band?: LaneRentalAsssessmentChargeBand
+  /** Whole number between 1 and 10000 */
   chargeable_days?: number
-  /** Required if lane_rental_assessment = 'chargeable' */
+  /** Required if outcome = 'chargeable' */
   charges_agreed?: boolean
 }
