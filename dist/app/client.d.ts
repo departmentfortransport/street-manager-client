@@ -43,6 +43,7 @@ import { PermitLaneRentalAssessmentUpdateRequest } from '../interfaces/permitLan
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
+    disableCertificateVerification?: boolean;
 }
 export declare class StreetManagerApiClient {
     private config;
