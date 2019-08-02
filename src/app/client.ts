@@ -43,7 +43,7 @@ import { ActivityCreateRequest } from '../interfaces/activityCreateRequest'
 import { ActivityCreateResponse } from '../interfaces/activityCreateResponse'
 import { PermitLaneRentalAssessmentUpdateRequest } from '../interfaces/permitLaneRentalAssessmentUpdateRequest'
 import { Agent } from 'https'
-import { ActivityResponse } from '../interfaces/activityResponse';
+import { ActivityResponse } from '../interfaces/activityResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
