@@ -194,6 +194,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post(`/activity`, activityCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    updatePermitLaneRentalAssessment(requestConfig, workReferenceNumber, permitReferenceNumber, permitLaneRentalAssessmentUpdateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/lane-rental-assessments`, permitLaneRentalAssessmentUpdateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

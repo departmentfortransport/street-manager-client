@@ -41,6 +41,7 @@ import { AddFileToWorkRequest } from '../interfaces/addFileToWorkRequest'
 import * as qs from 'qs'
 import { ActivityCreateRequest } from '../interfaces/activityCreateRequest'
 import { ActivityCreateResponse } from '../interfaces/activityCreateResponse'
+import { PermitLaneRentalAssessmentUpdateRequest } from '../interfaces/permitLaneRentalAssessmentUpdateRequest'
 import { Agent } from 'https'
 
 export interface StreetManagerApiClientConfig {
@@ -202,6 +203,10 @@ export class StreetManagerApiClient {
 
   public async createActivity(requestConfig: RequestConfig, activityCreateRequest: ActivityCreateRequest): Promise<ActivityCreateResponse> {
     return this.httpHandler<ActivityCreateResponse>(() => this.axios.post(`/activity`, activityCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updatePermitLaneRentalAssessment(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitLaneRentalAssessmentUpdateRequest: PermitLaneRentalAssessmentUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/lane-rental-assessments`, permitLaneRentalAssessmentUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
