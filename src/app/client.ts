@@ -43,6 +43,7 @@ import { ActivityCreateRequest } from '../interfaces/activityCreateRequest'
 import { ActivityCreateResponse } from '../interfaces/activityCreateResponse'
 import { PermitLaneRentalAssessmentUpdateRequest } from '../interfaces/permitLaneRentalAssessmentUpdateRequest'
 import { Agent } from 'https'
+import { WorkStartRevertRequest } from '../interfaces/workStartRevertRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -98,6 +99,10 @@ export class StreetManagerApiClient {
 
   public async updateWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/start`, workStartUpdateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async revertWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartRevertRequest: WorkStartRevertRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/revert-start`, workStartRevertRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updateWorkActualStopDate(requestConfig: RequestConfig, workReferenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void> {

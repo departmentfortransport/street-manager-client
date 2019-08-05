@@ -14,6 +14,7 @@ export * from './interfaces/permitAlterationResponse';
 export * from './interfaces/permitStatusUpdateRequest';
 export * from './interfaces/workResponse';
 export * from './interfaces/workStartUpdateRequest';
+export * from './interfaces/workStartRevertRequest';
 export * from './interfaces/workStopUpdateRequest';
 export * from './interfaces/commentCreateRequest';
 export * from './interfaces/commentCreateResponse';
