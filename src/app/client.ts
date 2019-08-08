@@ -44,6 +44,7 @@ import { ActivityCreateResponse } from '../interfaces/activityCreateResponse'
 import { PermitLaneRentalAssessmentUpdateRequest } from '../interfaces/permitLaneRentalAssessmentUpdateRequest'
 import { Agent } from 'https'
 import { WorkStartRevertRequest } from '../interfaces/workStartRevertRequest'
+import { ActivityResponse } from '../interfaces/activityResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -212,6 +213,10 @@ export class StreetManagerApiClient {
 
   public async updatePermitLaneRentalAssessment(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitLaneRentalAssessmentUpdateRequest: PermitLaneRentalAssessmentUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/lane-rental-assessments`, permitLaneRentalAssessmentUpdateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async getActivity(requestConfig: RequestConfig, activityReferenceNumber: string): Promise<ActivityResponse> {
+    return this.httpHandler<ActivityResponse>(() => this.axios.get(`/activity/${activityReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
