@@ -245,7 +245,7 @@ export declare enum LaneRentalAssessmentOutcome {
     exempt = "exempt",
     charges_not_applicable = "charges_not_applicable"
 }
-export declare enum LaneRentalAsssessmentChargeBand {
+export declare enum LaneRentalAssessmentChargeBand {
     charge_band_1 = "charge_band_1",
     charge_band_2 = "charge_band_2",
     charge_band_3 = "charge_band_3",

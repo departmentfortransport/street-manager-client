@@ -272,11 +272,11 @@ var LaneRentalAssessmentOutcome;
     LaneRentalAssessmentOutcome["exempt"] = "exempt";
     LaneRentalAssessmentOutcome["charges_not_applicable"] = "charges_not_applicable";
 })(LaneRentalAssessmentOutcome = exports.LaneRentalAssessmentOutcome || (exports.LaneRentalAssessmentOutcome = {}));
-var LaneRentalAsssessmentChargeBand;
-(function (LaneRentalAsssessmentChargeBand) {
-    LaneRentalAsssessmentChargeBand["charge_band_1"] = "charge_band_1";
-    LaneRentalAsssessmentChargeBand["charge_band_2"] = "charge_band_2";
-    LaneRentalAsssessmentChargeBand["charge_band_3"] = "charge_band_3";
-    LaneRentalAsssessmentChargeBand["charge_band_4"] = "charge_band_4";
-    LaneRentalAsssessmentChargeBand["charge_band_5"] = "charge_band_5";
-})(LaneRentalAsssessmentChargeBand = exports.LaneRentalAsssessmentChargeBand || (exports.LaneRentalAsssessmentChargeBand = {}));
+var LaneRentalAssessmentChargeBand;
+(function (LaneRentalAssessmentChargeBand) {
+    LaneRentalAssessmentChargeBand["charge_band_1"] = "charge_band_1";
+    LaneRentalAssessmentChargeBand["charge_band_2"] = "charge_band_2";
+    LaneRentalAssessmentChargeBand["charge_band_3"] = "charge_band_3";
+    LaneRentalAssessmentChargeBand["charge_band_4"] = "charge_band_4";
+    LaneRentalAssessmentChargeBand["charge_band_5"] = "charge_band_5";
+})(LaneRentalAssessmentChargeBand = exports.LaneRentalAssessmentChargeBand || (exports.LaneRentalAssessmentChargeBand = {}));
