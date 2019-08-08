@@ -76,4 +76,5 @@ export interface PermitResponse extends PermitSummaryResponse {
   lane_rental_assessment_charge_band?: LaneRentalAsssessmentChargeBand
   lane_rental_assessment_chargeable_days?: number
   lane_rental_assessment_charges_agreed?: boolean
+  is_lane_rental?: boolean
 }
