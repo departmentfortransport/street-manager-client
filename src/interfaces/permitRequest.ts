@@ -38,6 +38,8 @@ export interface PermitRequest extends DelegatedUserIdentification {
   permit_conditions?: PermitCondition[]
   /** Max length 500 characters */
   works_location_description: string
+  /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon */
+  works_coordinates?: any
   environmental_health_notifiable: boolean
   collaborative_working: boolean
   /** Required if collaborative_working = true
