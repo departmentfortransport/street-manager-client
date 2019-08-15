@@ -1,4 +1,4 @@
-import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, PermitStatus, WorkType, ReasonForRefusal, CloseFootway, LaneRentalAssessmentOutcome, LaneRentalAsssessmentChargeBand } from './referenceTypes'
+import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, PermitStatus, WorkType, ReasonForRefusal, CloseFootway, LaneRentalAssessmentOutcome, LaneRentalAssessmentChargeBand } from './referenceTypes'
 import { PermitCondition } from './permitCondition'
 import { FileSummaryResponse } from './fileSummaryResponse'
 import { PermitASD } from './permitASD'
@@ -73,7 +73,7 @@ export interface PermitResponse extends PermitSummaryResponse {
   close_footway: CloseFootway
   lane_rental_assessment_outcome?: LaneRentalAssessmentOutcome
   lane_rental_assessment_additional_details?: string
-  lane_rental_assessment_charge_band?: LaneRentalAsssessmentChargeBand
+  lane_rental_assessment_charge_band?: LaneRentalAssessmentChargeBand
   lane_rental_assessment_chargeable_days?: number
   lane_rental_assessment_charges_agreed?: boolean
   is_lane_rental: boolean
