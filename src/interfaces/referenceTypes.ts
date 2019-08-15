@@ -270,7 +270,7 @@ export enum LaneRentalAssessmentOutcome {
   charges_not_applicable = 'charges_not_applicable'
 }
 
-export enum LaneRentalAsssessmentChargeBand {
+export enum LaneRentalAssessmentChargeBand {
   charge_band_1 = 'charge_band_1',
   charge_band_2 = 'charge_band_2',
   charge_band_3 = 'charge_band_3',
