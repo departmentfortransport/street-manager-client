@@ -42,6 +42,7 @@ import { ActivityCreateResponse } from '../interfaces/activityCreateResponse';
 import { PermitLaneRentalAssessmentUpdateRequest } from '../interfaces/permitLaneRentalAssessmentUpdateRequest';
 import { WorkStartRevertRequest } from '../interfaces/workStartRevertRequest';
 import { ActivityResponse } from '../interfaces/activityResponse';
+import { ActivityCancelRequest } from '../interfaces/activityCancelRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -85,6 +86,7 @@ export declare class StreetManagerApiClient {
     createActivity(requestConfig: RequestConfig, activityCreateRequest: ActivityCreateRequest): Promise<ActivityCreateResponse>;
     updatePermitLaneRentalAssessment(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitLaneRentalAssessmentUpdateRequest: PermitLaneRentalAssessmentUpdateRequest): Promise<void>;
     getActivity(requestConfig: RequestConfig, activityReferenceNumber: string): Promise<ActivityResponse>;
+    cancelActivity(requestConfig: RequestConfig, activityReferenceNumber: string, activityCancelRequest: ActivityCancelRequest): Promise<void>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;
