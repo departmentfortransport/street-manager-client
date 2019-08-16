@@ -4,4 +4,5 @@ export interface WorkHistoryResponse {
     details: string;
     username: string;
     isComment?: boolean;
+    object_reference?: string;
 }
