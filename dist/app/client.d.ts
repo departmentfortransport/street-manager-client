@@ -43,6 +43,7 @@ import { PermitLaneRentalAssessmentUpdateRequest } from '../interfaces/permitLan
 import { WorkStartRevertRequest } from '../interfaces/workStartRevertRequest';
 import { ActivityResponse } from '../interfaces/activityResponse';
 import { ActivityCancelRequest } from '../interfaces/activityCancelRequest';
+import { WorkStopRevertRequest } from '../interfaces/workStopRevertRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -62,6 +63,7 @@ export declare class StreetManagerApiClient {
     updateWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void>;
     revertWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartRevertRequest: WorkStartRevertRequest): Promise<void>;
     updateWorkActualStopDate(requestConfig: RequestConfig, workReferenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void>;
+    revertWorkActualStopDate(requestConfig: RequestConfig, workReferenceNumber: string, workStopRevertRequest: WorkStopRevertRequest): Promise<void>;
     updateExcavationCarriedOut(requestConfig: RequestConfig, workReferenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void>;
     updateInspectionUnits(requestConfig: RequestConfig, workReferenceNumber: string, inspectionUnitsUpdateRequest: InspectionUnitsUpdateRequest): Promise<void>;
     addFileToWork(requestConfig: RequestConfig, workReferenceNumber: string, addFileToWorkRequest: AddFileToWorkRequest): Promise<void>;
