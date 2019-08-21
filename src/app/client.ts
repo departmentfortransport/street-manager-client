@@ -46,6 +46,7 @@ import { Agent } from 'https'
 import { WorkStartRevertRequest } from '../interfaces/workStartRevertRequest'
 import { ActivityResponse } from '../interfaces/activityResponse'
 import { ActivityCancelRequest } from '../interfaces/activityCancelRequest'
+import { WorkStopRevertRequest } from '../interfaces/workStopRevertRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -109,6 +110,10 @@ export class StreetManagerApiClient {
 
   public async updateWorkActualStopDate(requestConfig: RequestConfig, workReferenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/stop`, workStopUpdateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async revertWorkActualStopDate(requestConfig: RequestConfig, workReferenceNumber: string, workStopRevertRequest: WorkStopRevertRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/revert-stop`, workStopRevertRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updateExcavationCarriedOut(requestConfig: RequestConfig, workReferenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void> {

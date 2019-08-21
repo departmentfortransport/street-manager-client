@@ -77,6 +77,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/stop`, workStopUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    revertWorkActualStopDate(requestConfig, workReferenceNumber, workStopRevertRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/revert-stop`, workStopRevertRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     updateExcavationCarriedOut(requestConfig, workReferenceNumber, excavationCarriedOutUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)));
