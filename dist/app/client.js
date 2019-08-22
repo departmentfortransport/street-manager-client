@@ -219,6 +219,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/activity/${activityReferenceNumber}/cancel`, activityCancelRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    createForwardPlan(requestConfig, forwardPlanCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/forward-plans`, forwardPlanCreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
