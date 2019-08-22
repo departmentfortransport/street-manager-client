@@ -46,6 +46,7 @@ import { ActivityCancelRequest } from '../interfaces/activityCancelRequest';
 import { WorkStopRevertRequest } from '../interfaces/workStopRevertRequest';
 import { ActivityUpdateRequest } from '../interfaces/activityUpdateRequest';
 import { InitialAuthenticationResponse } from '../interfaces/initialAuthenticationResponse';
+import { PermitDiscountUpdateRequest } from '../interfaces/permitDiscountUpdateRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -93,6 +94,7 @@ export declare class StreetManagerApiClient {
     updatePermitLaneRentalAssessment(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitLaneRentalAssessmentUpdateRequest: PermitLaneRentalAssessmentUpdateRequest): Promise<void>;
     getActivity(requestConfig: RequestConfig, activityReferenceNumber: string): Promise<ActivityResponse>;
     cancelActivity(requestConfig: RequestConfig, activityReferenceNumber: string, activityCancelRequest: ActivityCancelRequest): Promise<void>;
+    updatePermitDiscount(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitDiscountUpdateRequest: PermitDiscountUpdateRequest): Promise<void>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;

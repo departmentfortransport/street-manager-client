@@ -49,6 +49,7 @@ import { ActivityCancelRequest } from '../interfaces/activityCancelRequest'
 import { WorkStopRevertRequest } from '../interfaces/workStopRevertRequest'
 import { ActivityUpdateRequest } from '../interfaces/activityUpdateRequest'
 import { InitialAuthenticationResponse } from '../interfaces/initialAuthenticationResponse'
+import { PermitDiscountUpdateRequest } from '../interfaces/permitDiscountUpdateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -237,6 +238,10 @@ export class StreetManagerApiClient {
 
   public async cancelActivity(requestConfig: RequestConfig, activityReferenceNumber: string, activityCancelRequest: ActivityCancelRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/activity/${activityReferenceNumber}/cancel`, activityCancelRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updatePermitDiscount(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitDiscountUpdateRequest: PermitDiscountUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/permit-discount`, permitDiscountUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
