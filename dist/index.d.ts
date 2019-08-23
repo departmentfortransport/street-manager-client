@@ -55,3 +55,4 @@ export * from './interfaces/activityCreateResponse';
 export * from './interfaces/permitLaneRentalAssessmentUpdateRequest';
 export * from './interfaces/activityResponse';
 export * from './interfaces/activityCancelRequest';
+export * from './interfaces/activityUpdateRequest';
