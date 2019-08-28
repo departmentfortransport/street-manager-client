@@ -74,6 +74,11 @@ export declare enum PermitStatus {
     revoked_closed = "revoked_closed",
     deemed_closed = "deemed_closed"
 }
+export declare enum ForwardPlanStatus {
+    raised = "raised",
+    cancelled = "cancelled",
+    closed = "closed"
+}
 export declare enum ReinstatementStatus {
     interim = "interim",
     permanent = "permanent"

@@ -84,6 +84,12 @@ var PermitStatus;
     PermitStatus["revoked_closed"] = "revoked_closed";
     PermitStatus["deemed_closed"] = "deemed_closed";
 })(PermitStatus = exports.PermitStatus || (exports.PermitStatus = {}));
+var ForwardPlanStatus;
+(function (ForwardPlanStatus) {
+    ForwardPlanStatus["raised"] = "raised";
+    ForwardPlanStatus["cancelled"] = "cancelled";
+    ForwardPlanStatus["closed"] = "closed";
+})(ForwardPlanStatus = exports.ForwardPlanStatus || (exports.ForwardPlanStatus = {}));
 var ReinstatementStatus;
 (function (ReinstatementStatus) {
     ReinstatementStatus["interim"] = "interim";
