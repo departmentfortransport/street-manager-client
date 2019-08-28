@@ -45,6 +45,7 @@ import { ActivityResponse } from '../interfaces/activityResponse';
 import { ActivityCancelRequest } from '../interfaces/activityCancelRequest';
 import { WorkStopRevertRequest } from '../interfaces/workStopRevertRequest';
 import { ActivityUpdateRequest } from '../interfaces/activityUpdateRequest';
+import { InitialAuthenticationResponse } from '../interfaces/initialAuthenticationResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -56,6 +57,7 @@ export declare class StreetManagerApiClient {
     constructor(config: StreetManagerApiClientConfig);
     status(): Promise<void>;
     authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse>;
+    authenticateInitial(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<InitialAuthenticationResponse>;
     createWork(requestConfig: RequestConfig, workCreateRequest: WorkCreateRequest): Promise<WorkCreateResponse>;
     createPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitCreateRequest: PermitCreateRequest): Promise<PermitCreateResponse>;
     getPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string): Promise<PermitResponse>;
@@ -87,7 +89,7 @@ export declare class StreetManagerApiClient {
     getDuration(requestConfig: RequestConfig, startDate: string, endDate: string): Promise<DurationCalculationResponse>;
     getWorkCategory(requestConfig: RequestConfig, getWorkCategoryRequest: GetWorkCategoryRequest): Promise<WorkCategoryResponse>;
     createActivity(requestConfig: RequestConfig, activityCreateRequest: ActivityCreateRequest): Promise<ActivityCreateResponse>;
-    updateActivity(requestConfig: RequestConfig, activityUpdateRequest: ActivityUpdateRequest, activityReferenceNumber: string): Promise<ActivityUpdateRequest>;
+    updateActivity(requestConfig: RequestConfig, activityUpdateRequest: ActivityUpdateRequest, activityReferenceNumber: string): Promise<void>;
     updatePermitLaneRentalAssessment(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitLaneRentalAssessmentUpdateRequest: PermitLaneRentalAssessmentUpdateRequest): Promise<void>;
     getActivity(requestConfig: RequestConfig, activityReferenceNumber: string): Promise<ActivityResponse>;
     cancelActivity(requestConfig: RequestConfig, activityReferenceNumber: string, activityCancelRequest: ActivityCancelRequest): Promise<void>;
