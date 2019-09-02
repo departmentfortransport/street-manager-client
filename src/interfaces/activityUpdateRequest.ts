@@ -25,7 +25,7 @@ export interface ActivityUpdateRequest extends DelegatedUserIdentification {
   location_types: LocationType[]
   /** Max length 500 characters */
   activity_location_description: string
-  traffic_management_type: TrafficManagementType,
+  traffic_management_type: TrafficManagementType
   collaborative_working: boolean
   /** Max length 500 characters */
   additional_info?: string
