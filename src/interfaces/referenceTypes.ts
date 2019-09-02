@@ -284,3 +284,10 @@ export enum LaneRentalAssessmentChargeBand {
   charge_band_4 = 'charge_band_4',
   charge_band_5 = 'charge_band_5'
 }
+
+export enum WorkStatus {
+  planned = 'planned',
+  in_progress = 'in_progress',
+  completed = 'completed',
+  cancelled = 'cancelled'
+}

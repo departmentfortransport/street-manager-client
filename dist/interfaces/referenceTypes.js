@@ -287,3 +287,10 @@ var LaneRentalAssessmentChargeBand;
     LaneRentalAssessmentChargeBand["charge_band_4"] = "charge_band_4";
     LaneRentalAssessmentChargeBand["charge_band_5"] = "charge_band_5";
 })(LaneRentalAssessmentChargeBand = exports.LaneRentalAssessmentChargeBand || (exports.LaneRentalAssessmentChargeBand = {}));
+var WorkStatus;
+(function (WorkStatus) {
+    WorkStatus["planned"] = "planned";
+    WorkStatus["in_progress"] = "in_progress";
+    WorkStatus["completed"] = "completed";
+    WorkStatus["cancelled"] = "cancelled";
+})(WorkStatus = exports.WorkStatus || (exports.WorkStatus = {}));

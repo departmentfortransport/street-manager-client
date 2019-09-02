@@ -5,7 +5,7 @@ import { FPNSummaryResponse } from './fpnSummaryResponse';
 import { PermitResponse } from './permitResponse';
 import { WorkHistoryResponse } from './workHistoryResponse';
 import { FileResponse } from './fileResponse';
-import { PermitStatus, ForwardPlanStatus } from './referenceTypes';
+import { WorkStatus } from './referenceTypes';
 export interface WorkResponse {
     work_id: number;
     work_reference_number: string;
@@ -15,7 +15,7 @@ export interface WorkResponse {
     street_name: string;
     area_name?: string;
     usrn: number;
-    work_status: PermitStatus | ForwardPlanStatus;
+    work_status: WorkStatus;
     active_permit?: PermitResponse;
     permits?: PermitSummaryResponse[];
     history: WorkHistoryResponse[];
