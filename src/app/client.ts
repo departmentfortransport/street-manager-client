@@ -219,7 +219,7 @@ export class StreetManagerApiClient {
   }
 
   public async updateActivity(requestConfig: RequestConfig, activityUpdateRequest: ActivityUpdateRequest, activityReferenceNumber: string): Promise<void> {
-    return this.httpHandler<ActivityUpdateRequest>(() => this.axios.put(`/activity/${activityReferenceNumber}`, activityUpdateRequest, this.generateRequestConfig(requestConfig)))
+    return this.httpHandler<void>(() => this.axios.put(`/activity/${activityReferenceNumber}`, activityUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updatePermitLaneRentalAssessment(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitLaneRentalAssessmentUpdateRequest: PermitLaneRentalAssessmentUpdateRequest): Promise<void> {
