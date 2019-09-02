@@ -47,6 +47,7 @@ import { WorkStartRevertRequest } from '../interfaces/workStartRevertRequest'
 import { ActivityResponse } from '../interfaces/activityResponse'
 import { ActivityCancelRequest } from '../interfaces/activityCancelRequest'
 import { WorkStopRevertRequest } from '../interfaces/workStopRevertRequest'
+import { ActivityUpdateRequest } from '../interfaces/activityUpdateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -215,6 +216,10 @@ export class StreetManagerApiClient {
 
   public async createActivity(requestConfig: RequestConfig, activityCreateRequest: ActivityCreateRequest): Promise<ActivityCreateResponse> {
     return this.httpHandler<ActivityCreateResponse>(() => this.axios.post(`/activity`, activityCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updateActivity(requestConfig: RequestConfig, activityUpdateRequest: ActivityUpdateRequest, activityReferenceNumber: string): Promise<void> {
+    return this.httpHandler<ActivityUpdateRequest>(() => this.axios.put(`/activity/${activityReferenceNumber}`, activityUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updatePermitLaneRentalAssessment(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitLaneRentalAssessmentUpdateRequest: PermitLaneRentalAssessmentUpdateRequest): Promise<void> {
