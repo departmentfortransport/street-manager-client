@@ -37,6 +37,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post('/authenticate', authenticationRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    authenticateInitial(requestConfig, authenticationRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post('/authenticate/initial', authenticationRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     createWork(requestConfig, workCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.post('/works', workCreateRequest, this.generateRequestConfig(requestConfig)));

@@ -56,3 +56,4 @@ export * from './interfaces/permitLaneRentalAssessmentUpdateRequest';
 export * from './interfaces/activityResponse';
 export * from './interfaces/activityCancelRequest';
 export * from './interfaces/activityUpdateRequest';
+export * from './interfaces/initialAuthenticationResponse';

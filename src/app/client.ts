@@ -48,6 +48,7 @@ import { ActivityResponse } from '../interfaces/activityResponse'
 import { ActivityCancelRequest } from '../interfaces/activityCancelRequest'
 import { WorkStopRevertRequest } from '../interfaces/workStopRevertRequest'
 import { ActivityUpdateRequest } from '../interfaces/activityUpdateRequest'
+import { InitialAuthenticationResponse } from '../interfaces/initialAuthenticationResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -79,6 +80,10 @@ export class StreetManagerApiClient {
 
   public async authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse> {
     return this.httpHandler<AuthenticationResponse>(() => this.axios.post('/authenticate', authenticationRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async authenticateInitial(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<InitialAuthenticationResponse> {
+    return this.httpHandler<InitialAuthenticationResponse>(() => this.axios.post('/authenticate/initial', authenticationRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async createWork(requestConfig: RequestConfig, workCreateRequest: WorkCreateRequest): Promise<WorkCreateResponse> {
