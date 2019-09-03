@@ -48,6 +48,7 @@ import { ActivityResponse } from '../interfaces/activityResponse'
 import { ActivityCancelRequest } from '../interfaces/activityCancelRequest'
 import { WorkStopRevertRequest } from '../interfaces/workStopRevertRequest'
 import { ActivityUpdateRequest } from '../interfaces/activityUpdateRequest'
+import { InitialAuthenticationResponse } from '../interfaces/initialAuthenticationResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -79,6 +80,10 @@ export class StreetManagerApiClient {
 
   public async authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse> {
     return this.httpHandler<AuthenticationResponse>(() => this.axios.post('/authenticate', authenticationRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async authenticateInitial(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<InitialAuthenticationResponse> {
+    return this.httpHandler<InitialAuthenticationResponse>(() => this.axios.post('/authenticate/initial', authenticationRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async createWork(requestConfig: RequestConfig, workCreateRequest: WorkCreateRequest): Promise<WorkCreateResponse> {
@@ -219,7 +224,7 @@ export class StreetManagerApiClient {
   }
 
   public async updateActivity(requestConfig: RequestConfig, activityUpdateRequest: ActivityUpdateRequest, activityReferenceNumber: string): Promise<void> {
-    return this.httpHandler<ActivityUpdateRequest>(() => this.axios.put(`/activity/${activityReferenceNumber}`, activityUpdateRequest, this.generateRequestConfig(requestConfig)))
+    return this.httpHandler<void>(() => this.axios.put(`/activity/${activityReferenceNumber}`, activityUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updatePermitLaneRentalAssessment(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitLaneRentalAssessmentUpdateRequest: PermitLaneRentalAssessmentUpdateRequest): Promise<void> {
