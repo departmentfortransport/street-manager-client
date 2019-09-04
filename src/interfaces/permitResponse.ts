@@ -55,6 +55,7 @@ export interface PermitResponse extends PermitSummaryResponse {
   inspection_units?: number
   permit_asds: PermitASD[]
   assessment_discount?: number
+  assessment_discount_reason?: string
   is_ttro_required?: boolean
   immediate_risk?: boolean
   early_start_pre_approval?: boolean
