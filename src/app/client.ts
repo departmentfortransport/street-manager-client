@@ -52,6 +52,7 @@ import { ForwardPlanCreateResponse } from '../interfaces/forwardPlanCreateRespon
 import { ActivityUpdateRequest } from '../interfaces/activityUpdateRequest'
 import { InitialAuthenticationResponse } from '../interfaces/initialAuthenticationResponse'
 import { PermitDiscountUpdateRequest } from '../interfaces/permitDiscountUpdateRequest'
+import { ForwardPlanResponse } from '../interfaces/forwardPlanResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -244,6 +245,10 @@ export class StreetManagerApiClient {
 
   public async createForwardPlan(requestConfig: RequestConfig, forwardPlanCreateRequest: ForwardPlanCreateRequest): Promise<ForwardPlanCreateResponse> {
     return this.httpHandler<ForwardPlanCreateResponse>(() => this.axios.post(`/forward-plans`, forwardPlanCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async getForwardPlan(requestConfig: RequestConfig, workReferenceNumber: string, forwardPlanReferenceNumber: string): Promise<ForwardPlanResponse> {
+    return this.httpHandler<ForwardPlanResponse>(() => this.axios.get(`/works/${workReferenceNumber}/forward-plans/${forwardPlanReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
   public async updatePermitDiscount(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitDiscountUpdateRequest: PermitDiscountUpdateRequest): Promise<void> {
