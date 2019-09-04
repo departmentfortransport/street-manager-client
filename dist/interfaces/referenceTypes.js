@@ -84,6 +84,12 @@ var PermitStatus;
     PermitStatus["revoked_closed"] = "revoked_closed";
     PermitStatus["deemed_closed"] = "deemed_closed";
 })(PermitStatus = exports.PermitStatus || (exports.PermitStatus = {}));
+var ForwardPlanStatus;
+(function (ForwardPlanStatus) {
+    ForwardPlanStatus["raised"] = "raised";
+    ForwardPlanStatus["cancelled"] = "cancelled";
+    ForwardPlanStatus["closed"] = "closed";
+})(ForwardPlanStatus = exports.ForwardPlanStatus || (exports.ForwardPlanStatus = {}));
 var ReinstatementStatus;
 (function (ReinstatementStatus) {
     ReinstatementStatus["interim"] = "interim";
@@ -281,3 +287,10 @@ var LaneRentalAssessmentChargeBand;
     LaneRentalAssessmentChargeBand["charge_band_4"] = "charge_band_4";
     LaneRentalAssessmentChargeBand["charge_band_5"] = "charge_band_5";
 })(LaneRentalAssessmentChargeBand = exports.LaneRentalAssessmentChargeBand || (exports.LaneRentalAssessmentChargeBand = {}));
+var WorkStatus;
+(function (WorkStatus) {
+    WorkStatus["planned"] = "planned";
+    WorkStatus["in_progress"] = "in_progress";
+    WorkStatus["completed"] = "completed";
+    WorkStatus["cancelled"] = "cancelled";
+})(WorkStatus = exports.WorkStatus || (exports.WorkStatus = {}));

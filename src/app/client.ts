@@ -47,6 +47,8 @@ import { WorkStartRevertRequest } from '../interfaces/workStartRevertRequest'
 import { ActivityResponse } from '../interfaces/activityResponse'
 import { ActivityCancelRequest } from '../interfaces/activityCancelRequest'
 import { WorkStopRevertRequest } from '../interfaces/workStopRevertRequest'
+import { ForwardPlanCreateRequest } from '../interfaces/forwardPlanCreateRequest'
+import { ForwardPlanCreateResponse } from '../interfaces/forwardPlanCreateResponse'
 import { ActivityUpdateRequest } from '../interfaces/activityUpdateRequest'
 import { InitialAuthenticationResponse } from '../interfaces/initialAuthenticationResponse'
 import { PermitDiscountUpdateRequest } from '../interfaces/permitDiscountUpdateRequest'
@@ -238,6 +240,10 @@ export class StreetManagerApiClient {
 
   public async cancelActivity(requestConfig: RequestConfig, activityReferenceNumber: string, activityCancelRequest: ActivityCancelRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/activity/${activityReferenceNumber}/cancel`, activityCancelRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createForwardPlan(requestConfig: RequestConfig, forwardPlanCreateRequest: ForwardPlanCreateRequest): Promise<ForwardPlanCreateResponse> {
+    return this.httpHandler<ForwardPlanCreateResponse>(() => this.axios.post(`/forward-plans`, forwardPlanCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updatePermitDiscount(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitDiscountUpdateRequest: PermitDiscountUpdateRequest): Promise<void> {

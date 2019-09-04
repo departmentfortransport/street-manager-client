@@ -74,6 +74,11 @@ export declare enum PermitStatus {
     revoked_closed = "revoked_closed",
     deemed_closed = "deemed_closed"
 }
+export declare enum ForwardPlanStatus {
+    raised = "raised",
+    cancelled = "cancelled",
+    closed = "closed"
+}
 export declare enum ReinstatementStatus {
     interim = "interim",
     permanent = "permanent"
@@ -252,4 +257,10 @@ export declare enum LaneRentalAssessmentChargeBand {
     charge_band_3 = "charge_band_3",
     charge_band_4 = "charge_band_4",
     charge_band_5 = "charge_band_5"
+}
+export declare enum WorkStatus {
+    planned = "planned",
+    in_progress = "in_progress",
+    completed = "completed",
+    cancelled = "cancelled"
 }
