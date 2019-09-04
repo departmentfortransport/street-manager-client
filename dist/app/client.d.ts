@@ -46,6 +46,9 @@ import { ActivityCancelRequest } from '../interfaces/activityCancelRequest';
 import { WorkStopRevertRequest } from '../interfaces/workStopRevertRequest';
 import { ForwardPlanCreateRequest } from '../interfaces/forwardPlanCreateRequest';
 import { ForwardPlanCreateResponse } from '../interfaces/forwardPlanCreateResponse';
+import { ActivityUpdateRequest } from '../interfaces/activityUpdateRequest';
+import { InitialAuthenticationResponse } from '../interfaces/initialAuthenticationResponse';
+import { PermitDiscountUpdateRequest } from '../interfaces/permitDiscountUpdateRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -57,6 +60,7 @@ export declare class StreetManagerApiClient {
     constructor(config: StreetManagerApiClientConfig);
     status(): Promise<void>;
     authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse>;
+    authenticateInitial(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<InitialAuthenticationResponse>;
     createWork(requestConfig: RequestConfig, workCreateRequest: WorkCreateRequest): Promise<WorkCreateResponse>;
     createPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitCreateRequest: PermitCreateRequest): Promise<PermitCreateResponse>;
     getPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string): Promise<PermitResponse>;
@@ -88,10 +92,12 @@ export declare class StreetManagerApiClient {
     getDuration(requestConfig: RequestConfig, startDate: string, endDate: string): Promise<DurationCalculationResponse>;
     getWorkCategory(requestConfig: RequestConfig, getWorkCategoryRequest: GetWorkCategoryRequest): Promise<WorkCategoryResponse>;
     createActivity(requestConfig: RequestConfig, activityCreateRequest: ActivityCreateRequest): Promise<ActivityCreateResponse>;
+    updateActivity(requestConfig: RequestConfig, activityUpdateRequest: ActivityUpdateRequest, activityReferenceNumber: string): Promise<void>;
     updatePermitLaneRentalAssessment(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitLaneRentalAssessmentUpdateRequest: PermitLaneRentalAssessmentUpdateRequest): Promise<void>;
     getActivity(requestConfig: RequestConfig, activityReferenceNumber: string): Promise<ActivityResponse>;
     cancelActivity(requestConfig: RequestConfig, activityReferenceNumber: string, activityCancelRequest: ActivityCancelRequest): Promise<void>;
     createForwardPlan(requestConfig: RequestConfig, forwardPlanCreateRequest: ForwardPlanCreateRequest): Promise<ForwardPlanCreateResponse>;
+    updatePermitDiscount(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitDiscountUpdateRequest: PermitDiscountUpdateRequest): Promise<void>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;

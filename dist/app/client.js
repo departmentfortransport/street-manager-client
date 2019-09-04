@@ -37,6 +37,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post('/authenticate', authenticationRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    authenticateInitial(requestConfig, authenticationRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post('/authenticate/initial', authenticationRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     createWork(requestConfig, workCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.post('/works', workCreateRequest, this.generateRequestConfig(requestConfig)));
@@ -204,6 +209,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post(`/activity`, activityCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    updateActivity(requestConfig, activityUpdateRequest, activityReferenceNumber) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/activity/${activityReferenceNumber}`, activityUpdateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     updatePermitLaneRentalAssessment(requestConfig, workReferenceNumber, permitReferenceNumber, permitLaneRentalAssessmentUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/lane-rental-assessments`, permitLaneRentalAssessmentUpdateRequest, this.generateRequestConfig(requestConfig)));
@@ -222,6 +232,11 @@ class StreetManagerApiClient {
     createForwardPlan(requestConfig, forwardPlanCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.post(`/forward-plans`, forwardPlanCreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    updatePermitDiscount(requestConfig, workReferenceNumber, permitReferenceNumber, permitDiscountUpdateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/permit-discount`, permitDiscountUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     httpHandler(request) {

@@ -49,6 +49,9 @@ import { ActivityCancelRequest } from '../interfaces/activityCancelRequest'
 import { WorkStopRevertRequest } from '../interfaces/workStopRevertRequest'
 import { ForwardPlanCreateRequest } from '../interfaces/forwardPlanCreateRequest'
 import { ForwardPlanCreateResponse } from '../interfaces/forwardPlanCreateResponse'
+import { ActivityUpdateRequest } from '../interfaces/activityUpdateRequest'
+import { InitialAuthenticationResponse } from '../interfaces/initialAuthenticationResponse'
+import { PermitDiscountUpdateRequest } from '../interfaces/permitDiscountUpdateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -80,6 +83,10 @@ export class StreetManagerApiClient {
 
   public async authenticate(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<AuthenticationResponse> {
     return this.httpHandler<AuthenticationResponse>(() => this.axios.post('/authenticate', authenticationRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async authenticateInitial(requestConfig: RequestConfig, authenticationRequest: AuthenticationRequest): Promise<InitialAuthenticationResponse> {
+    return this.httpHandler<InitialAuthenticationResponse>(() => this.axios.post('/authenticate/initial', authenticationRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async createWork(requestConfig: RequestConfig, workCreateRequest: WorkCreateRequest): Promise<WorkCreateResponse> {
@@ -219,6 +226,10 @@ export class StreetManagerApiClient {
     return this.httpHandler<ActivityCreateResponse>(() => this.axios.post(`/activity`, activityCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
+  public async updateActivity(requestConfig: RequestConfig, activityUpdateRequest: ActivityUpdateRequest, activityReferenceNumber: string): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/activity/${activityReferenceNumber}`, activityUpdateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
   public async updatePermitLaneRentalAssessment(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitLaneRentalAssessmentUpdateRequest: PermitLaneRentalAssessmentUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/lane-rental-assessments`, permitLaneRentalAssessmentUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
@@ -233,6 +244,10 @@ export class StreetManagerApiClient {
 
   public async createForwardPlan(requestConfig: RequestConfig, forwardPlanCreateRequest: ForwardPlanCreateRequest): Promise<ForwardPlanCreateResponse> {
     return this.httpHandler<ForwardPlanCreateResponse>(() => this.axios.post(`/forward-plans`, forwardPlanCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updatePermitDiscount(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitDiscountUpdateRequest: PermitDiscountUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/permit-discount`, permitDiscountUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
