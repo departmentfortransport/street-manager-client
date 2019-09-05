@@ -10,10 +10,10 @@ export interface ForwardPlanResponse extends ForwardPlanSummaryResponse {
   highway_authority_swa_code: string
   workstream_id: number
   works_coordinates: any
-  street_name?: string
-  area_name?: string
+  street_name: string
+  area_name: string
   usrn: number
-  road_category?: number
+  road_category: number
   start_date: Date
   end_date: Date
   date_created: Date
