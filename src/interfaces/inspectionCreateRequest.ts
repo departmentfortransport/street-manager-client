@@ -52,5 +52,5 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
      */
     username: string
     /** Max length 100 characters */
-    inspector_name: string
+    inspector_name?: string
 }
