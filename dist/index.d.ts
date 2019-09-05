@@ -57,6 +57,7 @@ export * from './interfaces/activityResponse';
 export * from './interfaces/activityCancelRequest';
 export * from './interfaces/forwardPlanCreateRequest';
 export * from './interfaces/forwardPlanCreateResponse';
+export * from './interfaces/forwardPlanUpdateRequest';
 export * from './interfaces/activityUpdateRequest';
 export * from './interfaces/initialAuthenticationResponse';
 export * from './interfaces/permitDiscountUpdateRequest';
