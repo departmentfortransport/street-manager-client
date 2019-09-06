@@ -253,7 +253,7 @@ export class StreetManagerApiClient {
   }
 
   public async updateForwardPlan(requestConfig: RequestConfig, workReferenceNumber: string, forwardPlanReferenceNumber: string, forwardPlanUpdateRequest: ForwardPlanUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/works/${workReferenceNumber}/forward-plans/${forwardPlanReferenceNumber}`, forwardPlanUpdateRequest, this.generateRequestConfig(requestConfig)))
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/forward-plans/${forwardPlanReferenceNumber}`, forwardPlanUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updatePermitDiscount(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitDiscountUpdateRequest: PermitDiscountUpdateRequest): Promise<void> {

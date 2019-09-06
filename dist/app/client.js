@@ -241,7 +241,7 @@ class StreetManagerApiClient {
     }
     updateForwardPlan(requestConfig, workReferenceNumber, forwardPlanReferenceNumber, forwardPlanUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/forward-plans/${forwardPlanReferenceNumber}`, forwardPlanUpdateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/forward-plans/${forwardPlanReferenceNumber}`, forwardPlanUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     updatePermitDiscount(requestConfig, workReferenceNumber, permitReferenceNumber, permitDiscountUpdateRequest) {
