@@ -51,7 +51,7 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
     reinspection_type?: InspectionType,
     /**
      * See business rule ref. 3.2 - Inspection category
-     * Defaulted to inspection_category value if not provided and reinspection_date is provided
+     * Defaulted to inspection_category value if this and/or reinspection_type are not provided and reinspection_date is provided
      */
     reinspection_category?: InspectionCategory,
     /** Max length 50 characters
