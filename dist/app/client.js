@@ -234,6 +234,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post(`/forward-plans`, forwardPlanCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    getForwardPlan(requestConfig, workReferenceNumber, forwardPlanReferenceNumber) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}/forward-plans/${forwardPlanReferenceNumber}`, this.generateRequestConfig(requestConfig)));
+        });
+    }
     updatePermitDiscount(requestConfig, workReferenceNumber, permitReferenceNumber, permitDiscountUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/permit-discount`, permitDiscountUpdateRequest, this.generateRequestConfig(requestConfig)));

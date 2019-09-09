@@ -6,6 +6,7 @@ import { PermitResponse } from './permitResponse';
 import { WorkHistoryResponse } from './workHistoryResponse';
 import { FileResponse } from './fileResponse';
 import { WorkStatus } from './referenceTypes';
+import { ForwardPlanSummaryResponse } from './forwardPlanSummaryResponse';
 export interface WorkResponse {
     work_id: number;
     work_reference_number: string;
@@ -17,6 +18,7 @@ export interface WorkResponse {
     usrn: number;
     work_status: WorkStatus;
     active_permit?: PermitResponse;
+    forward_plan?: ForwardPlanSummaryResponse;
     permits?: PermitSummaryResponse[];
     history: WorkHistoryResponse[];
     sites?: SiteSummaryResponse[];

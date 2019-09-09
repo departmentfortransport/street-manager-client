@@ -49,6 +49,7 @@ import { ForwardPlanCreateResponse } from '../interfaces/forwardPlanCreateRespon
 import { ActivityUpdateRequest } from '../interfaces/activityUpdateRequest';
 import { InitialAuthenticationResponse } from '../interfaces/initialAuthenticationResponse';
 import { PermitDiscountUpdateRequest } from '../interfaces/permitDiscountUpdateRequest';
+import { ForwardPlanResponse } from '../interfaces/forwardPlanResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -97,6 +98,7 @@ export declare class StreetManagerApiClient {
     getActivity(requestConfig: RequestConfig, activityReferenceNumber: string): Promise<ActivityResponse>;
     cancelActivity(requestConfig: RequestConfig, activityReferenceNumber: string, activityCancelRequest: ActivityCancelRequest): Promise<void>;
     createForwardPlan(requestConfig: RequestConfig, forwardPlanCreateRequest: ForwardPlanCreateRequest): Promise<ForwardPlanCreateResponse>;
+    getForwardPlan(requestConfig: RequestConfig, workReferenceNumber: string, forwardPlanReferenceNumber: string): Promise<ForwardPlanResponse>;
     updatePermitDiscount(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitDiscountUpdateRequest: PermitDiscountUpdateRequest): Promise<void>;
     private httpHandler;
     private handleError;
