@@ -47,7 +47,7 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
      * Time must occur today or a date in the future
      */
     reinspection_date_time?: Date,
-    /** Defaulted to inspection_type value if not provided and reinspection_date is provided */
+    /** Defaulted to inspection_type value if this and/or reinspection_category are not provided and reinspection_date is provided */
     reinspection_type?: InspectionType,
     /**
      * See business rule ref. 3.2 - Inspection category
