@@ -24,4 +24,5 @@ export interface InspectionResponse {
     username: string;
     promoter_organisation: string;
     highway_authority: string;
+    inspector_name?: string;
 }
