@@ -50,4 +50,6 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
      * Should be populated with the user creating the inspection
      */
     username: string;
+    /** Max length 100 characters */
+    inspector_name?: string;
 }
