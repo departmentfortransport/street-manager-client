@@ -3,6 +3,5 @@ export interface WorkHistoryResponse {
   topic: string,
   details: string,
   username: string,
-  isComment?: boolean,
   object_reference?: string
 }
