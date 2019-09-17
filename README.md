@@ -26,3 +26,5 @@ Then:
 5. In the repo where you have made your changes, commit your changes. This will assign your latest working version a _commit hash_
 6. Run `finish-local-changes.sh` to revert all references to the `street-manager-client` dependency in any `package.json` that references it with a Github URL plus the latest commit hash (generated in part 5)
 7. Commit and push the updated `package.json` of each repo and open a Pull Request against each repo. Ensure that the merging of these Pull Requests are co-ordinated to avoid any branches becoming out of sync.
+
+Test
