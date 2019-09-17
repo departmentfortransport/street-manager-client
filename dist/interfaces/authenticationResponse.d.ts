@@ -1,6 +1,7 @@
 export interface AuthenticationResponse {
-    idToken: string;
-    organisationReference: string;
-    accessToken: string;
-    refreshToken: string;
+    idToken?: string;
+    organisationReference?: string;
+    accessToken?: string;
+    refreshToken?: string;
+    sessionToken?: string;
 }
