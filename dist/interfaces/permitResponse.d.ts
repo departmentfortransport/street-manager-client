@@ -57,6 +57,7 @@ export interface PermitResponse extends PermitSummaryResponse {
     assessment_discount_reason?: string;
     is_ttro_required?: boolean;
     immediate_risk?: boolean;
+    is_early_start: boolean;
     early_start_pre_approval?: boolean;
     pre_approval_details?: string;
     pre_approval_authoriser?: string;
