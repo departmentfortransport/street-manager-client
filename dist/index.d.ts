@@ -63,3 +63,4 @@ export * from './interfaces/initialAuthenticationResponse';
 export * from './interfaces/permitDiscountUpdateRequest';
 export * from './interfaces/forwardPlanSummaryResponse';
 export * from './interfaces/forwardPlanResponse';
+export * from './interfaces/forwardPlanCancelRequest';
