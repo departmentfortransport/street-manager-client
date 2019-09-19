@@ -1,5 +1,6 @@
-import { InspectionType, InspectionCategory, InspectionOutcome, DefectFixedOnsite, FailureReason } from './referenceTypes'
+import { InspectionType, InspectionCategory, InspectionOutcome, DefectFixedOnsite } from './referenceTypes'
 import { DelegatedUserIdentification } from './delegatedUserIdentification'
+import { FailureReasonDetails } from './failureReasonDetails'
 
 export interface InspectionCreateRequest extends DelegatedUserIdentification {
     inspection_type: InspectionType,
@@ -9,12 +10,8 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
     inspection_category: InspectionCategory,
     /** See business rule ref. 3.3 - Inspection outcome */
     inspection_outcome: InspectionOutcome,
-    /** Required if inspection_outcome = failed_low or failed_high
-     * Max length 500 characters
-     */
-    defect_details?: string,
     /** See business rule ref. 3.4 - Inspection failure reasons */
-    failure_reasons?: FailureReason[],
+    failure_reasons_details?: FailureReasonDetails[],
     /** Required if inspection_outcome = unable_to_complete_inspection
      * Max length 500 characters
      */

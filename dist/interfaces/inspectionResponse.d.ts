@@ -1,5 +1,6 @@
-import { InspectionCategory, InspectionOutcome, DefectFixedOnsite, InspectionType, FailureReason } from './referenceTypes';
+import { InspectionCategory, InspectionOutcome, DefectFixedOnsite, InspectionType } from './referenceTypes';
 import { FileSummaryResponse } from './fileSummaryResponse';
+import { FailureReasonDetailsResponse } from './failureReasonDetailsResponse';
 export interface InspectionResponse {
     inspection_reference_number: string;
     permit_id: number;
@@ -8,7 +9,7 @@ export interface InspectionResponse {
     inspection_category: InspectionCategory;
     inspection_outcome: InspectionOutcome;
     defect_details?: string;
-    failure_reasons?: FailureReason[];
+    failure_reason_details?: FailureReasonDetailsResponse[];
     unable_to_complete_details?: string;
     was_call_logged?: boolean;
     call_logged_to?: string;
