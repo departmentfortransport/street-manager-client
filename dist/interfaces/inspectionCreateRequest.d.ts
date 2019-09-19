@@ -10,7 +10,7 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
     /** See business rule ref. 3.3 - Inspection outcome */
     inspection_outcome: InspectionOutcome;
     /** See business rule ref. 3.4 - Inspection failure reasons */
-    failure_reasons_details?: FailureReasonDetails[];
+    failure_reason_details?: FailureReasonDetails[];
     /** Required if inspection_outcome = unable_to_complete_inspection
      * Max length 500 characters
      */
