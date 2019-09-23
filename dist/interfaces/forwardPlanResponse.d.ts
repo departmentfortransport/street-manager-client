@@ -22,4 +22,5 @@ export interface ForwardPlanResponse extends ForwardPlanSummaryResponse {
     traffic_management_type?: TrafficManagementType;
     additional_info?: string;
     forward_plan_asds?: PermitASD[];
+    cancelled_reason?: string;
 }
