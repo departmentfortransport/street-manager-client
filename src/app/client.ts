@@ -292,6 +292,10 @@ export class StreetManagerApiClient {
       requestConfig.headers.token = config.token
     }
 
+    if (config.frontendToken) {
+      requestConfig.headers.frontendToken = config.frontendToken
+    }
+
     if (!request) {
       requestConfig.params = {}
     } else {
