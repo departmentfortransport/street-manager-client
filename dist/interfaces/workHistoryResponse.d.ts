@@ -4,4 +4,5 @@ export interface WorkHistoryResponse {
     details: string;
     username: string;
     object_reference?: string;
+    update_id: number;
 }
