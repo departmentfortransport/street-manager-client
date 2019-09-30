@@ -1,8 +1,7 @@
 import { ReinstatementStatus } from './referenceTypes'
+import { SiteDetails } from './siteDetails'
 
-export interface SiteSummaryResponse {
-  site_id: number,
-  site_description: string,
+export interface SiteSummaryResponse extends SiteDetails {
   permit_id: number,
   depth: number,
   length: number,
