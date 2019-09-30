@@ -94,9 +94,9 @@ export enum ReinstatementStatus {
 }
 
 export enum InspectionType {
-  slg = 'slg',
+  live_site = 'live_site',
   reinstatement = 'reinstatement',
-  defect_inspection = 'defect_inspection'
+  non_compliance_follow_up = 'non_compliance_follow_up'
 }
 
 export enum InspectionResponseType {
@@ -112,7 +112,9 @@ export enum InspectionCategory {
   routine = 'routine',
   joint_site_visit = 'joint_site_visit',
   follow_up = 'follow_up',
-  follow_up_completion = 'follow_up_completion'
+  follow_up_completion = 'follow_up_completion',
+  site_occupancy = 'site_occupancy',
+  conditions = 'conditions'
 }
 
 export enum InspectionOutcome {
@@ -121,7 +123,12 @@ export enum InspectionOutcome {
   failed_low = 'failed_low',
   failed_high = 'failed_high',
   further_inspections_required = 'further_inspections_required',
-  withdraw_defect = 'withdraw_defect'
+  agreed_site_compliance = 'agreed_site_compliance',
+  non_compliant_with_conditions = 'non_compliant_with_conditions',
+  works_stopped_apparatus_remaining = 'works_stopped_apparatus_remaining',
+  works_in_progress_no_carriageway_incursion = 'works_in_progress_no_carriageway_incursion',
+  works_in_progress = 'works_in_progress',
+  works_stopped = 'works_stopped'
 }
 
 export enum DefectFixedOnsite {
@@ -232,19 +239,19 @@ export enum ActivityActivityType {
 }
 
 export enum FailureReason {
-  slg_signage = 'slg_signage',
-  slg_distance = 'slg_distance',
-  slg_safety_zone = 'slg_safety_zone',
-  slg_barriers = 'slg_barriers',
-  slg_traffic_control = 'slg_traffic_control',
-  slg_pedestrian_provision = 'slg_pedestrian_provision',
-  slg_cyclist_provision = 'slg_cyclist_provision',
-  slg_operative_qualification = 'slg_operative_qualification',
-  slg_equipment = 'slg_equipment',
-  slg_materials = 'slg_materials',
-  slg_compaction = 'slg_compaction',
-  slg_construction_layers = 'slg_construction_layers',
-  slg_storage_of_materials = 'slg_storage_of_materials',
+  live_site_signage = 'live_site_signage',
+  live_site_distance = 'live_site_distance',
+  live_site_safety_zone = 'live_site_safety_zone',
+  live_site_barriers = 'live_site_barriers',
+  live_site_traffic_control = 'live_site_traffic_control',
+  live_site_pedestrian_provision = 'live_site_pedestrian_provision',
+  live_site_cyclist_provision = 'live_site_cyclist_provision',
+  live_site_operative_qualification = 'live_site_operative_qualification',
+  live_site_equipment = 'live_site_equipment',
+  live_site_materials = 'live_site_materials',
+  live_site_compaction = 'live_site_compaction',
+  live_site_construction_layers = 'live_site_construction_layers',
+  live_site_storage_of_materials = 'live_site_storage_of_materials',
   reinstatement_damage_to_surround_area = 'reinstatement_damage_to_surround_area',
   reinstatement_saw_cutting = 'reinstatement_saw_cutting',
   reinstatement_acute_angles = 'reinstatement_acute_angles',

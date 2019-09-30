@@ -12,11 +12,11 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
     inspection_outcome: InspectionOutcome,
     /** See business rule ref. 3.4 - Inspection failure reasons */
     failure_reason_details?: FailureReasonDetails[],
-    /** Required if inspection_outcome = unable_to_complete_inspection
+    /** Required if inspection_outcome = unable_to_complete_inspection or non_compliant_with_conditions
      * Max length 500 characters
      */
-    unable_to_complete_details?: string,
-    /** Required if inspection_outcome = failed_low or failed_high and inspection_type = slg */
+    inspection_outcome_details?: string,
+    /** Required if inspection_outcome = failed_high and inspection_type = live_site */
     was_call_logged?: boolean,
     /** Required if was_call_logged = true
      * Max length 100 characters
@@ -26,10 +26,10 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
      * Max length 500 characters
      */
     call_logged_summary?: string,
-    /** Required if inspection_outcome = failed_low or failed_high and inspection_type = slg */
+    /** Required if inspection_outcome = failed_high and inspection_type = live_site */
     defect_fixed_on_site?: DefectFixedOnsite,
     /** Max length 500 characters */
-    additional_failure_comments?: string,
+    additional_comments?: string,
     inspection_evidence?: boolean,
     /** Required if inspection_evidence = true
      * Array values must be unique

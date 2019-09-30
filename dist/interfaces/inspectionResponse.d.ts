@@ -10,12 +10,12 @@ export interface InspectionResponse {
     inspection_outcome: InspectionOutcome;
     defect_details?: string;
     failure_reason_details?: FailureReasonDetailsResponse[];
-    unable_to_complete_details?: string;
+    inspection_outcome_details?: string;
     was_call_logged?: boolean;
     call_logged_to?: string;
     call_logged_summary?: string;
     defect_fixed_on_site?: DefectFixedOnsite;
-    additional_failure_comments?: string;
+    additional_comments?: string;
     date_created: Date;
     date_modified: Date;
     files?: FileSummaryResponse[];
