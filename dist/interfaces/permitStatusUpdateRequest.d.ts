@@ -15,7 +15,7 @@ export interface PermitStatusUpdateRequest extends DelegatedUserIdentification {
      * Must contain between 1 and 5 values
      */
     reasons_for_refusal?: ReasonForRefusal[];
-    /** Required if permit_status = granted_proposed or granted_with_changes
+    /** Required if permit_status = granted_proposed
      * Is whole number between 0 and 100 inclusive
      */
     assessment_discount?: number;
@@ -23,4 +23,8 @@ export interface PermitStatusUpdateRequest extends DelegatedUserIdentification {
      * Max length 500 characters
      */
     revoke_reason?: string;
+    /** Required if permit_status = permit_modification_request
+     * Max length 500 characters
+     */
+    pending_change_details?: string;
 }
