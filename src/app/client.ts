@@ -265,6 +265,10 @@ export class StreetManagerApiClient {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/permit-discount`, permitDiscountUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
+  public async cancelScheduledInspection(requestConfig: RequestConfig, workReferenceNumber: string): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.delete(`/works/${workReferenceNumber}/scheduled-inspections`, this.generateRequestConfig(requestConfig)))
+  }
+
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
     try {
       let response: AxiosResponse<T> = await request()
