@@ -22,6 +22,10 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
      */
     call_logged_to?: string;
     /** Required if was_call_logged = true
+     * Max length 100 characters
+     */
+    call_logged_reference?: string;
+    /** Required if was_call_logged = true
      * Max length 500 characters
      */
     call_logged_summary?: string;
