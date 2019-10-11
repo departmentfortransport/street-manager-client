@@ -68,7 +68,7 @@ var PermitStatus;
 (function (PermitStatus) {
     PermitStatus["submitted"] = "submitted";
     PermitStatus["granted_proposed"] = "granted_proposed";
-    PermitStatus["granted_with_changes"] = "granted_with_changes";
+    PermitStatus["permit_modification_request"] = "permit_modification_request";
     PermitStatus["refused"] = "refused";
     PermitStatus["granted_in_progress"] = "granted_in_progress";
     PermitStatus["closed"] = "closed";
