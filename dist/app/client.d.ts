@@ -52,6 +52,7 @@ import { PermitDiscountUpdateRequest } from '../interfaces/permitDiscountUpdateR
 import { ForwardPlanResponse } from '../interfaces/forwardPlanResponse';
 import { ForwardPlanUpdateRequest } from '../interfaces/forwardPlanUpdateRequest';
 import { ForwardPlanCancelRequest } from '../interfaces/forwardPlanCancelRequest';
+import { ScheduledInspectionCreateRequest } from '../interfaces/scheduledInspectionCreateRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -104,6 +105,7 @@ export declare class StreetManagerApiClient {
     updateForwardPlan(requestConfig: RequestConfig, workReferenceNumber: string, forwardPlanReferenceNumber: string, forwardPlanUpdateRequest: ForwardPlanUpdateRequest): Promise<void>;
     cancelForwardPlan(requestConfig: RequestConfig, workReferenceNumber: string, forwardPlanReferenceNumber: string, forwardPlanCancelRequest: ForwardPlanCancelRequest): Promise<void>;
     updatePermitDiscount(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitDiscountUpdateRequest: PermitDiscountUpdateRequest): Promise<void>;
+    createScheduledInspection(requestConfig: RequestConfig, workReferenceNumber: string, scheduledInspectionCreateRequest: ScheduledInspectionCreateRequest): Promise<void>;
     cancelScheduledInspection(requestConfig: RequestConfig, workReferenceNumber: string): Promise<void>;
     private httpHandler;
     private handleError;
