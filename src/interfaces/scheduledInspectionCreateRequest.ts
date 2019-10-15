@@ -1,6 +1,7 @@
 import { InspectionType, InspectionCategory } from './referenceTypes'
+import { DelegatedUserIdentification } from './delegatedUserIdentification'
 
-export interface ScheduledInspectionCreateRequest {
+export interface ScheduledInspectionCreateRequest extends DelegatedUserIdentification {
   scheduled_inspection_type: InspectionType
   /** See business rule ref. 3.2 - Inspection category */
   scheduled_inspection_category: InspectionCategory
