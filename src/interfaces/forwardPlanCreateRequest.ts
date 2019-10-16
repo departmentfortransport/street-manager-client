@@ -1,7 +1,8 @@
 import { TrafficManagementType } from './referenceTypes'
 import { PermitASD } from './permitASD'
+import { DelegatedUserIdentification } from './delegatedUserIdentification'
 
-export interface ForwardPlanCreateRequest {
+export interface ForwardPlanCreateRequest extends DelegatedUserIdentification {
     /** Max length 24 characters
      * Must be unique in the system
      * Must contain only alphanumeric characters, dashes and underscores
