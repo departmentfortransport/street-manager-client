@@ -55,6 +55,7 @@ import { PermitDiscountUpdateRequest } from '../interfaces/permitDiscountUpdateR
 import { ForwardPlanResponse } from '../interfaces/forwardPlanResponse'
 import { ForwardPlanUpdateRequest } from '../interfaces/forwardPlanUpdateRequest'
 import { ForwardPlanCancelRequest } from '../interfaces/forwardPlanCancelRequest'
+import { ScheduledInspectionCreateRequest } from '../interfaces/scheduledInspectionCreateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -263,6 +264,10 @@ export class StreetManagerApiClient {
 
   public async updatePermitDiscount(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitDiscountUpdateRequest: PermitDiscountUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/permit-discount`, permitDiscountUpdateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createScheduledInspection(requestConfig: RequestConfig, workReferenceNumber: string, scheduledInspectionCreateRequest: ScheduledInspectionCreateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/works/${workReferenceNumber}/scheduled-inspections`, scheduledInspectionCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async cancelScheduledInspection(requestConfig: RequestConfig, workReferenceNumber: string): Promise<void> {

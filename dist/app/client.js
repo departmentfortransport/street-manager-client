@@ -254,6 +254,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/permit-discount`, permitDiscountUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    createScheduledInspection(requestConfig, workReferenceNumber, scheduledInspectionCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/scheduled-inspections`, scheduledInspectionCreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     cancelScheduledInspection(requestConfig, workReferenceNumber) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.delete(`/works/${workReferenceNumber}/scheduled-inspections`, this.generateRequestConfig(requestConfig)));

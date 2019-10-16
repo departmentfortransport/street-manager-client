@@ -1,7 +1,8 @@
 import { TrafficManagementType } from './referenceTypes'
 import { PermitASD } from './permitASD'
+import { DelegatedUserIdentification } from './delegatedUserIdentification'
 
-export interface ForwardPlanUpdateRequest {
+export interface ForwardPlanUpdateRequest extends DelegatedUserIdentification {
     /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon */
     works_coordinates: any
     start_date: Date
