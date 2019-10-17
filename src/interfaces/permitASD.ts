@@ -1,10 +1,10 @@
-import { ASDPeriodicityCode } from './referenceTypes'
+import { ASDCode, ASDPeriodicityCode } from './referenceTypes'
 
 export interface PermitASD {
   /**
    * Use Street Lookup API endpoint /nsg/streets to lookup this information
    */
-  street_special_desig_code: number
+  street_special_desig_code: ASDCode
   /** Max length 255 characters
    * Use Street Lookup API endpoint /nsg/streets to lookup this information
    */
@@ -21,5 +21,8 @@ export interface PermitASD {
    * Use Street Lookup API endpoint /nsg/streets to lookup this information
    */
   special_desig_end_time?: number
+  /**
+   * Use Street Lookup API endpoint /nsg/streets to lookup this information
+   */
   special_desig_periodicity_code?: ASDPeriodicityCode
 }
