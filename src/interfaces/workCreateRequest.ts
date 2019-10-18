@@ -10,16 +10,12 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
    * If not supplied it will be auto-generated
    */
   work_reference_number?: string
-  /** DEPRECATED: Max length 100 characters */
-  promoter_organisation?: string
   /** Max length 4 characters */
   promoter_swa_code: string
-  /** DEPRECATED: Max length 100 characters */
-  promoter_contact_details?: string
   /** Max length 100 characters */
-  approved_contractor: string
+  secondary_contact: string
   /** Max length 100 characters */
-  contractor_contact_details: string
+  secondary_contact_number: string
   /** Max length 100 characters */
   secondary_contact_email?: string
   proposed_start_date: Date
@@ -59,10 +55,6 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
    * See business rule ref. 1.12 - USRN
    */
   usrn: number
-  /** DEPRECATED: Max length 100 characters
-   * Use Street Lookup API endpoint /nsg/streets to lookup this information
-   */
-  highway_authority?: string
   /** Max length 4 characters */
   highway_authority_swa_code: string
   /**
@@ -121,6 +113,5 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
   additional_info?: string
   /** Must consist of 3 positive whole numbers */
   workstream_prefix?: string
-  /** Optional. If not provided, this will be defaulted to "no" */
-  close_footway?: CloseFootway
+  close_footway: CloseFootway
 }

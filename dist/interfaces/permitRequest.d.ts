@@ -2,12 +2,10 @@ import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType
 import { PermitCondition } from './permitCondition';
 import { DelegatedUserIdentification } from './delegatedUserIdentification';
 export interface PermitRequest extends DelegatedUserIdentification {
-    /** DEPRECATED: Max length 100 characters */
-    promoter_contact_details?: string;
     /** Max length 100 characters */
-    approved_contractor: string;
+    secondary_contact: string;
     /** Max length 100 characters */
-    contractor_contact_details: string;
+    secondary_contact_number: string;
     /** Max length 100 characters */
     secondary_contact_email?: string;
     proposed_start_date: Date;
@@ -83,6 +81,5 @@ export interface PermitRequest extends DelegatedUserIdentification {
     file_ids?: number[];
     /** Max length 500 characters */
     additional_info?: string;
-    /** Optional. If not provided, this will be defaulted to "no" */
-    close_footway?: CloseFootway;
+    close_footway: CloseFootway;
 }
