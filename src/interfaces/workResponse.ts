@@ -13,7 +13,9 @@ export interface WorkResponse {
   work_reference_number: string
   workstream_id: number
   promoter_swa_code: string
+  promoter_organisation: string
   highway_authority_swa_code: string
+  highway_authority: string
   street_name: string
   area_name?: string
   usrn: number
