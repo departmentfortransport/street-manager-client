@@ -33,7 +33,7 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
     defect_fixed_on_site?: DefectFixedOnsite;
     /** Max length 500 characters */
     additional_comments?: string;
-    inspection_evidence?: boolean;
+    inspection_evidence: boolean;
     /** Required if inspection_evidence = true
      * Array values must be unique
      * Must not contain null or undefined values

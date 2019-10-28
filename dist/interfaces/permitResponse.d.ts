@@ -12,8 +12,8 @@ export interface PermitResponse extends PermitSummaryResponse {
     promoter_organisation: string;
     promoter_swa_code: string;
     promoter_contact_details: string;
-    approved_contractor: string;
-    contractor_contact_details: string;
+    secondary_contact: string;
+    secondary_contact_number: string;
     secondary_contact_email?: string;
     proposed_start_time?: Date;
     proposed_end_time?: Date;
