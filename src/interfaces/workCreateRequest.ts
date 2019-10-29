@@ -1,17 +1,9 @@
 import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType, CloseFootway } from './referenceTypes'
 import { PermitCondition } from './permitCondition'
 import { PermitASD } from './permitASD'
-import { DelegatedUserIdentification } from './delegatedUserIdentification'
+import { BaseWorkCreateRequest } from './baseWorkCreateRequest'
 
-export interface WorkCreateRequest extends DelegatedUserIdentification {
-  /** Max length 24 characters
-   * Must be unique in the system
-   * Must contain only alphanumeric characters, dashes and underscores
-   * If not supplied it will be auto-generated
-   */
-  work_reference_number?: string
-  /** Max length 4 characters */
-  promoter_swa_code: string
+export interface WorkCreateRequest extends BaseWorkCreateRequest {
   /** Max length 100 characters */
   secondary_contact: string
   /** Max length 100 characters */
@@ -41,31 +33,6 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
    * See business rule ref. 1.11 - Permit conditions
    */
   permit_conditions?: PermitCondition[]
-  /** Max length 100 characters
-   * Use Street Lookup API endpoint /nsg/streets to lookup this information
-   * If not provided, populated with NSG data related to supplied USRN
-   */
-  street_name?: string
-  /** Max length 100 characters
-   * Use Street Lookup API endpoint /nsg/streets to lookup this information
-   * If not provided, populated with NSG data related to supplied USRN
-   */
-  area_name?: string
-  /** Is whole number between 1000001 and 99999999 inclusive
-   * See business rule ref. 1.12 - USRN
-   */
-  usrn: number
-  /** Max length 4 characters */
-  highway_authority_swa_code: string
-  /**
-   * Is whole number between 0 and 4 inclusive
-   * If not provided, populated with NSG data related to supplied USRN
-   */
-  road_category?: number
-  /** Max length 500 characters */
-  works_location_description: string
-  /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon */
-  works_coordinates: any
   environmental_health_notifiable: boolean
   collaborative_working: boolean
   /** Required if collaborative_working = true
@@ -111,7 +78,5 @@ export interface WorkCreateRequest extends DelegatedUserIdentification {
   early_start_reason?: string
   /** Max length 500 characters */
   additional_info?: string
-  /** Must consist of 3 positive whole numbers */
-  workstream_prefix?: string
   close_footway: CloseFootway
 }
