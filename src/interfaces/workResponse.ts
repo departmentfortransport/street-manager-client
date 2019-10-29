@@ -20,6 +20,7 @@ export interface WorkResponse {
   area_name?: string
   usrn: number
   work_status: WorkStatus
+  works_location_description: string
   active_permit?: PermitResponse
   forward_plan?: ForwardPlanSummaryResponse
   permits?: PermitSummaryResponse[]
