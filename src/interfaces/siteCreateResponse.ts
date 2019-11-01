@@ -1,5 +1,3 @@
-import { DelegatedUserIdentification } from './delegatedUserIdentification'
-
-export interface SiteCreateResponse extends DelegatedUserIdentification {
+export interface SiteCreateResponse {
   site_id: number
 }

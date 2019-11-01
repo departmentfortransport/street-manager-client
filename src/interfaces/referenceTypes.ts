@@ -413,3 +413,10 @@ export enum ASDPeriodicityCode {
   continuous_62 = 15,
   special_arrangements_63 = 16
 }
+
+export enum ReinstatementType {
+  excavation = 'excavation',
+  bar_holes = 'bar_holes',
+  core_holes = 'core_holes',
+  pole_testing = 'pole_testing'
+}

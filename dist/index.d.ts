@@ -70,3 +70,4 @@ export * from './interfaces/siteDetails';
 export * from './interfaces/failureReasonDetailsResponse';
 export * from './interfaces/forwardPlanCancelRequest';
 export * from './interfaces/scheduledInspectionCreateRequest';
+export * from './interfaces/siteCreateRequest';
