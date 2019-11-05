@@ -26,7 +26,7 @@ export interface ForwardPlanCreateRequest {
      */
     area_name?: string;
     /** Is whole number between 1000001 and 99999999 inclusive
-     * See business rule ref. 1.12 - USRN
+     * See business rule ref. 1.11 - USRN
      */
     usrn: number;
     /**
