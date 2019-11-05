@@ -13,6 +13,7 @@ export interface PermitStatusUpdateRequest extends DelegatedUserIdentification {
     additional_comments?: string;
     /** Array values must be unique
      * Must contain between 1 and 5 values
+     * Required if permit_status = refused
      */
     reasons_for_refusal?: ReasonForRefusal[];
     /** Required if permit_status = granted_proposed

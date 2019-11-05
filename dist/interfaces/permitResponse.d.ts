@@ -1,4 +1,4 @@
-import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, PermitStatus, WorkType, ReasonForRefusal, CloseFootway, LaneRentalAssessmentOutcome, LaneRentalAssessmentChargeBand } from './referenceTypes';
+import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, PermitStatus, WorkType, ReasonForRefusal, CloseFootway, LaneRentalAssessmentOutcome, LaneRentalAssessmentChargeBand, WorkStatus } from './referenceTypes';
 import { PermitCondition } from './permitCondition';
 import { FileSummaryResponse } from './fileSummaryResponse';
 import { PermitASD } from './permitASD';
@@ -79,4 +79,5 @@ export interface PermitResponse extends PermitSummaryResponse {
     lane_rental_assessment_charges_agreed?: boolean;
     is_lane_rental: boolean;
     pending_change_details?: string;
+    work_status: WorkStatus;
 }
