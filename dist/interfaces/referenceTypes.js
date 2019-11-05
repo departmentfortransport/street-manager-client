@@ -193,9 +193,11 @@ var AlterationStatus;
     AlterationStatus["deemed"] = "deemed";
     AlterationStatus["cancelled"] = "cancelled";
     AlterationStatus["revoked"] = "revoked";
+    AlterationStatus["auto_applied"] = "auto_applied";
 })(AlterationStatus = exports.AlterationStatus || (exports.AlterationStatus = {}));
 var AlterationType;
 (function (AlterationType) {
+    AlterationType["PROMOTER_IMPOSED_CHANGE"] = "PROMOTER_IMPOSED_CHANGE";
     AlterationType["PROMOTER_CHANGE_REQUEST"] = "PROMOTER_CHANGE_REQUEST";
     AlterationType["HA_CHANGE_REQUEST"] = "HA_CHANGE_REQUEST";
     AlterationType["HA_IMPOSED_CHANGE"] = "HA_IMPOSED_CHANGE";
