@@ -2,7 +2,7 @@ import { TrafficManagementType, ActivityActivityType, LocationType } from './ref
 import { DelegatedUserIdentification } from './delegatedUserIdentification';
 export interface ActivityCreateRequest extends DelegatedUserIdentification {
     /** Is whole number between 1000001 and 99999999 inclusive
-     * See business rule ref. 1.12 - USRN
+     * See business rule ref. 1.11 - USRN
      */
     usrn: number;
     /** Max length 100 characters
