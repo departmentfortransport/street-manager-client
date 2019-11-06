@@ -355,7 +355,16 @@ export enum AuditEvent {
   organisation_contract_removed = 'organisation_contract_removed',
   organisation_updated = 'organisation_updated',
   workstream_created = 'workstream_created',
-  workstream_updated = 'workstream_updated'
+  workstream_updated = 'workstream_updated',
+  inspection_works_stopped = 'inspection_works_stopped',
+  inspection_works_stopped_apparatus_remaining = 'inspection_works_stopped_apparatus_remaining',
+  inspection_works_in_progress = 'inspection_works_in_progress',
+  inspection_works_in_progress_no_carriageway_incursion = 'inspection_works_in_progress_no_carriageway_incursion',
+  inspection_non_compliant_with_conditions = 'inspection_non_compliant_with_conditions',
+  permit_modification_request = 'permit_modification_request',
+  scheduled_inspection_cancelled = 'scheduled_inspection_cancelled',
+  scheduled_inspection_created = 'scheduled_inspection_created',
+  alteration_applied_auto = 'alteration_applied_auto'
 }
 
 export enum ASDCode {
