@@ -36,4 +36,6 @@ export interface ReinstatementCreateRequest extends BaseWorkCreateRequest {
   inspection_units?: number
   /** Must be a number between *** and *** */
   number_of_holes: number
+  /** Must consist of 3 positive whole numbers */
+  workstream_prefix?: string
 }
