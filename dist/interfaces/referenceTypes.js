@@ -401,3 +401,24 @@ var ASDPeriodicityCode;
     ASDPeriodicityCode[ASDPeriodicityCode["continuous_62"] = 15] = "continuous_62";
     ASDPeriodicityCode[ASDPeriodicityCode["special_arrangements_63"] = 16] = "special_arrangements_63";
 })(ASDPeriodicityCode = exports.ASDPeriodicityCode || (exports.ASDPeriodicityCode = {}));
+var ReinstatementType;
+(function (ReinstatementType) {
+    ReinstatementType["excavation"] = "excavation";
+    ReinstatementType["bar_holes"] = "bar_holes";
+    ReinstatementType["core_holes"] = "core_holes";
+    ReinstatementType["pole_testing"] = "pole_testing";
+})(ReinstatementType = exports.ReinstatementType || (exports.ReinstatementType = {}));
+var Section81Type;
+(function (Section81Type) {
+    Section81Type["tee_valve_access_covers"] = "tee_valve_access_covers";
+    Section81Type["cabinet"] = "cabinet";
+    Section81Type["marker_post"] = "marker_post";
+    Section81Type["pole_post"] = "pole_post";
+    Section81Type["overhead_cables_broken_low_encroaching_onto_highway"] = "overhead_cables_broken_low_encroaching_onto_highway";
+    Section81Type["other"] = "other";
+})(Section81Type = exports.Section81Type || (exports.Section81Type = {}));
+var Section81Severity;
+(function (Section81Severity) {
+    Section81Severity["high"] = "high";
+    Section81Severity["low"] = "low";
+})(Section81Severity = exports.Section81Severity || (exports.Section81Severity = {}));

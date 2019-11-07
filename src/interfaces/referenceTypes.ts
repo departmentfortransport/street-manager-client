@@ -398,3 +398,24 @@ export enum ASDPeriodicityCode {
   continuous_62 = 15,
   special_arrangements_63 = 16
 }
+
+export enum ReinstatementType {
+  excavation = 'excavation',
+  bar_holes = 'bar_holes',
+  core_holes = 'core_holes',
+  pole_testing = 'pole_testing'
+}
+
+export enum Section81Type {
+  tee_valve_access_covers = 'tee_valve_access_covers',
+  cabinet = 'cabinet',
+  marker_post = 'marker_post',
+  pole_post = 'pole_post',
+  overhead_cables_broken_low_encroaching_onto_highway = 'overhead_cables_broken_low_encroaching_onto_highway',
+  other = 'other',
+}
+
+export enum Section81Severity {
+  high = 'high',
+  low = 'low'
+}
