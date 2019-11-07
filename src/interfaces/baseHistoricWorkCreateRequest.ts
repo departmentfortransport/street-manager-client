@@ -1,4 +1,6 @@
-export interface BaseHistoricWorkCreateRequest {
+import { BaseWorkCreateRequest } from './baseWorkCreateRequest'
+
+export interface BaseHistoricWorkCreateRequest extends BaseWorkCreateRequest {
   /** TODO */
   historical_permit_reference: string
   /** Max length 500 characters */
