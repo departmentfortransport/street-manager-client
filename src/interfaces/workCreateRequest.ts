@@ -79,4 +79,8 @@ export interface WorkCreateRequest extends BaseWorkCreateRequest {
   /** Max length 500 characters */
   additional_info?: string
   close_footway: CloseFootway
+  /** Max length 500 characters */
+  works_location_description: string
+  /** Must consist of 3 positive whole numbers */
+  workstream_prefix?: string
 }

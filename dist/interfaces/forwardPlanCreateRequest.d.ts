@@ -13,4 +13,8 @@ export interface ForwardPlanCreateRequest extends BaseWorkCreateRequest {
     /** Max length 500 characters */
     additional_info?: string;
     forward_plan_asds?: PermitASD[];
+    /** Max length 500 characters */
+    works_location_description: string;
+    /** Must consist of 3 positive whole numbers */
+    workstream_prefix?: string;
 }

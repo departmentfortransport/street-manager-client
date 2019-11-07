@@ -10,8 +10,6 @@ export interface BaseWorkCreateRequest extends DelegatedUserIdentification {
     promoter_swa_code: string;
     /** Max length 4 characters */
     highway_authority_swa_code: string;
-    /** Must consist of 3 positive whole numbers */
-    workstream_prefix?: string;
     /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon */
     works_coordinates: any;
     /** Max length 100 characters
@@ -33,6 +31,4 @@ export interface BaseWorkCreateRequest extends DelegatedUserIdentification {
      * If not provided, populated with NSG data related to supplied USRN
      */
     road_category?: number;
-    /** Max length 500 characters */
-    works_location_description: string;
 }
