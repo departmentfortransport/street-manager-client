@@ -1,6 +1,14 @@
 import { ReinstatementStatus, LocationType, ReinstatementType } from './referenceTypes';
 import { BaseWorkCreateRequest } from './baseWorkCreateRequest';
 export interface ReinstatementCreateRequest extends BaseWorkCreateRequest {
+    /** Max length 24 characters
+     * Must be unique in the system
+     * Must contain only alphanumeric characters, dashes and underscores
+     * If not supplied it will be auto-generated
+     */
+    work_reference_number?: string;
+    /** Must consist of 3 positive whole numbers */
+    workstream_prefix?: string;
     reinstatement_type: ReinstatementType;
     /** See business rule ref. 4.4 - Making interim site permanent */
     reinstatement_status: ReinstatementStatus;
@@ -35,6 +43,4 @@ export interface ReinstatementCreateRequest extends BaseWorkCreateRequest {
     inspection_units?: number;
     /** Must be a number between *** and *** */
     number_of_holes: number;
-    /** Must consist of 3 positive whole numbers */
-    workstream_prefix?: string;
 }
