@@ -1,14 +1,14 @@
 import { ReinstatementStatus, LocationType, ReinstatementType } from './referenceTypes'
 import { BaseWorkCreateRequest } from './baseWorkCreateRequest'
 
-export interface ReinstatementCreateRequest extends BaseWorkCreateRequest {
+export interface NonNotifiableSiteCreateRequest extends BaseWorkCreateRequest {
   /** Max length 24 characters
    * Must be unique in the system
    * Must contain only alphanumeric characters, dashes and underscores
    * If not supplied it will be auto-generated
    */
   work_reference_number?: string
-  /** Must consist of 3 positive whole numbers */
+  /** Must consist of 3 positive whole numbers. Default workstream if not provided */
   workstream_prefix?: string
   reinstatement_type: ReinstatementType
   /** See business rule ref. 4.4 - Making interim site permanent */
@@ -20,8 +20,8 @@ export interface ReinstatementCreateRequest extends BaseWorkCreateRequest {
   reinstatement_date: Date
   /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon */
   reinstatement_coordinates: any
-  /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon, if provided */
-  secondary_reinstatement_coordinates?: any
+  /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon. Required for non-notifiables */
+  secondary_reinstatement_coordinates: any
   /** Max length 500 characters */
   location_description: string
   /** Array values must be unique
