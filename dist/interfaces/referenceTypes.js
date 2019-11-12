@@ -300,6 +300,10 @@ var WorkStatus;
     WorkStatus["in_progress"] = "in_progress";
     WorkStatus["completed"] = "completed";
     WorkStatus["cancelled"] = "cancelled";
+    WorkStatus["unattributable"] = "unattributable";
+    WorkStatus["historical"] = "historical";
+    WorkStatus["non_notifiable"] = "non_notifiable";
+    WorkStatus["section_81"] = "section_81";
 })(WorkStatus = exports.WorkStatus || (exports.WorkStatus = {}));
 var AuditEvent;
 (function (AuditEvent) {
