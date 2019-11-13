@@ -189,10 +189,12 @@ export enum AlterationStatus {
   refused = 'refused',
   deemed = 'deemed',
   cancelled = 'cancelled',
-  revoked = 'revoked'
+  revoked = 'revoked',
+  auto_applied = 'auto_applied'
 }
 
 export enum AlterationType {
+  PROMOTER_IMPOSED_CHANGE = 'PROMOTER_IMPOSED_CHANGE',
   PROMOTER_CHANGE_REQUEST = 'PROMOTER_CHANGE_REQUEST',
   HA_CHANGE_REQUEST = 'HA_CHANGE_REQUEST',
   HA_IMPOSED_CHANGE = 'HA_IMPOSED_CHANGE',
@@ -357,7 +359,16 @@ export enum AuditEvent {
   organisation_contract_removed = 'organisation_contract_removed',
   organisation_updated = 'organisation_updated',
   workstream_created = 'workstream_created',
-  workstream_updated = 'workstream_updated'
+  workstream_updated = 'workstream_updated',
+  inspection_works_stopped = 'inspection_works_stopped',
+  inspection_works_stopped_apparatus_remaining = 'inspection_works_stopped_apparatus_remaining',
+  inspection_works_in_progress = 'inspection_works_in_progress',
+  inspection_works_in_progress_no_carriageway_incursion = 'inspection_works_in_progress_no_carriageway_incursion',
+  inspection_non_compliant_with_conditions = 'inspection_non_compliant_with_conditions',
+  permit_modification_request = 'permit_modification_request',
+  scheduled_inspection_cancelled = 'scheduled_inspection_cancelled',
+  scheduled_inspection_created = 'scheduled_inspection_created',
+  alteration_applied_auto = 'alteration_applied_auto'
 }
 
 export enum ASDCode {
