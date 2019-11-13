@@ -193,9 +193,11 @@ var AlterationStatus;
     AlterationStatus["deemed"] = "deemed";
     AlterationStatus["cancelled"] = "cancelled";
     AlterationStatus["revoked"] = "revoked";
+    AlterationStatus["auto_applied"] = "auto_applied";
 })(AlterationStatus = exports.AlterationStatus || (exports.AlterationStatus = {}));
 var AlterationType;
 (function (AlterationType) {
+    AlterationType["PROMOTER_IMPOSED_CHANGE"] = "PROMOTER_IMPOSED_CHANGE";
     AlterationType["PROMOTER_CHANGE_REQUEST"] = "PROMOTER_CHANGE_REQUEST";
     AlterationType["HA_CHANGE_REQUEST"] = "HA_CHANGE_REQUEST";
     AlterationType["HA_IMPOSED_CHANGE"] = "HA_IMPOSED_CHANGE";
@@ -300,6 +302,10 @@ var WorkStatus;
     WorkStatus["in_progress"] = "in_progress";
     WorkStatus["completed"] = "completed";
     WorkStatus["cancelled"] = "cancelled";
+    WorkStatus["unattributable"] = "unattributable";
+    WorkStatus["historical"] = "historical";
+    WorkStatus["non_notifiable"] = "non_notifiable";
+    WorkStatus["section_81"] = "section_81";
 })(WorkStatus = exports.WorkStatus || (exports.WorkStatus = {}));
 var AuditEvent;
 (function (AuditEvent) {
@@ -357,6 +363,15 @@ var AuditEvent;
     AuditEvent["organisation_updated"] = "organisation_updated";
     AuditEvent["workstream_created"] = "workstream_created";
     AuditEvent["workstream_updated"] = "workstream_updated";
+    AuditEvent["inspection_works_stopped"] = "inspection_works_stopped";
+    AuditEvent["inspection_works_stopped_apparatus_remaining"] = "inspection_works_stopped_apparatus_remaining";
+    AuditEvent["inspection_works_in_progress"] = "inspection_works_in_progress";
+    AuditEvent["inspection_works_in_progress_no_carriageway_incursion"] = "inspection_works_in_progress_no_carriageway_incursion";
+    AuditEvent["inspection_non_compliant_with_conditions"] = "inspection_non_compliant_with_conditions";
+    AuditEvent["permit_modification_request"] = "permit_modification_request";
+    AuditEvent["scheduled_inspection_cancelled"] = "scheduled_inspection_cancelled";
+    AuditEvent["scheduled_inspection_created"] = "scheduled_inspection_created";
+    AuditEvent["alteration_applied_auto"] = "alteration_applied_auto";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {
