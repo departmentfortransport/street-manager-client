@@ -274,6 +274,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post(`/section-81-works/section-81s`, section81CreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    createHistoricFPN(requestConfig, historicFPNCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/historic-works/fixed-penalty-notices`, historicFPNCreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
