@@ -56,6 +56,8 @@ import { ForwardPlanResponse } from '../interfaces/forwardPlanResponse'
 import { ForwardPlanUpdateRequest } from '../interfaces/forwardPlanUpdateRequest'
 import { ForwardPlanCancelRequest } from '../interfaces/forwardPlanCancelRequest'
 import { ScheduledInspectionCreateRequest } from '../interfaces/scheduledInspectionCreateRequest'
+import { HistoricInspectionCreateRequest } from '../interfaces/historicInspectionCreateRequest'
+import { HistoricInspectionCreateResponse } from '../interfaces/historicInspectionCreateResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -155,6 +157,10 @@ export class StreetManagerApiClient {
 
   public async createInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<InspectionCreateResponse> {
     return this.httpHandler<InspectionCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/inspections`, inspectionCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createHistoricInspection(requestConfig: RequestConfig, historicInspectionCreateRequest: HistoricInspectionCreateRequest): Promise<HistoricInspectionCreateResponse> {
+    return this.httpHandler<HistoricInspectionCreateResponse>(() => this.axios.post(`/historic-works/inspections`, historicInspectionCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async getInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionReferenceNumber: string): Promise<InspectionResponse> {

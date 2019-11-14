@@ -53,6 +53,8 @@ import { ForwardPlanResponse } from '../interfaces/forwardPlanResponse';
 import { ForwardPlanUpdateRequest } from '../interfaces/forwardPlanUpdateRequest';
 import { ForwardPlanCancelRequest } from '../interfaces/forwardPlanCancelRequest';
 import { ScheduledInspectionCreateRequest } from '../interfaces/scheduledInspectionCreateRequest';
+import { HistoricInspectionCreateRequest } from '../interfaces/historicInspectionCreateRequest';
+import { HistoricInspectionCreateResponse } from '../interfaces/historicInspectionCreateResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -81,6 +83,7 @@ export declare class StreetManagerApiClient {
     createReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, siteId: number, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementCreateResponse>;
     getSite(requestConfig: RequestConfig, workReferenceNumber: string, siteId: number): Promise<SiteResponse>;
     createInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<InspectionCreateResponse>;
+    createHistoricInspection(requestConfig: RequestConfig, historicInspectionCreateRequest: HistoricInspectionCreateRequest): Promise<HistoricInspectionCreateResponse>;
     getInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionReferenceNumber: string): Promise<InspectionResponse>;
     createFPN(requestConfig: RequestConfig, workReferenceNumber: string, fpnCreateRequest: FPNCreateRequest): Promise<FPNCreateResponse>;
     getFPN(requestConfig: RequestConfig, workReferenceNumber: string, fpnReferenceNumber: string): Promise<FPNResponse>;

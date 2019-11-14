@@ -73,5 +73,6 @@ export * from './interfaces/forwardPlanCancelRequest';
 export * from './interfaces/scheduledInspectionCreateRequest';
 export * from './interfaces/historicFailureReasonDetails';
 export * from './interfaces/historicInspectionCreateRequest';
+export * from './interfaces/historicInspectionCreateResponse';
 export * from './interfaces/historicFPNCreateRequest';
 export * from './interfaces/section81CreateRequest';
