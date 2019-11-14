@@ -368,7 +368,8 @@ export enum AuditEvent {
   permit_modification_request = 'permit_modification_request',
   scheduled_inspection_cancelled = 'scheduled_inspection_cancelled',
   scheduled_inspection_created = 'scheduled_inspection_created',
-  alteration_applied_auto = 'alteration_applied_auto'
+  alteration_applied_auto = 'alteration_applied_auto',
+  section_81_submitted = 'section_81_submitted'
 }
 
 export enum ASDCode {
@@ -419,4 +420,18 @@ export enum ReinstatementType {
   bar_holes = 'bar_holes',
   core_holes = 'core_holes',
   pole_testing = 'pole_testing'
+}
+
+export enum Section81Type {
+  tee_valve_access_covers = 'tee_valve_access_covers',
+  cabinet = 'cabinet',
+  marker_post = 'marker_post',
+  pole_post = 'pole_post',
+  overhead_cables_broken_low_encroaching_onto_highway = 'overhead_cables_broken_low_encroaching_onto_highway',
+  other = 'other'
+}
+
+export enum Section81Severity {
+  HIGH = 'HIGH',
+  LOW = 'LOW'
 }

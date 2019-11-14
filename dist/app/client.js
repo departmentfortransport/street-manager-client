@@ -264,6 +264,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.delete(`/works/${workReferenceNumber}/scheduled-inspections`, this.generateRequestConfig(requestConfig)));
         });
     }
+    createSection81(requestConfig, section81CreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/section-81-works/section-81s`, section81CreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
