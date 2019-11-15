@@ -40,6 +40,7 @@ export interface WorkCreateRequest extends BaseWorkCreateRequest {
     collaboration_details?: string;
     /** Optional but only saved if collaborative_working = true
      * Max length 500 characters
+     * Work Reference Number of collaborative works
      */
     collaborative_works?: string;
     activity_type: ActivityType;
