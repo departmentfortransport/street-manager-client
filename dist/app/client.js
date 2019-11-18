@@ -87,14 +87,14 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/revert-stop`, workStopRevertRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    updateExcavationCarriedOut(requestConfig, workReferenceNumber, excavationCarriedOutUpdateRequest) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)));
-        });
-    }
     updateInspectionUnits(requestConfig, workReferenceNumber, inspectionUnitsUpdateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/inspection-units`, inspectionUnitsUpdateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    updateFinalReinstatement(requestConfig, workReferenceNumber, finalReinstatementUpdateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/final-reinstatement`, finalReinstatementUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     addFileToWork(requestConfig, workReferenceNumber, addFileToWorkRequest) {

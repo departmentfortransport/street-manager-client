@@ -18,6 +18,7 @@ export interface WorkResponse {
     street_name: string;
     area_name?: string;
     usrn: number;
+    inspection_units?: number;
     work_status: WorkStatus;
     works_location_description: string;
     work_start_date?: Date;
