@@ -1,3 +1,3 @@
 export interface SiteCreateResponse {
-    site_id: number;
+    site_number: number;
 }
