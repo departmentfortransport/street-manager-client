@@ -150,8 +150,8 @@ export class StreetManagerApiClient {
     return this.httpHandler<ReinstatementCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/sites/${siteId}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getSite(requestConfig: RequestConfig, workReferenceNumber: string, siteId: number): Promise<SiteResponse> {
-    return this.httpHandler<SiteResponse>(() => this.axios.get(`/works/${workReferenceNumber}/sites/${siteId}`, this.generateRequestConfig(requestConfig)))
+  public async getSite(requestConfig: RequestConfig, workReferenceNumber: string, siteNumber: number): Promise<SiteResponse> {
+    return this.httpHandler<SiteResponse>(() => this.axios.get(`/works/${workReferenceNumber}/sites/${siteNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
   public async createInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<InspectionCreateResponse> {
