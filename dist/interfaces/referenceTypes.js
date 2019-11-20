@@ -416,3 +416,10 @@ var ASDPeriodicityCode;
     ASDPeriodicityCode[ASDPeriodicityCode["continuous_62"] = 15] = "continuous_62";
     ASDPeriodicityCode[ASDPeriodicityCode["special_arrangements_63"] = 16] = "special_arrangements_63";
 })(ASDPeriodicityCode = exports.ASDPeriodicityCode || (exports.ASDPeriodicityCode = {}));
+var ReinstatementType;
+(function (ReinstatementType) {
+    ReinstatementType["excavation"] = "excavation";
+    ReinstatementType["bar_holes"] = "bar_holes";
+    ReinstatementType["core_holes"] = "core_holes";
+    ReinstatementType["pole_testing"] = "pole_testing";
+})(ReinstatementType = exports.ReinstatementType || (exports.ReinstatementType = {}));

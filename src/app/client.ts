@@ -56,6 +56,7 @@ import { ForwardPlanResponse } from '../interfaces/forwardPlanResponse'
 import { ForwardPlanUpdateRequest } from '../interfaces/forwardPlanUpdateRequest'
 import { ForwardPlanCancelRequest } from '../interfaces/forwardPlanCancelRequest'
 import { ScheduledInspectionCreateRequest } from '../interfaces/scheduledInspectionCreateRequest'
+import { SiteCreateRequest } from '../interfaces/siteCreateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -141,8 +142,8 @@ export class StreetManagerApiClient {
     return this.httpHandler<void>(() => this.axios.post(`/works/${workReferenceNumber}/files`, addFileToWorkRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createSite(requestConfig: RequestConfig, workReferenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<SiteCreateResponse> {
-    return this.httpHandler<SiteCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/sites`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createSite(requestConfig: RequestConfig, workReferenceNumber: string, siteCreateRequest: SiteCreateRequest): Promise<SiteCreateResponse> {
+    return this.httpHandler<SiteCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/sites`, siteCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async createReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, siteId: number, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementCreateResponse> {

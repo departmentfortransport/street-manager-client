@@ -53,6 +53,7 @@ import { ForwardPlanResponse } from '../interfaces/forwardPlanResponse';
 import { ForwardPlanUpdateRequest } from '../interfaces/forwardPlanUpdateRequest';
 import { ForwardPlanCancelRequest } from '../interfaces/forwardPlanCancelRequest';
 import { ScheduledInspectionCreateRequest } from '../interfaces/scheduledInspectionCreateRequest';
+import { SiteCreateRequest } from '../interfaces/siteCreateRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -77,7 +78,7 @@ export declare class StreetManagerApiClient {
     updateExcavationCarriedOut(requestConfig: RequestConfig, workReferenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void>;
     updateInspectionUnits(requestConfig: RequestConfig, workReferenceNumber: string, inspectionUnitsUpdateRequest: InspectionUnitsUpdateRequest): Promise<void>;
     addFileToWork(requestConfig: RequestConfig, workReferenceNumber: string, addFileToWorkRequest: AddFileToWorkRequest): Promise<void>;
-    createSite(requestConfig: RequestConfig, workReferenceNumber: string, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<SiteCreateResponse>;
+    createSite(requestConfig: RequestConfig, workReferenceNumber: string, siteCreateRequest: SiteCreateRequest): Promise<SiteCreateResponse>;
     createReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, siteId: number, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementCreateResponse>;
     getSite(requestConfig: RequestConfig, workReferenceNumber: string, siteId: number): Promise<SiteResponse>;
     createInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<InspectionCreateResponse>;
