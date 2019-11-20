@@ -57,6 +57,8 @@ import { ForwardPlanUpdateRequest } from '../interfaces/forwardPlanUpdateRequest
 import { ForwardPlanCancelRequest } from '../interfaces/forwardPlanCancelRequest'
 import { ScheduledInspectionCreateRequest } from '../interfaces/scheduledInspectionCreateRequest'
 import { SiteCreateRequest } from '../interfaces/siteCreateRequest'
+import { Section81CreateRequest } from '../interfaces/section81CreateRequest'
+import { Section81CreateResponse } from '../interfaces/section81CreateResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -273,6 +275,10 @@ export class StreetManagerApiClient {
 
   public async cancelScheduledInspection(requestConfig: RequestConfig, workReferenceNumber: string): Promise<void> {
     return this.httpHandler<void>(() => this.axios.delete(`/works/${workReferenceNumber}/scheduled-inspections`, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createSection81(requestConfig: RequestConfig, section81CreateRequest: Section81CreateRequest): Promise<Section81CreateResponse> {
+    return this.httpHandler<Section81CreateResponse>(() => this.axios.post(`/section-81-works/section-81s`, section81CreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
