@@ -60,5 +60,6 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
     username: string;
     /** Max length 100 characters */
     inspector_name?: string;
+    /** Required if inspection_type = section 81 and inspection_outcome = Failed - high or Failed - low */
     made_safe_by_ha?: boolean;
 }
