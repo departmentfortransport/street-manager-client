@@ -71,3 +71,5 @@ export * from './interfaces/failureReasonDetailsResponse';
 export * from './interfaces/forwardPlanCancelRequest';
 export * from './interfaces/scheduledInspectionCreateRequest';
 export * from './interfaces/siteCreateRequest';
+export * from './interfaces/section81CreateRequest';
+export * from './interfaces/section81CreateResponse';
