@@ -9,14 +9,22 @@ export interface ReinstatementCreateRequest extends DelegatedUserIdentification 
    * Must be before actual end date (if entered)
    */
   reinstatement_date: Date
-  /** Is number between 0.01 and 99.99 inclusive, to two decimal places */
-  depth: number
-  /** Is number between 0.01 and 9999.99 inclusive, to two decimal places */
-  length: number
-  /** Is number between 0.01 and 99.99 inclusive, to two decimal places */
-  width: number
+  /** Is number between 0.01 and 99.99 inclusive, to two decimal places.
+   * Required if reinstatement type is excavation.
+   */
+  depth?: number
+  /** Is number between 0.01 and 9999.99 inclusive, to two decimal places
+   * Required if reinstatement type is excavation.
+   */
+  length?: number
+  /** Is number between 0.01 and 99.99 inclusive, to two decimal places
+   * Required if reinstatement type is excavation.
+   */
+  width?: number
   /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon */
   reinstatement_coordinates: any
+  /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon, if provided */
+  secondary_reinstatement_coordinates?: any
   /** Max length 500 characters */
   location_description: string
   /** Array values must be unique
@@ -32,12 +40,17 @@ export interface ReinstatementCreateRequest extends DelegatedUserIdentification 
    * See API specification Resource Guide > Works API > File upload for more information
    */
   file_ids?: number[]
-  /** Is whole number between 1 and 999 inclusive
-   * Permit must be in progress or closed
-   * Can only add inspection_units if an excavation was carried out
-   * Can only add inspection_units if the permit is in progress or closed
+  /**
+   * Is whole number between 1 and 999 inclusive
+   * Will default to previously provided value or 1.
    */
-  inspection_units: number
-  /** Whether it is a final reinstatement */
-  final_reinstatement: boolean
+  inspection_units?: number
+  /** Whether it is a final reinstatement
+   * Required if reinstatement type is excavation
+   */
+  final_reinstatement?: boolean
+  /** Must be a number between *** and ***
+   * Required if reinstatement type is not excavation
+   */
+  number_of_holes?: number
 }

@@ -102,9 +102,9 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/files`, addFileToWorkRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    createSite(requestConfig, workReferenceNumber, reinstatementCreateRequest) {
+    createSite(requestConfig, workReferenceNumber, siteCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/sites`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/sites`, siteCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     createReinstatement(requestConfig, workReferenceNumber, siteId, reinstatementCreateRequest) {
@@ -262,6 +262,11 @@ class StreetManagerApiClient {
     cancelScheduledInspection(requestConfig, workReferenceNumber) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.delete(`/works/${workReferenceNumber}/scheduled-inspections`, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    createSection81(requestConfig, section81CreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/section-81-works/section-81s`, section81CreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     httpHandler(request) {

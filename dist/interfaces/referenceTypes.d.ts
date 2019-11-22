@@ -340,7 +340,8 @@ export declare enum AuditEvent {
     permit_modification_request = "permit_modification_request",
     scheduled_inspection_cancelled = "scheduled_inspection_cancelled",
     scheduled_inspection_created = "scheduled_inspection_created",
-    alteration_applied_auto = "alteration_applied_auto"
+    alteration_applied_auto = "alteration_applied_auto",
+    section_81_submitted = "section_81_submitted"
 }
 export declare enum ASDCode {
     protected_street = 1,
@@ -382,4 +383,22 @@ export declare enum ASDPeriodicityCode {
     public_and_bank_holidays = 14,
     continuous_62 = 15,
     special_arrangements_63 = 16
+}
+export declare enum ReinstatementType {
+    excavation = "excavation",
+    bar_holes = "bar_holes",
+    core_holes = "core_holes",
+    pole_testing = "pole_testing"
+}
+export declare enum Section81Type {
+    tee_valve_access_covers = "tee_valve_access_covers",
+    cabinet = "cabinet",
+    marker_post = "marker_post",
+    pole_post = "pole_post",
+    overhead_cables_broken_low_encroaching_onto_highway = "overhead_cables_broken_low_encroaching_onto_highway",
+    other = "other"
+}
+export declare enum Section81Severity {
+    HIGH = "HIGH",
+    LOW = "LOW"
 }
