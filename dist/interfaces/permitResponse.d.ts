@@ -41,7 +41,6 @@ export interface PermitResponse extends PermitSummaryResponse {
     date_created: Date;
     date_modified: Date;
     deadline_date: Date;
-    excavation_carried_out: boolean;
     assessment_comments?: string;
     reasons_for_refusal?: ReasonForRefusal[];
     activity_type: ActivityType;
@@ -51,7 +50,6 @@ export interface PermitResponse extends PermitSummaryResponse {
     location_types: LocationType[];
     assessment_status?: AssessmentStatus;
     files?: FileSummaryResponse[];
-    inspection_units?: number;
     permit_asds: PermitASD[];
     assessment_discount?: number;
     assessment_discount_reason?: string;

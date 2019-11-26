@@ -361,7 +361,6 @@ var AuditEvent;
     AuditEvent["user_removed"] = "user_removed";
     AuditEvent["user_invited"] = "user_invited";
     AuditEvent["inspection_units_logged"] = "inspection_units_logged";
-    AuditEvent["excavation_carried_out"] = "excavation_carried_out";
     AuditEvent["permit_submitted"] = "permit_submitted";
     AuditEvent["paa_submitted"] = "paa_submitted";
     AuditEvent["forward_plan_edited"] = "forward_plan_edited";
@@ -383,6 +382,7 @@ var AuditEvent;
     AuditEvent["scheduled_inspection_created"] = "scheduled_inspection_created";
     AuditEvent["alteration_applied_auto"] = "alteration_applied_auto";
     AuditEvent["section_81_submitted"] = "section_81_submitted";
+    AuditEvent["final_reinstatement_updated"] = "final_reinstatement_updated";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {
