@@ -20,6 +20,8 @@ export interface WorkResponse {
     usrn: number;
     work_status: WorkStatus;
     works_location_description: string;
+    work_start_date?: Date;
+    work_end_date?: Date;
     active_permit?: PermitResponse;
     forward_plan?: ForwardPlanSummaryResponse;
     permits?: PermitSummaryResponse[];
