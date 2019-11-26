@@ -59,6 +59,7 @@ import { ScheduledInspectionCreateRequest } from '../interfaces/scheduledInspect
 import { SiteCreateRequest } from '../interfaces/siteCreateRequest'
 import { Section81CreateRequest } from '../interfaces/section81CreateRequest'
 import { Section81CreateResponse } from '../interfaces/section81CreateResponse'
+import { PermitAssessmentUpdateRequest } from '../interfaces/permitAssessmentUpdateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -114,6 +115,10 @@ export class StreetManagerApiClient {
 
   public async updatePermitStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, updatePermitStatusRequest: PermitStatusUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/status`, updatePermitStatusRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updateAssessmentStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, updateAssessmentStatusRequest: PermitAssessmentUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/assessment`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updateWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void> {

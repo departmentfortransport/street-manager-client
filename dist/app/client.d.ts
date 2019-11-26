@@ -56,6 +56,7 @@ import { ScheduledInspectionCreateRequest } from '../interfaces/scheduledInspect
 import { SiteCreateRequest } from '../interfaces/siteCreateRequest';
 import { Section81CreateRequest } from '../interfaces/section81CreateRequest';
 import { Section81CreateResponse } from '../interfaces/section81CreateResponse';
+import { PermitAssessmentUpdateRequest } from '../interfaces/permitAssessmentUpdateRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -73,6 +74,7 @@ export declare class StreetManagerApiClient {
     getPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string): Promise<PermitResponse>;
     getWork(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkResponse>;
     updatePermitStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, updatePermitStatusRequest: PermitStatusUpdateRequest): Promise<void>;
+    updateAssessmentStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, updateAssessmentStatusRequest: PermitAssessmentUpdateRequest): Promise<void>;
     updateWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void>;
     revertWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartRevertRequest: WorkStartRevertRequest): Promise<void>;
     updateWorkActualStopDate(requestConfig: RequestConfig, workReferenceNumber: string, workStopUpdateRequest: WorkStopUpdateRequest): Promise<void>;
