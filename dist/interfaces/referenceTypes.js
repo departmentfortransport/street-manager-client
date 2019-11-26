@@ -84,6 +84,15 @@ var PermitStatus;
     PermitStatus["revoked_closed"] = "revoked_closed";
     PermitStatus["deemed_closed"] = "deemed_closed";
 })(PermitStatus = exports.PermitStatus || (exports.PermitStatus = {}));
+var AssessmentStatus;
+(function (AssessmentStatus) {
+    AssessmentStatus["granted"] = "granted";
+    AssessmentStatus["granted_auto"] = "granted_auto";
+    AssessmentStatus["refused"] = "refused";
+    AssessmentStatus["refused_auto"] = "refused_auto";
+    AssessmentStatus["permit_modification_request"] = "permit_modification_request";
+    AssessmentStatus["revoked"] = "revoked";
+})(AssessmentStatus = exports.AssessmentStatus || (exports.AssessmentStatus = {}));
 var ForwardPlanStatus;
 (function (ForwardPlanStatus) {
     ForwardPlanStatus["raised"] = "raised";
