@@ -26,4 +26,5 @@ export interface InspectionResponse {
     promoter_organisation: string;
     highway_authority: string;
     inspector_name?: string;
+    made_safe_by_ha?: boolean;
 }

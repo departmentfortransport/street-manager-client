@@ -86,7 +86,8 @@ export declare enum ReinstatementStatus {
 export declare enum InspectionType {
     live_site = "live_site",
     reinstatement = "reinstatement",
-    non_compliance_follow_up = "non_compliance_follow_up"
+    non_compliance_follow_up = "non_compliance_follow_up",
+    section_81 = "section_81"
 }
 export declare enum InspectionResponseType {
     inspection = "inspection",
