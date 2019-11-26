@@ -100,6 +100,7 @@ var InspectionType;
     InspectionType["live_site"] = "live_site";
     InspectionType["reinstatement"] = "reinstatement";
     InspectionType["non_compliance_follow_up"] = "non_compliance_follow_up";
+    InspectionType["section_81"] = "section_81";
 })(InspectionType = exports.InspectionType || (exports.InspectionType = {}));
 var InspectionResponseType;
 (function (InspectionResponseType) {

@@ -7,7 +7,7 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
     /** inspection_start_date must be in the past */
     inspection_start_date: Date
     /** See business rule ref. 3.2 - Inspection category */
-    inspection_category: InspectionCategory
+    inspection_category?: InspectionCategory
     /** See business rule ref. 3.3 - Inspection outcome */
     inspection_outcome: InspectionOutcome
     /** See business rule ref. 3.4 - Inspection failure reasons */
@@ -61,4 +61,6 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
     username: string
     /** Max length 100 characters */
     inspector_name?: string
+    /** Required if inspection_type = section 81 and inspection_outcome = Failed - high or Failed - low */
+    made_safe_by_ha?: boolean
 }
