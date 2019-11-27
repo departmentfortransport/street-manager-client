@@ -9,7 +9,6 @@ import { PermitStatusUpdateRequest } from '../interfaces/permitStatusUpdateReque
 import { WorkResponse } from '../interfaces/workResponse'
 import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest'
 import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest'
-import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarriedOutUpdateRequest'
 import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateRequest'
 import { ReinstatementCreateResponse } from '../interfaces/reinstatementCreateResponse'
 import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest'
@@ -59,6 +58,8 @@ import { ScheduledInspectionCreateRequest } from '../interfaces/scheduledInspect
 import { SiteCreateRequest } from '../interfaces/siteCreateRequest'
 import { Section81CreateRequest } from '../interfaces/section81CreateRequest'
 import { Section81CreateResponse } from '../interfaces/section81CreateResponse'
+import { FinalReinstatementUpdateRequest } from '../interfaces/finalReinstatementUpdateRequest'
+import { PermitAssessmentUpdateRequest } from '../interfaces/permitAssessmentUpdateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -116,6 +117,10 @@ export class StreetManagerApiClient {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/status`, updatePermitStatusRequest, this.generateRequestConfig(requestConfig)))
   }
 
+  public async updateAssessmentStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, updateAssessmentStatusRequest: PermitAssessmentUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/assessment`, updateAssessmentStatusRequest, this.generateRequestConfig(requestConfig)))
+  }
+
   public async updateWorkActualStartDate(requestConfig: RequestConfig, workReferenceNumber: string, workStartUpdateRequest: WorkStartUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/start`, workStartUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
@@ -132,12 +137,12 @@ export class StreetManagerApiClient {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/revert-stop`, workStopRevertRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updateExcavationCarriedOut(requestConfig: RequestConfig, workReferenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/excavation`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)))
-  }
-
   public async updateInspectionUnits(requestConfig: RequestConfig, workReferenceNumber: string, inspectionUnitsUpdateRequest: InspectionUnitsUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/inspection-units`, inspectionUnitsUpdateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updateFinalReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, finalReinstatementUpdateRequest: FinalReinstatementUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/final-reinstatement`, finalReinstatementUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async addFileToWork(requestConfig: RequestConfig, workReferenceNumber: string, addFileToWorkRequest: AddFileToWorkRequest): Promise<void> {

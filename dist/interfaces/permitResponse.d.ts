@@ -1,4 +1,4 @@
-import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, PermitStatus, WorkType, ReasonForRefusal, CloseFootway, LaneRentalAssessmentOutcome, LaneRentalAssessmentChargeBand, WorkStatus } from './referenceTypes';
+import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType, ReasonForRefusal, CloseFootway, LaneRentalAssessmentOutcome, LaneRentalAssessmentChargeBand, WorkStatus, AssessmentStatus } from './referenceTypes';
 import { PermitCondition } from './permitCondition';
 import { FileSummaryResponse } from './fileSummaryResponse';
 import { PermitASD } from './permitASD';
@@ -40,7 +40,6 @@ export interface PermitResponse extends PermitSummaryResponse {
     date_created: Date;
     date_modified: Date;
     deadline_date: Date;
-    excavation_carried_out: boolean;
     assessment_comments?: string;
     reasons_for_refusal?: ReasonForRefusal[];
     activity_type: ActivityType;
@@ -48,9 +47,8 @@ export interface PermitResponse extends PermitSummaryResponse {
     application_type: ApplicationType;
     collaboration_type?: CollaborationType;
     location_types: LocationType[];
-    assessment_status?: PermitStatus;
+    assessment_status?: AssessmentStatus;
     files?: FileSummaryResponse[];
-    inspection_units?: number;
     permit_asds: PermitASD[];
     assessment_discount?: number;
     assessment_discount_reason?: string;

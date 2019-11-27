@@ -84,6 +84,15 @@ var PermitStatus;
     PermitStatus["revoked_closed"] = "revoked_closed";
     PermitStatus["deemed_closed"] = "deemed_closed";
 })(PermitStatus = exports.PermitStatus || (exports.PermitStatus = {}));
+var AssessmentStatus;
+(function (AssessmentStatus) {
+    AssessmentStatus["granted"] = "granted";
+    AssessmentStatus["granted_auto"] = "granted_auto";
+    AssessmentStatus["refused"] = "refused";
+    AssessmentStatus["refused_auto"] = "refused_auto";
+    AssessmentStatus["permit_modification_request"] = "permit_modification_request";
+    AssessmentStatus["revoked"] = "revoked";
+})(AssessmentStatus = exports.AssessmentStatus || (exports.AssessmentStatus = {}));
 var ForwardPlanStatus;
 (function (ForwardPlanStatus) {
     ForwardPlanStatus["raised"] = "raised";
@@ -352,7 +361,6 @@ var AuditEvent;
     AuditEvent["user_removed"] = "user_removed";
     AuditEvent["user_invited"] = "user_invited";
     AuditEvent["inspection_units_logged"] = "inspection_units_logged";
-    AuditEvent["excavation_carried_out"] = "excavation_carried_out";
     AuditEvent["permit_submitted"] = "permit_submitted";
     AuditEvent["paa_submitted"] = "paa_submitted";
     AuditEvent["forward_plan_edited"] = "forward_plan_edited";
@@ -374,6 +382,7 @@ var AuditEvent;
     AuditEvent["scheduled_inspection_created"] = "scheduled_inspection_created";
     AuditEvent["alteration_applied_auto"] = "alteration_applied_auto";
     AuditEvent["section_81_submitted"] = "section_81_submitted";
+    AuditEvent["final_reinstatement_updated"] = "final_reinstatement_updated";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {

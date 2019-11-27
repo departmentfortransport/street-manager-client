@@ -74,6 +74,14 @@ export declare enum PermitStatus {
     revoked_closed = "revoked_closed",
     deemed_closed = "deemed_closed"
 }
+export declare enum AssessmentStatus {
+    granted = "granted",
+    granted_auto = "granted_auto",
+    refused = "refused",
+    refused_auto = "refused_auto",
+    permit_modification_request = "permit_modification_request",
+    revoked = "revoked"
+}
 export declare enum ForwardPlanStatus {
     raised = "raised",
     cancelled = "cancelled",
@@ -321,7 +329,6 @@ export declare enum AuditEvent {
     user_removed = "user_removed",
     user_invited = "user_invited",
     inspection_units_logged = "inspection_units_logged",
-    excavation_carried_out = "excavation_carried_out",
     permit_submitted = "permit_submitted",
     paa_submitted = "paa_submitted",
     forward_plan_edited = "forward_plan_edited",
@@ -342,7 +349,8 @@ export declare enum AuditEvent {
     scheduled_inspection_cancelled = "scheduled_inspection_cancelled",
     scheduled_inspection_created = "scheduled_inspection_created",
     alteration_applied_auto = "alteration_applied_auto",
-    section_81_submitted = "section_81_submitted"
+    section_81_submitted = "section_81_submitted",
+    final_reinstatement_updated = "final_reinstatement_updated"
 }
 export declare enum ASDCode {
     protected_street = 1,
