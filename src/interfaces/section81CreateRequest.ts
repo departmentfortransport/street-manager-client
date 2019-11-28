@@ -16,7 +16,9 @@ export interface Section81CreateRequest extends BaseWorkCreateRequest {
   /** Max length 100 characters */
   inspector_contact_number?: string
   /** Max length 500 characters */
-  additional_details?: string
+  additional_details: string
+  /** Max length 100 characters */
+  other_type_details?: string
   /** Date must occur today or a date in the future */
   reinspection_date?: Date
   /**
