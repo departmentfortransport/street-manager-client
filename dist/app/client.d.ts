@@ -55,6 +55,7 @@ import { ScheduledInspectionCreateRequest } from '../interfaces/scheduledInspect
 import { SiteCreateRequest } from '../interfaces/siteCreateRequest';
 import { Section81CreateRequest } from '../interfaces/section81CreateRequest';
 import { Section81CreateResponse } from '../interfaces/section81CreateResponse';
+import { FinalReinstatementUpdateRequest } from '../interfaces/finalReinstatementUpdateRequest';
 import { PermitAssessmentUpdateRequest } from '../interfaces/permitAssessmentUpdateRequest';
 import { HistoricFPNCreateRequest } from '../interfaces/historicFPNCreateRequest';
 import { HistoricFPNCreateResponse } from '../interfaces/historicFPNCreateResponse';
@@ -66,6 +67,7 @@ import { Section81Response } from '../interfaces/section81Response';
 
 export interface StreetManagerApiClientConfig {
     baseURL: string;
+    timeout?: number;
     disableCertificateVerification?: boolean;
 }
 export declare class StreetManagerApiClient {
