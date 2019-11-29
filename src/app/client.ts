@@ -64,6 +64,8 @@ import { HistoricFPNCreateRequest } from '../interfaces/historicFPNCreateRequest
 import { HistoricFPNCreateResponse } from '../interfaces/historicFPNCreateResponse'
 import { NonNotifiableSiteCreateRequest } from '../interfaces/nonNotifiableSiteCreateRequest'
 import { NonNotifiableSiteCreateResponse } from '../interfaces/nonNotifiableSiteCreateResponse'
+import { HistoricInspectionCreateRequest } from '../interfaces/historicInspectionCreateRequest'
+import { HistoricInspectionCreateResponse } from '../interfaces/historicInspectionCreateResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -296,6 +298,10 @@ export class StreetManagerApiClient {
 
   public async createNonNotifiableSite(requestConfig: RequestConfig, nonNotifiableSiteCreateRequest: NonNotifiableSiteCreateRequest): Promise<NonNotifiableSiteCreateResponse> {
     return this.httpHandler<NonNotifiableSiteCreateResponse>(() => this.axios.post(`/non-notifiable-works/sites`, nonNotifiableSiteCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createHistoricInspection(requestConfig: RequestConfig, historicInspectionCreateRequest: HistoricInspectionCreateRequest): Promise<HistoricInspectionCreateResponse> {
+    return this.httpHandler<HistoricInspectionCreateResponse>(() => this.axios.post(`/historic-works/inspections`, historicInspectionCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

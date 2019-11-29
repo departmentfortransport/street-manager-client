@@ -5,4 +5,5 @@ export interface FailureReasonDetailsResponse {
   failure_reason: FailureReason
   sites?: SiteDetails[]
   details: string
+  site_name?: string
 }

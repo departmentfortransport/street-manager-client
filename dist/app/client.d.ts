@@ -61,6 +61,8 @@ import { HistoricFPNCreateRequest } from '../interfaces/historicFPNCreateRequest
 import { HistoricFPNCreateResponse } from '../interfaces/historicFPNCreateResponse';
 import { NonNotifiableSiteCreateRequest } from '../interfaces/nonNotifiableSiteCreateRequest';
 import { NonNotifiableSiteCreateResponse } from '../interfaces/nonNotifiableSiteCreateResponse';
+import { HistoricInspectionCreateRequest } from '../interfaces/historicInspectionCreateRequest';
+import { HistoricInspectionCreateResponse } from '../interfaces/historicInspectionCreateResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -119,6 +121,7 @@ export declare class StreetManagerApiClient {
     createSection81(requestConfig: RequestConfig, section81CreateRequest: Section81CreateRequest): Promise<Section81CreateResponse>;
     createHistoricFPN(requestConfig: RequestConfig, historicFPNCreateRequest: HistoricFPNCreateRequest): Promise<HistoricFPNCreateResponse>;
     createNonNotifiableSite(requestConfig: RequestConfig, nonNotifiableSiteCreateRequest: NonNotifiableSiteCreateRequest): Promise<NonNotifiableSiteCreateResponse>;
+    createHistoricInspection(requestConfig: RequestConfig, historicInspectionCreateRequest: HistoricInspectionCreateRequest): Promise<HistoricInspectionCreateResponse>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;
