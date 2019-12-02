@@ -2,6 +2,12 @@ import { TrafficManagementType } from './referenceTypes';
 import { PermitASD } from './permitASD';
 import { BaseWorkCreateRequest } from './baseWorkCreateRequest';
 export interface ForwardPlanCreateRequest extends BaseWorkCreateRequest {
+    /** Max length 24 characters
+     * Must be unique in the system
+     * Must contain only alphanumeric characters, dashes and underscores
+     * If not supplied it will be auto-generated
+     */
+    work_reference_number?: string;
     start_date: Date;
     /** end_date must be on or after start_date */
     end_date: Date;

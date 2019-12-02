@@ -3,6 +3,12 @@ import { PermitCondition } from './permitCondition';
 import { PermitASD } from './permitASD';
 import { BaseWorkCreateRequest } from './baseWorkCreateRequest';
 export interface WorkCreateRequest extends BaseWorkCreateRequest {
+    /** Max length 24 characters
+     * Must be unique in the system
+     * Must contain only alphanumeric characters, dashes and underscores
+     * If not supplied it will be auto-generated
+     */
+    work_reference_number?: string;
     /** Max length 100 characters */
     secondary_contact: string;
     /** Max length 100 characters */
