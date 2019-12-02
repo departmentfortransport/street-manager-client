@@ -64,22 +64,13 @@ export enum WorkCategory {
 
 export enum PermitStatus {
   submitted = 'submitted',
-  granted_proposed = 'granted_proposed',
+  granted = 'granted',
   permit_modification_request = 'permit_modification_request',
   refused = 'refused',
-  granted_in_progress = 'granted_in_progress',
   closed = 'closed',
   cancelled = 'cancelled',
-  revoked_proposed = 'revoked_proposed',
-  revoked_in_progress = 'revoked_in_progress',
-  deemed_proposed = 'deemed_proposed',
-  deemed_in_progress = 'deemed_in_progress',
-  granted_auto = 'granted_auto',
-  refused_auto = 'refused_auto',
-  cancelled_auto = 'cancelled_auto',
-  awaiting_assessment_in_progress = 'awaiting_assessment_in_progress',
-  revoked_closed = 'revoked_closed',
-  deemed_closed = 'deemed_closed'
+  revoked = 'revoked',
+  progressed = 'progressed'
 }
 
 export enum AssessmentStatus {
@@ -94,7 +85,7 @@ export enum AssessmentStatus {
 export enum ForwardPlanStatus {
   raised = 'raised',
   cancelled = 'cancelled',
-  closed = 'closed'
+  progressed = 'progressed'
 }
 
 export enum ReinstatementStatus {
