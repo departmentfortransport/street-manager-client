@@ -62,6 +62,8 @@ import { FinalReinstatementUpdateRequest } from '../interfaces/finalReinstatemen
 import { PermitAssessmentUpdateRequest } from '../interfaces/permitAssessmentUpdateRequest'
 import { HistoricFPNCreateRequest } from '../interfaces/historicFPNCreateRequest'
 import { HistoricFPNCreateResponse } from '../interfaces/historicFPNCreateResponse'
+import { NonNotifiableSiteCreateRequest } from '../interfaces/nonNotifiableSiteCreateRequest'
+import { NonNotifiableSiteCreateResponse } from '../interfaces/nonNotifiableSiteCreateResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -290,6 +292,10 @@ export class StreetManagerApiClient {
 
   public async createHistoricFPN(requestConfig: RequestConfig, historicFPNCreateRequest: HistoricFPNCreateRequest): Promise<HistoricFPNCreateResponse> {
     return this.httpHandler<HistoricFPNCreateResponse>(() => this.axios.post(`/historic-works/fixed-penalty-notices`, historicFPNCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createNonNotifiableSite(requestConfig: RequestConfig, nonNotifiableSiteCreateRequest: NonNotifiableSiteCreateRequest): Promise<NonNotifiableSiteCreateResponse> {
+    return this.httpHandler<NonNotifiableSiteCreateResponse>(() => this.axios.post(`/non-notifiable-works/sites`, nonNotifiableSiteCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

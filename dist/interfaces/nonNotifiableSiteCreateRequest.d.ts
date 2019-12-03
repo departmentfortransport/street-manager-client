@@ -1,6 +1,15 @@
-import { ReinstatementStatus, LocationType } from './referenceTypes';
-import { DelegatedUserIdentification } from './delegatedUserIdentification';
-export interface ReinstatementCreateRequest extends DelegatedUserIdentification {
+import { ReinstatementStatus, LocationType, ReinstatementType } from './referenceTypes';
+import { BaseWorkCreateRequest } from './baseWorkCreateRequest';
+export interface NonNotifiableSiteCreateRequest extends BaseWorkCreateRequest {
+    /** Max length 24 characters
+     * Must be unique in the system
+     * Must contain only alphanumeric characters, dashes and underscores
+     * If not supplied it will be auto-generated
+     */
+    work_reference_number?: string;
+    /** Must consist of 3 positive whole numbers. Default workstream if not provided */
+    workstream_prefix?: string;
+    reinstatement_type: ReinstatementType;
     /** See business rule ref. 4.4 - Making interim site permanent */
     reinstatement_status: ReinstatementStatus;
     /** reinstatement_date must be in the past
@@ -8,18 +17,6 @@ export interface ReinstatementCreateRequest extends DelegatedUserIdentification 
      * Must be before actual end date (if entered)
      */
     reinstatement_date: Date;
-    /** Is number between 0.01 and 99.99 inclusive, to two decimal places.
-     * Required if reinstatement type is excavation.
-     */
-    depth?: number;
-    /** Is number between 0.01 and 9999.99 inclusive, to two decimal places
-     * Required if reinstatement type is excavation.
-     */
-    length?: number;
-    /** Is number between 0.01 and 99.99 inclusive, to two decimal places
-     * Required if reinstatement type is excavation.
-     */
-    width?: number;
     /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon */
     reinstatement_coordinates: any;
     /** Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon, if provided */
@@ -44,12 +41,6 @@ export interface ReinstatementCreateRequest extends DelegatedUserIdentification 
      * Will default to previously provided value or 1.
      */
     inspection_units?: number;
-    /** Whether it is a final reinstatement
-     * Required if reinstatement type is excavation
-     */
-    final_reinstatement?: boolean;
-    /** Must be a number between 1 and 100
-     * Required if reinstatement type is not excavation
-     */
-    number_of_holes?: number;
+    /** Must be a number between 1 and 100 */
+    number_of_holes: number;
 }

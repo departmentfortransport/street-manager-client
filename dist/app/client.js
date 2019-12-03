@@ -279,6 +279,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post(`/historic-works/fixed-penalty-notices`, historicFPNCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    createNonNotifiableSite(requestConfig, nonNotifiableSiteCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/non-notifiable-works/sites`, nonNotifiableSiteCreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
