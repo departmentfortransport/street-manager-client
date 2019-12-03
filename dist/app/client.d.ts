@@ -57,6 +57,8 @@ import { Section81CreateRequest } from '../interfaces/section81CreateRequest';
 import { Section81CreateResponse } from '../interfaces/section81CreateResponse';
 import { FinalReinstatementUpdateRequest } from '../interfaces/finalReinstatementUpdateRequest';
 import { PermitAssessmentUpdateRequest } from '../interfaces/permitAssessmentUpdateRequest';
+import { HistoricFPNCreateRequest } from '../interfaces/historicFPNCreateRequest';
+import { HistoricFPNCreateResponse } from '../interfaces/historicFPNCreateResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -113,6 +115,7 @@ export declare class StreetManagerApiClient {
     createScheduledInspection(requestConfig: RequestConfig, workReferenceNumber: string, scheduledInspectionCreateRequest: ScheduledInspectionCreateRequest): Promise<void>;
     cancelScheduledInspection(requestConfig: RequestConfig, workReferenceNumber: string): Promise<void>;
     createSection81(requestConfig: RequestConfig, section81CreateRequest: Section81CreateRequest): Promise<Section81CreateResponse>;
+    createHistoricFPN(requestConfig: RequestConfig, historicFPNCreateRequest: HistoricFPNCreateRequest): Promise<HistoricFPNCreateResponse>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;

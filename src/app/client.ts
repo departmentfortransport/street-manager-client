@@ -60,6 +60,8 @@ import { Section81CreateRequest } from '../interfaces/section81CreateRequest'
 import { Section81CreateResponse } from '../interfaces/section81CreateResponse'
 import { FinalReinstatementUpdateRequest } from '../interfaces/finalReinstatementUpdateRequest'
 import { PermitAssessmentUpdateRequest } from '../interfaces/permitAssessmentUpdateRequest'
+import { HistoricFPNCreateRequest } from '../interfaces/historicFPNCreateRequest'
+import { HistoricFPNCreateResponse } from '../interfaces/historicFPNCreateResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -284,6 +286,10 @@ export class StreetManagerApiClient {
 
   public async createSection81(requestConfig: RequestConfig, section81CreateRequest: Section81CreateRequest): Promise<Section81CreateResponse> {
     return this.httpHandler<Section81CreateResponse>(() => this.axios.post(`/section-81-works/section-81s`, section81CreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createHistoricFPN(requestConfig: RequestConfig, historicFPNCreateRequest: HistoricFPNCreateRequest): Promise<HistoricFPNCreateResponse> {
+    return this.httpHandler<HistoricFPNCreateResponse>(() => this.axios.post(`/historic-works/fixed-penalty-notices`, historicFPNCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
