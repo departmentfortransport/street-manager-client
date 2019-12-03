@@ -4,7 +4,7 @@ export interface FailureReasonDetails {
   failure_reason: FailureReason
   /** Required if work has a reinstatement
    */
-  site_ids?: number[]
+  site_numbers?: number[]
   /** Max length 500 characters
    */
   details: string
