@@ -5,7 +5,6 @@ import { PermitASD } from './permitASD';
 import { PermitSummaryResponse } from './permitSummaryResponse';
 import { PermitAlterationSummaryResponse } from './permitAlterationSummaryResponse';
 export interface PermitResponse extends PermitSummaryResponse {
-    permit_id: number;
     permit_reference_number: string;
     work_id: number;
     work_reference_number: string;
