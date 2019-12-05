@@ -1,5 +1,5 @@
 import { BaseWorkCreateRequest } from './baseWorkCreateRequest';
-import { LocationType, InspectionType, InspectionCategory, Section81Type, Section81Severity } from './referenceTypes';
+import { LocationType, Section81Type, Section81Severity } from './referenceTypes';
 export interface Section81CreateRequest extends BaseWorkCreateRequest {
     /** Max length 500 characters */
     location_description: string;
@@ -25,11 +25,4 @@ export interface Section81CreateRequest extends BaseWorkCreateRequest {
      * Time must occur today or a date in the future
      */
     reinspection_date_time?: Date;
-    /** Mandatory if reinspection_date is provided */
-    reinspection_type?: InspectionType;
-    /**
-     * See business rule ref. 3.2 - Inspection category
-     * Mandatory if reinspection_date is provided
-     */
-    reinspection_category?: InspectionCategory;
 }
