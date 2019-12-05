@@ -10,9 +10,8 @@ import { ForwardPlanSummaryResponse } from './forwardPlanSummaryResponse'
 import { Section81SummaryResponse } from './section81SummaryResponse'
 
 export interface WorkResponse {
-  work_id: number
   work_reference_number: string
-  workstream_id: number
+  workstream_prefix: string
   promoter_swa_code: string
   promoter_organisation: string
   highway_authority_swa_code: string

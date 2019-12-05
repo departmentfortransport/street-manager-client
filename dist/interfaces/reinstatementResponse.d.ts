@@ -1,7 +1,6 @@
 import { ReinstatementStatus, LocationType } from './referenceTypes';
 import { FileSummaryResponse } from './fileSummaryResponse';
 export interface ReinstatementResponse {
-    reinstatement_id: number;
     permit_reference_number?: string;
     reinstatement_status: ReinstatementStatus;
     reinstatement_date: Date;

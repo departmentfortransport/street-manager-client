@@ -11,7 +11,7 @@ export interface Section81Response extends Section81SummaryResponse {
     highway_authority_swa_code: string;
     promoter_organisation: string;
     promoter_swa_code: string;
-    workstream_id: number;
+    workstream_prefix: string;
     location_types: LocationType[];
     inspection_date: Date;
     section_81_type: Section81Type;
