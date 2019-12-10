@@ -17,6 +17,8 @@ export interface WorkResponse {
     highway_authority: string;
     street_name: string;
     area_name?: string;
+    road_category: number;
+    works_coordinates: any;
     usrn: number;
     inspection_units?: number;
     work_status: WorkStatus;

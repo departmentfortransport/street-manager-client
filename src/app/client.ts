@@ -62,6 +62,11 @@ import { FinalReinstatementUpdateRequest } from '../interfaces/finalReinstatemen
 import { PermitAssessmentUpdateRequest } from '../interfaces/permitAssessmentUpdateRequest'
 import { HistoricFPNCreateRequest } from '../interfaces/historicFPNCreateRequest'
 import { HistoricFPNCreateResponse } from '../interfaces/historicFPNCreateResponse'
+import { NonNotifiableSiteCreateRequest } from '../interfaces/nonNotifiableSiteCreateRequest'
+import { NonNotifiableSiteCreateResponse } from '../interfaces/nonNotifiableSiteCreateResponse'
+import { HistoricInspectionCreateRequest } from '../interfaces/historicInspectionCreateRequest'
+import { HistoricInspectionCreateResponse } from '../interfaces/historicInspectionCreateResponse'
+import { Section81Response } from '../interfaces/section81Response'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -290,6 +295,18 @@ export class StreetManagerApiClient {
 
   public async createHistoricFPN(requestConfig: RequestConfig, historicFPNCreateRequest: HistoricFPNCreateRequest): Promise<HistoricFPNCreateResponse> {
     return this.httpHandler<HistoricFPNCreateResponse>(() => this.axios.post(`/historic-works/fixed-penalty-notices`, historicFPNCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createNonNotifiableSite(requestConfig: RequestConfig, nonNotifiableSiteCreateRequest: NonNotifiableSiteCreateRequest): Promise<NonNotifiableSiteCreateResponse> {
+    return this.httpHandler<NonNotifiableSiteCreateResponse>(() => this.axios.post(`/non-notifiable-works/sites`, nonNotifiableSiteCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createHistoricInspection(requestConfig: RequestConfig, historicInspectionCreateRequest: HistoricInspectionCreateRequest): Promise<HistoricInspectionCreateResponse> {
+    return this.httpHandler<HistoricInspectionCreateResponse>(() => this.axios.post(`/historic-works/inspections`, historicInspectionCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+    public async getSection81(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string): Promise<Section81Response> {
+    return this.httpHandler<Section81Response>(() => this.axios.get(`/works/${workReferenceNumber}/section-81s/${section81ReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

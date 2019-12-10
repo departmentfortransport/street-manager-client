@@ -439,3 +439,7 @@ var Section81Severity;
     Section81Severity["HIGH"] = "HIGH";
     Section81Severity["LOW"] = "LOW";
 })(Section81Severity = exports.Section81Severity || (exports.Section81Severity = {}));
+var Section81Status;
+(function (Section81Status) {
+    Section81Status["issued"] = "issued";
+})(Section81Status = exports.Section81Status || (exports.Section81Status = {}));

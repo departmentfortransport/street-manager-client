@@ -59,6 +59,12 @@ import { FinalReinstatementUpdateRequest } from '../interfaces/finalReinstatemen
 import { PermitAssessmentUpdateRequest } from '../interfaces/permitAssessmentUpdateRequest';
 import { HistoricFPNCreateRequest } from '../interfaces/historicFPNCreateRequest';
 import { HistoricFPNCreateResponse } from '../interfaces/historicFPNCreateResponse';
+import { NonNotifiableSiteCreateRequest } from '../interfaces/nonNotifiableSiteCreateRequest';
+import { NonNotifiableSiteCreateResponse } from '../interfaces/nonNotifiableSiteCreateResponse';
+import { HistoricInspectionCreateRequest } from '../interfaces/historicInspectionCreateRequest';
+import { HistoricInspectionCreateResponse } from '../interfaces/historicInspectionCreateResponse';
+import { Section81Response } from '../interfaces/section81Response';
+
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -116,6 +122,9 @@ export declare class StreetManagerApiClient {
     cancelScheduledInspection(requestConfig: RequestConfig, workReferenceNumber: string): Promise<void>;
     createSection81(requestConfig: RequestConfig, section81CreateRequest: Section81CreateRequest): Promise<Section81CreateResponse>;
     createHistoricFPN(requestConfig: RequestConfig, historicFPNCreateRequest: HistoricFPNCreateRequest): Promise<HistoricFPNCreateResponse>;
+    createNonNotifiableSite(requestConfig: RequestConfig, nonNotifiableSiteCreateRequest: NonNotifiableSiteCreateRequest): Promise<NonNotifiableSiteCreateResponse>;
+    createHistoricInspection(requestConfig: RequestConfig, historicInspectionCreateRequest: HistoricInspectionCreateRequest): Promise<HistoricInspectionCreateResponse>;
+    getSection81(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string): Promise<Section81Response>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;
