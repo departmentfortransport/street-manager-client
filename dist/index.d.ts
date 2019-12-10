@@ -79,3 +79,6 @@ export * from './interfaces/historicFPNCreateRequest';
 export * from './interfaces/historicFPNCreateResponse';
 export * from './interfaces/nonNotifiableSiteCreateRequest';
 export * from './interfaces/nonNotifiableSiteCreateResponse';
+export * from './interfaces/historicInspectionCreateRequest';
+export * from './interfaces/historicFailureReasonDetails';
+export * from './interfaces/historicInspectionCreateResponse';
