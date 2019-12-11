@@ -405,8 +405,8 @@ export declare enum Section81Type {
     other = "other"
 }
 export declare enum Section81Severity {
-    HIGH = "HIGH",
-    LOW = "LOW"
+    high = "high",
+    low = "low"
 }
 export declare enum Section81Status {
     issued = "issued",
