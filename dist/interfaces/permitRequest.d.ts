@@ -1,4 +1,4 @@
-import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType, CloseFootway } from './referenceTypes';
+import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType, CloseFootway, Hs2HighwayExemption } from './referenceTypes';
 import { PermitCondition } from './permitCondition';
 import { DelegatedUserIdentification } from './delegatedUserIdentification';
 export interface PermitRequest extends DelegatedUserIdentification {
@@ -83,4 +83,7 @@ export interface PermitRequest extends DelegatedUserIdentification {
     /** Max length 500 characters */
     additional_info?: string;
     close_footway: CloseFootway;
+    hs2_in_act_limits?: boolean;
+    hs2_consultation_requested_response_date?: Date;
+    hs2_highway_exemption?: Hs2HighwayExemption;
 }

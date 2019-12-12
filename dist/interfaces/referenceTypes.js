@@ -54,6 +54,7 @@ var WorkType;
 (function (WorkType) {
     WorkType["planned"] = "planned";
     WorkType["immediate"] = "immediate";
+    WorkType["hs2_highway_works"] = "hs2_highway_works";
 })(WorkType = exports.WorkType || (exports.WorkType = {}));
 var WorkCategory;
 (function (WorkCategory) {
@@ -63,6 +64,7 @@ var WorkCategory;
     WorkCategory["immediate_urgent"] = "immediate_urgent";
     WorkCategory["immediate_emergency"] = "immediate_emergency";
     WorkCategory["paa"] = "paa";
+    WorkCategory["hs2_highway"] = "hs2_highway";
 })(WorkCategory = exports.WorkCategory || (exports.WorkCategory = {}));
 var PermitStatus;
 (function (PermitStatus) {
@@ -443,3 +445,11 @@ var Section81Status;
 (function (Section81Status) {
     Section81Status["issued"] = "issued";
 })(Section81Status = exports.Section81Status || (exports.Section81Status = {}));
+var Hs2HighwayExemption;
+(function (Hs2HighwayExemption) {
+    Hs2HighwayExemption["works_to_a_bridge"] = "works_to_a_bridge";
+    Hs2HighwayExemption["alteration_or_disturbance_to_apparatus"] = "alteration_or_disturbance_to_apparatus";
+    Hs2HighwayExemption["depositing_soil_or_materials"] = "depositing_soil_or_materials";
+    Hs2HighwayExemption["erection_of_scaffolding"] = "erection_of_scaffolding";
+    Hs2HighwayExemption["none_applicable"] = "none_applicable";
+})(Hs2HighwayExemption = exports.Hs2HighwayExemption || (exports.Hs2HighwayExemption = {}));
