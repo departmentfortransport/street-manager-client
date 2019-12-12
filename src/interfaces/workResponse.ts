@@ -9,9 +9,8 @@ import { WorkStatus } from './referenceTypes'
 import { ForwardPlanSummaryResponse } from './forwardPlanSummaryResponse'
 
 export interface WorkResponse {
-  work_id: number
   work_reference_number: string
-  workstream_id: number
+  workstream_prefix: number
   promoter_swa_code: string
   promoter_organisation: string
   highway_authority_swa_code: string
