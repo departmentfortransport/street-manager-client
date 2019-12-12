@@ -294,6 +294,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}/section-81s/${section81ReferenceNumber}`, this.generateRequestConfig(requestConfig)));
         });
     }
+    updateSection81Status(requestConfig, workReferenceNumber, section81ReferenceNumber, updateSection81StatusRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/section-81s/${section81ReferenceNumber}/status`, updateSection81StatusRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

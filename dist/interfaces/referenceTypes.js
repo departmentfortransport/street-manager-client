@@ -374,6 +374,12 @@ var AuditEvent;
     AuditEvent["alteration_applied_auto"] = "alteration_applied_auto";
     AuditEvent["section_81_submitted"] = "section_81_submitted";
     AuditEvent["final_reinstatement_updated"] = "final_reinstatement_updated";
+    AuditEvent["section_81_acknowledged"] = "section_81_acknowledged";
+    AuditEvent["section_81_accepted"] = "section_81_accepted";
+    AuditEvent["section_81_accepted_fixed"] = "section_81_accepted_fixed";
+    AuditEvent["section_81_rejected"] = "section_81_rejected";
+    AuditEvent["section_81_resolved_by_ha"] = "section_81_resolved_by_ha";
+    AuditEvent["section_81_cancelled"] = "section_81_cancelled";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {
@@ -442,4 +448,15 @@ var Section81Severity;
 var Section81Status;
 (function (Section81Status) {
     Section81Status["issued"] = "issued";
+    Section81Status["acknowledged"] = "acknowledged";
+    Section81Status["accepted"] = "accepted";
+    Section81Status["accepted_fixed"] = "accepted_fixed";
+    Section81Status["rejected"] = "rejected";
+    Section81Status["resolved_by_ha"] = "resolved_by_ha";
+    Section81Status["cancelled"] = "cancelled";
 })(Section81Status = exports.Section81Status || (exports.Section81Status = {}));
+var Section81WorkType;
+(function (Section81WorkType) {
+    Section81WorkType["PERMIT_WORKS"] = "PERMIT_WORKS";
+    Section81WorkType["NON_NOTIFIABLE_WORKS"] = "NON_NOTIFIABLE_WORKS";
+})(Section81WorkType = exports.Section81WorkType || (exports.Section81WorkType = {}));

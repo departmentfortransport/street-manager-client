@@ -62,6 +62,7 @@ import { NonNotifiableSiteCreateResponse } from '../interfaces/nonNotifiableSite
 import { HistoricInspectionCreateRequest } from '../interfaces/historicInspectionCreateRequest';
 import { HistoricInspectionCreateResponse } from '../interfaces/historicInspectionCreateResponse';
 import { Section81Response } from '../interfaces/section81Response';
+import { Section81StatusUpdateRequest } from '../interfaces/section81StatusUpdateRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -122,6 +123,7 @@ export declare class StreetManagerApiClient {
     createNonNotifiableSite(requestConfig: RequestConfig, nonNotifiableSiteCreateRequest: NonNotifiableSiteCreateRequest): Promise<NonNotifiableSiteCreateResponse>;
     createHistoricInspection(requestConfig: RequestConfig, historicInspectionCreateRequest: HistoricInspectionCreateRequest): Promise<HistoricInspectionCreateResponse>;
     getSection81(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string): Promise<Section81Response>;
+    updateSection81Status(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string, updateSection81StatusRequest: Section81StatusUpdateRequest): Promise<void>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;

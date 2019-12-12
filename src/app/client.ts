@@ -65,6 +65,7 @@ import { NonNotifiableSiteCreateResponse } from '../interfaces/nonNotifiableSite
 import { HistoricInspectionCreateRequest } from '../interfaces/historicInspectionCreateRequest'
 import { HistoricInspectionCreateResponse } from '../interfaces/historicInspectionCreateResponse'
 import { Section81Response } from '../interfaces/section81Response'
+import { Section81StatusUpdateRequest } from '../interfaces/section81StatusUpdateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -303,8 +304,12 @@ export class StreetManagerApiClient {
     return this.httpHandler<HistoricInspectionCreateResponse>(() => this.axios.post(`/historic-works/inspections`, historicInspectionCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-    public async getSection81(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string): Promise<Section81Response> {
+  public async getSection81(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string): Promise<Section81Response> {
     return this.httpHandler<Section81Response>(() => this.axios.get(`/works/${workReferenceNumber}/section-81s/${section81ReferenceNumber}`, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updateSection81Status(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string, updateSection81StatusRequest: Section81StatusUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/section-81s/${section81ReferenceNumber}/status`, updateSection81StatusRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
