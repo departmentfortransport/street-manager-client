@@ -439,8 +439,8 @@ export enum Section81Type {
 }
 
 export enum Section81Severity {
-  HIGH = 'HIGH',
-  LOW = 'LOW'
+  high = 'high',
+  low = 'low'
 }
 
 export enum Section81Status {
@@ -454,6 +454,6 @@ export enum Section81Status {
 }
 
 export enum Section81WorkType {
-  PERMIT_WORKS = 'PERMIT_WORKS',
-  NON_NOTIFIABLE_WORKS = 'NON_NOTIFIABLE_WORKS'
+  permit_works = 'permit_works',
+  non_notifiable_works = 'non_notifiable_works'
 }

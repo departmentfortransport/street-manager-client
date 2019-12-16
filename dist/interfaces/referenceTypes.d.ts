@@ -405,8 +405,8 @@ export declare enum Section81Type {
     other = "other"
 }
 export declare enum Section81Severity {
-    HIGH = "HIGH",
-    LOW = "LOW"
+    high = "high",
+    low = "low"
 }
 export declare enum Section81Status {
     issued = "issued",
@@ -418,6 +418,6 @@ export declare enum Section81Status {
     cancelled = "cancelled"
 }
 export declare enum Section81WorkType {
-    PERMIT_WORKS = "PERMIT_WORKS",
-    NON_NOTIFIABLE_WORKS = "NON_NOTIFIABLE_WORKS"
+    permit_works = "permit_works",
+    non_notifiable_works = "non_notifiable_works"
 }

@@ -442,8 +442,8 @@ var Section81Type;
 })(Section81Type = exports.Section81Type || (exports.Section81Type = {}));
 var Section81Severity;
 (function (Section81Severity) {
-    Section81Severity["HIGH"] = "HIGH";
-    Section81Severity["LOW"] = "LOW";
+    Section81Severity["high"] = "high";
+    Section81Severity["low"] = "low";
 })(Section81Severity = exports.Section81Severity || (exports.Section81Severity = {}));
 var Section81Status;
 (function (Section81Status) {
@@ -457,6 +457,6 @@ var Section81Status;
 })(Section81Status = exports.Section81Status || (exports.Section81Status = {}));
 var Section81WorkType;
 (function (Section81WorkType) {
-    Section81WorkType["PERMIT_WORKS"] = "PERMIT_WORKS";
-    Section81WorkType["NON_NOTIFIABLE_WORKS"] = "NON_NOTIFIABLE_WORKS";
+    Section81WorkType["permit_works"] = "permit_works";
+    Section81WorkType["non_notifiable_works"] = "non_notifiable_works";
 })(Section81WorkType = exports.Section81WorkType || (exports.Section81WorkType = {}));
