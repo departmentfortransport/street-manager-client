@@ -439,8 +439,8 @@ export enum Section81Type {
 }
 
 export enum Section81Severity {
-  high = 'high',
-  low = 'low'
+  HIGH = 'HIGH',
+  LOW = 'LOW'
 }
 
 export enum Section81Status {

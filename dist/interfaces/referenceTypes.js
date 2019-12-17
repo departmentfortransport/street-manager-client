@@ -442,8 +442,8 @@ var Section81Type;
 })(Section81Type = exports.Section81Type || (exports.Section81Type = {}));
 var Section81Severity;
 (function (Section81Severity) {
-    Section81Severity["high"] = "high";
-    Section81Severity["low"] = "low";
+    Section81Severity["HIGH"] = "HIGH";
+    Section81Severity["LOW"] = "LOW";
 })(Section81Severity = exports.Section81Severity || (exports.Section81Severity = {}));
 var Section81Status;
 (function (Section81Status) {
