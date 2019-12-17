@@ -81,4 +81,6 @@ export interface PermitResponse extends PermitSummaryResponse {
     hs2_in_act_limits?: boolean;
     hs2_consultation_requested_response_date?: Date;
     hs2_highway_exemption?: Hs2HighwayExemption;
+    hs2_is_consultation?: boolean;
+    hs2_is_consent?: boolean;
 }
