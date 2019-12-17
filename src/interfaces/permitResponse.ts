@@ -1,4 +1,4 @@
-import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType, ReasonForRefusal, CloseFootway, LaneRentalAssessmentOutcome, LaneRentalAssessmentChargeBand, WorkStatus, AssessmentStatus, Hs2HighwayExemption } from './referenceTypes'
+import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType, ReasonForRefusal, CloseFootway, LaneRentalAssessmentOutcome, LaneRentalAssessmentChargeBand, WorkStatus, AssessmentStatus, HS2HighwayExemption } from './referenceTypes'
 import { PermitCondition } from './permitCondition'
 import { FileSummaryResponse } from './fileSummaryResponse'
 import { PermitASD } from './permitASD'
@@ -81,7 +81,7 @@ export interface PermitResponse extends PermitSummaryResponse {
   work_status: WorkStatus
   hs2_in_act_limits?: boolean
   hs2_consultation_requested_response_date?: Date
-  hs2_highway_exemption?: Hs2HighwayExemption,
+  hs2_highway_exemption?: HS2HighwayExemption,
   hs2_is_consultation?: boolean
   hs2_is_consent?: boolean
 }

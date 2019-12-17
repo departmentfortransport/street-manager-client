@@ -443,7 +443,7 @@ export enum Section81Status {
   issued = 'issued'
 }
 
-export enum Hs2HighwayExemption {
+export enum HS2HighwayExemption {
   works_to_a_bridge = 'works_to_a_bridge',
   alteration_or_disturbance_to_apparatus = 'alteration_or_disturbance_to_apparatus',
   depositing_soil_or_materials = 'depositing_soil_or_materials',

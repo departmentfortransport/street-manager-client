@@ -407,7 +407,7 @@ export declare enum Section81Severity {
 export declare enum Section81Status {
     issued = "issued"
 }
-export declare enum Hs2HighwayExemption {
+export declare enum HS2HighwayExemption {
     works_to_a_bridge = "works_to_a_bridge",
     alteration_or_disturbance_to_apparatus = "alteration_or_disturbance_to_apparatus",
     depositing_soil_or_materials = "depositing_soil_or_materials",

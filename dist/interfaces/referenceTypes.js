@@ -445,11 +445,11 @@ var Section81Status;
 (function (Section81Status) {
     Section81Status["issued"] = "issued";
 })(Section81Status = exports.Section81Status || (exports.Section81Status = {}));
-var Hs2HighwayExemption;
-(function (Hs2HighwayExemption) {
-    Hs2HighwayExemption["works_to_a_bridge"] = "works_to_a_bridge";
-    Hs2HighwayExemption["alteration_or_disturbance_to_apparatus"] = "alteration_or_disturbance_to_apparatus";
-    Hs2HighwayExemption["depositing_soil_or_materials"] = "depositing_soil_or_materials";
-    Hs2HighwayExemption["erection_of_scaffolding"] = "erection_of_scaffolding";
-    Hs2HighwayExemption["none_applicable"] = "none_applicable";
-})(Hs2HighwayExemption = exports.Hs2HighwayExemption || (exports.Hs2HighwayExemption = {}));
+var HS2HighwayExemption;
+(function (HS2HighwayExemption) {
+    HS2HighwayExemption["works_to_a_bridge"] = "works_to_a_bridge";
+    HS2HighwayExemption["alteration_or_disturbance_to_apparatus"] = "alteration_or_disturbance_to_apparatus";
+    HS2HighwayExemption["depositing_soil_or_materials"] = "depositing_soil_or_materials";
+    HS2HighwayExemption["erection_of_scaffolding"] = "erection_of_scaffolding";
+    HS2HighwayExemption["none_applicable"] = "none_applicable";
+})(HS2HighwayExemption = exports.HS2HighwayExemption || (exports.HS2HighwayExemption = {}));
