@@ -1,1 +1,3 @@
-export interface CommentCreateResponse {}
+export interface CommentCreateResponse {
+  comment_id: number
+}
