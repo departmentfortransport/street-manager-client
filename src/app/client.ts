@@ -10,6 +10,7 @@ import { WorkResponse } from '../interfaces/workResponse'
 import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest'
 import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest'
 import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateRequest'
+import { ReinstatementCreateResponse } from '../interfaces/reinstatementCreateResponse'
 import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest'
 import { InspectionResponse } from '../interfaces/inspectionResponse'
 import { FPNCreateRequest } from '../interfaces/fpnCreateRequest'
@@ -24,6 +25,7 @@ import { SiteResponse } from '../interfaces/siteResponse'
 import { SiteCreateResponse } from '../interfaces/siteCreateResponse'
 import { InspectionUnitsUpdateRequest } from '../interfaces/inspectionUnitsUpdateRequest'
 import { CommentCreateRequest } from '../interfaces/commentCreateRequest'
+import { CommentCreateResponse } from '../interfaces/commentCreateResponse'
 import { FPNResponse } from '../interfaces/fpnResponse'
 import { FPNStatusUpdateRequest } from '../interfaces/fpnStatusUpdateRequest'
 import { InspectionCreateResponse } from '../interfaces/inspectionCreateResponse'
@@ -159,8 +161,8 @@ export class StreetManagerApiClient {
     return this.httpHandler<SiteCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/sites`, siteCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, siteNumber: number, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/works/${workReferenceNumber}/sites/${siteNumber}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, siteNumber: number, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementCreateResponse> {
+    return this.httpHandler<ReinstatementCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/sites/${siteNumber}/reinstatements`, reinstatementCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async getSite(requestConfig: RequestConfig, workReferenceNumber: string, siteNumber: number): Promise<SiteResponse> {
@@ -187,8 +189,8 @@ export class StreetManagerApiClient {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/fixed-penalty-notices/${fpnReferenceNumber}/status`, fpnStatusUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/works/${workReferenceNumber}/comments`, commentCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<CommentCreateResponse> {
+    return this.httpHandler<CommentCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/comments`, commentCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async createPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationRequest: PermitAlterationCreateRequest): Promise<PermitAlterationCreateResponse> {
