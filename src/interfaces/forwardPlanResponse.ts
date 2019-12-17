@@ -8,7 +8,7 @@ export interface ForwardPlanResponse extends ForwardPlanSummaryResponse {
   promoter_contact_details: string
   highway_authority: string
   highway_authority_swa_code: string
-  workstream_prefix: string
+  workstream_id: number
   works_coordinates: any
   street_name: string
   area_name?: string

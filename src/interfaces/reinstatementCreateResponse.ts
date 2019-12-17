@@ -1,1 +1,3 @@
-export interface ReinstatementCreateResponse {}
+export interface ReinstatementCreateResponse {
+  reinstatement_id: number
+}
