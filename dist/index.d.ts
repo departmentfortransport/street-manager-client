@@ -82,3 +82,4 @@ export * from './interfaces/historicFailureReasonDetails';
 export * from './interfaces/historicInspectionCreateResponse';
 export * from './interfaces/section81Response';
 export * from './interfaces/section81StatusUpdateRequest';
+export * from './interfaces/section81SummaryResponse';
