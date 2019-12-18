@@ -341,7 +341,13 @@ export declare enum AuditEvent {
     scheduled_inspection_created = "scheduled_inspection_created",
     alteration_applied_auto = "alteration_applied_auto",
     section_81_submitted = "section_81_submitted",
-    final_reinstatement_updated = "final_reinstatement_updated"
+    final_reinstatement_updated = "final_reinstatement_updated",
+    section_81_acknowledged = "section_81_acknowledged",
+    section_81_accepted = "section_81_accepted",
+    section_81_accepted_fixed = "section_81_accepted_fixed",
+    section_81_rejected = "section_81_rejected",
+    section_81_resolved_by_ha = "section_81_resolved_by_ha",
+    section_81_cancelled = "section_81_cancelled"
 }
 export declare enum ASDCode {
     protected_street = 1,
@@ -403,5 +409,15 @@ export declare enum Section81Severity {
     LOW = "LOW"
 }
 export declare enum Section81Status {
-    issued = "issued"
+    issued = "issued",
+    acknowledged = "acknowledged",
+    accepted = "accepted",
+    accepted_fixed = "accepted_fixed",
+    rejected = "rejected",
+    resolved_by_ha = "resolved_by_ha",
+    cancelled = "cancelled"
+}
+export declare enum Section81WorkType {
+    permit_works = "permit_works",
+    non_notifiable_works = "non_notifiable_works"
 }
