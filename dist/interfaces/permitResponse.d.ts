@@ -6,7 +6,6 @@ import { PermitSummaryResponse } from './permitSummaryResponse';
 import { PermitAlterationSummaryResponse } from './permitAlterationSummaryResponse';
 export interface PermitResponse extends PermitSummaryResponse {
     permit_reference_number: string;
-    work_id: number;
     work_reference_number: string;
     promoter_organisation: string;
     promoter_swa_code: string;
@@ -68,7 +67,7 @@ export interface PermitResponse extends PermitSummaryResponse {
     sliding_end_date_candidate: boolean;
     validity_period_end_date: Date;
     final_reinstatement: boolean;
-    workstream_id: number;
+    workstream_prefix: string;
     close_footway: CloseFootway;
     lane_rental_assessment_outcome?: LaneRentalAssessmentOutcome;
     lane_rental_assessment_additional_details?: string;

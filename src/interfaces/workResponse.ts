@@ -7,11 +7,11 @@ import { WorkHistoryResponse } from './workHistoryResponse'
 import { FileResponse} from './fileResponse'
 import { WorkStatus } from './referenceTypes'
 import { ForwardPlanSummaryResponse } from './forwardPlanSummaryResponse'
+import { Section81SummaryResponse } from './section81SummaryResponse'
 
 export interface WorkResponse {
-  work_id: number
   work_reference_number: string
-  workstream_id: number
+  workstream_prefix: string
   promoter_swa_code: string
   promoter_organisation: string
   highway_authority_swa_code: string
@@ -33,5 +33,6 @@ export interface WorkResponse {
   sites?: SiteSummaryResponse[]
   inspections?: InspectionSummaryResponse[]
   fpns?: FPNSummaryResponse[]
+  section_81?: Section81SummaryResponse
   files?: FileResponse[]
 }

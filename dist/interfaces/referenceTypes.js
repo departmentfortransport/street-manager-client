@@ -376,6 +376,12 @@ var AuditEvent;
     AuditEvent["alteration_applied_auto"] = "alteration_applied_auto";
     AuditEvent["section_81_submitted"] = "section_81_submitted";
     AuditEvent["final_reinstatement_updated"] = "final_reinstatement_updated";
+    AuditEvent["section_81_acknowledged"] = "section_81_acknowledged";
+    AuditEvent["section_81_accepted"] = "section_81_accepted";
+    AuditEvent["section_81_accepted_fixed"] = "section_81_accepted_fixed";
+    AuditEvent["section_81_rejected"] = "section_81_rejected";
+    AuditEvent["section_81_resolved_by_ha"] = "section_81_resolved_by_ha";
+    AuditEvent["section_81_cancelled"] = "section_81_cancelled";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {
@@ -438,13 +444,24 @@ var Section81Type;
 })(Section81Type = exports.Section81Type || (exports.Section81Type = {}));
 var Section81Severity;
 (function (Section81Severity) {
-    Section81Severity["HIGH"] = "HIGH";
-    Section81Severity["LOW"] = "LOW";
+    Section81Severity["high"] = "high";
+    Section81Severity["low"] = "low";
 })(Section81Severity = exports.Section81Severity || (exports.Section81Severity = {}));
 var Section81Status;
 (function (Section81Status) {
     Section81Status["issued"] = "issued";
+    Section81Status["acknowledged"] = "acknowledged";
+    Section81Status["accepted"] = "accepted";
+    Section81Status["accepted_fixed"] = "accepted_fixed";
+    Section81Status["rejected"] = "rejected";
+    Section81Status["resolved_by_ha"] = "resolved_by_ha";
+    Section81Status["cancelled"] = "cancelled";
 })(Section81Status = exports.Section81Status || (exports.Section81Status = {}));
+var Section81WorkType;
+(function (Section81WorkType) {
+    Section81WorkType["permit_works"] = "permit_works";
+    Section81WorkType["non_notifiable_works"] = "non_notifiable_works";
+})(Section81WorkType = exports.Section81WorkType || (exports.Section81WorkType = {}));
 var HS2HighwayExemption;
 (function (HS2HighwayExemption) {
     HS2HighwayExemption["works_to_a_bridge"] = "works_to_a_bridge";

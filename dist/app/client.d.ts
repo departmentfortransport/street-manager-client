@@ -10,7 +10,6 @@ import { WorkResponse } from '../interfaces/workResponse';
 import { WorkStartUpdateRequest } from '../interfaces/workStartUpdateRequest';
 import { WorkStopUpdateRequest } from '../interfaces/workStopUpdateRequest';
 import { ReinstatementCreateRequest } from '../interfaces/reinstatementCreateRequest';
-import { ReinstatementCreateResponse } from '../interfaces/reinstatementCreateResponse';
 import { InspectionCreateRequest } from '../interfaces/inspectionCreateRequest';
 import { InspectionResponse } from '../interfaces/inspectionResponse';
 import { FPNCreateRequest } from '../interfaces/fpnCreateRequest';
@@ -24,7 +23,6 @@ import { SiteResponse } from '../interfaces/siteResponse';
 import { SiteCreateResponse } from '../interfaces/siteCreateResponse';
 import { InspectionUnitsUpdateRequest } from '../interfaces/inspectionUnitsUpdateRequest';
 import { CommentCreateRequest } from '../interfaces/commentCreateRequest';
-import { CommentCreateResponse } from '../interfaces/commentCreateResponse';
 import { FPNResponse } from '../interfaces/fpnResponse';
 import { FPNStatusUpdateRequest } from '../interfaces/fpnStatusUpdateRequest';
 import { InspectionCreateResponse } from '../interfaces/inspectionCreateResponse';
@@ -64,6 +62,7 @@ import { NonNotifiableSiteCreateResponse } from '../interfaces/nonNotifiableSite
 import { HistoricInspectionCreateRequest } from '../interfaces/historicInspectionCreateRequest';
 import { HistoricInspectionCreateResponse } from '../interfaces/historicInspectionCreateResponse';
 import { Section81Response } from '../interfaces/section81Response';
+import { Section81StatusUpdateRequest } from '../interfaces/section81StatusUpdateRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -90,14 +89,14 @@ export declare class StreetManagerApiClient {
     updateFinalReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, finalReinstatementUpdateRequest: FinalReinstatementUpdateRequest): Promise<void>;
     addFileToWork(requestConfig: RequestConfig, workReferenceNumber: string, addFileToWorkRequest: AddFileToWorkRequest): Promise<void>;
     createSite(requestConfig: RequestConfig, workReferenceNumber: string, siteCreateRequest: SiteCreateRequest): Promise<SiteCreateResponse>;
-    createReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, siteNumber: number, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<ReinstatementCreateResponse>;
+    createReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, siteNumber: number, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<void>;
     getSite(requestConfig: RequestConfig, workReferenceNumber: string, siteNumber: number): Promise<SiteResponse>;
     createInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionCreateRequest: InspectionCreateRequest): Promise<InspectionCreateResponse>;
     getInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionReferenceNumber: string): Promise<InspectionResponse>;
     createFPN(requestConfig: RequestConfig, workReferenceNumber: string, fpnCreateRequest: FPNCreateRequest): Promise<FPNCreateResponse>;
     getFPN(requestConfig: RequestConfig, workReferenceNumber: string, fpnReferenceNumber: string): Promise<FPNResponse>;
     updateFPNStatus(requestConfig: RequestConfig, workReferenceNumber: string, fpnReferenceNumber: string, fpnStatusUpdateRequest: FPNStatusUpdateRequest): Promise<void>;
-    createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<CommentCreateResponse>;
+    createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<void>;
     createPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationRequest: PermitAlterationCreateRequest): Promise<PermitAlterationCreateResponse>;
     updatePermitAlterationStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string, updatePermitAlterationStatusRequest: PermitAlterationStatusUpdateRequest): Promise<void>;
     getPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string): Promise<PermitAlterationResponse>;
@@ -124,6 +123,7 @@ export declare class StreetManagerApiClient {
     createNonNotifiableSite(requestConfig: RequestConfig, nonNotifiableSiteCreateRequest: NonNotifiableSiteCreateRequest): Promise<NonNotifiableSiteCreateResponse>;
     createHistoricInspection(requestConfig: RequestConfig, historicInspectionCreateRequest: HistoricInspectionCreateRequest): Promise<HistoricInspectionCreateResponse>;
     getSection81(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string): Promise<Section81Response>;
+    updateSection81Status(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string, updateSection81StatusRequest: Section81StatusUpdateRequest): Promise<void>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;
