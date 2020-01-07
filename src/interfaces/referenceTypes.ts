@@ -50,7 +50,8 @@ export enum TrafficManagementType {
 
 export enum WorkType {
   planned = 'planned',
-  immediate = 'immediate'
+  immediate = 'immediate',
+  hs2_highway_works = 'hs2_highway_works'
 }
 
 export enum WorkCategory {
@@ -59,7 +60,8 @@ export enum WorkCategory {
   major = 'major',
   immediate_urgent = 'immediate_urgent',
   immediate_emergency = 'immediate_emergency',
-  paa = 'paa'
+  paa = 'paa',
+  hs2_highway = 'hs2_highway'
 }
 
 export enum PermitStatus {
@@ -456,4 +458,12 @@ export enum Section81Status {
 export enum Section81WorkType {
   permit_works = 'permit_works',
   non_notifiable_works = 'non_notifiable_works'
+}
+
+export enum HS2HighwayExemption {
+  works_to_a_bridge = 'works_to_a_bridge',
+  alteration_or_disturbance_to_apparatus = 'alteration_or_disturbance_to_apparatus',
+  depositing_soil_or_materials = 'depositing_soil_or_materials',
+  erection_of_scaffolding = 'erection_of_scaffolding',
+  none_applicable = 'none_applicable'
 }
