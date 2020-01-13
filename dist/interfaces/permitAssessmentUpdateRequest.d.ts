@@ -14,7 +14,7 @@ export interface PermitAssessmentUpdateRequest extends DelegatedUserIdentificati
      * Required if assessment_status = refused
      */
     reasons_for_refusal?: ReasonForRefusal[];
-    /** Required if assessment_status = granted
+    /** Required if assessment_status = granted and permit's work_category != hs2_highway
      * Is whole number between 0 and 100 inclusive
      */
     assessment_discount?: number;
