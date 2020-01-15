@@ -95,4 +95,10 @@ export interface WorkCreateRequest extends BaseWorkCreateRequest {
     hs2_consultation_requested_response_date?: Date;
     /** Required if work_type = 'hs2_highway_works' and hs2_in_act_limits = true */
     hs2_highway_exemption?: HS2HighwayExemption;
+    /** Max length 100 characters */
+    additional_contact?: string;
+    /** Max length 100 characters */
+    additional_contact_number?: string;
+    /** Max length 100 characters */
+    additional_contact_email?: string;
 }

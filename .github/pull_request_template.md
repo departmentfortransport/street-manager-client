@@ -11,8 +11,8 @@ Coding best practices: https://github.com/departmentfortransport/street-manager/
 
 - [ ] Branch named {feature|hotfix|task}/{SM-.*}
 - [ ] If your pull request depends on any other, please link them
-- [ ] Quality Street approval
-- [ ] Street Smart approval
+- [ ] Changes approved by your team
+- [ ] Changes approved by another team
 - [ ] API definitions updated
 - [ ] Commit messages are meaningful
 - [ ] Add `DO NOT MERGE` if you want to postpone merge
