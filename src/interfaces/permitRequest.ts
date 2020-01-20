@@ -1,6 +1,7 @@
 import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType, CloseFootway } from './referenceTypes'
 import { PermitCondition } from './permitCondition'
 import { DelegatedUserIdentification } from './delegatedUserIdentification'
+import { PermitASD } from './permitASD'
 
 export interface PermitRequest extends DelegatedUserIdentification {
   /** Max length 100 characters */
@@ -84,4 +85,5 @@ export interface PermitRequest extends DelegatedUserIdentification {
   /** Max length 500 characters */
   additional_info?: string
   close_footway: CloseFootway
+  permit_asds?: PermitASD[]
 }

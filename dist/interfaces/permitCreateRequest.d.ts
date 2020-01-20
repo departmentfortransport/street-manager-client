@@ -1,8 +1,6 @@
-import { PermitASD } from './permitASD';
 import { PermitRequest } from './permitRequest';
 import { HS2HighwayExemption } from './referenceTypes';
 export interface PermitCreateRequest extends PermitRequest {
-    permit_asds?: PermitASD[];
     /** Must consist of 3 positive whole numbers */
     workstream_prefix?: string;
     /** Required if promoter_swa_code = '7374' */
