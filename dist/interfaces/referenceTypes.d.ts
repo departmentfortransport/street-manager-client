@@ -349,7 +349,8 @@ export declare enum AuditEvent {
     section_81_accepted_fixed = "section_81_accepted_fixed",
     section_81_rejected = "section_81_rejected",
     section_81_resolved_by_ha = "section_81_resolved_by_ha",
-    section_81_cancelled = "section_81_cancelled"
+    section_81_cancelled = "section_81_cancelled",
+    support_desk_action = "support_desk_action"
 }
 export declare enum ASDCode {
     protected_street = 1,
