@@ -350,6 +350,7 @@ export enum AuditEvent {
   forward_plan_cancelled = 'forward_plan_cancelled',
   user_removed = 'user_removed',
   user_invited = 'user_invited',
+  user_name_updated = 'user_name_updated',
   inspection_units_logged = 'inspection_units_logged',
   permit_submitted = 'permit_submitted',
   paa_submitted = 'paa_submitted',
