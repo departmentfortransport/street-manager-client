@@ -86,4 +86,10 @@ export interface PermitRequest extends DelegatedUserIdentification {
   additional_info?: string
   close_footway: CloseFootway
   permit_asds?: PermitASD[]
+  /** Max length 100 characters */
+  additional_contact?: string
+  /** Max length 100 characters */
+  additional_contact_number?: string
+  /** Max length 100 characters */
+  additional_contact_email?: string
 }

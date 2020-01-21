@@ -82,4 +82,7 @@ export interface PermitResponse extends PermitSummaryResponse {
     hs2_highway_exemption?: HS2HighwayExemption;
     hs2_is_consultation?: boolean;
     hs2_is_consent?: boolean;
+    additional_contact?: string;
+    additional_contact_number?: string;
+    additional_contact_email?: string;
 }
