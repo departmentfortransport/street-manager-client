@@ -9,7 +9,7 @@ export interface BaseHistoricWorkCreateRequest extends BaseWorkCreateRequest {
   /** Max length 500 characters */
   works_location_description: string
   /** Max length 500 characters */
-  description_of_work: string
+  description_of_work?: string
   /** Date must be in the past */
   work_start_date?: Date
   /** Date must be in the past
