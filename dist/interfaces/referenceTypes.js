@@ -353,6 +353,7 @@ var AuditEvent;
     AuditEvent["forward_plan_cancelled"] = "forward_plan_cancelled";
     AuditEvent["user_removed"] = "user_removed";
     AuditEvent["user_invited"] = "user_invited";
+    AuditEvent["user_name_updated"] = "user_name_updated";
     AuditEvent["inspection_units_logged"] = "inspection_units_logged";
     AuditEvent["permit_submitted"] = "permit_submitted";
     AuditEvent["paa_submitted"] = "paa_submitted";
