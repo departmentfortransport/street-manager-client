@@ -299,6 +299,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/section-81s/${section81ReferenceNumber}/status`, updateSection81StatusRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    acknowledgeHS2Permit(requestConfig, workReferenceNumber, permitReferenceNumber, hs2AcknowledgementRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/hs2_acknowledgement`, hs2AcknowledgementRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
