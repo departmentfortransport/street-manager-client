@@ -169,11 +169,20 @@ class StreetManagerApiClient {
     }
     uploadFile(requestConfig, buffer, filename, swaCode) {
         return __awaiter(this, void 0, void 0, function* () {
-            let form = new FormData();
+            const form = new FormData();
             form.append('file', buffer, filename);
-            let config = this.generateRequestConfig(requestConfig, { swaCode: swaCode });
+            const config = this.generateRequestConfig(requestConfig, { swaCode: swaCode });
             Object.assign(config.headers, form.getHeaders());
             return this.httpHandler(() => this.axios.post('/files', form, config));
+        });
+    }
+    createGeographicalArea(requestConfig, buffer, filename, swaCode) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const form = new FormData();
+            form.append('file', buffer, filename);
+            const config = this.generateRequestConfig(requestConfig, { swaCode: swaCode });
+            Object.assign(config.headers, form.getHeaders());
+            return this.httpHandler(() => this.axios.post('/geographical-areas', form, config));
         });
     }
     getFile(requestConfig, fileId) {

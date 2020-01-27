@@ -63,6 +63,7 @@ import { HistoricInspectionCreateRequest } from '../interfaces/historicInspectio
 import { HistoricInspectionCreateResponse } from '../interfaces/historicInspectionCreateResponse';
 import { Section81Response } from '../interfaces/section81Response';
 import { Section81StatusUpdateRequest } from '../interfaces/section81StatusUpdateRequest';
+import { GeographicalAreaCreateResponse } from '../interfaces/geographicalAreaCreateResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -101,6 +102,7 @@ export declare class StreetManagerApiClient {
     updatePermitAlterationStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string, updatePermitAlterationStatusRequest: PermitAlterationStatusUpdateRequest): Promise<void>;
     getPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string): Promise<PermitAlterationResponse>;
     uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string, swaCode?: string): Promise<FileSummaryResponse>;
+    createGeographicalArea(requestConfig: RequestConfig, buffer: Buffer, filename: string, swaCode?: string): Promise<GeographicalAreaCreateResponse>;
     getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>>;
     deleteFile(requestConfig: RequestConfig, fileId: number): Promise<void>;
     getWorkHistory(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkHistoryResponse[]>;
