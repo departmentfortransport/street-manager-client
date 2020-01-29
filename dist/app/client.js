@@ -176,11 +176,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post('/files', form, config));
         });
     }
-    createGeographicalArea(requestConfig, buffer, filename, swaCode) {
+    createGeographicalArea(requestConfig, buffer, filename) {
         return __awaiter(this, void 0, void 0, function* () {
             const form = new FormData();
             form.append('file', buffer, filename);
-            const config = this.generateRequestConfig(requestConfig, { swaCode: swaCode });
+            const config = this.generateRequestConfig(requestConfig);
             Object.assign(config.headers, form.getHeaders());
             return this.httpHandler(() => this.axios.post('/geographical-areas', form, config));
         });

@@ -214,11 +214,11 @@ export class StreetManagerApiClient {
     return this.httpHandler<FileSummaryResponse>(() => this.axios.post('/files', form, config))
   }
 
-  public async createGeographicalArea(requestConfig: RequestConfig, buffer: Buffer, filename: string, swaCode?: string): Promise<GeographicalAreaCreateResponse> {
+  public async createGeographicalArea(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<GeographicalAreaCreateResponse> {
     const form: FormData = new FormData()
     form.append('file', buffer, filename)
 
-    const config: AxiosRequestConfig = this.generateRequestConfig(requestConfig, { swaCode : swaCode })
+    const config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
     Object.assign(config.headers, form.getHeaders())
 
     return this.httpHandler<GeographicalAreaCreateResponse>(() => this.axios.post('/geographical-areas', form, config))
