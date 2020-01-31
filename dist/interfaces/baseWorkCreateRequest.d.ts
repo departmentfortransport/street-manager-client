@@ -17,7 +17,7 @@ export interface BaseWorkCreateRequest extends DelegatedUserIdentification {
      */
     area_name?: string;
     /** Is whole number between 1000001 and 99999999 inclusive
-     * See business rule ref. 1.11 - USRN
+     * See business rules section 1.4 - USRN
      */
     usrn: number;
     /**

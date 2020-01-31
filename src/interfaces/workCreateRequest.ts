@@ -35,9 +35,7 @@ export interface WorkCreateRequest extends BaseWorkCreateRequest {
   project_reference_number?: string
   traffic_management_plan: boolean
   lane_rental_applicable: boolean
-  /** Array values must be unique
-   * See business rule ref. 1.11 - Permit conditions
-   */
+  /** Array values must be unique */
   permit_conditions?: PermitCondition[]
   environmental_health_notifiable: boolean
   collaborative_working: boolean
@@ -69,7 +67,7 @@ export interface WorkCreateRequest extends BaseWorkCreateRequest {
   is_ttro_required?: boolean
   /** Required when work_type is immediate */
   immediate_risk?: boolean
-  /** See business rule ref. 1.9 - Early start */
+  /** See business rules section 3.4.6 - Early start */
   early_start_pre_approval?: boolean
   /** Required if early_start_pre_approval = true
    * Max length 500 characters

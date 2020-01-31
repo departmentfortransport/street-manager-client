@@ -3,7 +3,7 @@ import { DelegatedUserIdentification } from './delegatedUserIdentification'
 
 export interface PermitAssessmentUpdateRequest extends DelegatedUserIdentification {
   /** Can only be set to granted, refused, permit_modification_requested or revoked
-   * See business rule ref. 6.1 - Revoking a permit
+   * See business rules section 5 - Revoking a PA
    */
   assessment_status: AssessmentStatus
   /** Required if assessment_status = refused
