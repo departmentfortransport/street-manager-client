@@ -384,6 +384,7 @@ var AuditEvent;
     AuditEvent["section_81_resolved_by_ha"] = "section_81_resolved_by_ha";
     AuditEvent["section_81_cancelled"] = "section_81_cancelled";
     AuditEvent["support_desk_action"] = "support_desk_action";
+    AuditEvent["permit_hs2_acknowledged"] = "permit_hs2_acknowledged";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {
