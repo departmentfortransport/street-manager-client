@@ -25,6 +25,8 @@ export interface WorkResponse {
     works_location_description: string;
     work_start_date?: Date;
     work_end_date?: Date;
+    work_start_time?: Date;
+    work_end_time?: Date;
     description_of_work?: string;
     active_permit?: PermitResponse;
     forward_plan?: ForwardPlanSummaryResponse;

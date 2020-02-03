@@ -66,6 +66,7 @@ import { HistoricInspectionCreateRequest } from '../interfaces/historicInspectio
 import { HistoricInspectionCreateResponse } from '../interfaces/historicInspectionCreateResponse'
 import { Section81Response } from '../interfaces/section81Response'
 import { Section81StatusUpdateRequest } from '../interfaces/section81StatusUpdateRequest'
+import { HS2AcknowledgementRequest } from '../interfaces/hs2AcknowledgementRequest'
 import { GeographicalAreaCreateResponse } from '../interfaces/geographicalAreaCreateResponse'
 
 export interface StreetManagerApiClientConfig {
@@ -321,6 +322,10 @@ export class StreetManagerApiClient {
 
   public async updateSection81Status(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string, updateSection81StatusRequest: Section81StatusUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/section-81s/${section81ReferenceNumber}/status`, updateSection81StatusRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async acknowledgeHS2Permit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, hs2AcknowledgementRequest: HS2AcknowledgementRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/hs2_acknowledgement`, hs2AcknowledgementRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
