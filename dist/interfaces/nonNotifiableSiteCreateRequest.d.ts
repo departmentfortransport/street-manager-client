@@ -10,7 +10,7 @@ export interface NonNotifiableSiteCreateRequest extends BaseWorkCreateRequest {
     /** Must consist of 3 positive whole numbers. Default workstream if not provided */
     workstream_prefix?: string;
     reinstatement_type: ReinstatementType;
-    /** See business rule ref. 4.4 - Making interim site permanent */
+    /** See business rules section 8.4 - Making interim sites permanent */
     reinstatement_status: ReinstatementStatus;
     /** reinstatement_date must be in the past
      * Must be after actual start date

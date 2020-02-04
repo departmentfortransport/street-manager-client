@@ -1,7 +1,7 @@
 import { ReinstatementStatus, LocationType } from './referenceTypes';
 import { DelegatedUserIdentification } from './delegatedUserIdentification';
 export interface ReinstatementCreateRequest extends DelegatedUserIdentification {
-    /** See business rule ref. 4.4 - Making interim site permanent */
+    /** See business rules section 8.4 - Making interim sites permanent */
     reinstatement_status: ReinstatementStatus;
     /** reinstatement_date must be in the past
      * Must be after actual start date

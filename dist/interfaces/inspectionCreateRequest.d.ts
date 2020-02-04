@@ -5,11 +5,11 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
     inspection_type: InspectionType;
     /** inspection_start_date must be in the past */
     inspection_start_date: Date;
-    /** See business rule ref. 3.2 - Inspection category */
+    /** See business rules section 10.2 - Inspection types and categories */
     inspection_category?: InspectionCategory;
-    /** See business rule ref. 3.3 - Inspection outcome */
+    /** See business rules section 10.3 - Inspection outcomes */
     inspection_outcome: InspectionOutcome;
-    /** See business rule ref. 3.4 - Inspection failure reasons */
+    /** See business rules section 10.3 - Inspection outcomes */
     failure_reason_details?: FailureReasonDetails[];
     /** Required if inspection_outcome = unable_to_complete_inspection or non_compliant_with_conditions
      * Max length 500 characters
@@ -50,7 +50,7 @@ export interface InspectionCreateRequest extends DelegatedUserIdentification {
     /** Defaulted to inspection_type value if this and/or reinspection_category are not provided and reinspection_date is provided */
     reinspection_type?: InspectionType;
     /**
-     * See business rule ref. 3.2 - Inspection category
+     * See business rules section 10.2 - Inspection types and categories
      * Defaulted to inspection_category value if this and/or reinspection_type are not provided and reinspection_date is provided
      */
     reinspection_category?: InspectionCategory;

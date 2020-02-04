@@ -3,8 +3,8 @@ import { DelegatedUserIdentification } from './delegatedUserIdentification'
 
 export interface PermitStatusUpdateRequest extends DelegatedUserIdentification {
   /** Can only be set to cancelled
-   * See business rule ref. 7.1 - Cancelling a permit before assessment
-   * See business rule ref. 10.1 - Permit Status
+   * See business rules section 3.4.9 - Cancelling PAA & PA
+   * See business rules section 3.4.10 - PAA & PA statuses
    */
   permit_status: PermitStatus
   /** Required if permit_status = refused
