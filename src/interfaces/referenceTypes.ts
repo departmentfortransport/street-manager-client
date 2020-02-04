@@ -381,7 +381,8 @@ export enum AuditEvent {
   section_81_resolved_by_ha = 'section_81_resolved_by_ha',
   section_81_cancelled = 'section_81_cancelled',
   support_desk_action = 'support_desk_action',
-  permit_hs2_acknowledged = 'permit_hs2_acknowledged'
+  permit_hs2_acknowledged = 'permit_hs2_acknowledged',
+  geographical_area_created = 'geographical_area_created'
 }
 
 export enum ASDCode {

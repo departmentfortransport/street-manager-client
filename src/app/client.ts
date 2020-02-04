@@ -67,6 +67,7 @@ import { HistoricInspectionCreateResponse } from '../interfaces/historicInspecti
 import { Section81Response } from '../interfaces/section81Response'
 import { Section81StatusUpdateRequest } from '../interfaces/section81StatusUpdateRequest'
 import { HS2AcknowledgementRequest } from '../interfaces/hs2AcknowledgementRequest'
+import { GeographicalAreaCreateResponse } from '../interfaces/geographicalAreaCreateResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -205,13 +206,23 @@ export class StreetManagerApiClient {
   }
 
   public async uploadFile(requestConfig: RequestConfig, buffer: Buffer, filename: string, swaCode?: string): Promise<FileSummaryResponse> {
-    let form: FormData = new FormData()
+    const form: FormData = new FormData()
     form.append('file', buffer, filename)
 
-    let config: AxiosRequestConfig = this.generateRequestConfig(requestConfig, { swaCode : swaCode })
+    const config: AxiosRequestConfig = this.generateRequestConfig(requestConfig, { swaCode : swaCode })
     Object.assign(config.headers, form.getHeaders())
 
     return this.httpHandler<FileSummaryResponse>(() => this.axios.post('/files', form, config))
+  }
+
+  public async createGeographicalArea(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<GeographicalAreaCreateResponse> {
+    const form: FormData = new FormData()
+    form.append('file', buffer, filename)
+
+    const config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
+    Object.assign(config.headers, form.getHeaders())
+
+    return this.httpHandler<GeographicalAreaCreateResponse>(() => this.axios.post('/geographical-areas', form, config))
   }
 
   public async getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>> {
