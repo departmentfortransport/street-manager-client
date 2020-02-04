@@ -61,7 +61,7 @@ export enum WorkCategory {
   immediate_urgent = 'immediate_urgent',
   immediate_emergency = 'immediate_emergency',
   paa = 'paa',
-  hs2_highway = 'hs2_highway'
+  hs2_highway_works = 'hs2_highway_works'
 }
 
 export enum PermitStatus {
@@ -470,4 +470,11 @@ export enum HS2HighwayExemption {
   depositing_soil_or_materials = 'depositing_soil_or_materials',
   erection_of_scaffolding = 'erection_of_scaffolding',
   none_applicable = 'none_applicable'
+}
+
+export enum HS2Specific {
+  hs2_works_only = 'hs2_works_only',
+  consultation_works_only = 'consultation_works_only',
+  consent_works = 'consent_works',
+  unacknowledged_by_ha = 'unacknowledged_by_ha'
 }

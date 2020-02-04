@@ -64,7 +64,7 @@ var WorkCategory;
     WorkCategory["immediate_urgent"] = "immediate_urgent";
     WorkCategory["immediate_emergency"] = "immediate_emergency";
     WorkCategory["paa"] = "paa";
-    WorkCategory["hs2_highway"] = "hs2_highway";
+    WorkCategory["hs2_highway_works"] = "hs2_highway_works";
 })(WorkCategory = exports.WorkCategory || (exports.WorkCategory = {}));
 var PermitStatus;
 (function (PermitStatus) {
@@ -474,3 +474,10 @@ var HS2HighwayExemption;
     HS2HighwayExemption["erection_of_scaffolding"] = "erection_of_scaffolding";
     HS2HighwayExemption["none_applicable"] = "none_applicable";
 })(HS2HighwayExemption = exports.HS2HighwayExemption || (exports.HS2HighwayExemption = {}));
+var HS2Specific;
+(function (HS2Specific) {
+    HS2Specific["hs2_works_only"] = "hs2_works_only";
+    HS2Specific["consultation_only_works"] = "consultation_only_works";
+    HS2Specific["consent_works"] = "consent_works";
+    HS2Specific["unacknowledged_by_ha"] = "unacknowledged_by_ha";
+})(HS2Specific = exports.HS2Specific || (exports.HS2Specific = {}));
