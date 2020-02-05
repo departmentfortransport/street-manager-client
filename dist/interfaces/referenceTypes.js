@@ -35,6 +35,10 @@ var LocationType;
     LocationType["verge"] = "verge";
     LocationType["cycleway"] = "cycleway";
     LocationType["footpath"] = "footpath";
+    LocationType["parking_place"] = "parking_place";
+    LocationType["bus_stop_or_stand"] = "bus_stop_or_stand";
+    LocationType["cycle_hire_docking_station"] = "cycle_hire_docking_station";
+    LocationType["taxi_rank"] = "taxi_rank";
 })(LocationType = exports.LocationType || (exports.LocationType = {}));
 var TrafficManagementType;
 (function (TrafficManagementType) {

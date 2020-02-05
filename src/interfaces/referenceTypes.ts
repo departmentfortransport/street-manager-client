@@ -31,7 +31,11 @@ export enum LocationType {
   carriageway = 'carriageway',
   verge = 'verge',
   cycleway = 'cycleway',
-  footpath = 'footpath'
+  footpath = 'footpath',
+  parking_place = 'parking_place',
+  bus_stop_or_stand = 'bus_stop_or_stand',
+  cycle_hire_docking_station = 'cycle_hire_docking_station',
+  taxi_rank = 'taxi_rank'
 }
 
 export enum TrafficManagementType {
