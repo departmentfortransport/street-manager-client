@@ -390,6 +390,7 @@ var AuditEvent;
     AuditEvent["support_desk_action"] = "support_desk_action";
     AuditEvent["permit_hs2_acknowledged"] = "permit_hs2_acknowledged";
     AuditEvent["geographical_area_created"] = "geographical_area_created";
+    AuditEvent["workstream_access_updated"] = "workstream_access_updated";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {
