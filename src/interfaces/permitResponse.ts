@@ -50,6 +50,7 @@ export interface PermitResponse extends PermitSummaryResponse {
   assessment_status?: AssessmentStatus
   files?: FileSummaryResponse[]
   permit_asds: PermitASD[]
+  permit_not_selected_asds: PermitASD[]
   assessment_discount?: number
   assessment_discount_reason?: string
   is_ttro_required?: boolean
