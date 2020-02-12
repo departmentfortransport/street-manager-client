@@ -210,6 +210,7 @@ var AlterationType;
     AlterationType["HA_IMPOSED_CHANGE"] = "HA_IMPOSED_CHANGE";
     AlterationType["WORK_EXTENSION"] = "WORK_EXTENSION";
     AlterationType["DURATION_CHALLENGE"] = "DURATION_CHALLENGE";
+    AlterationType["MODIFIED_PERMIT"] = "MODIFIED_PERMIT";
 })(AlterationType = exports.AlterationType || (exports.AlterationType = {}));
 var ReasonForRefusal;
 (function (ReasonForRefusal) {
