@@ -90,7 +90,7 @@ export interface WorkCreateRequest extends BaseWorkCreateRequest {
   workstream_prefix?: string
   /** Required if promoter_swa_code = '7374' */
   hs2_in_act_limits?: boolean
-  /** Must be in the future */
+  /** Date must occur today or a date in the future */
   hs2_consultation_requested_response_date?: Date
   /** Required if work_type = 'hs2_highway_works' and hs2_in_act_limits = true */
   hs2_highway_exemption?: HS2HighwayExemption
