@@ -89,4 +89,5 @@ export interface PermitResponse extends PermitSummaryResponse {
   additional_contact?: string
   additional_contact_number?: string
   additional_contact_email?: string
+  ever_modification_requested: boolean
 }
