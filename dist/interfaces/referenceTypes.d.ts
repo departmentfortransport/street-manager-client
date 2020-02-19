@@ -74,6 +74,7 @@ export declare enum PermitStatus {
 export declare enum AssessmentStatus {
     granted = "granted",
     granted_auto = "granted_auto",
+    granted_with_duration_challenge = "granted_with_duration_challenge",
     refused = "refused",
     refused_auto = "refused_auto",
     permit_modification_request = "permit_modification_request",

@@ -85,6 +85,7 @@ var AssessmentStatus;
 (function (AssessmentStatus) {
     AssessmentStatus["granted"] = "granted";
     AssessmentStatus["granted_auto"] = "granted_auto";
+    AssessmentStatus["granted_with_duration_challenge"] = "granted_with_duration_challenge";
     AssessmentStatus["refused"] = "refused";
     AssessmentStatus["refused_auto"] = "refused_auto";
     AssessmentStatus["permit_modification_request"] = "permit_modification_request";
