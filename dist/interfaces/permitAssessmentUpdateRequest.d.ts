@@ -5,7 +5,7 @@ export interface PermitAssessmentUpdateRequest extends DelegatedUserIdentificati
      * See business rules section 5 - Revoking a PA
      */
     assessment_status: AssessmentStatus;
-    /** Required if assessment_status = refused
+    /** Required if assessment_status = refused or is_duration_challenged = true
      * Max length 500 characters
      */
     additional_comments?: string;
@@ -26,4 +26,9 @@ export interface PermitAssessmentUpdateRequest extends DelegatedUserIdentificati
      * Max length 500 characters
      */
     pending_change_details?: string;
+    /** Required if is_duration_challenged = true
+     * Must be at least 2 working days from start date
+     */
+    new_reasonable_period_end_date?: Date;
+    is_duration_challenged: boolean;
 }
