@@ -32,5 +32,5 @@ export interface PermitAssessmentUpdateRequest extends DelegatedUserIdentificati
    */
   new_reasonable_period_end_date?: Date
 
-  is_duration_challenged: boolean
+  is_duration_challenged?: boolean
 }

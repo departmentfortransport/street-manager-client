@@ -30,5 +30,5 @@ export interface PermitAssessmentUpdateRequest extends DelegatedUserIdentificati
      * Must be at least 2 working days from start date
      */
     new_reasonable_period_end_date?: Date;
-    is_duration_challenged: boolean;
+    is_duration_challenged?: boolean;
 }
