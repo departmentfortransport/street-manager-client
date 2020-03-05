@@ -290,6 +290,7 @@ export declare enum AuditEvent {
     inspection_failed = "inspection_failed",
     inspection_unable_to_carry_out = "inspection_unable_to_carry_out",
     inspection_further_required = "inspection_further_required",
+    inspection_agreed_site_compliance = "inspection_agreed_site_compliance",
     inspection_withdraw_defect = "inspection_withdraw_defect",
     activity_submitted = "activity_submitted",
     activity_edited = "activity_edited",
