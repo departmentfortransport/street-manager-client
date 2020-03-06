@@ -26,6 +26,7 @@ export interface PermitResponse extends PermitSummaryResponse {
   lane_rental_applicable: boolean
   permit_conditions?: PermitCondition[]
   street_name: string
+  town?: string
   area_name?: string
   usrn: number
   highway_authority: string

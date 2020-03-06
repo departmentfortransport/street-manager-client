@@ -17,6 +17,7 @@ export interface WorkResponse {
   highway_authority_swa_code: string
   highway_authority: string
   street_name: string
+  town?: string
   area_name?: string
   road_category: number
   works_coordinates: any
