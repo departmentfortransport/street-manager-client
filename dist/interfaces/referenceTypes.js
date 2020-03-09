@@ -322,6 +322,7 @@ var AuditEvent;
     AuditEvent["inspection_failed"] = "inspection_failed";
     AuditEvent["inspection_unable_to_carry_out"] = "inspection_unable_to_carry_out";
     AuditEvent["inspection_further_required"] = "inspection_further_required";
+    AuditEvent["inspection_agreed_site_compliance"] = "inspection_agreed_site_compliance";
     AuditEvent["inspection_withdraw_defect"] = "inspection_withdraw_defect";
     AuditEvent["activity_submitted"] = "activity_submitted";
     AuditEvent["activity_edited"] = "activity_edited";
