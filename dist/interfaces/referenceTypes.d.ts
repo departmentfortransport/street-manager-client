@@ -290,6 +290,7 @@ export declare enum AuditEvent {
     inspection_failed = "inspection_failed",
     inspection_unable_to_carry_out = "inspection_unable_to_carry_out",
     inspection_further_required = "inspection_further_required",
+    inspection_agreed_site_compliance = "inspection_agreed_site_compliance",
     inspection_withdraw_defect = "inspection_withdraw_defect",
     activity_submitted = "activity_submitted",
     activity_edited = "activity_edited",
@@ -359,7 +360,13 @@ export declare enum AuditEvent {
     support_desk_action = "support_desk_action",
     permit_hs2_acknowledged = "permit_hs2_acknowledged",
     geographical_area_created = "geographical_area_created",
-    workstream_access_updated = "workstream_access_updated"
+    workstream_access_updated = "workstream_access_updated",
+    planned_works_record_created = "planned_works_record_created",
+    in_progress_works_record_created = "in_progress_works_record_created",
+    historic_works_record_created = "historic_works_record_created",
+    non_notifiable_works_record_created = "non_notifiable_works_record_created",
+    section_81_works_record_created = "section_81_works_record_created",
+    unattributable_works_record_created = "unattributable_works_record_created"
 }
 export declare enum ASDCode {
     protected_street = 1,
