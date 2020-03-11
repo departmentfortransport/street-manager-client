@@ -14,6 +14,11 @@ export interface ActivityCreateRequest extends DelegatedUserIdentification {
      * Use Street Lookup API endpoint /nsg/streets to lookup this information
      * If not provided, populated with NSG data related to supplied USRN
      */
+    town?: string;
+    /** Max length 100 characters
+     * Use Street Lookup API endpoint /nsg/streets to lookup this information
+     * If not provided, populated with NSG data related to supplied USRN
+     */
     area_name?: string;
     /**
      * Is whole number between 0 and 4 inclusive
