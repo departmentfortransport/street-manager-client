@@ -16,6 +16,11 @@ export interface BaseWorkCreateRequest extends DelegatedUserIdentification {
    * Use Street Lookup API endpoint /nsg/streets to lookup this information
    * If not provided, populated with NSG data related to supplied USRN
    */
+  town?: string
+  /** Max length 100 characters
+   * Use Street Lookup API endpoint /nsg/streets to lookup this information
+   * If not provided, populated with NSG data related to supplied USRN
+   */
   area_name?: string
   /** Is whole number between 1000001 and 99999999 inclusive
    * See business rules section 1.4 - USRN

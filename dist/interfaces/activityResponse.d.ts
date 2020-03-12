@@ -3,6 +3,7 @@ export interface ActivityResponse {
     activity_reference_number: string;
     usrn: number;
     street_name?: string;
+    town?: string;
     area_name?: string;
     road_category?: number;
     activity_coordinates: any;

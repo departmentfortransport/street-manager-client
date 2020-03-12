@@ -4,6 +4,7 @@ export interface Section81Response extends Section81SummaryResponse {
     work_reference_number: string;
     usrn: number;
     street_name: string;
+    town?: string;
     area?: string;
     road_category: number;
     works_coordinates: any;

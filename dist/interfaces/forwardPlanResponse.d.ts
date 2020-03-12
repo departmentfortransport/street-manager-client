@@ -10,6 +10,7 @@ export interface ForwardPlanResponse extends ForwardPlanSummaryResponse {
     workstream_prefix: string;
     works_coordinates: any;
     street_name: string;
+    town?: string;
     area_name?: string;
     usrn: number;
     road_category: number;
