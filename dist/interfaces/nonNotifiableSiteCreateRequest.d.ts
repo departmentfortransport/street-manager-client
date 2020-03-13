@@ -37,10 +37,10 @@ export interface NonNotifiableSiteCreateRequest extends BaseWorkCreateRequest {
      */
     file_ids?: number[];
     /**
-     * Is whole number between 1 and 999 inclusive
+     * Is whole number between 0 and 999 inclusive
      * Will default to previously provided value or 1.
      */
     inspection_units?: number;
-    /** Must be a number between 1 and 100 */
+    /** Must be a number between 0 and 100 */
     number_of_holes: number;
 }
