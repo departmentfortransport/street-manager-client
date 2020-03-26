@@ -185,6 +185,15 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post('/geographical-areas', form, config));
         });
     }
+    updateGeographicalArea(requestConfig, geographicalAreaReferenceNumber, buffer, filename) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const form = new FormData();
+            form.append('file', buffer, filename);
+            const config = this.generateRequestConfig(requestConfig);
+            Object.assign(config.headers, form.getHeaders());
+            return this.httpHandler(() => this.axios.put(`/geographical-areas/${geographicalAreaReferenceNumber}`, form, config));
+        });
+    }
     getFile(requestConfig, fileId) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

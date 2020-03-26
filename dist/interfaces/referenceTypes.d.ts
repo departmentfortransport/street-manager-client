@@ -360,13 +360,15 @@ export declare enum AuditEvent {
     support_desk_action = "support_desk_action",
     permit_hs2_acknowledged = "permit_hs2_acknowledged",
     geographical_area_created = "geographical_area_created",
+    geographical_area_updated = "geographical_area_updated",
     workstream_access_updated = "workstream_access_updated",
     planned_works_record_created = "planned_works_record_created",
     in_progress_works_record_created = "in_progress_works_record_created",
     historic_works_record_created = "historic_works_record_created",
     non_notifiable_works_record_created = "non_notifiable_works_record_created",
     section_81_works_record_created = "section_81_works_record_created",
-    unattributable_works_record_created = "unattributable_works_record_created"
+    unattributable_works_record_created = "unattributable_works_record_created",
+    upcoming_event = "upcoming_event"
 }
 export declare enum ASDCode {
     protected_street = 1,

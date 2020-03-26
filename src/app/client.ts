@@ -225,6 +225,16 @@ export class StreetManagerApiClient {
     return this.httpHandler<GeographicalAreaCreateResponse>(() => this.axios.post('/geographical-areas', form, config))
   }
 
+  public async updateGeographicalArea(requestConfig: RequestConfig, geographicalAreaReferenceNumber: string, buffer: Buffer, filename: string): Promise<void> {
+    const form: FormData = new FormData()
+    form.append('file', buffer, filename)
+
+    const config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
+    Object.assign(config.headers, form.getHeaders())
+
+    return this.httpHandler<void>(() => this.axios.put(`/geographical-areas/${geographicalAreaReferenceNumber}`, form, config))
+  }
+
   public async getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>> {
     try {
       let config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
