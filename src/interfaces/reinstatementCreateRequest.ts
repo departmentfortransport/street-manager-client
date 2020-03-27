@@ -9,15 +9,15 @@ export interface ReinstatementCreateRequest extends DelegatedUserIdentification 
    * Must be before actual end date (if entered)
    */
   reinstatement_date: Date
-  /** Is number between 0.01 and 99.99 inclusive, to two decimal places.
+  /** Is number between 0 and 99.99 inclusive, to two decimal places.
    * Required if reinstatement type is excavation.
    */
   depth?: number
-  /** Is number between 0.01 and 9999.99 inclusive, to two decimal places
+  /** Is number between 0 and 9999.99 inclusive, to two decimal places
    * Required if reinstatement type is excavation.
    */
   length?: number
-  /** Is number between 0.01 and 99.99 inclusive, to two decimal places
+  /** Is number between 0 and 99.99 inclusive, to two decimal places
    * Required if reinstatement type is excavation.
    */
   width?: number
@@ -41,7 +41,7 @@ export interface ReinstatementCreateRequest extends DelegatedUserIdentification 
    */
   file_ids?: number[]
   /**
-   * Is whole number between 1 and 999 inclusive
+   * Is whole number between 0 and 999 inclusive
    * Will default to previously provided value or 1.
    */
   inspection_units?: number
@@ -49,7 +49,7 @@ export interface ReinstatementCreateRequest extends DelegatedUserIdentification 
    * Required if reinstatement type is excavation
    */
   final_reinstatement?: boolean
-  /** Must be a number between 1 and 100
+  /** Must be a number between 0 and 100
    * Required if reinstatement type is not excavation
    */
   number_of_holes?: number
