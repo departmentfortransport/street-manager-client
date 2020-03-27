@@ -392,6 +392,7 @@ var AuditEvent;
     AuditEvent["support_desk_action"] = "support_desk_action";
     AuditEvent["permit_hs2_acknowledged"] = "permit_hs2_acknowledged";
     AuditEvent["geographical_area_created"] = "geographical_area_created";
+    AuditEvent["geographical_area_updated"] = "geographical_area_updated";
     AuditEvent["workstream_access_updated"] = "workstream_access_updated";
     AuditEvent["planned_works_record_created"] = "planned_works_record_created";
     AuditEvent["in_progress_works_record_created"] = "in_progress_works_record_created";
@@ -399,6 +400,7 @@ var AuditEvent;
     AuditEvent["non_notifiable_works_record_created"] = "non_notifiable_works_record_created";
     AuditEvent["section_81_works_record_created"] = "section_81_works_record_created";
     AuditEvent["unattributable_works_record_created"] = "unattributable_works_record_created";
+    AuditEvent["upcoming_event"] = "upcoming_event";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {
