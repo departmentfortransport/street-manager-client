@@ -20,4 +20,6 @@ export interface FPNCreateRequest extends DelegatedUserIdentification {
   authorised_officer: string,
   /** Max length 100 characters */
   officer_contact_details: string
+  /** The permit_reference_number of the associated permit */
+  permit_reference_number?: string
 }
