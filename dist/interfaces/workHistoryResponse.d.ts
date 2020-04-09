@@ -7,4 +7,6 @@ export interface WorkHistoryResponse {
     event: AuditEvent;
     object_reference?: string;
     update_id: number;
+    internal_user_identifier?: string;
+    internal_user_name?: string;
 }

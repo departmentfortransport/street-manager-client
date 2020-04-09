@@ -85,3 +85,4 @@ export * from './interfaces/section81StatusUpdateRequest';
 export * from './interfaces/section81SummaryResponse';
 export * from './interfaces/hs2AcknowledgementRequest';
 export * from './interfaces/geographicalAreaCreateResponse';
+export * from './interfaces/delegatedUserIdentification';
