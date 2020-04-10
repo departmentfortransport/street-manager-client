@@ -10,4 +10,5 @@ export interface FPNResponse extends FPNSummaryResponse {
     promoter_organisation: string;
     ha_organisation: string;
     files?: FileSummaryResponse[];
+    permit_reference_number?: string;
 }
