@@ -401,6 +401,12 @@ var AuditEvent;
     AuditEvent["section_81_works_record_created"] = "section_81_works_record_created";
     AuditEvent["unattributable_works_record_created"] = "unattributable_works_record_created";
     AuditEvent["upcoming_event"] = "upcoming_event";
+    AuditEvent["sample_inspection_target_created"] = "sample_inspection_target_created";
+    AuditEvent["sample_inspection_target_updated"] = "sample_inspection_target_updated";
+    AuditEvent["sample_inspection_created"] = "sample_inspection_created";
+    AuditEvent["sample_inspection_completed"] = "sample_inspection_completed";
+    AuditEvent["sample_inspection_removed"] = "sample_inspection_removed";
+    AuditEvent["sample_inspection_expired"] = "sample_inspection_expired";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {

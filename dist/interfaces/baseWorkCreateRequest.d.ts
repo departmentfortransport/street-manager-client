@@ -26,7 +26,7 @@ export interface BaseWorkCreateRequest extends DelegatedUserIdentification {
      */
     usrn: number;
     /**
-     * Is whole number between 0 and 4 inclusive
+     * Is whole number between 0 and 10 inclusive
      * If not provided, populated with NSG data related to supplied USRN
      */
     road_category?: number;
