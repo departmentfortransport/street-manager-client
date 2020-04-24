@@ -374,7 +374,9 @@ export declare enum AuditEvent {
     sample_inspection_created = "sample_inspection_created",
     sample_inspection_completed = "sample_inspection_completed",
     sample_inspection_removed = "sample_inspection_removed",
-    sample_inspection_expired = "sample_inspection_expired"
+    sample_inspection_expired = "sample_inspection_expired",
+    internal_comment_submitted = "internal_comment_submitted",
+    comment_read = "comment_read"
 }
 export declare enum ASDCode {
     protected_street = 1,
