@@ -407,6 +407,8 @@ var AuditEvent;
     AuditEvent["sample_inspection_completed"] = "sample_inspection_completed";
     AuditEvent["sample_inspection_removed"] = "sample_inspection_removed";
     AuditEvent["sample_inspection_expired"] = "sample_inspection_expired";
+    AuditEvent["internal_comment_submitted"] = "internal_comment_submitted";
+    AuditEvent["comment_read"] = "comment_read";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {
