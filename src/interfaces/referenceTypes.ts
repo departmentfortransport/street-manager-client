@@ -11,7 +11,10 @@ export enum ActivityType {
   section_50 = 'section_50',
   core_sampling = 'core_sampling',
   statutory_infrastructure_works = 'statutory_infrastructure_works',
-  works_for_rail_purposes = 'works_for_rail_purposes'
+  works_for_rail_purposes = 'works_for_rail_purposes',
+  works_for_road_purposes = 'works_for_road_purposes',
+  new_service_connection = 'new_service_connection',
+  optional_permit_no_fee = 'optional_permit_no_fee'
 }
 
 export enum ApplicationType {
