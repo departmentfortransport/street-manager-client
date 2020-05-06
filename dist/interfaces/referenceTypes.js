@@ -15,6 +15,9 @@ var ActivityType;
     ActivityType["core_sampling"] = "core_sampling";
     ActivityType["statutory_infrastructure_works"] = "statutory_infrastructure_works";
     ActivityType["works_for_rail_purposes"] = "works_for_rail_purposes";
+    ActivityType["works_for_road_purposes"] = "works_for_road_purposes";
+    ActivityType["new_service_connection"] = "new_service_connection";
+    ActivityType["optional_permit_no_fee"] = "optional_permit_no_fee";
 })(ActivityType = exports.ActivityType || (exports.ActivityType = {}));
 var ApplicationType;
 (function (ApplicationType) {
