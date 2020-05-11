@@ -1,9 +1,10 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -16,7 +17,7 @@ const https_1 = require("https");
 class StreetManagerApiClient {
     constructor(config) {
         this.config = config;
-        let axiosRequestConfig = {
+        const axiosRequestConfig = {
             baseURL: this.config.baseURL,
             timeout: this.config.timeout
         };
@@ -197,7 +198,7 @@ class StreetManagerApiClient {
     getFile(requestConfig, fileId) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                let config = this.generateRequestConfig(requestConfig);
+                const config = this.generateRequestConfig(requestConfig);
                 config.responseType = 'arraybuffer';
                 config.transformResponse = (data) => data;
                 return yield this.axios.get(`/files/${fileId}`, config);
@@ -325,7 +326,7 @@ class StreetManagerApiClient {
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                let response = yield request();
+                const response = yield request();
                 if (response.data) {
                     return response.data;
                 }
@@ -340,7 +341,7 @@ class StreetManagerApiClient {
         return Promise.reject(err);
     }
     generateRequestConfig(config, request) {
-        let requestConfig = {
+        const requestConfig = {
             headers: {
                 'x-request-id': config.requestId
             }
