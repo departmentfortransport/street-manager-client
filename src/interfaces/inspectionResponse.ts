@@ -6,7 +6,7 @@ export interface InspectionResponse {
   inspection_reference_number: string
   inspection_type: InspectionType
   inspection_start_date: Date
-  inspection_category: InspectionCategory
+  inspection_category?: InspectionCategory
   inspection_outcome: InspectionOutcome
   defect_details?: string
   failure_reason_details?: FailureReasonDetailsResponse[]
