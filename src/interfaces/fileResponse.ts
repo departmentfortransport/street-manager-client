@@ -6,4 +6,3 @@ export interface FileResponse extends FileSummaryResponse {
   swa_code: string,
   organisation_name: string
 }
-

@@ -79,7 +79,7 @@ export class StreetManagerApiClient {
   private axios: AxiosInstance
 
   constructor (private config: StreetManagerApiClientConfig) {
-    let axiosRequestConfig: AxiosRequestConfig = {
+    const axiosRequestConfig: AxiosRequestConfig = {
       baseURL: this.config.baseURL,
       timeout: this.config.timeout
     }
@@ -237,7 +237,7 @@ export class StreetManagerApiClient {
 
   public async getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>> {
     try {
-      let config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
+      const config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
       config.responseType = 'arraybuffer'
       config.transformResponse = (data) => data
       return await this.axios.get(`/files/${fileId}`, config)
@@ -340,7 +340,7 @@ export class StreetManagerApiClient {
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
     try {
-      let response: AxiosResponse<T> = await request()
+      const response: AxiosResponse<T> = await request()
       if (response.data) {
         return response.data
       }
@@ -355,7 +355,7 @@ export class StreetManagerApiClient {
   }
 
   private generateRequestConfig(config: RequestConfig, request?: any): AxiosRequestConfig {
-    let requestConfig: AxiosRequestConfig = {
+    const requestConfig: AxiosRequestConfig = {
       headers: {
         'x-request-id': config.requestId
       }
