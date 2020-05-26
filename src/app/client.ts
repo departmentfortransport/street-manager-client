@@ -68,6 +68,8 @@ import { Section81Response } from '../interfaces/section81Response'
 import { Section81StatusUpdateRequest } from '../interfaces/section81StatusUpdateRequest'
 import { HS2AcknowledgementRequest } from '../interfaces/hs2AcknowledgementRequest'
 import { GeographicalAreaCreateResponse } from '../interfaces/geographicalAreaCreateResponse'
+import { SampleInspectionTargetCreateRequest } from '../interfaces/sampleInspectionTargetCreateRequest'
+import { SampleInspectionTargetCreateResponse } from '../interfaces/sampleInspectionTargetCreateResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -336,6 +338,10 @@ export class StreetManagerApiClient {
 
   public async acknowledgeHS2Permit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, hs2AcknowledgementRequest: HS2AcknowledgementRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/hs2_acknowledgement`, hs2AcknowledgementRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createSampleInspectionTarget(requestConfig: RequestConfig, createSampleInspectionTargetRequest: SampleInspectionTargetCreateRequest): Promise<SampleInspectionTargetCreateResponse> {
+    return this.httpHandler<SampleInspectionTargetCreateResponse>(() => this.axios.post('/sample-inspection-targets', createSampleInspectionTargetRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

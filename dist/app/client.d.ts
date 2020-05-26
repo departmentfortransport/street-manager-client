@@ -65,6 +65,8 @@ import { Section81Response } from '../interfaces/section81Response';
 import { Section81StatusUpdateRequest } from '../interfaces/section81StatusUpdateRequest';
 import { HS2AcknowledgementRequest } from '../interfaces/hs2AcknowledgementRequest';
 import { GeographicalAreaCreateResponse } from '../interfaces/geographicalAreaCreateResponse';
+import { SampleInspectionTargetCreateRequest } from '../interfaces/sampleInspectionTargetCreateRequest';
+import { SampleInspectionTargetCreateResponse } from '../interfaces/sampleInspectionTargetCreateResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -129,6 +131,7 @@ export declare class StreetManagerApiClient {
     getSection81(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string): Promise<Section81Response>;
     updateSection81Status(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string, updateSection81StatusRequest: Section81StatusUpdateRequest): Promise<void>;
     acknowledgeHS2Permit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, hs2AcknowledgementRequest: HS2AcknowledgementRequest): Promise<void>;
+    createSampleInspectionTarget(requestConfig: RequestConfig, createSampleInspectionTargetRequest: SampleInspectionTargetCreateRequest): Promise<SampleInspectionTargetCreateResponse>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;

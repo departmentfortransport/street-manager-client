@@ -322,6 +322,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/hs2_acknowledgement`, hs2AcknowledgementRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    createSampleInspectionTarget(requestConfig, createSampleInspectionTargetRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post('/sample-inspection-targets', createSampleInspectionTargetRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
