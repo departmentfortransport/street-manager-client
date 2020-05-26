@@ -12,7 +12,7 @@ export interface PermitASD {
   /** Max length 300 characters
    * Use Street Lookup API endpoint /nsg/streets to lookup this information
    */
-  special_desig_description: string
+  special_desig_description?: string
   /** Is whole number between 0 and 2400 inclusive
    * Use Street Lookup API endpoint /nsg/streets to lookup this information
    */
