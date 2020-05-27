@@ -14,4 +14,5 @@ export interface PermitCreateRequest extends PermitRequest {
      * Array values max length 100 characters
      */
     hs2_highway_emails?: string[];
+    is_covid_19_response?: boolean;
 }
