@@ -12,10 +12,18 @@ export interface PermitASD {
      * Use Street Lookup API endpoint /nsg/streets to lookup this information
      */
     special_desig_description?: string;
+    /**
+     * Use Street Lookup API endpoint /nsg/streets to lookup this information
+     */
+    special_desig_start_date?: Date;
     /** Is whole number between 0 and 2400 inclusive
      * Use Street Lookup API endpoint /nsg/streets to lookup this information
      */
     special_desig_start_time?: number;
+    /**
+     * Use Street Lookup API endpoint /nsg/streets to lookup this information
+     */
+    special_desig_end_date?: Date;
     /**  Is whole number between 0 and 2400 inclusive
      * Use Street Lookup API endpoint /nsg/streets to lookup this information
      */
