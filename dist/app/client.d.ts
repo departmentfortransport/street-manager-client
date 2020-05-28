@@ -67,6 +67,7 @@ import { HS2AcknowledgementRequest } from '../interfaces/hs2AcknowledgementReque
 import { GeographicalAreaCreateResponse } from '../interfaces/geographicalAreaCreateResponse';
 import { SampleInspectionTargetCreateRequest } from '../interfaces/sampleInspectionTargetCreateRequest';
 import { SampleInspectionTargetCreateResponse } from '../interfaces/sampleInspectionTargetCreateResponse';
+import { CommentReadRequest } from '../interfaces/commentReadRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -101,6 +102,7 @@ export declare class StreetManagerApiClient {
     getFPN(requestConfig: RequestConfig, workReferenceNumber: string, fpnReferenceNumber: string): Promise<FPNResponse>;
     updateFPNStatus(requestConfig: RequestConfig, workReferenceNumber: string, fpnReferenceNumber: string, fpnStatusUpdateRequest: FPNStatusUpdateRequest): Promise<void>;
     createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<void>;
+    markCommentAsRead(requestConfig: RequestConfig, workReferenceNumber: string, commentReferenceNumber: string, commentReadRequest: CommentReadRequest): Promise<void>;
     createPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationRequest: PermitAlterationCreateRequest): Promise<PermitAlterationCreateResponse>;
     updatePermitAlterationStatus(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string, updatePermitAlterationStatusRequest: PermitAlterationStatusUpdateRequest): Promise<void>;
     getPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationReferenceNumber: string): Promise<PermitAlterationResponse>;
