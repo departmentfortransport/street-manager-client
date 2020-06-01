@@ -170,7 +170,12 @@ export declare enum CommentTopic {
     SECTION_74 = "SECTION_74",
     INSPECTION = "INSPECTION",
     FPN = "FPN",
-    OVERRUN = "OVERRUN"
+    OVERRUN = "OVERRUN",
+    FORWARD_PLAN = "FORWARD_PLAN",
+    CHANGE_REQUEST = "CHANGE_REQUEST",
+    IMPOSED_VARIATION = "IMPOSED_VARIATION",
+    DURATION_CHALLENGE = "DURATION_CHALLENGE",
+    SECTION_81 = "SECTION_81"
 }
 export declare enum AlterationStatus {
     submitted = "submitted",

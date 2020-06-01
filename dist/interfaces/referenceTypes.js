@@ -193,6 +193,11 @@ var CommentTopic;
     CommentTopic["INSPECTION"] = "INSPECTION";
     CommentTopic["FPN"] = "FPN";
     CommentTopic["OVERRUN"] = "OVERRUN";
+    CommentTopic["FORWARD_PLAN"] = "FORWARD_PLAN";
+    CommentTopic["CHANGE_REQUEST"] = "CHANGE_REQUEST";
+    CommentTopic["IMPOSED_VARIATION"] = "IMPOSED_VARIATION";
+    CommentTopic["DURATION_CHALLENGE"] = "DURATION_CHALLENGE";
+    CommentTopic["SECTION_81"] = "SECTION_81";
 })(CommentTopic = exports.CommentTopic || (exports.CommentTopic = {}));
 var AlterationStatus;
 (function (AlterationStatus) {
