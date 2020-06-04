@@ -115,7 +115,7 @@ export class StreetManagerApiClient {
     return this.httpHandler<PermitCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/permits`, permitCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string) {
+  public async getPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string): Promise<PermitResponse> {
     return this.httpHandler<PermitResponse>(() => this.axios.get(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 

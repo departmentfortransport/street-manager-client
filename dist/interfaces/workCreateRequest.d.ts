@@ -104,4 +104,5 @@ export interface WorkCreateRequest extends BaseWorkCreateRequest {
     additional_contact_number?: string;
     /** Max length 100 characters */
     additional_contact_email?: string;
+    is_covid_19_response?: boolean;
 }
