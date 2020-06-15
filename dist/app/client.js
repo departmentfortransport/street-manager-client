@@ -152,6 +152,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/comments`, commentCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    markCommentAsRead(requestConfig, workReferenceNumber, commentReferenceNumber, commentReadRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/comments/${commentReferenceNumber}/read`, commentReadRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     createPermitAlteration(requestConfig, workReferenceNumber, permitReferenceNumber, permitAlterationRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/alterations`, permitAlterationRequest, this.generateRequestConfig(requestConfig)));

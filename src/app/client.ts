@@ -70,6 +70,7 @@ import { HS2AcknowledgementRequest } from '../interfaces/hs2AcknowledgementReque
 import { GeographicalAreaCreateResponse } from '../interfaces/geographicalAreaCreateResponse'
 import { SampleInspectionTargetCreateRequest } from '../interfaces/sampleInspectionTargetCreateRequest'
 import { SampleInspectionTargetCreateResponse } from '../interfaces/sampleInspectionTargetCreateResponse'
+import { CommentReadRequest } from '../interfaces/commentReadRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -193,6 +194,10 @@ export class StreetManagerApiClient {
 
   public async createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.post(`/works/${workReferenceNumber}/comments`, commentCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async markCommentAsRead(requestConfig: RequestConfig, workReferenceNumber: string, commentReferenceNumber: string,  commentReadRequest: CommentReadRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/comments/${commentReferenceNumber}/read`, commentReadRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async createPermitAlteration(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, permitAlterationRequest: PermitAlterationCreateRequest): Promise<PermitAlterationCreateResponse> {
