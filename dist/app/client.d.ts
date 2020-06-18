@@ -134,6 +134,7 @@ export declare class StreetManagerApiClient {
     updateSection81Status(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string, updateSection81StatusRequest: Section81StatusUpdateRequest): Promise<void>;
     acknowledgeHS2Permit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, hs2AcknowledgementRequest: HS2AcknowledgementRequest): Promise<void>;
     createSampleInspectionTarget(requestConfig: RequestConfig, createSampleInspectionTargetRequest: SampleInspectionTargetCreateRequest): Promise<SampleInspectionTargetCreateResponse>;
+    generateSampleInspection(requestConfig: RequestConfig): Promise<void>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;
