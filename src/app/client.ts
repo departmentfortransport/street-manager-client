@@ -349,6 +349,10 @@ export class StreetManagerApiClient {
     return this.httpHandler<SampleInspectionTargetCreateResponse>(() => this.axios.post('/sample-inspection-targets', createSampleInspectionTargetRequest, this.generateRequestConfig(requestConfig)))
   }
 
+  public async generateSampleInspection(requestConfig: RequestConfig): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post('/sample-inspection', null, this.generateRequestConfig(requestConfig)))
+  }
+
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
     try {
       const response: AxiosResponse<T> = await request()
