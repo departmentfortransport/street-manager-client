@@ -70,6 +70,7 @@ import { HS2AcknowledgementRequest } from '../interfaces/hs2AcknowledgementReque
 import { GeographicalAreaCreateResponse } from '../interfaces/geographicalAreaCreateResponse'
 import { SampleInspectionTargetCreateRequest } from '../interfaces/sampleInspectionTargetCreateRequest'
 import { SampleInspectionTargetCreateResponse } from '../interfaces/sampleInspectionTargetCreateResponse'
+import { SampleInspectionTargetUpdateRequest } from '../interfaces/sampleInspectionTargetUpdateRequest'
 import { CommentReadRequest } from '../interfaces/commentReadRequest'
 
 export interface StreetManagerApiClientConfig {
@@ -347,6 +348,10 @@ export class StreetManagerApiClient {
 
   public async createSampleInspectionTarget(requestConfig: RequestConfig, createSampleInspectionTargetRequest: SampleInspectionTargetCreateRequest): Promise<SampleInspectionTargetCreateResponse> {
     return this.httpHandler<SampleInspectionTargetCreateResponse>(() => this.axios.post('/sample-inspection-targets', createSampleInspectionTargetRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updateSampleInspectionTarget(requestConfig: RequestConfig, sampleInspectionTargetReferenceNumber: string, updateSampleInspectionTargetRequest: SampleInspectionTargetUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/sample-inspection-targets/${sampleInspectionTargetReferenceNumber}`, updateSampleInspectionTargetRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async generateSampleInspection(requestConfig: RequestConfig): Promise<void> {
