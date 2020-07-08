@@ -1,4 +1,4 @@
-import { OffenceCode } from './referenceTypes'
+import { OffenceCode, PaymentMethod } from './referenceTypes'
 import { BaseHistoricWorkCreateRequest } from './baseHistoricWorkCreateRequest'
 
 export interface HistoricFPNCreateRequest extends BaseHistoricWorkCreateRequest {
@@ -20,4 +20,11 @@ export interface HistoricFPNCreateRequest extends BaseHistoricWorkCreateRequest 
   authorised_officer: string
   /** Max length 100 characters */
   officer_contact_details: string
+  /** Max length 500 characters */
+  officer_address: string
+  /** Max length 100 characters */
+  representations_contact: string
+  /** Max length 500 characters */
+  representations_contact_address: string
+  payment_methods: PaymentMethod[]
 }

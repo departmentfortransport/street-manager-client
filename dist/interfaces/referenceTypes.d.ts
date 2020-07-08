@@ -465,3 +465,9 @@ export declare enum HS2HighwayExemption {
     erection_of_scaffolding = "erection_of_scaffolding",
     none_applicable = "none_applicable"
 }
+export declare enum PaymentMethod {
+    bank_transfer = "bank_transfer",
+    card_payment = "card_payment",
+    cash = "cash",
+    cheque = "cheque"
+}
