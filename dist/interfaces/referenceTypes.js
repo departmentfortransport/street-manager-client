@@ -505,3 +505,10 @@ var HS2HighwayExemption;
     HS2HighwayExemption["erection_of_scaffolding"] = "erection_of_scaffolding";
     HS2HighwayExemption["none_applicable"] = "none_applicable";
 })(HS2HighwayExemption = exports.HS2HighwayExemption || (exports.HS2HighwayExemption = {}));
+var PaymentMethod;
+(function (PaymentMethod) {
+    PaymentMethod["bank_transfer"] = "bank_transfer";
+    PaymentMethod["card_payment"] = "card_payment";
+    PaymentMethod["cash"] = "cash";
+    PaymentMethod["cheque"] = "cheque";
+})(PaymentMethod = exports.PaymentMethod || (exports.PaymentMethod = {}));
