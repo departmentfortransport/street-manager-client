@@ -512,3 +512,8 @@ var PaymentMethod;
     PaymentMethod["cash"] = "cash";
     PaymentMethod["cheque"] = "cheque";
 })(PaymentMethod = exports.PaymentMethod || (exports.PaymentMethod = {}));
+var ForwardPlanWorkType;
+(function (ForwardPlanWorkType) {
+    ForwardPlanWorkType["planned"] = "planned";
+    ForwardPlanWorkType["hs2_highway_works"] = "hs2_highway_works";
+})(ForwardPlanWorkType = exports.ForwardPlanWorkType || (exports.ForwardPlanWorkType = {}));

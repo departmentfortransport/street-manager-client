@@ -471,3 +471,7 @@ export declare enum PaymentMethod {
     cash = "cash",
     cheque = "cheque"
 }
+export declare enum ForwardPlanWorkType {
+    planned = "planned",
+    hs2_highway_works = "hs2_highway_works"
+}
