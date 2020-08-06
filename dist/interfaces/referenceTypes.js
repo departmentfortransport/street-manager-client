@@ -505,3 +505,8 @@ var HS2HighwayExemption;
     HS2HighwayExemption["erection_of_scaffolding"] = "erection_of_scaffolding";
     HS2HighwayExemption["none_applicable"] = "none_applicable";
 })(HS2HighwayExemption = exports.HS2HighwayExemption || (exports.HS2HighwayExemption = {}));
+var ForwardPlanWorkType;
+(function (ForwardPlanWorkType) {
+    ForwardPlanWorkType["planned"] = "planned";
+    ForwardPlanWorkType["hs2_highway_works"] = "hs2_highway_works";
+})(ForwardPlanWorkType = exports.ForwardPlanWorkType || (exports.ForwardPlanWorkType = {}));
