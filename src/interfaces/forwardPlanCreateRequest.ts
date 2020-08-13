@@ -1,4 +1,4 @@
-import { TrafficManagementType } from './referenceTypes'
+import { TrafficManagementType, HS2HighwayExemption, ForwardPlanWorkType } from './referenceTypes'
 import { PermitASD } from './permitASD'
 import { BaseWorkCreateRequest } from './baseWorkCreateRequest'
 
@@ -24,4 +24,12 @@ export interface ForwardPlanCreateRequest extends BaseWorkCreateRequest {
   works_location_description: string
   /** Must consist of 3 positive whole numbers */
   workstream_prefix?: string
+  /** Required if promoter_swa_code = '7374' */
+  hs2_work_type?: ForwardPlanWorkType
+  /** Required if promoter_swa_code = '7374' */
+  hs2_in_act_limits?: boolean
+  /** Date must occur today or a date in the future */
+  hs2_consultation_requested_response_date?: Date
+  /** Required if hs2_work_type = 'hs2_highway_works' and hs2_in_act_limits = true */
+  hs2_highway_exemption?: HS2HighwayExemption
 }

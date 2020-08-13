@@ -1,5 +1,5 @@
 import { ForwardPlanSummaryResponse } from './forwardPlanSummaryResponse'
-import { TrafficManagementType } from './referenceTypes'
+import { TrafficManagementType, HS2HighwayExemption, ForwardPlanWorkType } from './referenceTypes'
 import { PermitASD } from './permitASD'
 
 export interface ForwardPlanResponse extends ForwardPlanSummaryResponse {
@@ -25,4 +25,8 @@ export interface ForwardPlanResponse extends ForwardPlanSummaryResponse {
   additional_info?: string
   forward_plan_asds?: PermitASD[]
   cancelled_reason?: string
+  hs2_in_act_limits?: boolean
+  hs2_consultation_requested_response_date?: Date
+  hs2_highway_exemption?: HS2HighwayExemption
+  hs2_works_type?: ForwardPlanWorkType
 }

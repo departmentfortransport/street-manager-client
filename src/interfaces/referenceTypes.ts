@@ -502,3 +502,8 @@ export enum HS2HighwayExemption {
   erection_of_scaffolding = 'erection_of_scaffolding',
   none_applicable = 'none_applicable'
 }
+
+export enum ForwardPlanWorkType {
+  planned = 'planned',
+  hs2_highway_works = 'hs2_highway_works'
+}
