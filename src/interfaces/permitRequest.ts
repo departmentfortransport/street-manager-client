@@ -90,4 +90,11 @@ export interface PermitRequest extends DelegatedUserIdentification {
   additional_contact_number?: string
   /** Max length 100 characters */
   additional_contact_email?: string
+  /** Date must occur today or a date in the future */
+  hs2_consultation_requested_response_date?: Date
+  /** Array Max length 2 items
+   * Array values must be valid email addresses
+   * Array values max length 100 characters
+   */
+  hs2_highway_emails?: string[]
 }
