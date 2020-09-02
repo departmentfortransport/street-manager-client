@@ -105,4 +105,8 @@ export interface WorkCreateRequest extends BaseWorkCreateRequest {
     /** Max length 100 characters */
     additional_contact_email?: string;
     is_covid_19_response?: boolean;
+    /** Array max length 10 items
+     * Array values must be valid USRNs
+     */
+    hs2_additional_usrns?: number[];
 }
