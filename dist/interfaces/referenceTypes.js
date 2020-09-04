@@ -417,6 +417,7 @@ var AuditEvent;
     AuditEvent["sample_inspection_expired"] = "sample_inspection_expired";
     AuditEvent["internal_comment_submitted"] = "internal_comment_submitted";
     AuditEvent["comment_read"] = "comment_read";
+    AuditEvent["excavation_carried_out_updated"] = "excavation_carried_out_updated";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {

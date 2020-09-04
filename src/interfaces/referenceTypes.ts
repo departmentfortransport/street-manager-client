@@ -413,7 +413,8 @@ export enum AuditEvent {
   sample_inspection_removed = 'sample_inspection_removed',
   sample_inspection_expired = 'sample_inspection_expired',
   internal_comment_submitted = 'internal_comment_submitted',
-  comment_read = 'comment_read'
+  comment_read = 'comment_read',
+  excavation_carried_out_updated = 'excavation_carried_out_updated'
 }
 
 export enum ASDCode {
