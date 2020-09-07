@@ -93,4 +93,5 @@ export interface PermitResponse extends PermitSummaryResponse {
     ever_modification_requested: boolean;
     is_duration_challenged?: boolean;
     is_covid_19_response?: boolean;
+    hs2_additional_usrns?: number[];
 }
