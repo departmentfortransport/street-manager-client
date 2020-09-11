@@ -8,4 +8,8 @@ export interface PermitCreateRequest extends PermitRequest {
     /** Required if work_type = 'hs2_highway_works' and hs2_in_act_limits = true */
     hs2_highway_exemption?: HS2HighwayExemption;
     is_covid_19_response?: boolean;
+    /** Array max length 10 items
+     * Array values must be valid USRNs
+     */
+    hs2_additional_usrns?: number[];
 }
