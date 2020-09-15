@@ -57,6 +57,21 @@ var TrafficManagementType;
     TrafficManagementType["some_carriageway_incursion"] = "some_carriageway_incursion";
     TrafficManagementType["no_carriageway_incursion"] = "no_carriageway_incursion";
 })(TrafficManagementType = exports.TrafficManagementType || (exports.TrafficManagementType = {}));
+var TrafficManagementTypeResponse;
+(function (TrafficManagementTypeResponse) {
+    TrafficManagementTypeResponse["road_closure"] = "road_closure";
+    TrafficManagementTypeResponse["contra_flow"] = "contra_flow";
+    TrafficManagementTypeResponse["lane_closure"] = "lane_closure";
+    TrafficManagementTypeResponse["multi_way_signals"] = "multi_way_signals";
+    TrafficManagementTypeResponse["two_way_signals"] = "two_way_signals";
+    TrafficManagementTypeResponse["convoy_workings"] = "convoy_workings";
+    TrafficManagementTypeResponse["stop_go_boards"] = "stop_go_boards";
+    TrafficManagementTypeResponse["priority_working"] = "priority_working";
+    TrafficManagementTypeResponse["give_and_take"] = "give_and_take";
+    TrafficManagementTypeResponse["some_carriageway_incursion"] = "some_carriageway_incursion";
+    TrafficManagementTypeResponse["no_carriageway_incursion"] = "no_carriageway_incursion";
+    TrafficManagementTypeResponse["upcoming_enum"] = "upcoming_enum";
+})(TrafficManagementTypeResponse = exports.TrafficManagementTypeResponse || (exports.TrafficManagementTypeResponse = {}));
 var WorkType;
 (function (WorkType) {
     WorkType["planned"] = "planned";

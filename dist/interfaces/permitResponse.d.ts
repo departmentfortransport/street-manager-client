@@ -1,4 +1,4 @@
-import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType, ReasonForRefusal, CloseFootway, LaneRentalAssessmentOutcome, LaneRentalAssessmentChargeBand, WorkStatus, AssessmentStatus, HS2HighwayExemption } from './referenceTypes';
+import { ActivityType, ApplicationType, CollaborationType, LocationType, WorkType, ReasonForRefusal, CloseFootway, LaneRentalAssessmentOutcome, LaneRentalAssessmentChargeBand, WorkStatus, AssessmentStatus, HS2HighwayExemption, TrafficManagementTypeResponse } from './referenceTypes';
 import { PermitCondition } from './permitCondition';
 import { FileSummaryResponse } from './fileSummaryResponse';
 import { PermitASD } from './permitASD';
@@ -43,7 +43,7 @@ export interface PermitResponse extends PermitSummaryResponse {
     assessment_comments?: string;
     reasons_for_refusal?: ReasonForRefusal[];
     activity_type: ActivityType;
-    traffic_management_type: TrafficManagementType;
+    traffic_management_type: TrafficManagementTypeResponse;
     application_type: ApplicationType;
     collaboration_type?: CollaborationType;
     location_types: LocationType[];
