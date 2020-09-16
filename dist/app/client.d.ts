@@ -69,6 +69,7 @@ import { SampleInspectionTargetCreateRequest } from '../interfaces/sampleInspect
 import { SampleInspectionTargetCreateResponse } from '../interfaces/sampleInspectionTargetCreateResponse';
 import { SampleInspectionTargetUpdateRequest } from '../interfaces/sampleInspectionTargetUpdateRequest';
 import { CommentReadRequest } from '../interfaces/commentReadRequest';
+import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarriedOutUpdateRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -93,6 +94,7 @@ export declare class StreetManagerApiClient {
     revertWorkActualStopDate(requestConfig: RequestConfig, workReferenceNumber: string, workStopRevertRequest: WorkStopRevertRequest): Promise<void>;
     updateInspectionUnits(requestConfig: RequestConfig, workReferenceNumber: string, inspectionUnitsUpdateRequest: InspectionUnitsUpdateRequest): Promise<void>;
     updateFinalReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, finalReinstatementUpdateRequest: FinalReinstatementUpdateRequest): Promise<void>;
+    updateExcavationCarriedOut(requestConfig: RequestConfig, workReferenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void>;
     addFileToWork(requestConfig: RequestConfig, workReferenceNumber: string, addFileToWorkRequest: AddFileToWorkRequest): Promise<void>;
     createSite(requestConfig: RequestConfig, workReferenceNumber: string, siteCreateRequest: SiteCreateRequest): Promise<SiteCreateResponse>;
     createReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, siteNumber: number, reinstatementCreateRequest: ReinstatementCreateRequest): Promise<void>;

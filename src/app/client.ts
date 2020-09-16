@@ -72,6 +72,7 @@ import { SampleInspectionTargetCreateRequest } from '../interfaces/sampleInspect
 import { SampleInspectionTargetCreateResponse } from '../interfaces/sampleInspectionTargetCreateResponse'
 import { SampleInspectionTargetUpdateRequest } from '../interfaces/sampleInspectionTargetUpdateRequest'
 import { CommentReadRequest } from '../interfaces/commentReadRequest'
+import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarriedOutUpdateRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -155,6 +156,10 @@ export class StreetManagerApiClient {
 
   public async updateFinalReinstatement(requestConfig: RequestConfig, workReferenceNumber: string, finalReinstatementUpdateRequest: FinalReinstatementUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/final-reinstatement`, finalReinstatementUpdateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updateExcavationCarriedOut(requestConfig: RequestConfig, workReferenceNumber: string, excavationCarriedOutUpdateRequest: ExcavationCarriedOutUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/excavation-carried-out`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async addFileToWork(requestConfig: RequestConfig, workReferenceNumber: string, addFileToWorkRequest: AddFileToWorkRequest): Promise<void> {

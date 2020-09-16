@@ -103,6 +103,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/final-reinstatement`, finalReinstatementUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    updateExcavationCarriedOut(requestConfig, workReferenceNumber, excavationCarriedOutUpdateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/excavation-carried-out`, excavationCarriedOutUpdateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     addFileToWork(requestConfig, workReferenceNumber, addFileToWorkRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/files`, addFileToWorkRequest, this.generateRequestConfig(requestConfig)));
