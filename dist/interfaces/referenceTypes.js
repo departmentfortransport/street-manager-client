@@ -418,6 +418,9 @@ var AuditEvent;
     AuditEvent["internal_comment_submitted"] = "internal_comment_submitted";
     AuditEvent["comment_read"] = "comment_read";
     AuditEvent["excavation_carried_out_updated"] = "excavation_carried_out_updated";
+    AuditEvent["section_81_linked_to_permit"] = "section_81_linked_to_permit";
+    AuditEvent["section_81_unlinked_from_permit"] = "section_81_unlinked_from_permit";
+    AuditEvent["section_81_reassigned"] = "section_81_reassigned";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {

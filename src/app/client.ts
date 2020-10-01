@@ -74,6 +74,8 @@ import { SampleInspectionTargetUpdateRequest } from '../interfaces/sampleInspect
 import { CommentReadRequest } from '../interfaces/commentReadRequest'
 import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarriedOutUpdateRequest'
 import { CommentCreateResponse } from '../interfaces/commentCreateResponse'
+import { LinkSection81ToPermitRequest } from '../interfaces/linkSection81ToPermitRequest'
+import { LinkSection81ToPermitResponse } from '../interfaces/linkSection81ToPermitResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -346,6 +348,10 @@ export class StreetManagerApiClient {
 
   public async updateSection81Status(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string, updateSection81StatusRequest: Section81StatusUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/section-81s/${section81ReferenceNumber}/status`, updateSection81StatusRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async linkSection81ToPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, linkSection81ToPermitRequest: LinkSection81ToPermitRequest): Promise<LinkSection81ToPermitResponse> {
+    return this.httpHandler<LinkSection81ToPermitResponse>(() => this.axios.post(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/link-section-81`, linkSection81ToPermitRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async acknowledgeHS2Permit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, hs2AcknowledgementRequest: HS2AcknowledgementRequest): Promise<void> {

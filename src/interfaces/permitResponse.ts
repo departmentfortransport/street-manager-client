@@ -4,6 +4,7 @@ import { FileSummaryResponse } from './fileSummaryResponse'
 import { PermitASD } from './permitASD'
 import { PermitSummaryResponse } from './permitSummaryResponse'
 import { PermitAlterationSummaryResponse } from './permitAlterationSummaryResponse'
+import { LinkedSection81 } from './linkedSection81'
 
 export interface PermitResponse extends PermitSummaryResponse {
   permit_reference_number: string
@@ -95,4 +96,5 @@ export interface PermitResponse extends PermitSummaryResponse {
   is_covid_19_response?: boolean
   hs2_additional_usrns?: number[]
   excavation_carried_out: boolean
+  linked_section_81?: LinkedSection81
 }
