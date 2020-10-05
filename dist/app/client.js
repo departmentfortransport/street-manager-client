@@ -187,20 +187,20 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post('/files', form, config));
         });
     }
-    createGeographicalArea(requestConfig, buffer, filename) {
+    createGeographicalArea(requestConfig, buffer, filename, internalUserIdentifier, internalUserName) {
         return __awaiter(this, void 0, void 0, function* () {
             const form = new FormData();
             form.append('file', buffer, filename);
-            const config = this.generateRequestConfig(requestConfig);
+            const config = this.generateRequestConfig(requestConfig, { internalUserIdentifier: internalUserIdentifier, internalUserName: internalUserName });
             Object.assign(config.headers, form.getHeaders());
             return this.httpHandler(() => this.axios.post('/geographical-areas', form, config));
         });
     }
-    updateGeographicalArea(requestConfig, geographicalAreaReferenceNumber, buffer, filename) {
+    updateGeographicalArea(requestConfig, geographicalAreaReferenceNumber, buffer, filename, internalUserIdentifier, internalUserName) {
         return __awaiter(this, void 0, void 0, function* () {
             const form = new FormData();
             form.append('file', buffer, filename);
-            const config = this.generateRequestConfig(requestConfig);
+            const config = this.generateRequestConfig(requestConfig, { internalUserIdentifier: internalUserIdentifier, internalUserName: internalUserName });
             Object.assign(config.headers, form.getHeaders());
             return this.httpHandler(() => this.axios.put(`/geographical-areas/${geographicalAreaReferenceNumber}`, form, config));
         });
