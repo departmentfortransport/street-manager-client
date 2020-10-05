@@ -91,3 +91,4 @@ export * from './interfaces/sampleInspectionTargetCreateRequest';
 export * from './interfaces/sampleInspectionTargetCreateResponse';
 export * from './interfaces/sampleInspectionTargetUpdateRequest';
 export * from './interfaces/excavationCarriedOutUpdateRequest';
+export * from './interfaces/sampleInspectionSummaryResponse';
