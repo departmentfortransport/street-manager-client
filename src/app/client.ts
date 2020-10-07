@@ -228,21 +228,21 @@ export class StreetManagerApiClient {
     return this.httpHandler<FileSummaryResponse>(() => this.axios.post('/files', form, config))
   }
 
-  public async createGeographicalArea(requestConfig: RequestConfig, buffer: Buffer, filename: string): Promise<GeographicalAreaCreateResponse> {
+  public async createGeographicalArea(requestConfig: RequestConfig, buffer: Buffer, filename: string, internalUserIdentifier?: string, internalUserName?: string): Promise<GeographicalAreaCreateResponse> {
     const form: FormData = new FormData()
     form.append('file', buffer, filename)
 
-    const config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
+    const config: AxiosRequestConfig = this.generateRequestConfig(requestConfig, { internalUserIdentifier : internalUserIdentifier, internalUserName : internalUserName })
     Object.assign(config.headers, form.getHeaders())
 
     return this.httpHandler<GeographicalAreaCreateResponse>(() => this.axios.post('/geographical-areas', form, config))
   }
 
-  public async updateGeographicalArea(requestConfig: RequestConfig, geographicalAreaReferenceNumber: string, buffer: Buffer, filename: string): Promise<void> {
+  public async updateGeographicalArea(requestConfig: RequestConfig, geographicalAreaReferenceNumber: string, buffer: Buffer, filename: string, internalUserIdentifier?: string, internalUserName?: string): Promise<void> {
     const form: FormData = new FormData()
     form.append('file', buffer, filename)
 
-    const config: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
+    const config: AxiosRequestConfig = this.generateRequestConfig(requestConfig, { internalUserIdentifier : internalUserIdentifier, internalUserName : internalUserName })
     Object.assign(config.headers, form.getHeaders())
 
     return this.httpHandler<void>(() => this.axios.put(`/geographical-areas/${geographicalAreaReferenceNumber}`, form, config))
