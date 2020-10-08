@@ -73,6 +73,7 @@ import { SampleInspectionTargetCreateResponse } from '../interfaces/sampleInspec
 import { SampleInspectionTargetUpdateRequest } from '../interfaces/sampleInspectionTargetUpdateRequest'
 import { CommentReadRequest } from '../interfaces/commentReadRequest'
 import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarriedOutUpdateRequest'
+import { CommentCreateResponse } from '../interfaces/commentCreateResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -198,8 +199,8 @@ export class StreetManagerApiClient {
     return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/fixed-penalty-notices/${fpnReferenceNumber}/status`, fpnStatusUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/works/${workReferenceNumber}/comments`, commentCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createComment(requestConfig: RequestConfig, workReferenceNumber: string, commentCreateRequest: CommentCreateRequest): Promise<CommentCreateResponse> {
+    return this.httpHandler<CommentCreateResponse>(() => this.axios.post(`/works/${workReferenceNumber}/comments`, commentCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async markCommentAsRead(requestConfig: RequestConfig, workReferenceNumber: string, commentReferenceNumber: string,  commentReadRequest: CommentReadRequest): Promise<void> {
