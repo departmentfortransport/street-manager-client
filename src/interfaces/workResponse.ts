@@ -8,6 +8,7 @@ import { FileResponse} from './fileResponse'
 import { WorkStatus } from './referenceTypes'
 import { ForwardPlanSummaryResponse } from './forwardPlanSummaryResponse'
 import { Section81SummaryResponse } from './section81SummaryResponse'
+import { SampleInspectionSummaryResponse } from './sampleInspectionSummaryResponse'
 
 export interface WorkResponse {
   work_reference_number: string
@@ -39,4 +40,5 @@ export interface WorkResponse {
   fpns?: FPNSummaryResponse[]
   section_81?: Section81SummaryResponse
   files?: FileResponse[]
+  sample_inspections?: SampleInspectionSummaryResponse[]
 }
