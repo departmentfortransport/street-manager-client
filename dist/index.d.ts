@@ -93,3 +93,5 @@ export * from './interfaces/sampleInspectionTargetUpdateRequest';
 export * from './interfaces/excavationCarriedOutUpdateRequest';
 export * from './interfaces/sampleInspectionSummaryResponse';
 export * from './interfaces/commentCreateResponse';
+export * from './interfaces/linkSection81ToPermitRequest';
+export * from './interfaces/linkSection81ToPermitResponse';
