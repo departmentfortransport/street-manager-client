@@ -1,4 +1,4 @@
-import { InspectionCategory, InspectionOutcome, DefectFixedOnsite, InspectionType } from './referenceTypes';
+import { InspectionCategory, InspectionOutcome, DefectFixedOnsite, InspectionType, InspectionStatus, InspectionReasonForWithdrawal } from './referenceTypes';
 import { FileSummaryResponse } from './fileSummaryResponse';
 import { FailureReasonDetailsResponse } from './failureReasonDetailsResponse';
 export interface InspectionResponse {
@@ -27,4 +27,9 @@ export interface InspectionResponse {
     highway_authority: string;
     inspector_name?: string;
     made_safe_by_ha?: boolean;
+    inspection_status: InspectionStatus;
+    inspection_status_string: string;
+    inspection_reason_for_withdrawal?: InspectionReasonForWithdrawal;
+    inspection_reason_for_withdrawal_string?: string;
+    withdrawal_details?: string;
 }
