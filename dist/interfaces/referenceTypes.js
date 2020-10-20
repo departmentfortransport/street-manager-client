@@ -421,6 +421,7 @@ var AuditEvent;
     AuditEvent["section_81_linked_to_permit"] = "section_81_linked_to_permit";
     AuditEvent["section_81_unlinked_from_permit"] = "section_81_unlinked_from_permit";
     AuditEvent["section_81_reassigned"] = "section_81_reassigned";
+    AuditEvent["permit_granted_with_duration_challenge"] = "permit_granted_with_duration_challenge";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {

@@ -417,7 +417,8 @@ export enum AuditEvent {
   excavation_carried_out_updated = 'excavation_carried_out_updated',
   section_81_linked_to_permit = 'section_81_linked_to_permit',
   section_81_unlinked_from_permit = 'section_81_unlinked_from_permit',
-  section_81_reassigned = 'section_81_reassigned'
+  section_81_reassigned = 'section_81_reassigned',
+  permit_granted_with_duration_challenge = 'permit_granted_with_duration_challenge'
 }
 
 export enum ASDCode {
