@@ -4,4 +4,5 @@ export interface FPNSummaryResponse {
     fpn_offence_type: OffenceCode;
     issue_date_time: Date;
     fpn_status: FPNStatus;
+    status_changed_date: Date;
 }
