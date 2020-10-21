@@ -1,7 +1,7 @@
 import { ActivityType, TrafficManagementType, ApplicationType, CollaborationType, LocationType, WorkType, ReasonForRefusal, CloseFootway, LaneRentalAssessmentOutcome, LaneRentalAssessmentChargeBand, WorkStatus, AssessmentStatus, HS2HighwayExemption } from './referenceTypes'
-import { PermitCondition } from './permitCondition'
+import { PermitConditionResponse } from './permitCondition'
 import { FileSummaryResponse } from './fileSummaryResponse'
-import { PermitASD } from './permitASD'
+import { PermitASDResponse } from './permitASD'
 import { PermitSummaryResponse } from './permitSummaryResponse'
 import { PermitAlterationSummaryResponse } from './permitAlterationSummaryResponse'
 import { LinkedSection81 } from './linkedSection81'
@@ -25,7 +25,7 @@ export interface PermitResponse extends PermitSummaryResponse {
   project_reference_number?: string
   traffic_management_plan: boolean
   lane_rental_applicable: boolean
-  permit_conditions?: PermitCondition[]
+  permit_conditions?: PermitConditionResponse[]
   street_name: string
   town?: string
   area_name?: string
@@ -44,15 +44,22 @@ export interface PermitResponse extends PermitSummaryResponse {
   deadline_date: Date
   assessment_comments?: string
   reasons_for_refusal?: ReasonForRefusal[]
+  reasons_for_refusal_string?: string[]
   activity_type: ActivityType
+  activity_type_string: string
   traffic_management_type: TrafficManagementType
+  traffic_management_type_string: string
   application_type: ApplicationType
+  application_type_string: string
   collaboration_type?: CollaborationType
+  collaboration_type_string?: string
   location_types: LocationType[]
+  location_types_string: string[]
   assessment_status?: AssessmentStatus
+  assessment_status_string?: string
   files?: FileSummaryResponse[]
-  permit_asds: PermitASD[]
-  permit_not_selected_asds: PermitASD[]
+  permit_asds: PermitASDResponse[]
+  permit_not_selected_asds: PermitASDResponse[]
   assessment_discount?: number
   assessment_discount_reason?: string
   is_ttro_required?: boolean
@@ -66,23 +73,29 @@ export interface PermitResponse extends PermitSummaryResponse {
   additional_info?: string
   permit_alterations?: PermitAlterationSummaryResponse[]
   work_type: WorkType
+  work_type_string: string
   revoke_reason?: string
   sliding_end_date_candidate: boolean
   validity_period_end_date: Date
   final_reinstatement: boolean
   workstream_prefix: string
   close_footway: CloseFootway
+  close_footway_string: string
   lane_rental_assessment_outcome?: LaneRentalAssessmentOutcome
+  lane_rental_assessment_outcome_string?: string
   lane_rental_assessment_additional_details?: string
   lane_rental_assessment_charge_band?: LaneRentalAssessmentChargeBand
+  lane_rental_assessment_charge_band_string?: string
   lane_rental_assessment_chargeable_days?: number
   lane_rental_assessment_charges_agreed?: boolean
   is_lane_rental: boolean
   pending_change_details?: string
   work_status: WorkStatus
+  work_status_string: string
   hs2_in_act_limits?: boolean
   hs2_consultation_requested_response_date?: Date
   hs2_highway_exemption?: HS2HighwayExemption,
+  hs2_highway_exemption_string?: string,
   hs2_is_consultation?: boolean
   hs2_is_consent?: boolean
   hs2_highway_emails?: string[]

@@ -36,3 +36,8 @@ export interface PermitASD {
    */
   special_desig_periodicity_code?: ASDPeriodicityCode
 }
+
+export interface PermitASDResponse extends PermitASD {
+  street_special_desig_code_string: string
+  special_desig_periodicity_code_string?: string
+}

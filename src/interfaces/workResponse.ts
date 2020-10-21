@@ -25,6 +25,7 @@ export interface WorkResponse {
   usrn: number
   inspection_units?: number
   work_status: WorkStatus
+  work_status_string: string
   works_location_description: string
   work_start_date?: Date
   work_end_date?: Date

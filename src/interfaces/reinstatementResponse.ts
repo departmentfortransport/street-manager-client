@@ -4,6 +4,7 @@ import { FileSummaryResponse } from './fileSummaryResponse'
 export interface ReinstatementResponse {
   permit_reference_number?: string
   reinstatement_status: ReinstatementStatus
+  reinstatement_status_string: string
   reinstatement_date: Date
   depth?: number
   length?: number
@@ -15,6 +16,7 @@ export interface ReinstatementResponse {
   date_created: Date
   date_modified: Date
   location_types: LocationType[]
+  location_types_string: string[]
   reinstatement_evidence: boolean
   files?: FileSummaryResponse[]
   number_of_holes?: number

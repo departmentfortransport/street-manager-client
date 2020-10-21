@@ -6,4 +6,5 @@ export interface ForwardPlanSummaryResponse {
   start_date: Date
   end_date: Date
   forward_plan_status: ForwardPlanStatus
+  forward_plan_status_string: string
 }
