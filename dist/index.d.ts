@@ -95,3 +95,4 @@ export * from './interfaces/sampleInspectionSummaryResponse';
 export * from './interfaces/commentCreateResponse';
 export * from './interfaces/linkSection81ToPermitRequest';
 export * from './interfaces/linkSection81ToPermitResponse';
+export * from './interfaces/unlinkSection81FromPermitRequest';

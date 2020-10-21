@@ -76,6 +76,7 @@ import { ExcavationCarriedOutUpdateRequest } from '../interfaces/excavationCarri
 import { CommentCreateResponse } from '../interfaces/commentCreateResponse'
 import { LinkSection81ToPermitRequest } from '../interfaces/linkSection81ToPermitRequest'
 import { LinkSection81ToPermitResponse } from '../interfaces/linkSection81ToPermitResponse'
+import { UnlinkSection81FromPermitRequest } from '../interfaces/unlinkSection81FromPermitRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -352,6 +353,10 @@ export class StreetManagerApiClient {
 
   public async linkSection81ToPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, linkSection81ToPermitRequest: LinkSection81ToPermitRequest): Promise<LinkSection81ToPermitResponse> {
     return this.httpHandler<LinkSection81ToPermitResponse>(() => this.axios.post(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/link-section-81`, linkSection81ToPermitRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async unlinkSection81FromPermit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, unlinkSection81FromPermitRequest: UnlinkSection81FromPermitRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/unlink-section-81`, unlinkSection81FromPermitRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async acknowledgeHS2Permit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, hs2AcknowledgementRequest: HS2AcknowledgementRequest): Promise<void> {
