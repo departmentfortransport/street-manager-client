@@ -418,7 +418,8 @@ export enum AuditEvent {
   section_81_linked_to_permit = 'section_81_linked_to_permit',
   section_81_unlinked_from_permit = 'section_81_unlinked_from_permit',
   section_81_reassigned = 'section_81_reassigned',
-  permit_granted_with_duration_challenge = 'permit_granted_with_duration_challenge'
+  permit_granted_with_duration_challenge = 'permit_granted_with_duration_challenge',
+  inspection_withdrawn = 'inspection_withdrawn'
 }
 
 export enum ASDCode {
@@ -518,4 +519,18 @@ export enum PaymentMethod {
 export enum ForwardPlanWorkType {
   planned = 'planned',
   hs2_highway_works = 'hs2_highway_works'
+}
+
+export enum InspectionStatus {
+  recorded = 'recorded',
+  withdrawn = 'withdrawn',
+  scheduled = 'scheduled'
+}
+
+export enum InspectionReasonForWithdrawal {
+  incorrect_outcome_recorded = 'incorrect_outcome_recorded',
+  wrong_works_or_organisation = 'wrong_works_or_organisation',
+  wrong_details = 'wrong_details',
+  outcome_changed = 'outcome_changed',
+  other = 'other'
 }

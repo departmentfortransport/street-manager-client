@@ -422,6 +422,7 @@ var AuditEvent;
     AuditEvent["section_81_unlinked_from_permit"] = "section_81_unlinked_from_permit";
     AuditEvent["section_81_reassigned"] = "section_81_reassigned";
     AuditEvent["permit_granted_with_duration_challenge"] = "permit_granted_with_duration_challenge";
+    AuditEvent["inspection_withdrawn"] = "inspection_withdrawn";
 })(AuditEvent = exports.AuditEvent || (exports.AuditEvent = {}));
 var ASDCode;
 (function (ASDCode) {
@@ -522,3 +523,17 @@ var ForwardPlanWorkType;
     ForwardPlanWorkType["planned"] = "planned";
     ForwardPlanWorkType["hs2_highway_works"] = "hs2_highway_works";
 })(ForwardPlanWorkType = exports.ForwardPlanWorkType || (exports.ForwardPlanWorkType = {}));
+var InspectionStatus;
+(function (InspectionStatus) {
+    InspectionStatus["recorded"] = "recorded";
+    InspectionStatus["withdrawn"] = "withdrawn";
+    InspectionStatus["scheduled"] = "scheduled";
+})(InspectionStatus = exports.InspectionStatus || (exports.InspectionStatus = {}));
+var InspectionReasonForWithdrawal;
+(function (InspectionReasonForWithdrawal) {
+    InspectionReasonForWithdrawal["incorrect_outcome_recorded"] = "incorrect_outcome_recorded";
+    InspectionReasonForWithdrawal["wrong_works_or_organisation"] = "wrong_works_or_organisation";
+    InspectionReasonForWithdrawal["wrong_details"] = "wrong_details";
+    InspectionReasonForWithdrawal["outcome_changed"] = "outcome_changed";
+    InspectionReasonForWithdrawal["other"] = "other";
+})(InspectionReasonForWithdrawal = exports.InspectionReasonForWithdrawal || (exports.InspectionReasonForWithdrawal = {}));
