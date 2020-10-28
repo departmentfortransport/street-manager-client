@@ -77,6 +77,7 @@ import { CommentCreateResponse } from '../interfaces/commentCreateResponse'
 import { LinkSection81ToPermitRequest } from '../interfaces/linkSection81ToPermitRequest'
 import { LinkSection81ToPermitResponse } from '../interfaces/linkSection81ToPermitResponse'
 import { UnlinkSection81FromPermitRequest } from '../interfaces/unlinkSection81FromPermitRequest'
+import { InspectionWithdrawRequest } from '../interfaces/inspectionWithdrawRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -373,6 +374,10 @@ export class StreetManagerApiClient {
 
   public async generateSampleInspection(requestConfig: RequestConfig): Promise<void> {
     return this.httpHandler<void>(() => this.axios.post('/sample-inspection', null, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async withdrawInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionReferenceNumber: string, inspectionWithdrawRequest: InspectionWithdrawRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/works/${workReferenceNumber}/inspections/${inspectionReferenceNumber}/withdraw`, inspectionWithdrawRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

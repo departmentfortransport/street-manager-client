@@ -74,6 +74,7 @@ import { CommentCreateResponse } from '../interfaces/commentCreateResponse';
 import { LinkSection81ToPermitRequest } from '../interfaces/linkSection81ToPermitRequest';
 import { LinkSection81ToPermitResponse } from '../interfaces/linkSection81ToPermitResponse';
 import { UnlinkSection81FromPermitRequest } from '../interfaces/unlinkSection81FromPermitRequest';
+import { InspectionWithdrawRequest } from '../interfaces/inspectionWithdrawRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -145,6 +146,7 @@ export declare class StreetManagerApiClient {
     createSampleInspectionTarget(requestConfig: RequestConfig, createSampleInspectionTargetRequest: SampleInspectionTargetCreateRequest): Promise<SampleInspectionTargetCreateResponse>;
     updateSampleInspectionTarget(requestConfig: RequestConfig, sampleInspectionTargetReferenceNumber: string, updateSampleInspectionTargetRequest: SampleInspectionTargetUpdateRequest): Promise<void>;
     generateSampleInspection(requestConfig: RequestConfig): Promise<void>;
+    withdrawInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionReferenceNumber: string, inspectionWithdrawRequest: InspectionWithdrawRequest): Promise<void>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;
