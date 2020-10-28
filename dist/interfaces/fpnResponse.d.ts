@@ -11,6 +11,7 @@ export interface FPNResponse extends FPNSummaryResponse {
     representations_contact?: string;
     representations_contact_address?: string;
     payment_methods?: PaymentMethod[];
+    payment_methods_string?: string[];
     work_reference_number: string;
     promoter_organisation: string;
     ha_organisation: string;

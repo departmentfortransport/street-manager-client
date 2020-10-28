@@ -5,5 +5,7 @@ export interface Section81SummaryResponse {
   date_created: Date
   location_description: string
   section_81_severity: Section81Severity
+  section_81_severity_string: string
   section_81_status: Section81Status
+  section_81_status_string: string
 }

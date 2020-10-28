@@ -9,6 +9,8 @@ export interface SiteSummaryResponse extends SiteDetails {
   completed_date: Date
   end_date: Date
   site_status: ReinstatementStatus
+  site_status_string: string
   reinstatement_type: ReinstatementType
+  reinstatement_type_string: string
   number_of_holes?: number
 }

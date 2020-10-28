@@ -15,8 +15,10 @@ export interface Section81Response extends Section81SummaryResponse {
     promoter_swa_code: string;
     workstream_prefix: string;
     location_types: LocationType[];
+    location_types_string: string[];
     inspection_date: Date;
     section_81_type: Section81Type;
+    section_81_type_string: string;
     other_type_details?: string;
     made_safe_by_ha: boolean;
     inspector_name?: string;
@@ -25,7 +27,9 @@ export interface Section81Response extends Section81SummaryResponse {
     status_changed_date: Date;
     promoter_response?: string;
     section_81_work_type?: Section81WorkType;
+    section_81_work_type_string?: string;
     promoter_status?: Section81Status;
+    promoter_status_string?: string;
     promoter_status_changed_date?: Date;
     linked_permit?: LinkedPermit;
 }

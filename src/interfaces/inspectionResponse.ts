@@ -5,9 +5,12 @@ import { FailureReasonDetailsResponse } from './failureReasonDetailsResponse'
 export interface InspectionResponse {
   inspection_reference_number: string
   inspection_type: InspectionType
+  inspection_type_string: string
   inspection_start_date: Date
   inspection_category?: InspectionCategory
+  inspection_category_string?: string
   inspection_outcome: InspectionOutcome
+  inspection_outcome_string: string
   defect_details?: string
   failure_reason_details?: FailureReasonDetailsResponse[]
   inspection_outcome_details?: string
@@ -16,6 +19,7 @@ export interface InspectionResponse {
   call_logged_reference?: string
   call_logged_summary?: string
   defect_fixed_on_site?: DefectFixedOnsite
+  defect_fixed_on_site_string?: string
   additional_comments?: string
   date_created: Date
   date_modified: Date

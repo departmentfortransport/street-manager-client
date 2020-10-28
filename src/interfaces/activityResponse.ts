@@ -10,6 +10,7 @@ export interface ActivityResponse {
   activity_coordinates: any
   activity_name: string
   activity_activity_type: ActivityActivityType
+  activity_activity_type_string: string
   activity_type_details?: string
   contact_name?: string
   contact_details?: string
@@ -18,8 +19,10 @@ export interface ActivityResponse {
   end_date: Date
   end_time?: Date
   location_types: LocationType[]
+  location_types_string: string[]
   activity_location_description: string
   traffic_management_type: TrafficManagementType
+  traffic_management_type_string: string
   collaborative_working: boolean
   additional_info?: string
   cancelled: boolean

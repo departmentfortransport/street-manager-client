@@ -4,6 +4,7 @@ import { PermitStatus } from './referenceTypes'
 
 export interface PermitAlterationResponse extends PermitAlterationSummaryResponse {
   permit_status?: PermitStatus
+  permit_status_string?: string
   assessment_discount?: number
   assessment_comments?: string
   permit_alteration_reason: string

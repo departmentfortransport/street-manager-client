@@ -6,5 +6,7 @@ export interface PermitSummaryResponse {
     actual_start_date?: Date;
     actual_stop_date?: Date;
     permit_status: PermitStatus;
+    permit_status_string: string;
     work_category: WorkCategory;
+    work_category_string: string;
 }
