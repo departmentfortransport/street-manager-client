@@ -26,4 +26,12 @@ export interface Section81CreateRequest extends BaseWorkCreateRequest {
    * Time must occur today or a date in the future
    */
   reinspection_date_time?: Date
+  section_81_evidence: boolean
+  /** Required if section_81_evidence = true
+   * Array values must be unique
+   * Must not contain null or undefined values
+   * A file_id can only be associated with one section of Street Manager
+   * See API specification Resource Guide > Works API > File upload for more information
+   */
+  file_ids?: number[]
 }
