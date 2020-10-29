@@ -5,7 +5,7 @@ import { FPNSummaryResponse } from './fpnSummaryResponse';
 import { PermitResponse } from './permitResponse';
 import { WorkHistoryResponse } from './workHistoryResponse';
 import { FileResponse } from './fileResponse';
-import { WorkStatus } from './referenceTypes';
+import { WorkStatusResponse } from './referenceTypes';
 import { ForwardPlanSummaryResponse } from './forwardPlanSummaryResponse';
 import { Section81SummaryResponse } from './section81SummaryResponse';
 import { SampleInspectionSummaryResponse } from './sampleInspectionSummaryResponse';
@@ -23,7 +23,7 @@ export interface WorkResponse {
     works_coordinates: any;
     usrn: number;
     inspection_units?: number;
-    work_status: WorkStatus;
+    work_status: WorkStatusResponse;
     work_status_string: string;
     works_location_description: string;
     work_start_date?: Date;

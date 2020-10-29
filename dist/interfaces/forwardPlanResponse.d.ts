@@ -1,5 +1,5 @@
 import { ForwardPlanSummaryResponse } from './forwardPlanSummaryResponse';
-import { TrafficManagementType, HS2HighwayExemption, ForwardPlanWorkType } from './referenceTypes';
+import { TrafficManagementTypeResponse, HS2HighwayExemptionResponse, ForwardPlanWorkTypeResponse } from './referenceTypes';
 import { PermitASDResponse } from './permitASD';
 export interface ForwardPlanResponse extends ForwardPlanSummaryResponse {
     promoter_organisation: string;
@@ -20,15 +20,15 @@ export interface ForwardPlanResponse extends ForwardPlanSummaryResponse {
     works_location_description: string;
     description_of_work: string;
     project_reference_number?: string;
-    traffic_management_type?: TrafficManagementType;
+    traffic_management_type?: TrafficManagementTypeResponse;
     traffic_management_type_string?: string;
     additional_info?: string;
     forward_plan_asds?: PermitASDResponse[];
     cancelled_reason?: string;
     hs2_in_act_limits?: boolean;
     hs2_consultation_requested_response_date?: Date;
-    hs2_highway_exemption?: HS2HighwayExemption;
+    hs2_highway_exemption?: HS2HighwayExemptionResponse;
     hs2_highway_exemption_string?: string;
-    hs2_works_type?: ForwardPlanWorkType;
+    hs2_works_type?: ForwardPlanWorkTypeResponse;
     hs2_works_type_string?: string;
 }

@@ -1,15 +1,15 @@
-import { InspectionCategory, InspectionOutcome, DefectFixedOnsite, InspectionType, InspectionStatus, InspectionReasonForWithdrawal } from './referenceTypes'
+import { DefectFixedOnsiteResponse, InspectionStatusResponse, InspectionReasonForWithdrawalResponse, InspectionTypeResponse, InspectionCategoryResponse, InspectionOutcomeResponse } from './referenceTypes'
 import { FileSummaryResponse } from './fileSummaryResponse'
 import { FailureReasonDetailsResponse } from './failureReasonDetailsResponse'
 
 export interface InspectionResponse {
   inspection_reference_number: string
-  inspection_type: InspectionType
+  inspection_type: InspectionTypeResponse
   inspection_type_string: string
   inspection_start_date: Date
-  inspection_category?: InspectionCategory
+  inspection_category?: InspectionCategoryResponse
   inspection_category_string?: string
-  inspection_outcome: InspectionOutcome
+  inspection_outcome: InspectionOutcomeResponse
   inspection_outcome_string: string
   defect_details?: string
   failure_reason_details?: FailureReasonDetailsResponse[]
@@ -18,7 +18,7 @@ export interface InspectionResponse {
   call_logged_to?: string
   call_logged_reference?: string
   call_logged_summary?: string
-  defect_fixed_on_site?: DefectFixedOnsite
+  defect_fixed_on_site?: DefectFixedOnsiteResponse
   defect_fixed_on_site_string?: string
   additional_comments?: string
   date_created: Date
@@ -32,9 +32,9 @@ export interface InspectionResponse {
   highway_authority: string
   inspector_name?: string
   made_safe_by_ha?: boolean
-  inspection_status: InspectionStatus
+  inspection_status: InspectionStatusResponse
   inspection_status_string: string
-  inspection_reason_for_withdrawal?: InspectionReasonForWithdrawal
+  inspection_reason_for_withdrawal?: InspectionReasonForWithdrawalResponse
   inspection_reason_for_withdrawal_string?: string
   withdrawal_details?: string
 }

@@ -1,6 +1,6 @@
 import { FPNSummaryResponse } from './fpnSummaryResponse'
 import { FileSummaryResponse } from './fileSummaryResponse'
-import { PaymentMethod } from './referenceTypes'
+import { PaymentMethodResponse } from './referenceTypes'
 
 export interface FPNResponse extends FPNSummaryResponse {
   location: string
@@ -11,7 +11,7 @@ export interface FPNResponse extends FPNSummaryResponse {
   officer_address?: string
   representations_contact?: string
   representations_contact_address?: string
-  payment_methods?: PaymentMethod[]
+  payment_methods?: PaymentMethodResponse[]
   payment_methods_string?: string[]
   work_reference_number: string
   promoter_organisation: string
