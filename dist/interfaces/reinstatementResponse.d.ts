@@ -1,8 +1,8 @@
-import { ReinstatementStatus, LocationType } from './referenceTypes';
+import { LocationTypeResponse, ReinstatementStatusResponse } from './referenceTypes';
 import { FileSummaryResponse } from './fileSummaryResponse';
 export interface ReinstatementResponse {
     permit_reference_number?: string;
-    reinstatement_status: ReinstatementStatus;
+    reinstatement_status: ReinstatementStatusResponse;
     reinstatement_status_string: string;
     reinstatement_date: Date;
     depth?: number;
@@ -14,7 +14,7 @@ export interface ReinstatementResponse {
     end_date: Date;
     date_created: Date;
     date_modified: Date;
-    location_types: LocationType[];
+    location_types: LocationTypeResponse[];
     location_types_string: string[];
     reinstatement_evidence: boolean;
     files?: FileSummaryResponse[];

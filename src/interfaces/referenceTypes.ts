@@ -17,9 +17,35 @@ export enum ActivityType {
   optional_permit_no_fee = 'optional_permit_no_fee'
 }
 
+export enum ActivityTypeResponse {
+  highway_improvement_works = 'highway_improvement_works',
+  highway_repair_and_maintenance_works = 'highway_repair_and_maintenance_works',
+  utility_asset_works = 'utility_asset_works',
+  utility_repair_and_maintenance_works = 'utility_repair_and_maintenance_works',
+  diversionary_works = 'diversionary_works',
+  disconnection_or_alteration_of_supply = 'disconnection_or_alteration_of_supply',
+  permanent_reinstatement = 'permanent_reinstatement',
+  remedial_works = 'remedial_works',
+  section_58 = 'section_58',
+  section_50 = 'section_50',
+  core_sampling = 'core_sampling',
+  statutory_infrastructure_works = 'statutory_infrastructure_works',
+  works_for_rail_purposes = 'works_for_rail_purposes',
+  works_for_road_purposes = 'works_for_road_purposes',
+  new_service_connection = 'new_service_connection',
+  optional_permit_no_fee = 'optional_permit_no_fee',
+  upcoming_enum = 'upcoming_enum'
+}
+
 export enum ApplicationType {
   permit = 'permit',
   notice = 'notice'
+}
+
+export enum ApplicationTypeResponse {
+  permit = 'permit',
+  notice = 'notice',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum CollaborationType {
@@ -27,6 +53,14 @@ export enum CollaborationType {
   trench_sharing_secondary_promoter = 'trench_sharing_secondary_promoter',
   sharing_traffic_management_only = 'sharing_traffic_management_only',
   other = 'other'
+}
+
+export enum CollaborationTypeResponse {
+  trench_sharing_primary_promoter = 'trench_sharing_primary_promoter',
+  trench_sharing_secondary_promoter = 'trench_sharing_secondary_promoter',
+  sharing_traffic_management_only = 'sharing_traffic_management_only',
+  other = 'other',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum LocationType {
@@ -39,6 +73,19 @@ export enum LocationType {
   bus_stop_or_stand = 'bus_stop_or_stand',
   cycle_hire_docking_station = 'cycle_hire_docking_station',
   taxi_rank = 'taxi_rank'
+}
+
+export enum LocationTypeResponse {
+  footway = 'footway',
+  carriageway = 'carriageway',
+  verge = 'verge',
+  cycleway = 'cycleway',
+  footpath = 'footpath',
+  parking_place = 'parking_place',
+  bus_stop_or_stand = 'bus_stop_or_stand',
+  cycle_hire_docking_station = 'cycle_hire_docking_station',
+  taxi_rank = 'taxi_rank',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum TrafficManagementType {
@@ -55,20 +102,43 @@ export enum TrafficManagementType {
   no_carriageway_incursion = 'no_carriageway_incursion'
 }
 
+export enum TrafficManagementTypeResponse {
+  road_closure = 'road_closure',
+  contra_flow = 'contra_flow',
+  lane_closure = 'lane_closure',
+  multi_way_signals = 'multi_way_signals',
+  two_way_signals = 'two_way_signals',
+  convoy_workings = 'convoy_workings',
+  stop_go_boards = 'stop_go_boards',
+  priority_working = 'priority_working',
+  give_and_take = 'give_and_take',
+  some_carriageway_incursion = 'some_carriageway_incursion',
+  no_carriageway_incursion = 'no_carriageway_incursion',
+  upcoming_enum = 'upcoming_enum'
+}
+
 export enum WorkType {
   planned = 'planned',
   immediate = 'immediate',
   hs2_highway_works = 'hs2_highway_works'
 }
 
-export enum WorkCategory {
+export enum WorkTypeResponse {
+  planned = 'planned',
+  immediate = 'immediate',
+  hs2_highway_works = 'hs2_highway_works',
+  upcoming_enum = 'upcoming_enum'
+}
+
+export enum WorkCategoryResponseEnum {
   minor = 'minor',
   standard = 'standard',
   major = 'major',
   immediate_urgent = 'immediate_urgent',
   immediate_emergency = 'immediate_emergency',
   paa = 'paa',
-  hs2_highway = 'hs2_highway'
+  hs2_highway = 'hs2_highway',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum PermitStatus {
@@ -82,6 +152,18 @@ export enum PermitStatus {
   progressed = 'progressed'
 }
 
+export enum PermitStatusResponse {
+  submitted = 'submitted',
+  granted = 'granted',
+  permit_modification_request = 'permit_modification_request',
+  refused = 'refused',
+  closed = 'closed',
+  cancelled = 'cancelled',
+  revoked = 'revoked',
+  progressed = 'progressed',
+  upcoming_enum = 'upcoming_enum'
+}
+
 export enum AssessmentStatus {
   granted = 'granted',
   granted_auto = 'granted_auto',
@@ -91,15 +173,32 @@ export enum AssessmentStatus {
   revoked = 'revoked'
 }
 
-export enum ForwardPlanStatus {
+export enum AssessmentStatusResponse {
+  granted = 'granted',
+  granted_auto = 'granted_auto',
+  refused = 'refused',
+  refused_auto = 'refused_auto',
+  permit_modification_request = 'permit_modification_request',
+  revoked = 'revoked',
+  upcoming_enum = 'upcoming_enum'
+}
+
+export enum ForwardPlanStatusResponse {
   raised = 'raised',
   cancelled = 'cancelled',
-  progressed = 'progressed'
+  progressed = 'progressed',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum ReinstatementStatus {
   interim = 'interim',
   permanent = 'permanent'
+}
+
+export enum ReinstatementStatusResponse {
+  interim = 'interim',
+  permanent = 'permanent',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum InspectionType {
@@ -109,9 +208,18 @@ export enum InspectionType {
   section_81 = 'section_81'
 }
 
-export enum InspectionResponseType {
+export enum InspectionTypeResponse {
+  live_site = 'live_site',
+  reinstatement = 'reinstatement',
+  non_compliance_follow_up = 'non_compliance_follow_up',
+  section_81 = 'section_81',
+  upcoming_enum = 'upcoming_enum'
+}
+
+export enum InspectionResponseTypeResponse {
   inspection = 'inspection',
-  reinspection = 'reinspection'
+  reinspection = 'reinspection',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum InspectionCategory {
@@ -125,6 +233,20 @@ export enum InspectionCategory {
   follow_up_completion = 'follow_up_completion',
   site_occupancy = 'site_occupancy',
   conditions = 'conditions'
+}
+
+export enum InspectionCategoryResponse {
+  a = 'a',
+  b = 'b',
+  c = 'c',
+  third_party = 'third_party',
+  routine = 'routine',
+  joint_site_visit = 'joint_site_visit',
+  follow_up = 'follow_up',
+  follow_up_completion = 'follow_up_completion',
+  site_occupancy = 'site_occupancy',
+  conditions = 'conditions',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum InspectionOutcome {
@@ -141,10 +263,32 @@ export enum InspectionOutcome {
   works_stopped = 'works_stopped'
 }
 
+export enum InspectionOutcomeResponse {
+  passed = 'passed',
+  unable_to_complete_inspection = 'unable_to_complete_inspection',
+  failed_low = 'failed_low',
+  failed_high = 'failed_high',
+  further_inspections_required = 'further_inspections_required',
+  agreed_site_compliance = 'agreed_site_compliance',
+  non_compliant_with_conditions = 'non_compliant_with_conditions',
+  works_stopped_apparatus_remaining = 'works_stopped_apparatus_remaining',
+  works_in_progress_no_carriageway_incursion = 'works_in_progress_no_carriageway_incursion',
+  works_in_progress = 'works_in_progress',
+  works_stopped = 'works_stopped',
+  upcoming_enum = 'upcoming_enum'
+}
+
 export enum DefectFixedOnsite {
   yes_by_inspector = 'yes_by_inspector',
   yes_by_onsite_members = 'yes_by_onsite_members',
   no = 'no'
+}
+
+export enum DefectFixedOnsiteResponse {
+  yes_by_inspector = 'yes_by_inspector',
+  yes_by_onsite_members = 'yes_by_onsite_members',
+  no = 'no',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum PermitConditionType {
@@ -168,11 +312,41 @@ export enum PermitConditionType {
   NCT12a = 'NCT12a'
 }
 
+export enum PermitConditionTypeResponse {
+  NCT01a = 'NCT01a',
+  NCT01b = 'NCT01b',
+  NCT02a = 'NCT02a',
+  NCT02b = 'NCT02b',
+  NCT04a = 'NCT04a',
+  NCT04b = 'NCT04b',
+  NCT05a = 'NCT05a',
+  NCT06a = 'NCT06a',
+  NCT07a = 'NCT07a',
+  NCT08a = 'NCT08a',
+  NCT08b = 'NCT08b',
+  NCT09a = 'NCT09a',
+  NCT09b = 'NCT09b',
+  NCT09c = 'NCT09c',
+  NCT10a = 'NCT10a',
+  NCT11a = 'NCT11a',
+  NCT11b = 'NCT11b',
+  NCT12a = 'NCT12a',
+  upcoming_enum = 'upcoming_enum'
+}
+
 export enum OffenceCode {
   offence_code_05 = 'offence_code_05',
   offence_code_06 = 'offence_code_06',
   offence_code_08 = 'offence_code_08',
   offence_code_09 = 'offence_code_09'
+}
+
+export enum OffenceCodeResponse {
+  offence_code_05 = 'offence_code_05',
+  offence_code_06 = 'offence_code_06',
+  offence_code_08 = 'offence_code_08',
+  offence_code_09 = 'offence_code_09',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum FPNStatus {
@@ -182,6 +356,16 @@ export enum FPNStatus {
   paid_discounted = 'paid_discounted',
   disputed = 'disputed',
   withdrawn = 'withdrawn'
+}
+
+export enum FPNStatusResponse {
+  issued = 'issued',
+  accepted = 'accepted',
+  paid = 'paid',
+  paid_discounted = 'paid_discounted',
+  disputed = 'disputed',
+  withdrawn = 'withdrawn',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum CommentTopic {
@@ -208,14 +392,27 @@ export enum AlterationStatus {
   auto_applied = 'auto_applied'
 }
 
-export enum AlterationType {
+export enum AlterationStatusResponse {
+  submitted = 'submitted',
+  granted = 'granted',
+  granted_with_duration_challenge = 'granted_with_duration_challenge',
+  refused = 'refused',
+  deemed = 'deemed',
+  cancelled = 'cancelled',
+  revoked = 'revoked',
+  auto_applied = 'auto_applied',
+  upcoming_enum = 'upcoming_enum'
+}
+
+export enum AlterationTypeResponse {
   PROMOTER_IMPOSED_CHANGE = 'PROMOTER_IMPOSED_CHANGE',
   PROMOTER_CHANGE_REQUEST = 'PROMOTER_CHANGE_REQUEST',
   HA_CHANGE_REQUEST = 'HA_CHANGE_REQUEST',
   HA_IMPOSED_CHANGE = 'HA_IMPOSED_CHANGE',
   WORK_EXTENSION = 'WORK_EXTENSION',
   DURATION_CHALLENGE = 'DURATION_CHALLENGE',
-  MODIFIED_PERMIT = 'MODIFIED_PERMIT'
+  MODIFIED_PERMIT = 'MODIFIED_PERMIT',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum ReasonForRefusal {
@@ -238,10 +435,38 @@ export enum ReasonForRefusal {
   RC50 = 'RC50'
 }
 
+export enum ReasonForRefusalResponse {
+  RC10 = 'RC10',
+  RC11 = 'RC11',
+  RC12 = 'RC12',
+  RC20 = 'RC20',
+  RC21 = 'RC21',
+  RC22 = 'RC22',
+  RC23 = 'RC23',
+  RC30 = 'RC30',
+  RC31 = 'RC31',
+  RC32 = 'RC32',
+  RC33 = 'RC33',
+  RC40 = 'RC40',
+  RC41 = 'RC41',
+  RC42 = 'RC42',
+  RC43 = 'RC43',
+  RC44 = 'RC44',
+  RC50 = 'RC50',
+  upcoming_enum = 'upcoming_enum'
+}
+
 export enum CloseFootway {
   yes_provide_pedestrian_walkway = 'yes_provide_pedestrian_walkway',
   yes_provide_alternative_route = 'yes_provide_alternative_route',
   no = 'no'
+}
+
+export enum CloseFootwayResponse {
+  yes_provide_pedestrian_walkway = 'yes_provide_pedestrian_walkway',
+  yes_provide_alternative_route = 'yes_provide_alternative_route',
+  no = 'no',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum ActivityActivityType {
@@ -254,6 +479,19 @@ export enum ActivityActivityType {
   section58 = 'section58',
   compound = 'compound',
   other = 'other'
+}
+
+export enum ActivityActivityTypeResponse {
+  skips = 'skips',
+  scaffolding = 'scaffolding',
+  hoarding = 'hoarding',
+  crane_mobile_platform = 'crane_mobile_platform',
+  event = 'event',
+  section50 = 'section50',
+  section58 = 'section58',
+  compound = 'compound',
+  other = 'other',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum FailureReason {
@@ -294,12 +532,60 @@ export enum FailureReason {
   reinstatement_edge_depression = 'reinstatement_edge_depression'
 }
 
+export enum FailureReasonResponse {
+  live_site_signage = 'live_site_signage',
+  live_site_distance = 'live_site_distance',
+  live_site_safety_zone = 'live_site_safety_zone',
+  live_site_barriers = 'live_site_barriers',
+  live_site_traffic_control = 'live_site_traffic_control',
+  live_site_pedestrian_provision = 'live_site_pedestrian_provision',
+  live_site_cyclist_provision = 'live_site_cyclist_provision',
+  live_site_operative_qualification = 'live_site_operative_qualification',
+  live_site_equipment = 'live_site_equipment',
+  live_site_materials = 'live_site_materials',
+  live_site_compaction = 'live_site_compaction',
+  live_site_construction_layers = 'live_site_construction_layers',
+  live_site_storage_of_materials = 'live_site_storage_of_materials',
+  reinstatement_damage_to_surround_area = 'reinstatement_damage_to_surround_area',
+  reinstatement_saw_cutting = 'reinstatement_saw_cutting',
+  reinstatement_acute_angles = 'reinstatement_acute_angles',
+  reinstatement_verge = 'reinstatement_verge',
+  reinstatement_anti_skid = 'reinstatement_anti_skid',
+  reinstatement_fixed_features = 'reinstatement_fixed_features',
+  reinstatement_modular = 'reinstatement_modular',
+  reinstatement_proximity = 'reinstatement_proximity',
+  reinstatement_materials_incorrect = 'reinstatement_materials_incorrect',
+  reinstatement_materials_damaged = 'reinstatement_materials_damaged',
+  reinstatement_edge_sealant = 'reinstatement_edge_sealant',
+  reinstatement_over_banding = 'reinstatement_over_banding',
+  reinstatement_road_markings = 'reinstatement_road_markings',
+  reinstatement_infill_pointing = 'reinstatement_infill_pointing',
+  reinstatement_ironwork_apparatus = 'reinstatement_ironwork_apparatus',
+  reinstatement_breaking_out_fretting = 'reinstatement_breaking_out_fretting',
+  reinstatement_interface_cracking = 'reinstatement_interface_cracking',
+  reinstatement_crowning = 'reinstatement_crowning',
+  reinstatement_depression = 'reinstatement_depression',
+  reinstatement_as_laid_profile = 'reinstatement_as_laid_profile',
+  reinstatement_texture_depth = 'reinstatement_texture_depth',
+  reinstatement_edge_depression = 'reinstatement_edge_depression',
+  upcoming_enum = 'upcoming_enum'
+}
+
 export enum LaneRentalAssessmentOutcome {
   chargeable = 'chargeable',
   potentially_chargeable = 'potentially_chargeable',
   charges_waived = 'charges_waived',
   exempt = 'exempt',
   charges_not_applicable = 'charges_not_applicable'
+}
+
+export enum LaneRentalAssessmentOutcomeResponse {
+  chargeable = 'chargeable',
+  potentially_chargeable = 'potentially_chargeable',
+  charges_waived = 'charges_waived',
+  exempt = 'exempt',
+  charges_not_applicable = 'charges_not_applicable',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum LaneRentalAssessmentChargeBand {
@@ -310,7 +596,16 @@ export enum LaneRentalAssessmentChargeBand {
   charge_band_5 = 'charge_band_5'
 }
 
-export enum WorkStatus {
+export enum LaneRentalAssessmentChargeBandResponse {
+  charge_band_1 = 'charge_band_1',
+  charge_band_2 = 'charge_band_2',
+  charge_band_3 = 'charge_band_3',
+  charge_band_4 = 'charge_band_4',
+  charge_band_5 = 'charge_band_5',
+  upcoming_enum = 'upcoming_enum'
+}
+
+export enum WorkStatusResponse {
   planned = 'planned',
   in_progress = 'in_progress',
   completed = 'completed',
@@ -318,7 +613,8 @@ export enum WorkStatus {
   unattributable = 'unattributable',
   historical = 'historical',
   non_notifiable = 'non_notifiable',
-  section_81 = 'section_81'
+  section_81 = 'section_81',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum AuditEvent {
@@ -449,6 +745,34 @@ export enum ASDCode {
   emergency_services_routes = 30
 }
 
+export enum ASDCodeResponse {
+  protected_street = 1,
+  traffic_sensitive = 2,
+  special_engineering_difficulty = 3,
+  proposed_special_engineering_difficulty = 6,
+  level_crossing_safety_zone = 8,
+  environmentally_sensitive_areas = 9,
+  structures_not_designated_special_engineering_difficulty = 10,
+  pipelines_and_specialist_cables = 12,
+  priority_lanes = 13,
+  lane_rental = 16,
+  streets_subject_to_early_notification_of_immediate_activities = 17,
+  special_events = 18,
+  parking_bays_and_restrictions = 19,
+  pedestrian_crossings_traffic_signals_and_traffic_sensors = 20,
+  speed_limits = 21,
+  transport_authority_critical_apparatus = 22,
+  strategic_route = 23,
+  street_lighting = 24,
+  drainage_and_flood_risk = 25,
+  unusual_traffic_layout = 26,
+  local_considerations = 27,
+  winter_maintenance_routes = 28,
+  hgv_approved_routes = 29,
+  emergency_services_routes = 30,
+  upcoming_enum = 999
+}
+
 export enum ASDPeriodicityCode {
   everyday = 1,
   working_days_only = 2,
@@ -465,11 +789,36 @@ export enum ASDPeriodicityCode {
   special_arrangements_63 = 16
 }
 
+export enum ASDPeriodicityCodeResponse {
+  everyday = 1,
+  working_days_only = 2,
+  weekends = 3,
+  monday_only = 7,
+  tuesday_only = 8,
+  wednesday_only = 9,
+  thursday_only = 10,
+  friday_only = 11,
+  saturday_only = 12,
+  sunday_only = 13,
+  public_and_bank_holidays = 14,
+  continuous_62 = 15,
+  special_arrangements_63 = 16,
+  upcoming_enum = 999
+}
+
 export enum ReinstatementType {
   excavation = 'excavation',
   bar_holes = 'bar_holes',
   core_holes = 'core_holes',
   pole_testing = 'pole_testing'
+}
+
+export enum ReinstatementTypeResponse {
+  excavation = 'excavation',
+  bar_holes = 'bar_holes',
+  core_holes = 'core_holes',
+  pole_testing = 'pole_testing',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum Section81Type {
@@ -481,9 +830,25 @@ export enum Section81Type {
   other = 'other'
 }
 
+export enum Section81TypeResponse {
+  tee_valve_access_covers = 'tee_valve_access_covers',
+  cabinet = 'cabinet',
+  marker_post = 'marker_post',
+  pole_post = 'pole_post',
+  overhead_cables_broken_low_encroaching_onto_highway = 'overhead_cables_broken_low_encroaching_onto_highway',
+  other = 'other',
+  upcoming_enum = 'upcoming_enum'
+}
+
 export enum Section81Severity {
   high = 'high',
   low = 'low'
+}
+
+export enum Section81SeverityResponse {
+  high = 'high',
+  low = 'low',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum Section81Status {
@@ -496,9 +861,26 @@ export enum Section81Status {
   cancelled = 'cancelled'
 }
 
+export enum Section81StatusResponse {
+  issued = 'issued',
+  acknowledged = 'acknowledged',
+  accepted = 'accepted',
+  accepted_fixed = 'accepted_fixed',
+  rejected = 'rejected',
+  resolved_by_ha = 'resolved_by_ha',
+  cancelled = 'cancelled',
+  upcoming_enum = 'upcoming_enum'
+}
+
 export enum Section81WorkType {
   permit_works = 'permit_works',
   non_notifiable_works = 'non_notifiable_works'
+}
+
+export enum Section81WorkTypeResponse {
+  permit_works = 'permit_works',
+  non_notifiable_works = 'non_notifiable_works',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum HS2HighwayExemption {
@@ -509,6 +891,15 @@ export enum HS2HighwayExemption {
   none_applicable = 'none_applicable'
 }
 
+export enum HS2HighwayExemptionResponse {
+  works_to_a_bridge = 'works_to_a_bridge',
+  alteration_or_disturbance_to_apparatus = 'alteration_or_disturbance_to_apparatus',
+  depositing_soil_or_materials = 'depositing_soil_or_materials',
+  erection_of_scaffolding = 'erection_of_scaffolding',
+  none_applicable = 'none_applicable',
+  upcoming_enum = 'upcoming_enum'
+}
+
 export enum PaymentMethod {
   bank_transfer = 'bank_transfer',
   card_payment = 'card_payment',
@@ -516,15 +907,30 @@ export enum PaymentMethod {
   cheque = 'cheque'
 }
 
+export enum PaymentMethodResponse {
+  bank_transfer = 'bank_transfer',
+  card_payment = 'card_payment',
+  cash = 'cash',
+  cheque = 'cheque',
+  upcoming_enum = 'upcoming_enum'
+}
+
 export enum ForwardPlanWorkType {
   planned = 'planned',
   hs2_highway_works = 'hs2_highway_works'
 }
 
-export enum InspectionStatus {
+export enum ForwardPlanWorkTypeResponse {
+  planned = 'planned',
+  hs2_highway_works = 'hs2_highway_works',
+  upcoming_enum = 'upcoming_enum'
+}
+
+export enum InspectionStatusResponse {
   recorded = 'recorded',
   withdrawn = 'withdrawn',
-  scheduled = 'scheduled'
+  scheduled = 'scheduled',
+  upcoming_enum = 'upcoming_enum'
 }
 
 export enum InspectionReasonForWithdrawal {
@@ -533,4 +939,13 @@ export enum InspectionReasonForWithdrawal {
   wrong_details = 'wrong_details',
   outcome_changed = 'outcome_changed',
   other = 'other'
+}
+
+export enum InspectionReasonForWithdrawalResponse {
+  incorrect_outcome_recorded = 'incorrect_outcome_recorded',
+  wrong_works_or_organisation = 'wrong_works_or_organisation',
+  wrong_details = 'wrong_details',
+  outcome_changed = 'outcome_changed',
+  other = 'other',
+  upcoming_enum = 'upcoming_enum'
 }

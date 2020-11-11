@@ -1,4 +1,4 @@
-import { ActivityActivityType, LocationType, TrafficManagementType } from './referenceTypes';
+import { ActivityActivityTypeResponse, TrafficManagementTypeResponse, LocationTypeResponse } from './referenceTypes';
 export interface ActivityResponse {
     activity_reference_number: string;
     usrn: number;
@@ -8,7 +8,7 @@ export interface ActivityResponse {
     road_category?: number;
     activity_coordinates: any;
     activity_name: string;
-    activity_activity_type: ActivityActivityType;
+    activity_activity_type: ActivityActivityTypeResponse;
     activity_activity_type_string: string;
     activity_type_details?: string;
     contact_name?: string;
@@ -17,10 +17,10 @@ export interface ActivityResponse {
     start_time?: Date;
     end_date: Date;
     end_time?: Date;
-    location_types: LocationType[];
+    location_types: LocationTypeResponse[];
     location_types_string: string[];
     activity_location_description: string;
-    traffic_management_type: TrafficManagementType;
+    traffic_management_type: TrafficManagementTypeResponse;
     traffic_management_type_string: string;
     collaborative_working: boolean;
     additional_info?: string;

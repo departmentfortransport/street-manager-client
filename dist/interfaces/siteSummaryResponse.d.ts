@@ -1,4 +1,4 @@
-import { ReinstatementStatus, ReinstatementType } from './referenceTypes';
+import { ReinstatementStatusResponse, ReinstatementTypeResponse } from './referenceTypes';
 import { SiteDetails } from './siteDetails';
 export interface SiteSummaryResponse extends SiteDetails {
     permit_reference_number?: string;
@@ -7,9 +7,9 @@ export interface SiteSummaryResponse extends SiteDetails {
     width?: number;
     completed_date: Date;
     end_date: Date;
-    site_status: ReinstatementStatus;
+    site_status: ReinstatementStatusResponse;
     site_status_string: string;
-    reinstatement_type: ReinstatementType;
+    reinstatement_type: ReinstatementTypeResponse;
     reinstatement_type_string: string;
     number_of_holes?: number;
 }
