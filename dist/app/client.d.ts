@@ -75,6 +75,7 @@ import { LinkSection81ToPermitRequest } from '../interfaces/linkSection81ToPermi
 import { LinkSection81ToPermitResponse } from '../interfaces/linkSection81ToPermitResponse';
 import { UnlinkSection81FromPermitRequest } from '../interfaces/unlinkSection81FromPermitRequest';
 import { InspectionWithdrawRequest } from '../interfaces/inspectionWithdrawRequest';
+import { GetWorkHistoryRequest } from '../interfaces/getWorkHistoryRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -119,7 +120,7 @@ export declare class StreetManagerApiClient {
     updateGeographicalArea(requestConfig: RequestConfig, geographicalAreaReferenceNumber: string, buffer: Buffer, filename: string, internalUserIdentifier?: string, internalUserName?: string): Promise<void>;
     getFile(requestConfig: RequestConfig, fileId: number): Promise<AxiosResponse<Buffer>>;
     deleteFile(requestConfig: RequestConfig, fileId: number): Promise<void>;
-    getWorkHistory(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkHistoryResponse[]>;
+    getWorkHistory(requestConfig: RequestConfig, workReferenceNumber: string, request: GetWorkHistoryRequest): Promise<WorkHistoryResponse>;
     getDuration(requestConfig: RequestConfig, startDate: string, endDate: string): Promise<DurationCalculationResponse>;
     getWorkCategory(requestConfig: RequestConfig, getWorkCategoryRequest: GetWorkCategoryRequest): Promise<WorkCategoryResponse>;
     createActivity(requestConfig: RequestConfig, activityCreateRequest: ActivityCreateRequest): Promise<ActivityCreateResponse>;

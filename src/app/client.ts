@@ -78,6 +78,7 @@ import { LinkSection81ToPermitRequest } from '../interfaces/linkSection81ToPermi
 import { LinkSection81ToPermitResponse } from '../interfaces/linkSection81ToPermitResponse'
 import { UnlinkSection81FromPermitRequest } from '../interfaces/unlinkSection81FromPermitRequest'
 import { InspectionWithdrawRequest } from '../interfaces/inspectionWithdrawRequest'
+import { GetWorkHistoryRequest } from '../interfaces/getWorkHistoryRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -268,8 +269,8 @@ export class StreetManagerApiClient {
     return this.httpHandler<void>(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getWorkHistory(requestConfig: RequestConfig, workReferenceNumber: string): Promise<WorkHistoryResponse[]> {
-    return this.httpHandler<WorkHistoryResponse[]>(() => this.axios.get(`/works/${workReferenceNumber}/history`, this.generateRequestConfig(requestConfig)))
+  public async getWorkHistory(requestConfig: RequestConfig, workReferenceNumber: string, request: GetWorkHistoryRequest): Promise<WorkHistoryResponse> {
+    return this.httpHandler<WorkHistoryResponse>(() => this.axios.get(`/works/${workReferenceNumber}/history`, this.generateRequestConfig(requestConfig, request)))
   }
 
   public async getDuration(requestConfig: RequestConfig, startDate: string, endDate: string): Promise<DurationCalculationResponse> {

@@ -97,3 +97,6 @@ export * from './interfaces/linkSection81ToPermitRequest';
 export * from './interfaces/linkSection81ToPermitResponse';
 export * from './interfaces/unlinkSection81FromPermitRequest';
 export * from './interfaces/inspectionWithdrawRequest';
+export * from './interfaces/paginationResponse';
+export * from './interfaces/paginationRequest';
+export * from './interfaces/getWorkHistoryRequest';
