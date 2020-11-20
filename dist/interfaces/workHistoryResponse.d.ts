@@ -1,5 +1,9 @@
+import { PaginationResponse } from './paginationResponse';
 import { AuditEvent } from './referenceTypes';
-export interface WorkHistoryResponse {
+export interface WorkHistoryResponse extends PaginationResponse {
+    rows: WorkHistorySummaryResponse[];
+}
+export interface WorkHistorySummaryResponse {
     action_date: Date;
     topic: string;
     details: string;

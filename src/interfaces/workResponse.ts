@@ -3,7 +3,7 @@ import { SiteSummaryResponse } from './siteSummaryResponse'
 import { PermitSummaryResponse } from './permitSummaryResponse'
 import { FPNSummaryResponse } from './fpnSummaryResponse'
 import { PermitResponse } from './permitResponse'
-import { WorkHistoryResponse } from './workHistoryResponse'
+import { WorkHistorySummaryResponse } from './workHistoryResponse'
 import { FileResponse} from './fileResponse'
 import { WorkStatusResponse } from './referenceTypes'
 import { ForwardPlanSummaryResponse } from './forwardPlanSummaryResponse'
@@ -35,7 +35,7 @@ export interface WorkResponse {
   active_permit?: PermitResponse
   forward_plan?: ForwardPlanSummaryResponse
   permits?: PermitSummaryResponse[]
-  history: WorkHistoryResponse[]
+  history: WorkHistorySummaryResponse[]
   sites?: SiteSummaryResponse[]
   inspections?: InspectionSummaryResponse[]
   fpns?: FPNSummaryResponse[]

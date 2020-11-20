@@ -223,9 +223,9 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.delete(`/files/${fileId}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    getWorkHistory(requestConfig, workReferenceNumber) {
+    getWorkHistory(requestConfig, workReferenceNumber, request) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}/history`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/works/${workReferenceNumber}/history`, this.generateRequestConfig(requestConfig, request)));
         });
     }
     getDuration(requestConfig, startDate, endDate) {
