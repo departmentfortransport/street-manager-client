@@ -338,6 +338,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.post(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/unlink-section-81`, unlinkSection81FromPermitRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    reassignSection81(requestConfig, workReferenceNumber, section81ReferenceNumber, reassignSection81Request) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/section-81s/${section81ReferenceNumber}/reassign-section-81`, reassignSection81Request, this.generateRequestConfig(requestConfig)));
+        });
+    }
     acknowledgeHS2Permit(requestConfig, workReferenceNumber, permitReferenceNumber, hs2AcknowledgementRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.put(`/works/${workReferenceNumber}/permits/${permitReferenceNumber}/hs2_acknowledgement`, hs2AcknowledgementRequest, this.generateRequestConfig(requestConfig)));
