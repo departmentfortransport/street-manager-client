@@ -1,5 +1,6 @@
 import { Section81SummaryResponse } from './section81SummaryResponse'
 import { LocationType, Section81Type, Section81WorkType, Section81Status } from './referenceTypes'
+import { FileSummaryResponse } from './fileSummaryResponse'
 
 export interface Section81Response extends Section81SummaryResponse {
   work_reference_number: string
@@ -27,4 +28,5 @@ export interface Section81Response extends Section81SummaryResponse {
   section_81_work_type?: Section81WorkType
   promoter_status?: Section81Status
   promoter_status_changed_date?: Date
+  files?: FileSummaryResponse[]
 }
