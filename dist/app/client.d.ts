@@ -77,6 +77,7 @@ import { UnlinkSection81FromPermitRequest } from '../interfaces/unlinkSection81F
 import { InspectionWithdrawRequest } from '../interfaces/inspectionWithdrawRequest';
 import { GetWorkHistoryRequest } from '../interfaces/getWorkHistoryRequest';
 import { ReassignSection81Request } from '../interfaces/reassignSection81Request';
+import { SampleInspectionTargetResponse } from '../interfaces/sampleInspectionTargetResponse';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -147,6 +148,7 @@ export declare class StreetManagerApiClient {
     reassignSection81(requestConfig: RequestConfig, workReferenceNumber: string, section81ReferenceNumber: string, reassignSection81Request: ReassignSection81Request): Promise<void>;
     acknowledgeHS2Permit(requestConfig: RequestConfig, workReferenceNumber: string, permitReferenceNumber: string, hs2AcknowledgementRequest: HS2AcknowledgementRequest): Promise<void>;
     createSampleInspectionTarget(requestConfig: RequestConfig, createSampleInspectionTargetRequest: SampleInspectionTargetCreateRequest): Promise<SampleInspectionTargetCreateResponse>;
+    getSampleInspectionTarget(requestConfig: RequestConfig, sampleInspectionTargetReferenceNumber: string): Promise<SampleInspectionTargetResponse>;
     updateSampleInspectionTarget(requestConfig: RequestConfig, sampleInspectionTargetReferenceNumber: string, updateSampleInspectionTargetRequest: SampleInspectionTargetUpdateRequest): Promise<void>;
     generateSampleInspection(requestConfig: RequestConfig): Promise<void>;
     withdrawInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionReferenceNumber: string, inspectionWithdrawRequest: InspectionWithdrawRequest): Promise<void>;
