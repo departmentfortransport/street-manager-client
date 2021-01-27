@@ -80,6 +80,7 @@ import { UnlinkSection81FromPermitRequest } from '../interfaces/unlinkSection81F
 import { InspectionWithdrawRequest } from '../interfaces/inspectionWithdrawRequest'
 import { GetWorkHistoryRequest } from '../interfaces/getWorkHistoryRequest'
 import { ReassignSection81Request } from '../interfaces/reassignSection81Request'
+import { SampleInspectionTargetResponse } from '../interfaces/sampleInspectionTargetResponse'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -372,6 +373,10 @@ export class StreetManagerApiClient {
 
   public async createSampleInspectionTarget(requestConfig: RequestConfig, createSampleInspectionTargetRequest: SampleInspectionTargetCreateRequest): Promise<SampleInspectionTargetCreateResponse> {
     return this.httpHandler<SampleInspectionTargetCreateResponse>(() => this.axios.post('/sample-inspection-targets', createSampleInspectionTargetRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async getSampleInspectionTarget(requestConfig: RequestConfig, sampleInspectionTargetReferenceNumber: string): Promise<SampleInspectionTargetResponse> {
+    return this.httpHandler<SampleInspectionTargetResponse>(() => this.axios.get(`/sample-inspection-targets/${sampleInspectionTargetReferenceNumber}`, this.generateRequestConfig(requestConfig)))
   }
 
   public async updateSampleInspectionTarget(requestConfig: RequestConfig, sampleInspectionTargetReferenceNumber: string, updateSampleInspectionTargetRequest: SampleInspectionTargetUpdateRequest): Promise<void> {
