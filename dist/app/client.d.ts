@@ -78,6 +78,7 @@ import { InspectionWithdrawRequest } from '../interfaces/inspectionWithdrawReque
 import { GetWorkHistoryRequest } from '../interfaces/getWorkHistoryRequest';
 import { ReassignSection81Request } from '../interfaces/reassignSection81Request';
 import { SampleInspectionTargetResponse } from '../interfaces/sampleInspectionTargetResponse';
+import { SampleInspectionTargetCloseRequest } from '../interfaces/sampleInspectionTargetCloseRequest';
 export interface StreetManagerApiClientConfig {
     baseURL: string;
     timeout?: number;
@@ -150,6 +151,7 @@ export declare class StreetManagerApiClient {
     createSampleInspectionTarget(requestConfig: RequestConfig, createSampleInspectionTargetRequest: SampleInspectionTargetCreateRequest): Promise<SampleInspectionTargetCreateResponse>;
     getSampleInspectionTarget(requestConfig: RequestConfig, sampleInspectionTargetReferenceNumber: string): Promise<SampleInspectionTargetResponse>;
     updateSampleInspectionTarget(requestConfig: RequestConfig, sampleInspectionTargetReferenceNumber: string, updateSampleInspectionTargetRequest: SampleInspectionTargetUpdateRequest): Promise<void>;
+    closeSampleInspectionTarget(requestConfig: RequestConfig, sampleInspectionTargetReferenceNumber: string, closeSampleInspectionTargetRequest: SampleInspectionTargetCloseRequest): Promise<void>;
     generateSampleInspection(requestConfig: RequestConfig): Promise<void>;
     withdrawInspection(requestConfig: RequestConfig, workReferenceNumber: string, inspectionReferenceNumber: string, inspectionWithdrawRequest: InspectionWithdrawRequest): Promise<void>;
     private httpHandler;
