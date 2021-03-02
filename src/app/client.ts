@@ -81,6 +81,7 @@ import { InspectionWithdrawRequest } from '../interfaces/inspectionWithdrawReque
 import { GetWorkHistoryRequest } from '../interfaces/getWorkHistoryRequest'
 import { ReassignSection81Request } from '../interfaces/reassignSection81Request'
 import { SampleInspectionTargetResponse } from '../interfaces/sampleInspectionTargetResponse'
+import { SampleInspectionTargetCloseRequest } from '../interfaces/sampleInspectionTargetCloseRequest'
 
 export interface StreetManagerApiClientConfig {
   baseURL: string,
@@ -381,6 +382,10 @@ export class StreetManagerApiClient {
 
   public async updateSampleInspectionTarget(requestConfig: RequestConfig, sampleInspectionTargetReferenceNumber: string, updateSampleInspectionTargetRequest: SampleInspectionTargetUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/sample-inspection-targets/${sampleInspectionTargetReferenceNumber}`, updateSampleInspectionTargetRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async closeSampleInspectionTarget(requestConfig: RequestConfig, sampleInspectionTargetReferenceNumber: string, closeSampleInspectionTargetRequest: SampleInspectionTargetCloseRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/sample-inspection-targets/${sampleInspectionTargetReferenceNumber}/close`, closeSampleInspectionTargetRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async generateSampleInspection(requestConfig: RequestConfig): Promise<void> {

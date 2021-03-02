@@ -102,3 +102,4 @@ export * from './interfaces/paginationResponse';
 export * from './interfaces/paginationRequest';
 export * from './interfaces/getWorkHistoryRequest';
 export * from './interfaces/reassignSection81Request';
+export * from './interfaces/sampleInspectionTargetCloseRequest';

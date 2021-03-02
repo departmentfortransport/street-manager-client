@@ -363,6 +363,11 @@ class StreetManagerApiClient {
             return this.httpHandler(() => this.axios.put(`/sample-inspection-targets/${sampleInspectionTargetReferenceNumber}`, updateSampleInspectionTargetRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    closeSampleInspectionTarget(requestConfig, sampleInspectionTargetReferenceNumber, closeSampleInspectionTargetRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/sample-inspection-targets/${sampleInspectionTargetReferenceNumber}/close`, closeSampleInspectionTargetRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     generateSampleInspection(requestConfig) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.post('/sample-inspection', null, this.generateRequestConfig(requestConfig)));
