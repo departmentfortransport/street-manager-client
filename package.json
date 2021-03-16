@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
-    "form-data": "^3.0.0",
+    "form-data": "^4.0.0",
     "http-status-codes": "^1.4.0",
     "qs": "^6.9.1"
   },
